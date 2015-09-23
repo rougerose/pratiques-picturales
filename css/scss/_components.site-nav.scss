@@ -1,0 +1,59 @@
+/* ==========================================================================
+   #SITE-NAV
+   ========================================================================== */
+
+.site-nav {
+  position: relative;
+  left: 8.33333%; // 1/12 en décalage à gauche
+}
+
+  .site-nav__logo {
+    width: 100%;
+
+    @media screen and (min-width: 32em) {
+      width: 477px;
+    }
+  }
+
+  /**
+   * les éléments site-nav__list se comportent comme des .layout__item,
+   * (élement parent est un div.layout)
+   * mais positionnés avec float, au lieu de inline-block compte tenu
+   * des retours de chariots produits par spip qui sont impossibles
+   * à supprimer. De plus, la largeur est réglée ici pour ne pas surcharger
+   * les CSS en règles .u-X/11 qui ne seront que très peu utilisées
+   * dans l'ensemble du site.
+   **/
+  .site-nav__list {
+    margin:  0;
+    list-style: none;
+    width: 50%; // u-1/2
+    float: left;
+    padding-left: $spacing-unit;
+
+    @include media-query(lap-and-up) {
+      width: 18.18182%; // u-2/11
+    }
+  }
+
+    .site-nav__item {}
+
+      .site-nav__link {
+        position: relative;
+        color: $black-color;
+
+        > svg {
+          position: absolute;
+          top: -2px;
+          left: -12px;
+        }
+
+        > span {
+          color: $black-color;
+          @include transition-color;
+        }
+
+        .active & {
+          font-weight: bold;
+        }
+      }

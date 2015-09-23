@@ -1,0 +1,43 @@
+<!-- vide -->
+<BOUCLE_rubriques(RUBRIQUES){tout}{par num titre}>
+  [(#SET{defaut,#ID_RUBRIQUE|couleur_site})]
+  [(#SET{couleur,#ID_RUBRIQUE|couleur_rubrique|sinon{#ID_RUBRIQUE|couleur_secteur}|sinon{#GET{defaut}}})]
+
+  [(#REM) bordure de page ]
+  .color__rubrique#ID_RUBRIQUE--border {
+    border-color: [#(#GET{couleur})];
+   }
+
+   [(#REM) navigation principale ]
+   [(#ID_RUBRIQUE|=={#ID_SECTEUR}|oui)
+
+     .color__rubrique#ID_RUBRIQUE--nav:before {
+       color: [#(#GET{couleur})];
+     }
+
+     .color__rubrique#ID_RUBRIQUE--nav:hover {
+       color: [#(#GET{couleur})];
+     }
+   ]
+
+</BOUCLE_rubriques>
+
+[(#SET{pages,
+  #ARRAY{
+    auteurs,'f5a623',
+    mots,'4a90e2',
+    recherche,'9013fe'}
+  })]
+
+<BOUCLE_pages(DATA){source tableau,#GET{pages}}>
+
+  [(#REM) navigation principale ]
+  .color__[(#CLE)]--nav:before \{
+    color: [#(#VALEUR)];
+  \}
+
+  .color__rubrique#ID_RUBRIQUE--nav:hover \{
+    color: [#(#VALEUR)];
+  \}
+
+</BOUCLE_pages>

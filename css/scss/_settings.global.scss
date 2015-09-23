@@ -1,0 +1,36 @@
+// ==========================================================================
+// #GLOBAL
+// ==========================================================================
+
+//
+// #INUIT SETTINGS
+// ==========================================================================
+
+$spacing-unit       : $inuit-base-spacing-unit;
+$spacing-unit--tiny : $inuit-base-spacing-unit--tiny;
+$spacing-unit--small: $inuit-base-spacing-unit--small;
+$spacing-unit--large: $inuit-base-spacing-unit--large;
+$spacing-unit--huge : $inuit-base-spacing-unit--huge;
+
+
+// columns : trumps.widths
+$inuit-widths-columns: (1,2,3,12) !default;
+
+// responsive columns : trumps.widths-responsive
+$inuit-widths-columns-responsive: (1,2,3,12) !default;
+
+// $inuit-enable-responsive-margins: true;
+
+// breakpoints : settings.responsive
+$breakpoints: (
+    "palm"          "screen and (max-width: 44.9375em)",
+    "lap-and-up"    "screen and (min-width: 45em)",
+    "desk"          "screen and (min-width: 64em)",
+) !default;
+
+
+//
+// #PRATIQUES-PICTURALES SETTINGS
+// ==========================================================================
+
+$debug: true;

@@ -1,0 +1,13 @@
+[(#SET{page-variable,#ENV{type-page,page}})][
+  (#GET{page-variable}|match{rubrique}|oui)
+    #SET{page-variable,#GET{page-variable}|concat{#ID_RUBRIQUE}}
+][(#SET{class,[page_(#ENV{type-page,page})[ #ENV{type-page,page}_(#ENV{composition,''})]][ composition_(#ENV{composition})]})]
+<body class="[page-body(#ENV{type-page}|oui)][ (#GET{class})]">
+  <INCLURE{fond=header/#ENV{type-page}, env, page-variable=#GET{page-variable}} />
+  <div class="page-content color__#GET{page-variable}--border">
+    <div class="wrapper">
+      <INCLURE{fond=content/#ENV{type-page},env} />
+    </div><!-- /.wrapper -->
+  </div><!-- /.page-content -->
+  <INCLURE{fond=footer/#ENV{type-page},env} />
+</body>

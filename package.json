@@ -1,5 +1,5 @@
 {
-  "name": "pratiques-picturales",
+  "name": "pratiques picturales",
   "version": "0.1.0",
   "description": "Plugin SPIP",
   "main": "",
@@ -12,6 +12,8 @@
     "gulp-concat": "latest",
     "gulp-csslint": "^0.2.0",
     "gulp-cssnano": "latest",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
     "gulp-postcss": "latest",
     "gulp-sass": "latest",
     "gulp-uglify": "latest"

@@ -1,0 +1,12 @@
+/* ==========================================================================
+   #PAGE-CONTENT
+   ========================================================================== */
+
+.page-content {
+  padding-left: 12px;
+  border-right: 12px solid $black-color;
+  @include media-query(lap-and-up) {
+    padding-left: 24px;
+    border-right-width: 24px;
+  }
+}
