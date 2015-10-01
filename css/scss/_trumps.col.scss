@@ -1,12 +1,9 @@
 /* ==========================================================================
-   #PAGE-HEAD
+   #COL
    ========================================================================== */
 
-.page-head {
-  padding: $spacing-unit 0;
-  border-left: $spacing-unit--small solid $black-color;
+.u-col2-lap-and-up {
   @include media-query(lap-and-up) {
-    border-left-width: $spacing-unit;
-    padding-right: $spacing-unit;
+    column-count: 2;
   }
 }

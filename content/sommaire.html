@@ -9,10 +9,3 @@
     </div>
   </div>
 </section>
-
-<BOUCLE_rubriques(RUBRIQUES){tout}{par num titre}>
-#ID_RUBRIQUE #TITRE <br>
-[(#SET{defaut,#ID_RUBRIQUE|couleur_site})]
-[(#SET{couleur,#ID_RUBRIQUE|couleur_rubrique|sinon{#ID_RUBRIQUE|couleur_secteur}|sinon{#GET{defaut}}})]
-couleur: #GET{couleur} <br><br>
-</BOUCLE_rubriques>

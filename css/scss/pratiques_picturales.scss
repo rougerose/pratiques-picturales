@@ -15,8 +15,8 @@
 
 // SETTINGS:
 @import "node_modules/inuit-defaults/settings.defaults";
-@import "settings.global";
 @import "settings.colors";
+@import "settings.global";
 
 @import "node_modules/inuit-responsive-settings/settings.responsive";
 
@@ -34,8 +34,9 @@
 // GENERIC:
 @import "node_modules/inuit-normalize/generic.normalize";
 @import "node_modules/inuit-box-sizing/generic.box-sizing";
-@import "node_modules/inuit-reset/generic.reset";
-@import "node_modules/inuit-shared/generic.shared";
+@import "generic.shared";
+// @import "node_modules/inuit-reset/generic.reset";
+// @import "node_modules/inuit-shared/generic.shared";
 
 // BASE:
 // @import "base.fonts";
@@ -47,42 +48,70 @@
 // @import "node_modules/inuit-headings/base.headings";
 // @import "node_modules/inuit-paragraphs/base.paragraphs";
 // @import "node_modules/inuit-lists/base.lists";
-// @import "node_modules/inuit-images/base.images";
+@import "node_modules/inuit-images/base.images";
 
 // OBJECTS:
 // @import "node_modules/inuit-block/objects.block";
 // @import "node_modules/inuit-box/objects.box";
-// @import "node_modules/inuit-buttons/objects.buttons";
+@import "node_modules/inuit-buttons/objects.buttons";
 // @import "node_modules/inuit-flag/objects.flag";
 @import "node_modules/inuit-layout/objects.layout";
-// @import "node_modules/inuit-list-bare/objects.list-bare";
+
+@import "objects.flex-grid";
+
+@import "node_modules/inuit-list-bare/objects.list-bare";
 // @import "node_modules/inuit-list-block/objects.list-block";
 // @import "node_modules/inuit-list-inline/objects.list-inline";
 // @import "node_modules/inuit-list-ui/objects.list-ui";
-// @import "node_modules/inuit-media/objects.media";
+@import "node_modules/inuit-media/objects.media";
 // @import "node_modules/inuit-pack/objects.pack";
 // @import "node_modules/inuit-tables/objects.tables";
 // @import "node_modules/inuit-tabs/objects.tabs";
 
 @import "objects.wrapper";
+@import "objects.container";
+
+@import "objects.obj";
 
 // COMPONENTS:
 @import "components.page";
 @import "components.page-head";
 @import "components.page-content";
 
+@import "components.headings";
+
 @import "components.site-nav";
 
+@import "components.article";
+@import "components.article-resume";
+@import "components.auteur";
+@import "components.notes";
+@import "components.tags";
+@import "components.bibliographie";
+@import "components.documents";
+
+@import "components.meta";
+
+@import "components.lists";
+@import "components.boxes";
 @import "components.icons";
+@import "components.buttons";
+@import "components.action";
 
 @import "components.spip-admin";
 
 // TRUMPS:
-// @import "node_modules/inuit-clearfix/trumps.clearfix";
+@import "node_modules/inuit-clearfix/trumps.clearfix";
 // @import "node_modules/inuit-headings-trumps/trumps.headings";
 // @import "node_modules/inuit-spacing/trumps.spacing";
 // @import "node_modules/inuit-responsive-spacing/trumps.spacing-responsive";
+@import "trumps.headings";
+@import "trumps.text";
+
+@import "trumps.col";
 @import "node_modules/inuit-widths/trumps.widths";
 @import "node_modules/inuit-responsive-widths/trumps.widths-responsive";
+@import "trumps.widths-layout";
+@import "trumps.widths-push-pull";
 //
 // @import "node_modules/inuit-print/trumps.print";

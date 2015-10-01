@@ -1,0 +1,15 @@
+[(#SET{layout,#ENV{layout,''}})]
+<BOUCLE_article_resume(ARTICLES){id_article}>
+<article class="article-resume[ (#GET{layout})]">
+  [(#GET{layout}|=={flex-grid__item}|oui)<div class="container-palm--tiny">]
+  <header class="o-obj__header">
+    <h1 class="o-obj__title epsilon">[<a href="#URL_ARTICLE">(#TITRE)</a>]</h1>
+    [<p class="o-obj__subtitle o-obj__subtitle--resume zeta">(#SOUSTITRE)</p>]
+  </header>
+  [<p class="o-obj__authors">
+    <:pratiques_picturales:par_auteur:> (#MODELE{pp-auteurs,id_article,contexte=resume})
+  </p>]
+  [(#INTRODUCTION)]
+  [(#GET{layout}|=={flex-grid__item}|oui)</div>]
+</article><!-- /.article-resume -->
+</BOUCLE_article_resume>

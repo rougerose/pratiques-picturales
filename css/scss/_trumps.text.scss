@@ -1,9 +1,9 @@
 /* ==========================================================================
-   #PAGE
+   #TEXT HELPERS
    ========================================================================== */
 
-.page {
-  font-family: "Optima LT Std","Optima","Helevetica Neue", Helvetica, sans-serif;
-  color: $text-color;
-  @include inuit-font-size(14px, 20px);
+.u-text-center-palm {
+  @include media-query(palm) {
+    text-align: center;
+  }
 }

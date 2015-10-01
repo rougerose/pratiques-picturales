@@ -6,27 +6,60 @@
 // #INUIT SETTINGS
 // ==========================================================================
 
-$spacing-unit       : $inuit-base-spacing-unit;
-$spacing-unit--tiny : $inuit-base-spacing-unit--tiny;
-$spacing-unit--small: $inuit-base-spacing-unit--small;
-$spacing-unit--large: $inuit-base-spacing-unit--large;
-$spacing-unit--huge : $inuit-base-spacing-unit--huge;
+// $base-font-size alias
+$base-font-size                      : $inuit-base-font-size;
 
+// $spacing-unit alias
+$spacing-unit                        : $inuit-base-spacing-unit;
+$spacing-unit--tiny                  : $inuit-base-spacing-unit--tiny;
+$spacing-unit--small                 : $inuit-base-spacing-unit--small;
+$spacing-unit--large                 : $inuit-base-spacing-unit--large;
+$spacing-unit--huge                  : $inuit-base-spacing-unit--huge;
 
-// columns : trumps.widths
-$inuit-widths-columns: (1,2,3,12) !default;
+// _trumps.headings sizes
+$inuit-heading-size-1                : 30px !default;
+$inuit-heading-lineheight-1          : 1.1 !default;
+$inuit-heading-size-2                : 26px !default;
+$inuit-heading-lineheight-2          : 1.1 !default;
+$inuit-heading-size-3                : 22px !default;
+$inuit-heading-lineheight-3          : 1.1 !default;
+$inuit-heading-size-4                : 20px !default;
+$inuit-heading-lineheight-4          : 1.1 !default;
+$inuit-heading-size-5                : 18px !default;
+$inuit-heading-lineheight-5          : 1.1 !default;
+$inuit-heading-size-6                : 16px !default;
+$inuit-heading-lineheight-6          : 1.1 !default;
 
-// responsive columns : trumps.widths-responsive
-$inuit-widths-columns-responsive: (1,2,3,12) !default;
+// columns                           : trumps.widths
+$inuit-widths-columns                : (3,4,6) !default;
 
-// $inuit-enable-responsive-margins: true;
+// responsive columns                : trumps.widths-responsive
+$inuit-widths-columns-responsive     : (3,4,6) !default;
 
-// breakpoints : settings.responsive
-$breakpoints: (
-    "palm"          "screen and (max-width: 44.9375em)",
-    "lap-and-up"    "screen and (min-width: 45em)",
-    "desk"          "screen and (min-width: 64em)",
-) !default;
+// breakpoints                       : settings.responsive
+// $breakpoints                         : (
+//   "palm"       "screen and (max-width: 44.9375em)",
+//   "lap-and-up" "screen and (min-width: 45em)",
+// );
+
+// palm : =< 500px
+// lap : => 500 et =< 750px
+// lap and up : => 750px
+// desk: >= 751px
+$breakpoints                         : (
+  "palm"       "screen and (max-width: 31.250em)",
+  "lap"        "screen and (min-width: 31.3em) and (max-width: 46.875em)",
+  "lap-and-up" "screen and (min-width: 31.3em)",
+  "desk"       "screen and (min-width: 46.938em)"
+);
+
+// buttons settings
+$inuit-enable-btn--small: true;
+$inuit-enable-btn--full: true;
+
+// $inuit-btn-padding                   : 2px;
+$inuit-btn-border-width: 2px;
+$inuit-btn-radius                    : 2px;
 
 
 //

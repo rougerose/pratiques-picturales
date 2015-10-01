@@ -1,33 +1,83 @@
 #HTTP_HEADER{Content-Type: text/css; charset=utf-8}
 #HTTP_HEADER{Vary: Accept-Encoding}
 /**
- * site:     pratiques-picturales. color css file, for SPIP.
+ * site:     pratiques-picturales. theme color css file (SPIP).
  * version:  0.1
  * author:   christophe le drean
  **/
 
 <BOUCLE_rubriques(RUBRIQUES){tout}{par num titre}>
 
-  [(#SET{defaut,#ID_RUBRIQUE|couleur_site})]
-  [(#SET{couleur,#ID_RUBRIQUE|couleur_rubrique|sinon{#ID_RUBRIQUE|couleur_secteur}|sinon{#GET{defaut}}})]
+[(#SET{defaut,#ID_RUBRIQUE|couleur_site})]
+[(#SET{couleur,#ID_RUBRIQUE|couleur_rubrique|sinon{#ID_RUBRIQUE|couleur_secteur}|sinon{#GET{defaut}}})]
+[(#SET{couleur_lum06,[(#GET{couleur}|couleur_luminance{0.6})]})]
 
-  [(#REM) bordure de page ]
-  .color__rubrique#ID_RUBRIQUE--border
+[(#REM) définition principale ]
+  .t-rub[(#ID_RUBRIQUE)]__color
+  {
+    color: [#(#GET{couleur})];
+  }
+
+[(#REM) border ]
+  .t-rub[(#ID_RUBRIQUE)]__border
   {
     border-color: [#(#GET{couleur})];
-   }
+  }
 
-   [(#REM) navigation principale ]
-   [(#ID_RUBRIQUE|=={#ID_SECTEUR}|oui)
+[(#REM) background ]
+  .t-rub[(#ID_RUBRIQUE)]__bg,
+  .t-rub[(#ID_RUBRIQUE)]__bg--hover:hover
+  {
+    color: [#(#GET{couleur}|couleur_extreme)];
+    background: [#(#GET{couleur})];
+  }
 
-    .color__rubrique#ID_RUBRIQUE--nav,
-    .active .color__rubrique#ID_RUBRIQUE--nav,
-    .active .color__rubrique#ID_RUBRIQUE--nav > span,
-    a.color__rubrique#ID_RUBRIQUE--nav:hover,
-    a.color__rubrique#ID_RUBRIQUE--nav:hover > span
+[(#REM) hN ]
+  .t-rub[(#ID_RUBRIQUE)]__hN,
+[(#REM) btn--action ]
+  .t-rub[(#ID_RUBRIQUE)]__btn--action
+  {
+    color: [#(#GET{couleur})];
+    border-color: [#(#GET{couleur})];
+  }
+
+  .t-rub[(#ID_RUBRIQUE)]__btn--action:before
+  {
+    background: [#(#GET{couleur})];
+  }
+
+  .t-rub[(#ID_RUBRIQUE)]__btn--action:active
+  {
+    background: [#(#GET{couleur}|couleur_luminance0.6})];
+  }
+
+[(#REM) box-arrow ]
+  .t-rub[(#ID_RUBRIQUE)]__box-arrow,
+  .t-rub[(#ID_RUBRIQUE)]__box-arrow:before
+  {
+    border-top-color: [#(#GET{couleur})];
+    color: [#(#GET{couleur})];
+  }
+
+[(#REM) articles-connexes ]
+  @media screen and (max-width: 31.25em)
+  {
+    .t-rub[(#ID_RUBRIQUE)]__articles-connexes
     {
-      color: [#(#GET{couleur})];
+      background-color: [#(#GET{couleur}|couleur_saturation{0.1})];
     }
+  }
+
+[(#ID_RUBRIQUE|=={#ID_SECTEUR}|oui)
+  [(#REM) navigation principale ]
+    .t-rub[(#ID_RUBRIQUE)]__color-nav,
+    .active .t-rub[(#ID_RUBRIQUE)]__color-nav,
+    .active .t-rub[(#ID_RUBRIQUE)]__color-nav > span,
+    .t-rub[(#ID_RUBRIQUE)]__color-nav:hover,
+    .t-rub[(#ID_RUBRIQUE)]__color-nav:hover > span
+     {
+       color: [#(#GET{couleur})];
+     }
 
    ]
 
@@ -39,13 +89,15 @@
 
 <BOUCLE_pages(DATA){source tableau,#GET{pages}}>
 
-  [(#REM) navigation principale ]
+[(#REM) définition principale ]
+  .t-[(#CLE)]__color,
 
-  .color__[(#CLE)]--nav,
-  .active a.color__[(#CLE)]--nav,
-  .active .color__[(#CLE)]--nav > span,
-  a.color__[(#CLE)]--nav:hover,
-  a.color__[(#CLE)]--nav:hover > span
+[(#REM) navigation principale ]
+  .t-[(#CLE)]__color-nav,
+  .active .t-[(#CLE)]__color-nav,
+  .active .t-[(#CLE)]__color-nav > span,
+  .t-[(#CLE)]__color-nav:hover,
+  .t-[(#CLE)]__color-nav:hover > span
   \{
     color: [#(#VALEUR)];
   \}

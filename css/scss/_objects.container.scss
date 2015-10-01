@@ -1,9 +1,11 @@
 /* ==========================================================================
-   #PAGE
+   #CONTAINER
    ========================================================================== */
 
-.page {
-  font-family: "Optima LT Std","Optima","Helevetica Neue", Helvetica, sans-serif;
-  color: $text-color;
-  @include inuit-font-size(14px, 20px);
+// .container {}
+
+@include media-query(palm) {
+  .container-palm--tiny {
+    margin: 0 $inuit-base-spacing-unit--tiny;
+  }
 }

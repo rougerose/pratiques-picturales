@@ -1,0 +1,41 @@
+/* ==========================================================================
+   #OBJ (OBJETS)
+   ========================================================================== */
+
+/**
+ *
+ * La notion d'objets s'entend ici selon ceux utilisés par SPIP. Objet article,
+ * rubrique, mot-clé...
+ *
+ * Il s'agit de regrouper à partir d'une seule dénomination des caractéristiques
+ * communes pour chaque objet.
+ *
+ */
+
+.o-obj__section {
+  margin-bottom: double($spacing-unit);
+}
+
+.o-obj__header {
+  margin-bottom: $spacing-unit;
+}
+
+  .o-obj__title {
+    margin-bottom: 0;
+  }
+
+  .o-obj__subtitle {
+    margin-bottom: 0;
+    font-style: italic;
+    color: #000;
+  }
+
+  .o-obj__subtitle--resume {
+    margin-top: $spacing-unit--tiny;
+    color: $text-color;
+  }
+
+  .o-obj__authors {
+    font-style: italic;
+    color: $black-color;
+  }

@@ -1,0 +1,19 @@
+/* ==========================================================================
+   #ACTION
+   ========================================================================== */
+
+.c-action {
+  position: relative;
+  
+}
+
+  .c-action__toggle {
+    width: 100px;
+    height: 30px;
+  }
+
+  .c-action__content {
+    position: absolute;
+    top: 50px;
+    opacity: 0;
+  }

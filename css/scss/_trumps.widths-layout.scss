@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #WIDTHS-LAYOUT
+   ========================================================================== */
+
+/**
+ * Pour éviter de produire un code important et inutile,
+ * la grille est calculée sur une base de 6 colonnes.
+ * On ajoute ici les classes nécessaire pour les tailles peu utilisées
+ * et non calculées par inuit (u-11/12 par exemple).
+*/
+
+@include media-query(lap) {
+  .u-11\/12-lap {
+    width: 91.66667%;
+  }
+}
+
+
+@include media-query(lap-and-up) {
+  .u-11\/12-lap-and-up {
+    width: 91.66667%;
+  }
+}

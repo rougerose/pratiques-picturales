@@ -1,0 +1,39 @@
+/* ==========================================================================
+   #FLEX-GRID
+   ========================================================================== */
+
+/**
+ * Mise en page avec flex de manière ponctuelle, lorsque l'utilisation
+ * du système de grille layout/layout__item n'est pas possible avec Spip
+ * (suppression des espaces entre deux blocs layout__item) et lorsque la mise
+ * en page en colonnes n'est pas indispensable (problème de compatibilité
+ * avec flex pour certaines versions de navigateurs).
+ */
+
+/*
+   règles générales
+   ========================================================================== */
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$inuit-base-spacing-unit;
+}
+
+  .flex-grid__item {
+    flex: 0 0 100%;
+    padding-left: $inuit-base-spacing-unit;
+  }
+
+/*
+   règles de mise en page
+   ========================================================================== */
+
+
+.u-flex-1\/2-lap-and-up {
+  @include media-query(lap-and-up) {
+    & > .flex-grid__item {
+      flex: 0 0 50%;
+    }
+  }
+}

@@ -6,7 +6,7 @@ var gulp = require('gulp')
     , concat = require('gulp-concat')
     , uglify = require('gulp-uglify')
     , autoprefixer = require('gulp-autoprefixer')
-    // , nano = require('gulp-cssnano')
+    //, nano = require('gulp-cssnano')
     , csslint = require('gulp-csslint')
     , plumber = require('gulp-plumber')
     , notify = require('gulp-notify')
@@ -33,7 +33,8 @@ gulp.task('css', function () {
     .pipe(autoprefixer())
     //.pipe(nano())
     .pipe(csslint({
-      'box-sizing': false
+      'box-sizing': false,
+      'box-model': false
     }))
     .pipe(csslint.reporter())
     .pipe(gulp.dest('./css'))

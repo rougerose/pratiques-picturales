@@ -430,47 +430,6 @@ html {
 *:after {
   box-sizing: inherit; }
 
-/*------------------------------------*    #RESET
-\*------------------------------------*/
-/**
- * As well as using normalize.css, it is often advantageous to remove all
- * margins from certain elements.
- */
-/* line 407, stdin */
-body,
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-dl, dd, ol, ul,
-form, fieldset, legend,
-figure,
-table, th, td, caption,
-hr {
-  margin: 0;
-  padding: 0; }
-
-/**
- * Give a help cursor to elements that give extra info on `:hover`.
- */
-/* line 415, stdin */
-abbr[title],
-dfn[title] {
-  cursor: help; }
-
-/**
- * Remove underlines from potentially troublesome elements.
- */
-/* line 422, stdin */
-u,
-ins {
-  text-decoration: none; }
-
-/**
- * Apply faux underlines to inserted text via `border-bottom`.
- */
-/* line 428, stdin */
-ins {
-  border-bottom: 1px solid; }
-
 /*------------------------------------*    #SHARED
 \*------------------------------------*/
 /**
@@ -478,7 +437,7 @@ ins {
  * base line-height. This allows us to keep a consistent vertical rhythm.
  * As per: csswizardry.com/2012/06/single-direction-margin-declarations
  */
-/* line 444, stdin */
+/* line 407, stdin */
 h1, h2, h3, h4, h5, h6,
 ul, ol, dl,
 blockquote, p, address,
@@ -486,33 +445,28 @@ hr,
 table,
 fieldset, figure,
 pre {
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 24px; }
 
 /**
  * Where `margin-left` is concerned we want to try and indent certain elements
  * by a consistent amount. Define that amount once,here.
  */
-/* line 452, stdin */
-ul, ol, dd {
-  margin-left: 48px;
-  margin-left: 3rem; }
-
 /* ==========================================================================
    #LINKS
    ========================================================================== */
-/* line 459, stdin */
+/* line 417, stdin */
 a {
-  color: #4fc9e9;
-  text-decoration: none;
-  -webkit-transition: color 0.4s ease;
-          transition: color 0.4s ease; }
+  display: inline-block;
+  color: #000;
+  text-decoration: underline;
+  -webkit-transition: all 0.4s ease;
+          transition: all 0.4s ease; }
 
-/* line 466, stdin */
+/* line 425, stdin */
 a:hover,
 a:active,
 a:focus {
-  color: #1694b5; }
+  color: #f44336; }
 
 /*------------------------------------*    #PAGE
 \*------------------------------------*/
@@ -530,7 +484,7 @@ a:focus {
  * 5. Fonts on OSX will look more consistent with other systems that do not
  *    render text using sub-pixel anti-aliasing.
  */
-/* line 485, stdin */
+/* line 444, stdin */
 html {
   font-size: 1em;
   /* [1] */
@@ -551,6 +505,105 @@ html {
   -webkit-font-smoothing: antialiased;
   /* [5] */ }
 
+/*------------------------------------*    #IMAGES
+\*------------------------------------*/
+/**
+ * 1. Fluid images for responsive purposes.
+ * 2. Offset `alt` text from surrounding copy.
+ * 3. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ */
+/* line 473, stdin */
+img {
+  max-width: 100%;
+  /* [1] */
+  font-style: italic;
+  /* [2] */
+  vertical-align: middle;
+  /* [3] */ }
+
+/**
+ * 1. Google Maps breaks if `max-width: 100%` acts upon it; use their selector
+ *    to remove the effects.
+ * 2. If a `width` and/or `height` attribute have been explicitly defined, let’s
+ *    not make the image fluid.
+ */
+/* line 487, stdin */
+.gm-style img, img[width], img[height] {
+  /* [2] */
+  max-width: none; }
+
+/*------------------------------------*    #BUTTONS
+\*------------------------------------*/
+/**
+ * A simple button object.
+ */
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ * 6. Fixes odd inner spacing in IE7.
+ * 7. Subtract the border size from the padding value so that buttons do not
+ *    grow larger as we add borders.
+ */
+/* line 507, stdin */
+.btn {
+  display: inline-block;
+  /* [1] */
+  vertical-align: middle;
+  /* [2] */
+  font: inherit;
+  /* [3] */
+  text-align: center;
+  /* [4] */
+  margin: 0;
+  /* [4] */
+  cursor: pointer;
+  /* [5] */
+  overflow: visible;
+  /* [6] */
+  padding: 10px 22px;
+  /* [7] */
+  background-color: #4a8ec2;
+  border: 2px solid #4a8ec2;
+  border-radius: 2px; }
+
+/* line 531, stdin */
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus {
+  text-decoration: none;
+  /* [4] */
+  color: #fff; }
+
+/**
+ * Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
+ */
+/* line 539, stdin */
+.btn::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+     * Small buttons.
+     */
+/* line 546, stdin */
+.btn--small {
+  padding: 4px 10px;
+  /* [7] */ }
+
+/**
+     * Full-width buttons.
+     */
+/* line 553, stdin */
+.btn--full {
+  width: 100%; }
+
 /*------------------------------------*    #LAYOUT
 \*------------------------------------*/
 /**
@@ -562,7 +615,7 @@ html {
 /**
  * Begin a layout group.
  */
-/* line 516, stdin */
+/* line 567, stdin */
 .layout {
   list-style: none;
   margin: 0;
@@ -576,7 +629,7 @@ html {
      * 4. Full-width unless told to behave otherwise.
      * 5. Required to combine fluid widths and fixed gutters.
      */
-/* line 529, stdin */
+/* line 580, stdin */
 .layout__item {
   display: inline-block;
   /* [1] */
@@ -588,31 +641,179 @@ html {
   /* [4] */ }
 
 /* ==========================================================================
+   #FLEX-GRID
+   ========================================================================== */
+/**
+ * Mise en page avec flex de manière ponctuelle, lorsque l'utilisation
+ * du système de grille layout/layout__item n'est pas possible avec Spip
+ * (suppression des espaces entre deux blocs layout__item) et lorsque la mise
+ * en page en colonnes n'est pas indispensable (problème de compatibilité
+ * avec flex pour certaines versions de navigateurs).
+ */
+/*
+   règles générales
+   ========================================================================== */
+/* line 603, stdin */
+.flex-grid {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-left: -24px; }
+
+/* line 608, stdin */
+.flex-grid__item {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  padding-left: 24px; }
+
+/*
+   règles de mise en page
+   ========================================================================== */
+@media screen and (min-width: 31.3em) {
+  /* line 616, stdin */
+  .u-flex-1\/2-lap-and-up > .flex-grid__item {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%; } }
+
+/*------------------------------------*    #LIST-BARE
+\*------------------------------------*/
+/**
+ * The list-bare object simply removes any indents and bullet points from lists.
+ */
+/* line 624, stdin */
+.list-bare {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+/*------------------------------------*    #MEDIA
+\*------------------------------------*/
+/**
+ * Place any image- and text-like content side-by-side, as per:
+ * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ */
+/* line 635, stdin */
+.media {
+  display: block; }
+
+/* line 638, stdin */
+.media__img {
+  float: left;
+  margin-right: 24px; }
+
+/* line 642, stdin */
+.media__img > img {
+  display: block; }
+
+/* line 645, stdin */
+.media__body {
+  overflow: hidden;
+  display: block; }
+
+/* line 650, stdin */
+.media__body,
+.media__body > :last-child {
+  margin-bottom: 0; }
+
+/* ==========================================================================
    #WRAPPER
    ========================================================================== */
-/* line 542, stdin */
+/* line 656, stdin */
 .wrapper {
   max-width: 1100px; }
+
+@media screen and (max-width: 31.25em) {
+  /* line 660, stdin */
+  .wrapper {
+    padding: 0 12px; } }
+
+@media screen and (min-width: 31.3em) and (max-width: 46.875em) {
+  /* line 664, stdin */
+  .wrapper {
+    padding-right: 12px; } }
+
+@media screen and (min-width: 37.5em) and (max-width: 46.875em) {
+  /* line 668, stdin */
+  .wrapper--readable {
+    max-width: 37.5em; } }
+
+/* ==========================================================================
+   #CONTAINER
+   ========================================================================== */
+@media screen and (max-width: 31.25em) {
+  /* line 675, stdin */
+  .container-palm--tiny {
+    margin: 0 6px; } }
+
+/* ==========================================================================
+   #OBJ (OBJETS)
+   ========================================================================== */
+/**
+ *
+ * La notion d'objets s'entend ici selon ceux utilisés par SPIP. Objet article,
+ * rubrique, mot-clé...
+ *
+ * Il s'agit de regrouper à partir d'une seule dénomination des caractéristiques
+ * communes pour chaque objet.
+ *
+ */
+/* line 690, stdin */
+.o-obj__section {
+  margin-bottom: 48px; }
+
+/* line 693, stdin */
+.o-obj__header {
+  margin-bottom: 24px; }
+
+/* line 696, stdin */
+.o-obj__title {
+  margin-bottom: 0; }
+
+/* line 699, stdin */
+.o-obj__subtitle {
+  margin-bottom: 0;
+  font-style: italic;
+  color: #000; }
+
+/* line 704, stdin */
+.o-obj__subtitle--resume {
+  margin-top: 6px;
+  color: #444; }
+
+/* line 708, stdin */
+.o-obj__authors {
+  font-style: italic;
+  color: #000; }
 
 /* ==========================================================================
    #PAGE
    ========================================================================== */
-/* line 548, stdin */
+/* line 715, stdin */
 .page {
-  font-family: "Helevetica Neue", Helvetica, sans-serif;
-  color: #555; }
+  font-family: "Optima LT Std","Optima","Helevetica Neue", Helvetica, sans-serif;
+  color: #444;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 20px; }
 
 /* ==========================================================================
    #PAGE-HEAD
    ========================================================================== */
-/* line 555, stdin */
+/* line 725, stdin */
 .page-head {
-  padding-top: 1em;
-  padding-right: 12px;
+  padding: 24px 0;
   border-left: 12px solid #000; }
 
-@media screen and (min-width: 45em) {
-  /* line 561, stdin */
+@media screen and (min-width: 31.3em) {
+  /* line 730, stdin */
   .page-head {
     border-left-width: 24px;
     padding-right: 24px; } }
@@ -620,33 +821,53 @@ html {
 /* ==========================================================================
    #PAGE-CONTENT
    ========================================================================== */
-/* line 568, stdin */
+/* line 737, stdin */
 .page-content {
-  padding-left: 12px;
+  padding: 24px 0 24px 12px;
   border-right: 12px solid #000; }
 
-@media screen and (min-width: 45em) {
-  /* line 573, stdin */
+@media screen and (min-width: 31.3em) {
+  /* line 742, stdin */
   .page-content {
     padding-left: 24px;
     border-right-width: 24px; } }
 
 /* ==========================================================================
+   #HEADINGS
+   ========================================================================== */
+/* line 749, stdin */
+.c-heading--section {
+  border-bottom: 1px solid #000;
+  text-transform: uppercase; }
+
+/*
+   SPIP
+   ========================================================================== */
+/* line 760, stdin */
+h2.spip,
+h3.spip,
+h4.spip,
+h5.spip,
+h6.spip {
+  margin: 48px 0 24px;
+  color: #000; }
+
+/* ==========================================================================
    #SITE-NAV
    ========================================================================== */
-/* line 580, stdin */
-.site-nav {
-  position: relative;
-  left: 8.33333%; }
+@media screen and (max-width: 31.25em) {
+  /* line 768, stdin */
+  .site-nav {
+    padding-left: 40px; } }
 
-/* line 584, stdin */
-.site-nav__logo {
+/* line 771, stdin */
+.site-nav__home {
   width: 100%; }
 
-@media screen and (min-width: 32em) {
-  /* line 588, stdin */
-  .site-nav__logo {
-    width: 477px; } }
+/* line 774, stdin */
+.site-nav__logo {
+  max-width: 477px;
+  margin-bottom: 12px; }
 
 /**
    * les éléments site-nav__list se comportent comme des .layout__item,
@@ -657,60 +878,269 @@ html {
    * les CSS en règles .u-X/11 qui ne seront que très peu utilisées
    * dans l'ensemble du site.
    **/
-/* line 600, stdin */
+/* line 787, stdin */
 .site-nav__list {
   margin: 0;
   list-style: none;
-  width: 50%;
+  width: 33.33333%;
   float: left;
-  padding-left: 24px; }
+  padding-left: 24px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.33333; }
 
-@media screen and (min-width: 45em) {
-  /* line 608, stdin */
+@media screen and (max-width: 21.875em) {
+  /* line 798, stdin */
+  .site-nav__list {
+    width: 50%; } }
+
+@media screen and (min-width: 46.938em) {
+  /* line 802, stdin */
   .site-nav__list {
     width: 18.18182%; } }
 
-/* line 611, stdin */
+/* line 805, stdin */
 .site-nav__link {
   position: relative;
-  color: #000; }
+  text-decoration: none; }
 
-/* line 615, stdin */
+/* line 809, stdin */
 .site-nav__link > svg {
   position: absolute;
   top: -2px;
   left: -12px; }
 
-/* line 620, stdin */
+/* line 814, stdin */
 .site-nav__link > span {
   color: #000;
   -webkit-transition: color 0.4s ease;
           transition: color 0.4s ease; }
 
-/* line 624, stdin */
+/* line 818, stdin */
 .active .site-nav__link {
   font-weight: bold; }
 
 /* ==========================================================================
+   #ARTICLE
+   ========================================================================== */
+@media screen and (max-width: 31.25em) {
+  /* line 825, stdin */
+  .article {
+    padding-left: 16px;
+    padding-right: 6px; } }
+
+/* line 829, stdin */
+.article__texte--chapo {
+  margin-bottom: 48px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.33333;
+  color: #1e1e1e; }
+
+/* ==========================================================================
+   #ARTICLE-RESUME
+   ========================================================================== */
+/* ==========================================================================
+   #AUTEUR
+   ========================================================================== */
+/* ==========================================================================
+   #NOTES
+   ========================================================================== */
+/* line 845, stdin */
+.notes > div {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+
+/* line 849, stdin */
+.notes > div > p {
+  margin: 0; }
+
+/* ==========================================================================
+   #TAGS
+   ========================================================================== */
+/*
+   #TAGS__LIST
+   ========================================================================== */
+/* line 858, stdin */
+.tags__item:before {
+  content: '# '; }
+
+/* ==========================================================================
+   #BIBLIOGRAPHIE
+   ========================================================================== */
+/* line 864, stdin */
+.bibliographie-ref__titre {
+  font-style: italic; }
+
+/* ==========================================================================
+   #DOCUMENTS
+   ========================================================================== */
+/* line 870, stdin */
+.document__link {
+  display: block;
+  border-bottom: 1px dotted #ddd;
+  padding: 12px 0;
+  text-decoration: none; }
+
+/* line 876, stdin */
+.document__link--first {
+  padding-top: 0; }
+
+/* line 879, stdin */
+.document__info {
+  margin-left: 100px; }
+
+/* line 882, stdin */
+.document__descriptif {
+  display: block; }
+
+/* ==========================================================================
+   #META
+   ========================================================================== */
+/* line 888, stdin */
+.meta__date {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 2;
+  color: #8888a7; }
+
+/* ==========================================================================
+   #LISTS
+   ========================================================================== */
+/*
+   #SPIP LISTS
+   ========================================================================== */
+/* line 900, stdin */
+ul.spip {
+  list-style: square inside; }
+
+/* line 904, stdin */
+ul.spip,
+ol.spip {
+  margin: 0;
+  padding: 0; }
+
+/* line 909, stdin */
+ul.spip ul,
+ol.spip ol {
+  padding-left: 0.75em; }
+
+/* ==========================================================================
+   #BOXES
+   ========================================================================== */
+/*
+   #BOX-ARROW
+   ========================================================================== */
+/* line 918, stdin */
+.box-arrow {
+  position: relative;
+  padding-top: 24px;
+  padding-top: 1.5rem;
+  border-top: 1px solid #000;
+  text-align: center;
+  text-transform: uppercase; }
+
+/* line 927, stdin */
+.box-arrow:before,
+.box-arrow:after {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  height: 0;
+  width: 0;
+  border: solid transparent;
+  content: " ";
+  pointer-events: none; }
+
+/* line 937, stdin */
+.box-arrow:before {
+  border-top-color: #000;
+  border-width: 13px;
+  margin-left: -13px; }
+
+/* line 942, stdin */
+.box-arrow:after {
+  border-top-color: #fff;
+  border-width: 12px;
+  margin-left: -12px; }
+
+/* ==========================================================================
    #ICONS
    ========================================================================== */
-/* line 630, stdin */
+/* line 950, stdin */
 .icon-svg-source {
   display: none; }
 
-/* line 633, stdin */
+/* line 953, stdin */
 .icon-oblique {
   width: 9px;
   height: 19px; }
 
-/* line 637, stdin */
+/* line 957, stdin */
 .icon-oblique__stroke {
   stroke: currentColor; }
 
 /* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+/* line 963, stdin */
+.btn {
+  font-weight: bold; }
+
+/* line 966, stdin */
+.btn--action {
+  position: relative;
+  background: none;
+  -webkit-transition: color 0.4s ease;
+          transition: color 0.4s ease; }
+
+/* line 971, stdin */
+.btn--action:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  opacity: 0;
+  -webkit-transform: scale3d(0.1, 0.1, 1);
+          transform: scale3d(0.1, 0.1, 1);
+  -webkit-transition: -webkit-transform 0.4s ease, opacity 0.4s ease;
+          transition: transform 0.4s ease, opacity 0.4s ease; }
+
+/* line 983, stdin */
+.btn--action:hover:before {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0); }
+
+/* line 987, stdin */
+.btn__label {
+  text-transform: uppercase; }
+
+/* ==========================================================================
+   #ACTION
+   ========================================================================== */
+/* line 993, stdin */
+.c-action {
+  position: relative; }
+
+/* line 996, stdin */
+.c-action__toggle {
+  width: 100px;
+  height: 30px; }
+
+/* line 1000, stdin */
+.c-action__content {
+  position: absolute;
+  top: 50px;
+  opacity: 0; }
+
+/* ==========================================================================
    #SPIP-ADMIN
    ========================================================================== */
-/* line 644, stdin */
+/* line 1009, stdin */
 body .spip-admin-bloc,
 body .spip-admin-float {
   z-index: 99999;
@@ -720,18 +1150,103 @@ body .spip-admin-float {
   -webkit-transition: right 0.35s ease;
           transition: right 0.35s ease; }
 
-/* line 652, stdin */
+/* line 1017, stdin */
 body .spip-admin-bloc:hover,
 body .spip-admin-float:hover {
   right: 0; }
 
-/* line 655, stdin */
+/* line 1020, stdin */
 .spip-admin-float .spip-admin-boutons {
   display: block;
   margin-bottom: 5px;
   font: 10px/1 "PT Mono", "Menlo", monospace;
   text-align: center;
   border-radius: 5px 0 0 5px; }
+
+/*------------------------------------*    #CLEARFIX
+\*------------------------------------*/
+/**
+ * Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+ * Extend the clearfix class with Sass to avoid the `.clearfix` class appearing
+ * over and over in your markup.
+ */
+/* line 1036, stdin */
+.clearfix:after,
+.media:after,
+.document__link:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/*------------------------------------*    #HEADINGS
+\*------------------------------------*/
+/**
+ * Headings 1–6’s corresponding Greek-alphabet abstract classes for double-
+ * stranded heading hierarchy: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ *
+ * Use these helper classes to cause other elements to adopt the styling of the
+ * respective heading, e.g.:
+ *
+   <h2 class="alpha">Lorem ipsum</h2>
+ *
+ */
+/**
+  * Surcharge du fichier inuit-headings-trums/_trumps.headings.scss,
+  * afin de pouvoir définir l'interlignage
+  */
+/* line 1057, stdin */
+.alpha {
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 1.1; }
+
+/* line 1062, stdin */
+.beta {
+  font-size: 26px;
+  font-size: 1.625rem;
+  line-height: 1.1; }
+
+/* line 1067, stdin */
+.gamma {
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 1.1; }
+
+/* line 1072, stdin */
+.delta {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.1; }
+
+/* line 1077, stdin */
+.epsilon {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.1; }
+
+/* line 1082, stdin */
+.zeta {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.1; }
+
+/* ==========================================================================
+   #TEXT HELPERS
+   ========================================================================== */
+@media screen and (max-width: 31.25em) {
+  /* line 1091, stdin */
+  .u-text-center-palm {
+    text-align: center; } }
+
+/* ==========================================================================
+   #COL
+   ========================================================================== */
+@media screen and (min-width: 31.3em) {
+  /* line 1098, stdin */
+  .u-col2-lap-and-up {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2; } }
 
 /*------------------------------------*    #WIDTHS
 \*------------------------------------*/
@@ -742,208 +1257,223 @@ body .spip-admin-float:hover {
  *
  * <div class="u-7/12">
  */
-/* line 671, stdin */
-.u-1\/1 {
-  width: 100%; }
-
-/* line 674, stdin */
-.u-1\/2 {
-  width: 50%; }
-
-/* line 677, stdin */
+/* line 1110, stdin */
 .u-1\/3 {
   width: 33.33333%; }
 
-/* line 680, stdin */
+/* line 1113, stdin */
 .u-2\/3 {
   width: 66.66667%; }
 
-/* line 683, stdin */
-.u-1\/12 {
-  width: 8.33333%; }
-
-/* line 686, stdin */
-.u-2\/12 {
-  width: 16.66667%; }
-
-/* line 689, stdin */
-.u-3\/12 {
+/* line 1116, stdin */
+.u-1\/4 {
   width: 25%; }
 
-/* line 692, stdin */
-.u-4\/12 {
-  width: 33.33333%; }
-
-/* line 695, stdin */
-.u-5\/12 {
-  width: 41.66667%; }
-
-/* line 698, stdin */
-.u-6\/12 {
+/* line 1119, stdin */
+.u-2\/4 {
   width: 50%; }
 
-/* line 701, stdin */
-.u-7\/12 {
-  width: 58.33333%; }
-
-/* line 704, stdin */
-.u-8\/12 {
-  width: 66.66667%; }
-
-/* line 707, stdin */
-.u-9\/12 {
+/* line 1122, stdin */
+.u-3\/4 {
   width: 75%; }
 
-/* line 710, stdin */
-.u-10\/12 {
-  width: 83.33333%; }
+/* line 1125, stdin */
+.u-1\/6 {
+  width: 16.66667%; }
 
-/* line 713, stdin */
-.u-11\/12 {
-  width: 91.66667%; }
+/* line 1128, stdin */
+.u-2\/6 {
+  width: 33.33333%; }
+
+/* line 1131, stdin */
+.u-3\/6 {
+  width: 50%; }
+
+/* line 1134, stdin */
+.u-4\/6 {
+  width: 66.66667%; }
+
+/* line 1137, stdin */
+.u-5\/6 {
+  width: 83.33333%; }
 
 /*------------------------------------*    #WIDTHS-RESPONSIVE
 \*------------------------------------*/
 /**
  * Responsive width classes based on your responsive settings.
  */
-@media screen and (max-width: 44.9375em) {
-  /* line 722, stdin */
-  .u-1\/1-palm {
-    width: 100%; }
-  /* line 724, stdin */
-  .u-1\/2-palm {
-    width: 50%; }
-  /* line 726, stdin */
+@media screen and (max-width: 31.25em) {
+  /* line 1146, stdin */
   .u-1\/3-palm {
     width: 33.33333%; }
-  /* line 728, stdin */
+  /* line 1148, stdin */
   .u-2\/3-palm {
     width: 66.66667%; }
-  /* line 730, stdin */
-  .u-1\/12-palm {
-    width: 8.33333%; }
-  /* line 732, stdin */
-  .u-2\/12-palm {
-    width: 16.66667%; }
-  /* line 734, stdin */
-  .u-3\/12-palm {
+  /* line 1150, stdin */
+  .u-1\/4-palm {
     width: 25%; }
-  /* line 736, stdin */
-  .u-4\/12-palm {
-    width: 33.33333%; }
-  /* line 738, stdin */
-  .u-5\/12-palm {
-    width: 41.66667%; }
-  /* line 740, stdin */
-  .u-6\/12-palm {
+  /* line 1152, stdin */
+  .u-2\/4-palm {
     width: 50%; }
-  /* line 742, stdin */
-  .u-7\/12-palm {
-    width: 58.33333%; }
-  /* line 744, stdin */
-  .u-8\/12-palm {
-    width: 66.66667%; }
-  /* line 746, stdin */
-  .u-9\/12-palm {
+  /* line 1154, stdin */
+  .u-3\/4-palm {
     width: 75%; }
-  /* line 748, stdin */
-  .u-10\/12-palm {
-    width: 83.33333%; }
-  /* line 750, stdin */
-  .u-11\/12-palm {
-    width: 91.66667%; } }
-
-@media screen and (min-width: 45em) {
-  /* line 754, stdin */
-  .u-1\/1-lap-and-up {
-    width: 100%; }
-  /* line 756, stdin */
-  .u-1\/2-lap-and-up {
+  /* line 1156, stdin */
+  .u-1\/6-palm {
+    width: 16.66667%; }
+  /* line 1158, stdin */
+  .u-2\/6-palm {
+    width: 33.33333%; }
+  /* line 1160, stdin */
+  .u-3\/6-palm {
     width: 50%; }
-  /* line 758, stdin */
+  /* line 1162, stdin */
+  .u-4\/6-palm {
+    width: 66.66667%; }
+  /* line 1164, stdin */
+  .u-5\/6-palm {
+    width: 83.33333%; } }
+
+@media screen and (min-width: 31.3em) and (max-width: 46.875em) {
+  /* line 1168, stdin */
+  .u-1\/3-lap {
+    width: 33.33333%; }
+  /* line 1170, stdin */
+  .u-2\/3-lap {
+    width: 66.66667%; }
+  /* line 1172, stdin */
+  .u-1\/4-lap {
+    width: 25%; }
+  /* line 1174, stdin */
+  .u-2\/4-lap {
+    width: 50%; }
+  /* line 1176, stdin */
+  .u-3\/4-lap {
+    width: 75%; }
+  /* line 1178, stdin */
+  .u-1\/6-lap {
+    width: 16.66667%; }
+  /* line 1180, stdin */
+  .u-2\/6-lap {
+    width: 33.33333%; }
+  /* line 1182, stdin */
+  .u-3\/6-lap {
+    width: 50%; }
+  /* line 1184, stdin */
+  .u-4\/6-lap {
+    width: 66.66667%; }
+  /* line 1186, stdin */
+  .u-5\/6-lap {
+    width: 83.33333%; } }
+
+@media screen and (min-width: 31.3em) {
+  /* line 1190, stdin */
   .u-1\/3-lap-and-up {
     width: 33.33333%; }
-  /* line 760, stdin */
+  /* line 1192, stdin */
   .u-2\/3-lap-and-up {
     width: 66.66667%; }
-  /* line 762, stdin */
-  .u-1\/12-lap-and-up {
-    width: 8.33333%; }
-  /* line 764, stdin */
-  .u-2\/12-lap-and-up {
-    width: 16.66667%; }
-  /* line 766, stdin */
-  .u-3\/12-lap-and-up {
+  /* line 1194, stdin */
+  .u-1\/4-lap-and-up {
     width: 25%; }
-  /* line 768, stdin */
-  .u-4\/12-lap-and-up {
-    width: 33.33333%; }
-  /* line 770, stdin */
-  .u-5\/12-lap-and-up {
-    width: 41.66667%; }
-  /* line 772, stdin */
-  .u-6\/12-lap-and-up {
+  /* line 1196, stdin */
+  .u-2\/4-lap-and-up {
     width: 50%; }
-  /* line 774, stdin */
-  .u-7\/12-lap-and-up {
-    width: 58.33333%; }
-  /* line 776, stdin */
-  .u-8\/12-lap-and-up {
-    width: 66.66667%; }
-  /* line 778, stdin */
-  .u-9\/12-lap-and-up {
+  /* line 1198, stdin */
+  .u-3\/4-lap-and-up {
     width: 75%; }
-  /* line 780, stdin */
-  .u-10\/12-lap-and-up {
-    width: 83.33333%; }
-  /* line 782, stdin */
+  /* line 1200, stdin */
+  .u-1\/6-lap-and-up {
+    width: 16.66667%; }
+  /* line 1202, stdin */
+  .u-2\/6-lap-and-up {
+    width: 33.33333%; }
+  /* line 1204, stdin */
+  .u-3\/6-lap-and-up {
+    width: 50%; }
+  /* line 1206, stdin */
+  .u-4\/6-lap-and-up {
+    width: 66.66667%; }
+  /* line 1208, stdin */
+  .u-5\/6-lap-and-up {
+    width: 83.33333%; } }
+
+@media screen and (min-width: 46.938em) {
+  /* line 1212, stdin */
+  .u-1\/3-desk {
+    width: 33.33333%; }
+  /* line 1214, stdin */
+  .u-2\/3-desk {
+    width: 66.66667%; }
+  /* line 1216, stdin */
+  .u-1\/4-desk {
+    width: 25%; }
+  /* line 1218, stdin */
+  .u-2\/4-desk {
+    width: 50%; }
+  /* line 1220, stdin */
+  .u-3\/4-desk {
+    width: 75%; }
+  /* line 1222, stdin */
+  .u-1\/6-desk {
+    width: 16.66667%; }
+  /* line 1224, stdin */
+  .u-2\/6-desk {
+    width: 33.33333%; }
+  /* line 1226, stdin */
+  .u-3\/6-desk {
+    width: 50%; }
+  /* line 1228, stdin */
+  .u-4\/6-desk {
+    width: 66.66667%; }
+  /* line 1230, stdin */
+  .u-5\/6-desk {
+    width: 83.33333%; } }
+
+/* ==========================================================================
+   #WIDTHS-LAYOUT
+   ========================================================================== */
+/**
+ * Pour éviter de produire un code important et inutile,
+ * la grille est calculée sur une base de 6 colonnes.
+ * On ajoute ici les classes nécessaire pour les tailles peu utilisées
+ * et non calculées par inuit (u-11/12 par exemple).
+*/
+@media screen and (min-width: 31.3em) and (max-width: 46.875em) {
+  /* line 1243, stdin */
+  .u-11\/12-lap {
+    width: 91.66667%; } }
+
+@media screen and (min-width: 31.3em) {
+  /* line 1247, stdin */
   .u-11\/12-lap-and-up {
     width: 91.66667%; } }
 
-@media screen and (min-width: 64em) {
-  /* line 786, stdin */
-  .u-1\/1-desk {
-    width: 100%; }
-  /* line 788, stdin */
-  .u-1\/2-desk {
-    width: 50%; }
-  /* line 790, stdin */
-  .u-1\/3-desk {
-    width: 33.33333%; }
-  /* line 792, stdin */
-  .u-2\/3-desk {
-    width: 66.66667%; }
-  /* line 794, stdin */
-  .u-1\/12-desk {
-    width: 8.33333%; }
-  /* line 796, stdin */
-  .u-2\/12-desk {
-    width: 16.66667%; }
-  /* line 798, stdin */
-  .u-3\/12-desk {
-    width: 25%; }
-  /* line 800, stdin */
-  .u-4\/12-desk {
-    width: 33.33333%; }
-  /* line 802, stdin */
-  .u-5\/12-desk {
-    width: 41.66667%; }
-  /* line 804, stdin */
-  .u-6\/12-desk {
-    width: 50%; }
-  /* line 806, stdin */
-  .u-7\/12-desk {
-    width: 58.33333%; }
-  /* line 808, stdin */
-  .u-8\/12-desk {
-    width: 66.66667%; }
-  /* line 810, stdin */
-  .u-9\/12-desk {
-    width: 75%; }
-  /* line 812, stdin */
-  .u-10\/12-desk {
-    width: 83.33333%; }
-  /* line 814, stdin */
-  .u-11\/12-desk {
-    width: 91.66667%; } }
+/* ==========================================================================
+   #PUSH-PULL-WIDTHS
+   ========================================================================== */
+@media screen and (min-width: 31.3em) and (max-width: 46.875em) {
+  /* line 1254, stdin */
+  .u-1\/12-push-lap {
+    left: 8.33333%;
+    position: relative; } }
+
+@media screen and (min-width: 31.3em) {
+  /* line 1259, stdin */
+  .u-1\/12-push-lap-and-up {
+    left: 8.33333%;
+    position: relative; } }
+
+@media screen and (min-width: 46.938em) {
+  /* line 1264, stdin */
+  .u-1\/4-push-desk {
+    left: 25%;
+    position: relative; }
+  /* line 1267, stdin */
+  .u-3\/4-push-desk {
+    left: 75%;
+    position: relative; }
+  /* line 1270, stdin */
+  .u-2\/4-pull-desk {
+    right: 50%;
+    position: relative; } }

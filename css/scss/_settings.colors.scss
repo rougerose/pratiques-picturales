@@ -3,12 +3,14 @@
 // ==========================================================================
 
 
-$black-color : #000;
-$white-color : #fff;
-$gray-color  : #999;
+$black-color     : #000;
+$dark-gray-color : #443838;
+$gray-color      : #999;
+$white-color     : #fff;
+$red-color       : #f44336;
 
 // links
-$link-color  : #4fc9e9;
-$link-color-hover: #1694b5;
+$link-color      : $black-color;
+$link-color-hover: $red-color;
 
-$text-color  : #555;
+$text-color      : #444;

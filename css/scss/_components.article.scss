@@ -1,0 +1,16 @@
+/* ==========================================================================
+   #ARTICLE
+   ========================================================================== */
+
+.article {
+  @include media-query(palm) {
+    padding-left: 16px;
+    padding-right: 6px;
+  }
+}
+
+    .article__texte--chapo {
+      margin-bottom: $spacing-unit--large;
+      @include inuit-font-size(18px);
+      color: darken($text-color,15%);
+    }

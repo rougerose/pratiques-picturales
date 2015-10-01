@@ -3,9 +3,10 @@
    ========================================================================== */
 
 a {
+  display: inline-block;
   color: $link-color;
-  text-decoration: none;
-  @include transition-color;
+  text-decoration: underline;
+  @include transition(all);
   &:hover,
   &:active,
   &:focus {
