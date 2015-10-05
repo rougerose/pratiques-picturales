@@ -5,6 +5,7 @@ if (!defined("_ECRIRE_INC_VERSION")) return;
 $GLOBALS[$GLOBALS['idx_lang']] = array(
   // A
   'article_pdf' => 'Télécharger la version PDF de cet article',
+  'article_pdf_court' => 'Version PDF',
   'articles_connexes' => 'Lire également',
 
   // B
@@ -29,7 +30,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'plan'                   => 'Plan',
 
   // R
-  'resume'                 => 'résumé',
+  'resume'                 => 'Résumé',
 
   // T
   'tags' => 'Mots-clés',

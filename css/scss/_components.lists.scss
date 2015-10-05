@@ -2,9 +2,40 @@
    #LISTS
    ========================================================================== */
 
+/*
+   #TOC-LIST
+   ========================================================================== */
+
+.toc {
+  position: fixed;
+  top: 0;
+  background: #fff;
+}
+
+.toc-list {
+}
+
+  .toc-list__item {
+    margin-bottom: $spacing-unit--tiny;
+    text-transform: uppercase;
+    &.is-active {
+      border-bottom: 1px solid #000;
+      & .toc__link {
+        color: #000;
+      }
+    }
+  }
+
+  .toc__link {
+    text-decoration: none;
+    color: $gray-color;
+  }
+
+
+
 
 /*
-   #SPIP LISTS
+   #SPIP LIST
    ========================================================================== */
 
 ul.spip {

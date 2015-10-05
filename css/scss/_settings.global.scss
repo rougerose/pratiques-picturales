@@ -46,7 +46,7 @@ $inuit-widths-columns-responsive     : (3,4,6) !default;
 // lap : => 500 et =< 750px
 // lap and up : => 750px
 // desk: >= 751px
-$breakpoints                         : (
+$breakpoints : (
   "palm"       "screen and (max-width: 31.250em)",
   "lap"        "screen and (min-width: 31.3em) and (max-width: 46.875em)",
   "lap-and-up" "screen and (min-width: 31.3em)",

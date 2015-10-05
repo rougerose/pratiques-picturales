@@ -2,7 +2,7 @@
   (#GET{page-variable}|match{rubrique|article}|oui)
     #SET{page-variable,#VAL{rub}|concat{#ID_RUBRIQUE}}
 ][(#SET{class,[page_(#ENV{type-page,page})[ #ENV{type-page,page}_(#ENV{composition,''})]][ composition_(#ENV{composition})]})]
-<body class="[page-body(#ENV{type-page}|oui)][ (#GET{class})]">
+<body id="js-page-body" class="[(#ENV{type-page}|oui)page-body] [(#GET{class})]">
   <INCLURE{fond=header/#ENV{type-page}, env, page-variable=#GET{page-variable}} />
   <main class="page-content[ t-(#GET{page-variable})__border]">
     <div class="wrapper wrapper--readable">

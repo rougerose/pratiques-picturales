@@ -10,6 +10,7 @@ var gulp = require('gulp')
     , csslint = require('gulp-csslint')
     , plumber = require('gulp-plumber')
     , notify = require('gulp-notify')
+    , rename = require('gulp-rename')
     ;
 
 var onError = function(err) {
@@ -19,7 +20,6 @@ var onError = function(err) {
     message:  "Error: <%= error.message %>",
     sound:    "Beep"
   })(err);
-
   this.emit('end');
 };
 
@@ -46,19 +46,47 @@ gulp.task('css', function () {
     }));
 });
 
+gulp.task('copy', function() {
+  gulp.src([
+    'node_modules/gumshoe/dist/js/gumshoe.js',
+    'node_modules/smooth-scroll/dist/js/smooth-scroll.js',
+    'bower_components/jquery-sticky/jquery.sticky.js'
+  ])
+    .pipe(gulp.dest('./js/src'));
+});
+
 // librairies js: concat;
-// gulp.task('jslib', function () {
-//   gulp.src([ ])
-//     .pipe(concat('libraries.js',{newLine: ';\r\n'}))
-//     .pipe(gulp.dest('./javascript'));
+// gulp.task('js_lib', function () {
+//   gulp.src([
+//     'node_modules/gumshoe/dist/js/gumshoe.min.js'
+//   ])
+//     .pipe(concat('libs.js',{newLine: ';\r\n'}))
+//     .pipe(gulp.dest('./js'));
 // });
 
 // minifyjs : uglify;
-// gulp.task('minifyjs', function () {
-//   gulp.src(['./javascript/libraries.js'])
-//     .pipe(uglify())
-//     .pipe(gulp.dest('./javascript'));
-// });
+gulp.task('minifyjs', function () {
+  gulp.src(['./js/src/*.js'])
+    .pipe(uglify({
+      preserveComments: 'license'
+    }))
+    .pipe(rename({
+      suffix: ".min"
+    }))
+    .pipe(gulp.dest('./js/dist/'));
+});
+
+// concat scripts pour composition article-numero
+gulp.task('concat_compo_article_numero', function() {
+  return gulp.src([
+    './js/dist/utils.min.js',
+    './js/dist/gumshoe.min.js',
+    './js/dist/jquery.sticky.min.js',
+    './js/dist/smooth-scroll.min.js'
+  ])
+    .pipe(concat('article_numero.min.js', {newLine: ';'}))
+    .pipe(gulp.dest('./js/dist'));
+});
 
 // watch
 gulp.task('watch', function () {
@@ -68,5 +96,7 @@ gulp.task('watch', function () {
 
 // tâches
 gulp.task('default', ['css']);
-// gulp.task('libjs',['jslib']);
-// gulp.task('minify', ['minifyjs']);
+gulp.task('jscopy', ['copy']);
+//gulp.task('jslib',['js_lib']);
+gulp.task('jsmini', ['minifyjs']);
+gulp.task('jsconcat',['concat_compo_article_numero']);

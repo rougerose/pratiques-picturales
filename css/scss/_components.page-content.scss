@@ -5,9 +5,9 @@
 .page-content {
   padding: $spacing-unit 0 $spacing-unit $spacing-unit--small;
   border-right: $spacing-unit--small solid $black-color;
+
   @include media-query(lap-and-up) {
     padding-left: $spacing-unit;
     border-right-width: $spacing-unit;
   }
-
 }

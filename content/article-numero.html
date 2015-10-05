@@ -46,28 +46,26 @@
 
     <section class="o-obj__section" data-ui-component="section-article-content">
 
-      <div class="layout__item u-1/12-push-lap u-11/12-lap u-3/4-push-desk u-1/4-desk">
+      [<div class="layout__item xu-1/12-push-lap u-11/12-lap xu-3/4-push-desk u-1/4-desk toc-cont">
 
-        <section class="meta">
-          <h1>TOC</h1> <!-- TODO: aside ou nav au lieu de section ? -->
-        </section>
+        (#INCLURE{fond=inclure/article-toc, id_article})
 
       </div><!-- /.layout__item
-      --><div class="layout__item u-1/12-push-lap u-11/12-lap u-2/4-desk">
+      -->]<div class="layout__item xu-1/12-push-lap u-11/12-lap u-2/4-desk toc-article">
 
-        [<section class="o-obj__section">
+        [<section id="resume" class="o-obj__section section">
           <h1 class="delta c-heading--section [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:resume:></h1>
           (#DESCRIPTIF)
         </section><!-- /.article__resume -->]
 
-        [<section class="o-obj__section">
-          <h1 class="delta c-heading--section [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:plan:></h1>
+        [<section class="o-obj__section section">
+          <h1 id="plan" class="delta c-heading--section [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:plan:></h1>
           <div class="article__plan">
             (#SOMMAIRE{#TEXTE})
           </div>
         </section><!-- /.article__plan -->]
 
-        <section class="o-obj__section">
+        <section id="texte" class="o-obj__section section">
           <h1 class="delta c-heading--section[ t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:texte_integral:></h1>
 
           [<div class="article__texte--chapo">
@@ -81,14 +79,14 @@
 
         [<section class="o-obj__section">
           <h1 class="c-heading--section delta [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
-          <div class="notes u-col2-lap-and-up">
+          <div class="notes xu-col2-lap-and-up">
             (#NOTES)
           </div>
         </section><!-- /.article__notes -->]
 
         [(#SET{_id_rubrique,#ID_RUBRIQUE})]
         <B_tags>
-        <section class="o-obj__section">
+        <section id="tags" class="o-obj__section">
           <h1 class="c-heading--section delta [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:tags:></h1>
           <p class="tags__list">
             <BOUCLE_tags(MOTS){id_article}{id_groupe!=2}{par titre}{' '}>[<span class="tags__item [t-rub(#GET{_id_rubrique})__color]"><a href="#URL_MOT">(#TITRE)</a></span>]</BOUCLE_tags>
@@ -108,14 +106,14 @@
         ]<B_documents>
           <BOUCLE_documents(DOCUMENTS){id_article}{mode=document}{vu=non}>
               <BOUCLE_technique_mot_article_pdf(MOTS){id_document}{id_mot=4}>
-                [(#ID_DOCUMENT|unique{mots}|oui) #SET{_id_doc_pdf,#ID_DOCUMENT} ]
+                [(#ID_DOCUMENT|unique|oui) #SET{_id_doc_pdf,#ID_DOCUMENT} ]
               </BOUCLE_technique_mot_article_pdf>
-              [(#ID_DOCUMENT|unique{mots}|oui) #SET{_id_docs,#GET{_id_docs}|push{#ID_DOCUMENT}} ]
+              [(#ID_DOCUMENT|unique|oui) #SET{_id_docs,#GET{_id_docs}|push{#ID_DOCUMENT}} ]
           </BOUCLE_documents>
         </B_documents>
         [(#REM)
           Afficher les documents si le test est positif.
-        ][<section class="o-obj__section">
+        ][<section id="documents" class="o-obj__section">
           <h1 class="c-heading--section delta [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:documents:></h1>
           (#GET{_id_docs}|count|>{0}|oui) #INCLURE{fond=inclure/documents-article, id_article, id_rubrique, _id_docs=#GET{_id_docs}}
         </section><!-- /.article_documents -->]
@@ -124,14 +122,14 @@
 
           [<div class="layout__item u-2/4-lap-and-up">
 
-            <section class="o-obj__section">
+            <section id="bibliographie" class="o-obj__section">
               <h1 class="c-heading--section delta [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:bibliographie:></h1>
                 (#BIBLIOGRAPHIE)
             </section><!-- /bibliographie -->
 
           </div><!-- /.layout__item
           -->]<div class="layout__item u-2/4-lap-and-up">
-            <section class="o-obj__section">
+            <section id="reference" class="o-obj__section">
               <h1 class="c-heading--section delta [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:citer_article:></h1>
               <p class="bibliographie-ref">
                 [(#MODELE{pp-auteurs,id_article,contexte=resume}), ][«&nbsp;(#TITRE) [(#SOUSTITRE)]&nbsp;».][ <span class="bibliographie-ref__titre">(#NOM_SITE_SPIP)[&nbsp;: (#INFO_TITRE{rubrique,#ID_RUBRIQUE})]</span>, ][(#INFO_SOUSTITRE{rubrique,#ID_RUBRIQUE}), ][(#INFO_DATE_NUMERO{rubrique,#ID_RUBRIQUE}|affdate_mois_annee).]
@@ -145,7 +143,7 @@
 
         </div><!-- /.layout -->
 
-        [<section class="o-obj__section">
+        [<section id="pdf" class="o-obj__section">
           (#GET{_id_doc_pdf}|oui)
             <h1 class="epsilon"><a href="#INFO_URL{document,#GET{_id_doc_pdf}}" class="btn btn--full btn--action [t-rub(#ID_RUBRIQUE)__btn--action]"><span class="btn__label"><:pratiques_picturales:article_pdf:></span></a></h1>
         </section><!-- /.article_pdf -->]
@@ -172,5 +170,11 @@
       </div><!-- /.layout__item -->
     </section><!-- /section-article-content -->
   </div><!-- /.layout -->
+
+  [<script src="(#CHEMIN{js/src/jquery.toc-init.js})" charset="utf-8"></script>]
+
+  <!-- smooth-scroll.js -->
+  <!-- <script>smoothScroll.init({selector: '.js-smooth-scroll'});</script> -->
+
 </article>
 </BOUCLE_article>
