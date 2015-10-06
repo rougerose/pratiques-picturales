@@ -4,7 +4,7 @@
 
 .site-nav {
   @include media-query(palm) {
-    padding-left: $spacing-unit + 16;
+    padding-left: 16px;
   }
 }
 

@@ -18,7 +18,6 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
-    "gumshoe": "github:cferdinandi/gumshoe",
     "smooth-scroll": "github:cferdinandi/smooth-scroll"
   },
   "dependencies": {

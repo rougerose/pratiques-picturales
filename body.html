@@ -5,7 +5,7 @@
 <body id="js-page-body" class="[(#ENV{type-page}|oui)page-body] [(#GET{class})]">
   <INCLURE{fond=header/#ENV{type-page}, env, page-variable=#GET{page-variable}} />
   <main class="page-content[ t-(#GET{page-variable})__border]">
-    <div class="wrapper wrapper--readable">
+    <div class="wrapper">
       <INCLURE{fond=content/#ENV{type-page}, env, page-variable=#GET{page-variable}} />
     </div><!-- /.wrapper -->
   </main>

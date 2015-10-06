@@ -7,7 +7,6 @@ var gulp = require('gulp')
     , uglify = require('gulp-uglify')
     , autoprefixer = require('gulp-autoprefixer')
     //, nano = require('gulp-cssnano')
-    , csslint = require('gulp-csslint')
     , plumber = require('gulp-plumber')
     , notify = require('gulp-notify')
     , rename = require('gulp-rename')
@@ -32,11 +31,6 @@ gulp.task('css', function () {
     .pipe(sass({ sourceComments: true }))
     .pipe(autoprefixer())
     //.pipe(nano())
-    .pipe(csslint({
-      'box-sizing': false,
-      'box-model': false
-    }))
-    .pipe(csslint.reporter())
     .pipe(gulp.dest('./css'))
     .pipe(notify({
       title: 'Gulp',
@@ -50,7 +44,8 @@ gulp.task('copy', function() {
   gulp.src([
     'node_modules/gumshoe/dist/js/gumshoe.js',
     'node_modules/smooth-scroll/dist/js/smooth-scroll.js',
-    'bower_components/jquery-sticky/jquery.sticky.js'
+    'bower_components/jquery-sticky/jquery.sticky.js',
+    'bower_components/Scrollspy/scrollspy.js'
   ])
     .pipe(gulp.dest('./js/src'));
 });
@@ -80,11 +75,11 @@ gulp.task('minifyjs', function () {
 gulp.task('concat_compo_article_numero', function() {
   return gulp.src([
     './js/dist/utils.min.js',
-    './js/dist/gumshoe.min.js',
+    './js/dist/scrollspy.min.js',
     './js/dist/jquery.sticky.min.js',
     './js/dist/smooth-scroll.min.js'
   ])
-    .pipe(concat('article_numero.min.js', {newLine: ';'}))
+    .pipe(concat('article_numero.min.js', {newLine: '\n;'}))
     .pipe(gulp.dest('./js/dist'));
 });
 

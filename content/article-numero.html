@@ -1,33 +1,31 @@
 <BOUCLE_article(ARTICLES){id_article}>
-<article class="article">
+<article class="objet article">
   <div class="layout">
-    <section class="o-obj__section" data-ui-component="section-article-header">
+    <div class="layout__item u-11/12-lap u-3/4-desk article-layout__item article-layout__item--header">
 
-      <div class="layout__item u-1/12-push-lap u-11/12-lap u-1/4-push-desk u-3/4-desk">
+      <header class="objet__header objet__section">
+        <h1 class="objet__title alpha[ t-rub(#ID_RUBRIQUE)__color]">#TITRE</h1>
+        [<p class="objet__subtitle gamma">(#SOUSTITRE)</p>]
+      </header>
 
-        <header class="o-obj__header">
-          <h1 class="o-obj__title alpha[ t-rub(#ID_RUBRIQUE)__color]">#TITRE</h1>
-          [<p class="o-obj__subtitle gamma">(#SOUSTITRE)</p>]
-        </header>
+    </div><!-- /.layout__item
+    --><div class="layout__item">
 
-      </div><!-- /.layout__item -->
+      <section class="objet__meta objet__section">
 
-      <section class="meta article__auteur">
+        <div class="layout">
 
-        <div class="layout__item u-1/12-push-lap u-11/12-lap u-1/4-push-desk u-2/4-desk">
-
-          [<p class="meta__auteurs delta">
-            <:pratiques_picturales:par_auteur:> (#MODELE{pp-auteurs,id_article})
-          </p>]
-
-        </div><!-- /.layout__item
-        --><div class="layout__item u-1/12-push-lap u-11/12-lap u-2/4-pull-desk u-1/4-desk">
-          [<p class="meta__date">
-            <time pubdate datetime="[(#DATE|date_iso)]">(#DATE|affdate)</time>
-          </p>]
-        </div><!-- /.layout__item
-        --><div class="layout__item u-1/12-push-lap u-11/12-lap u-1/4-desk">
-
+          <div class="layout__item u-11/12-lap u-1/4-desk article-layout__item">
+            [<p class="meta__date">
+              <time pubdate datetime="[(#DATE|date_iso)]">(#DATE|affdate)</time>
+            </p>]
+          </div><!-- /.layout__item
+          --><div class="layout__item u-11/12-lap u-2/4-desk article-layout__item">
+            [<p class="meta__auteurs">
+              <:pratiques_picturales:par_auteur:> (#MODELE{pp-auteurs,id_article})
+            </p>]
+          </div><!-- /.layout__item
+          --><div class="layout__item u-11/12-lap u-1/4-desk article-layout__item">
           <div class="c-action">
             <!-- TODO: Terminer bouton Partager -->
             <button type="button" class="btn btn--action c-action__toggle[ t-rub(#ID_RUBRIQUE)__color][ t-rub(#ID_RUBRIQUE)__border][ t-rub(#ID_RUBRIQUE)__bg--before]">
@@ -37,100 +35,92 @@
               <span id="socialtags"></span>
             </div>
           </div><!-- /.c-action -->
+          </div><!-- /.layout__item -->
 
-        </div><!-- /.layout__item -->
+        </div><!-- /.layout -->
 
-      </section><!-- /.meta -->
+      </section><!-- /.objet__meta -->
 
-    </section><!-- /.o-obj__section -->
+    </div><!-- /.layout__item -->
+    <div class="layout__item u-11/12-lap u-3/4-desk article-layout__item article-layout__item--content">
+      <section class="layout layout--rev objet__content">
+        <div class="layout__item u-1/3-desk objet__content--sub">
+          [(#INCLURE{fond=inclure/article-toc, id_article})]
+        </div><!-- /.content--sub
+        --><div class="layout__item u-2/3-desk objet__content--main">
+          [<section id="resume" class="objet__section">
+            <h1 class="delta hN [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:resume:></h1>
+            (#DESCRIPTIF)
+          </section><!-- /.article__resume -->]
 
-    <section class="o-obj__section" data-ui-component="section-article-content">
+          [<section class="objet__section">
+            <h1 id="plan" class="delta hN [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:plan:></h1>
+            <div class="article__plan">
+              (#SOMMAIRE{#TEXTE})
+            </div>
+          </section><!-- /.article__plan -->]
 
-      [<div class="layout__item xu-1/12-push-lap u-11/12-lap xu-3/4-push-desk u-1/4-desk toc-cont">
+          <section id="texte" class="objet__section">
+            <h1 class="delta hN [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:texte_integral:></h1>
 
-        (#INCLURE{fond=inclure/article-toc, id_article})
+            [<div class="article__texte--chapo">
+              (#CHAPO)
+            </div><!-- article__texte--chapo -->]
 
-      </div><!-- /.layout__item
-      -->]<div class="layout__item xu-1/12-push-lap u-11/12-lap u-2/4-desk toc-article">
+            [<div class="article__texte--texte">
+              (#TEXTE|ancres_sommaire)
+            </div><!-- article__texte--texte -->]
 
-        [<section id="resume" class="o-obj__section section">
-          <h1 class="delta c-heading--section [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:resume:></h1>
-          (#DESCRIPTIF)
-        </section><!-- /.article__resume -->]
+          </section><!-- /.article__texte -->
 
-        [<section class="o-obj__section section">
-          <h1 id="plan" class="delta c-heading--section [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:plan:></h1>
-          <div class="article__plan">
-            (#SOMMAIRE{#TEXTE})
-          </div>
-        </section><!-- /.article__plan -->]
+          [<section class="objet__section">
+            <h1 class="delta hN [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
+            <div class="notes u-col2-lap-and-up">
+              (#NOTES)
+            </div>
+          </section><!-- /.article__notes -->]
 
-        <section id="texte" class="o-obj__section section">
-          <h1 class="delta c-heading--section[ t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:texte_integral:></h1>
+          [(#SET{_id_rubrique,#ID_RUBRIQUE})]
+          <B_tags>
+          <section id="tags" class="objet__section">
+            <h1 class="delta hN [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:tags:></h1>
+            <p class="tags__list">
+              <BOUCLE_tags(MOTS){id_article}{id_groupe!=2}{par titre}{' '}>[<span class="tags__item [t-rub(#GET{_id_rubrique})__color]"><a href="#URL_MOT">(#TITRE)</a></span>]</BOUCLE_tags>
+            </p>
+          </section><!-- /.article__notes -->
+          </B_tags>
 
-          [<div class="article__texte--chapo">
-            (#CHAPO)
-          </div><!-- article__texte--chapo -->]
+          [(#REM)
+            Array des documents à afficher,
+            autres que la version pdf de l'article (id_mot 4).
+          ][
+            (#SET{_id_docs,#ARRAY})
+          ][(#REM)
+            id du document pour la version PDF de l'article
+          ][
+            (#SET{_id_doc_pdf,''})
+          ]<B_documents>
+            <BOUCLE_documents(DOCUMENTS){id_article}{mode=document}{vu=non}>
+                <BOUCLE_technique_mot_article_pdf(MOTS){id_document}{id_mot=4}>
+                  [(#ID_DOCUMENT|unique|oui) #SET{_id_doc_pdf,#ID_DOCUMENT} ]
+                </BOUCLE_technique_mot_article_pdf>
+                [(#ID_DOCUMENT|unique|oui) #SET{_id_docs,#GET{_id_docs}|push{#ID_DOCUMENT}} ]
+            </BOUCLE_documents>
+          </B_documents>
+          [(#REM)
+            Afficher les documents si le test est positif.
+          ][<section id="documents" class="objet__section">
+            <h1 class="delta hN [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:documents:></h1>
+            (#GET{_id_docs}|count|>{0}|oui) #INCLURE{fond=inclure/documents-article, id_article, id_rubrique, _id_docs=#GET{_id_docs}}
+          </section><!-- /.article_documents -->]
 
-          [<div class="article__texte--texte">
-            (#TEXTE|ancres_sommaire)
-          </div><!-- article__texte--texte -->]
-        </section><!-- /.article__texte -->
-
-        [<section class="o-obj__section">
-          <h1 class="c-heading--section delta [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
-          <div class="notes xu-col2-lap-and-up">
-            (#NOTES)
-          </div>
-        </section><!-- /.article__notes -->]
-
-        [(#SET{_id_rubrique,#ID_RUBRIQUE})]
-        <B_tags>
-        <section id="tags" class="o-obj__section">
-          <h1 class="c-heading--section delta [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:tags:></h1>
-          <p class="tags__list">
-            <BOUCLE_tags(MOTS){id_article}{id_groupe!=2}{par titre}{' '}>[<span class="tags__item [t-rub(#GET{_id_rubrique})__color]"><a href="#URL_MOT">(#TITRE)</a></span>]</BOUCLE_tags>
-          </p>
-        </section><!-- /.article__notes -->
-        </B_tags>
-
-        [(#REM)
-          Array des documents à afficher,
-          autres que la version pdf de l'article (id_mot 4).
-        ][
-          (#SET{_id_docs,#ARRAY})
-        ][(#REM)
-          id du document pour la version PDF de l'article
-        ][
-          (#SET{_id_doc_pdf,''})
-        ]<B_documents>
-          <BOUCLE_documents(DOCUMENTS){id_article}{mode=document}{vu=non}>
-              <BOUCLE_technique_mot_article_pdf(MOTS){id_document}{id_mot=4}>
-                [(#ID_DOCUMENT|unique|oui) #SET{_id_doc_pdf,#ID_DOCUMENT} ]
-              </BOUCLE_technique_mot_article_pdf>
-              [(#ID_DOCUMENT|unique|oui) #SET{_id_docs,#GET{_id_docs}|push{#ID_DOCUMENT}} ]
-          </BOUCLE_documents>
-        </B_documents>
-        [(#REM)
-          Afficher les documents si le test est positif.
-        ][<section id="documents" class="o-obj__section">
-          <h1 class="c-heading--section delta [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:documents:></h1>
-          (#GET{_id_docs}|count|>{0}|oui) #INCLURE{fond=inclure/documents-article, id_article, id_rubrique, _id_docs=#GET{_id_docs}}
-        </section><!-- /.article_documents -->]
-
-        <div class="layout">
-
-          [<div class="layout__item u-2/4-lap-and-up">
-
-            <section id="bibliographie" class="o-obj__section">
-              <h1 class="c-heading--section delta [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:bibliographie:></h1>
+          <div class="layout">
+            [<section id="bibliographie" class="layout__item u-2/4-desk objet__section">
+              <h1 class="delta hN [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:bibliographie:></h1>
                 (#BIBLIOGRAPHIE)
-            </section><!-- /bibliographie -->
-
-          </div><!-- /.layout__item
-          -->]<div class="layout__item u-2/4-lap-and-up">
-            <section id="reference" class="o-obj__section">
-              <h1 class="c-heading--section delta [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:citer_article:></h1>
+            </section><!-- /bibliographie
+            -->]<section id="reference" class="layout__item u-2/4-desk objet__section">
+              <h1 class="delta hN [t-rub(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:citer_article:></h1>
               <p class="bibliographie-ref">
                 [(#MODELE{pp-auteurs,id_article,contexte=resume}), ][«&nbsp;(#TITRE) [(#SOUSTITRE)]&nbsp;».][ <span class="bibliographie-ref__titre">(#NOM_SITE_SPIP)[&nbsp;: (#INFO_TITRE{rubrique,#ID_RUBRIQUE})]</span>, ][(#INFO_SOUSTITRE{rubrique,#ID_RUBRIQUE}), ][(#INFO_DATE_NUMERO{rubrique,#ID_RUBRIQUE}|affdate_mois_annee).]
               </p>
@@ -138,43 +128,38 @@
                 <a href="(#URL_ARTICLE|url_absolue)" rel="bookmark">[(#URL_ARTICLE|url_absolue)]</a>
               </p>]
             </section><!-- /citer_article -->
+          </div><!-- /.layout -->
 
-          </div><!-- /.layout__item -->
+          [<section id="pdf" class="objet__section">
+            (#GET{_id_doc_pdf}|oui)
+              <h1 class="epsilon"><a href="#INFO_URL{document,#GET{_id_doc_pdf}}" class="btn btn--full btn--action [t-rub(#ID_RUBRIQUE)__btn--action]"><span class="btn__label"><:pratiques_picturales:article_pdf:></span></a></h1>
+          </section><!-- /.article_pdf -->]
 
-        </div><!-- /.layout -->
+          [(#REM)
+            Array des articles connexes
+          ][(#SET{_articles_connexes,#ARRAY})]
+          <BOUCLE_mots_articles_connexes(MOTS){id_article}{id_groupe!=2}>
+            [(#SET{_articles_connexes,#GET{_articles_connexes}|push{#ID_MOT}})]
+          </BOUCLE_mots_articles_connexes>
+          <B_articles_connexes>
+            <section class="objet__section u-text-center-palm [t-rub(#ID_RUBRIQUE)__articles-connexes]">
+              <h1 class="box-arrow delta [t-rub(#ID_RUBRIQUE)__box-arrow]"><:pratiques_picturales:articles_connexes:></h1>
 
-        [<section id="pdf" class="o-obj__section">
-          (#GET{_id_doc_pdf}|oui)
-            <h1 class="epsilon"><a href="#INFO_URL{document,#GET{_id_doc_pdf}}" class="btn btn--full btn--action [t-rub(#ID_RUBRIQUE)__btn--action]"><span class="btn__label"><:pratiques_picturales:article_pdf:></span></a></h1>
-        </section><!-- /.article_pdf -->]
+              <div class="flex-grid u-flex-1/2-lap-and-up">
+                <BOUCLE_articles_connexes(ARTICLES){id_article!=#ID_ARTICLE}{mots 50% #GET{_articles_connexes} !tri}{0,4}>
+                <INCLURE{fond=inclure/article-resume,id_article,layout=flex-grid__item} />
+                </BOUCLE_articles_connexes>
+              </div><!-- /.flex-grid -->
 
-        [(#REM)
-          Array des articles connexes
-        ][(#SET{_articles_connexes,#ARRAY})]
-        <BOUCLE_mots_articles_connexes(MOTS){id_article}{id_groupe!=2}>
-          [(#SET{_articles_connexes,#GET{_articles_connexes}|push{#ID_MOT}})]
-        </BOUCLE_mots_articles_connexes>
-        <B_articles_connexes>
-          <section class="o-obj__section u-text-center-palm [t-rub(#ID_RUBRIQUE)__articles-connexes]">
-            <h1 class="box-arrow delta [t-rub(#ID_RUBRIQUE)__box-arrow]"><:pratiques_picturales:articles_connexes:></h1>
+            </section><!-- /.article_related -->
+          </B_articles_connexes_1>
 
-            <div class="flex-grid u-flex-1/2-lap-and-up">
-              <BOUCLE_articles_connexes(ARTICLES){id_article!=#ID_ARTICLE}{mots 50% #GET{_articles_connexes} !tri}{0,4}>
-              <INCLURE{fond=inclure/article-resume,id_article,layout=flex-grid__item} />
-              </BOUCLE_articles_connexes>
-            </div><!-- /.flex-grid -->
-
-          </section><!-- /.article_related -->
-        </B_articles_connexes_1>
-
-      </div><!-- /.layout__item -->
-    </section><!-- /section-article-content -->
+        </div><!-- /.content--main -->
+      </section><!-- /.objet__content -->
+    </div><!-- /.layout__item -->
   </div><!-- /.layout -->
-
   [<script src="(#CHEMIN{js/src/jquery.toc-init.js})" charset="utf-8"></script>]
-
   <!-- smooth-scroll.js -->
-  <!-- <script>smoothScroll.init({selector: '.js-smooth-scroll'});</script> -->
-
+  <script>smoothScroll.init({selector: '.js-scroll'});</script>
 </article>
 </BOUCLE_article>

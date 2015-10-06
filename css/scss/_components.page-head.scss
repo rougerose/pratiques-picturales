@@ -10,3 +10,9 @@
     padding-right: $spacing-unit;
   }
 }
+
+.page-head__layout {
+  @include media-query(lap-and-up) {
+    margin-left: 8.33333%;
+  }
+}

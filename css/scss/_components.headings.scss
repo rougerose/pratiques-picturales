@@ -2,7 +2,9 @@
    #HEADINGS
    ========================================================================== */
 
-.c-heading--section {
+.hN {
+  padding-top: $spacing-unit;
+  margin-top: 0;
   border-bottom: 1px solid $black-color;
   text-transform: uppercase;
 }

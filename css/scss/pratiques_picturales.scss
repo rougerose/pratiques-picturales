@@ -26,8 +26,6 @@
 @import "tools.mixins";
 @import "node_modules/inuit-responsive-tools/tools.responsive";
 
-@import "tools.debug";
-
 // @import "node_modules/inuit-tools-widths/tools.widths";
 @import "tools.widths"; // sans déclaration !important
 
@@ -69,9 +67,8 @@
 // @import "node_modules/inuit-tabs/objects.tabs";
 
 @import "objects.wrapper";
-@import "objects.container";
 
-@import "objects.obj";
+@import "objects.objet";
 
 // COMPONENTS:
 @import "components.page";
@@ -85,6 +82,7 @@
 
 @import "components.article";
 @import "components.article-resume";
+@import "components.toc";
 @import "components.auteur";
 @import "components.notes";
 @import "components.tags";

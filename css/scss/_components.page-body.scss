@@ -5,7 +5,7 @@
 .page-body {
   @include media-query(desk) {
     &:before {
-      content: 'largest';
+      content: 'large';
       display: none;
     }
   }

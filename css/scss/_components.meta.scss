@@ -2,12 +2,22 @@
    #META
    ========================================================================== */
 
-.meta {}
+// .meta {}
 
   .meta__auteurs {
+    margin-top: 0;
+    font-style: italic;
+    @include inuit-font-size(18px);
+    @include media-query(desk) {
+      margin-bottom: 0;
+    }
   }
 
   .meta__date {
-    @include inuit-font-size(14px,2);
-    color: #8888a7; //$gray-color;
+    margin-top: 0;
+    color: $gray-color;
+    @include media-query(desk) {
+      margin-bottom: 0;
+      // @include inuit-font-size(14px,2);
+    }
   }

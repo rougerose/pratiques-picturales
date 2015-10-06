@@ -1,5 +1,5 @@
 /* ==========================================================================
-   #OBJ (OBJETS)
+   #OBJET
    ========================================================================== */
 
 /**
@@ -12,30 +12,46 @@
  *
  */
 
-.o-obj__section {
-  margin-bottom: double($spacing-unit);
-}
+.objet {}
 
-.o-obj__header {
+.objet__section {
   margin-bottom: $spacing-unit;
 }
 
-  .o-obj__title {
+.objet__header {}
+
+  .objet__title {
     margin-bottom: 0;
   }
 
-  .o-obj__subtitle {
+  .objet__subtitle {
     margin-bottom: 0;
     font-style: italic;
     color: #000;
   }
 
-  .o-obj__subtitle--resume {
+  .objet__subtitle--resume {
     margin-top: $spacing-unit--tiny;
     color: $text-color;
   }
 
-  .o-obj__authors {
+  .objet__authors {
     font-style: italic;
     color: $black-color;
+  }
+
+.objet__meta {
+  position: relative;
+}
+
+// .objet__content {}
+
+  .objet__content--main {
+    @include media-query(lap) {
+      max-width: 500px;
+    }
+  }
+
+  .objet__content--sub {
+    @extend .objet__content--main;
   }

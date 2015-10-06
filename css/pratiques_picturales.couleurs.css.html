@@ -12,6 +12,12 @@
 [(#SET{couleur,#ID_RUBRIQUE|couleur_rubrique|sinon{#ID_RUBRIQUE|couleur_secteur}|sinon{#GET{defaut}}})]
 [(#SET{couleur_lum06,[(#GET{couleur}|couleur_luminance{0.6})]})]
 
+[(#REM) mediaqueries ]
+  [(#SET{palm, "screen and (max-width: 31.188em)"})]
+  [(#SET{lap, "screen and (min-width: 31.250em) and (max-width: 46.813em)"})]
+  [(#SET{lap-and-up, "screen and (min-width: 31.250em)"})]
+  [(#SET{desk, "screen and (min-width: 46.875em)"})]
+
 [(#REM) définition principale ]
   .t-rub[(#ID_RUBRIQUE)]__color
   {
@@ -59,12 +65,26 @@
     color: [#(#GET{couleur})];
   }
 
-[(#REM) articles-connexes ]
-  @media screen and (max-width: 31.25em)
+[(#REM) articles-connexes / version palm uniquement  ]
+  @media [(#GET{palm})]
   {
     .t-rub[(#ID_RUBRIQUE)]__articles-connexes
     {
       background-color: [#(#GET{couleur}|couleur_saturation{0.1})];
+    }
+  }
+
+[(#REM) toc ]
+  .t-rub[(#ID_RUBRIQUE)]__toc
+  {
+    background-color: [#(#GET{couleur}|couleur_saturation{0.1})];
+  }
+
+  @media [(#GET{desk})]
+  {
+    .t-rub[(#ID_RUBRIQUE)]__toc
+    {
+      background-color: #fff;
     }
   }
 
