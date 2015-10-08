@@ -68,8 +68,6 @@
 
 @import "objects.wrapper";
 
-@import "objects.objet";
-
 // COMPONENTS:
 @import "components.page";
 @import "components.page-head";
@@ -80,6 +78,8 @@
 
 @import "components.site-nav";
 
+@import "components.element";
+
 @import "components.article";
 @import "components.article-resume";
 @import "components.toc";
@@ -88,9 +88,10 @@
 @import "components.tags";
 @import "components.bibliographie";
 @import "components.documents";
-
+@import "components.cover";
 @import "components.meta";
 
+@import "components.images";
 @import "components.lists";
 @import "components.boxes";
 @import "components.icons";

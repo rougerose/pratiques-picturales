@@ -1,0 +1,65 @@
+/* ==========================================================================
+   #ELEMENT
+   ========================================================================== */
+
+/**
+ *
+ * La notion d'élément s'entend ici selon ceux utilisés par SPIP. Élément article,
+ * rubrique, mot-clé...
+ *
+ * Il s'agit de regrouper à partir d'une seule dénomination des caractéristiques
+ * communes pour chaque élément.
+ *
+ */
+
+// .element {}
+
+.element__section {
+  margin-bottom: $spacing-unit;
+}
+
+/*
+   element__header
+   ========================================================================== */
+
+.element__header {}
+
+  .element__title {
+    margin-bottom: 0;
+  }
+
+  .element__subtitle {
+    margin-bottom: 0;
+    font-style: italic;
+    color: $black-color;
+  }
+
+  .element__subtitle--resume {
+    margin-top: $spacing-unit--tiny;
+    color: $text-color;
+  }
+
+  .element__authors {
+    font-style: italic;
+    color: $black-color;
+  }
+
+.element__meta {
+  position: relative;
+}
+
+/*
+   element__content
+   ========================================================================== */
+
+// .element__content {}
+
+  .element__content--main {
+    @include media-query(lap) {
+      max-width: 500px;
+    }
+  }
+
+  .element__content--sub {
+    @extend .element__content--main;
+  }

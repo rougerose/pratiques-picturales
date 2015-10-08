@@ -34,10 +34,12 @@
     @include inuit-font-size(18px);
 
     // @media max-width: 350px
-    @media screen and (max-width: 21.875em) {
+    // @media screen and (max-width: 350px) {
+    //   width: 50%; // u-1/2
+    // }
+    @include media-query(palm) {
       width: 50%; // u-1/2
     }
-
     @include media-query(desk) {
       width: 18.18182%; // u-2/11
     }

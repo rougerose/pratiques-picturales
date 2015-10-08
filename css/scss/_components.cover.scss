@@ -1,0 +1,45 @@
+/* ==========================================================================
+   #COVER
+   ========================================================================== */
+
+.cover {
+  position: relative;
+  margin-bottom: $spacing-unit--large;
+  overflow: hidden;
+}
+  .cover__img {}
+
+  .cover__body {
+    position: absolute;
+    bottom: 0px;
+    padding: $spacing-unit--small;
+    width: 70%;
+    @include transition(transform);
+    transform: translateY(32px);
+    .cover__link:hover & {
+      transform: translateY(0);
+    }
+    @include media-query(desk) {
+      width: 50%;
+    }
+  }
+
+    .cover__desc {
+      margin: $spacing-unit--tiny 0 0;
+    }
+
+    .cover__desc--subtitle {
+      color: inherit;
+    }
+
+    .cover__desc--next {
+      text-align: right;
+      opacity: 0;
+      transition: opacity 0.45s, transform 0.9s;
+      transform: translateY(100%);
+
+      .cover__link:hover & {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }

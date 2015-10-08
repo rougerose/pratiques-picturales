@@ -17,4 +17,5 @@
     <necessite nom="cextras" compatibilite="[3.7.1;[" />
     <necessite nom="sommaire" compatibilite="[1.2.1;[" />
     <necessite nom="intertitres" compatibilite="[0.1.0;[" />
+    <necessite nom="adaptive_images" compatibilite="[1.9.1;[" />
 </paquet>

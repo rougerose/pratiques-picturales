@@ -2,11 +2,11 @@
 <BOUCLE_article_resume(ARTICLES){id_article}>
 [(#GET{layout}|=={flex-grid__item}|oui)<div class="flex-grid__item">]
   <article class="article-resume">
-    <header class="o-obj__header">
-      <h1 class="o-obj__title epsilon">[<a href="#URL_ARTICLE">(#TITRE)</a>]</h1>
-      [<p class="o-obj__subtitle o-obj__subtitle--resume zeta">(#SOUSTITRE)</p>]
+    <header class="element__header">
+      <h1 class="element__title epsilon">[<a href="#URL_ARTICLE">(#TITRE)</a>]</h1>
+      [<p class="element__subtitle element__subtitle--resume zeta">(#SOUSTITRE)</p>]
     </header>
-    [<p class="o-obj__authors">
+    [<p class="element__authors">
       <:pratiques_picturales:par_auteur:> (#MODELE{pp-auteurs,id_article,contexte=resume})
     </p>]
     [(#INTRODUCTION)]
