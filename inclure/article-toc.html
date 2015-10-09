@@ -10,30 +10,30 @@
       [(#ID_DOCUMENT|unique{toc}|oui) #SET{docs,' '} ]
   </BOUCLE_documents>
 
-<nav id="js-toc" class="toc [t-rub(#ID_RUBRIQUE)__toc]">
+<nav id="js-toc" class="toc [t-(#ID_RUBRIQUE)__toc]">
   <ul class="list-bare toc-list">
-    [(#DESCRIPTIF|oui) <li class="toc-list__item">
+    [(#DESCRIPTIF|oui) <li class="toc-list__item [t-(#ID_RUBRIQUE)__toc-item]">
       <a class="toc__link js-scroll" href="#resume"><:pratiques_picturales:resume:></a>
     </li> ]
-    [(#SOMMAIRE|{#TEXTE}|oui) <li class="toc-list__item">
+    [(#SOMMAIRE|{#TEXTE}|oui) <li class="toc-list__item [t-(#ID_RUBRIQUE)__toc-item]">
       <a class="toc__link js-scroll" href="#plan"><:pratiques_picturales:plan:></a>
     </li> ]
-    [(#TEXTE|oui) <li class="toc-list__item">
+    [(#TEXTE|oui) <li class="toc-list__item [t-(#ID_RUBRIQUE)__toc-item]">
       <a class="toc__link js-scroll" href="#texte"><:pratiques_picturales:texte_integral:></a>
     </li> ]
-    [(#GET{tags}|oui) <li class="toc-list__item">
+    [(#GET{tags}|oui) <li class="toc-list__item [t-(#ID_RUBRIQUE)__toc-item]">
       <a class="toc__link js-scroll" href="#tags"><:pratiques_picturales:tags:></a>
     </li> ]
-    [(#GET{docs}|oui) <li class="toc-list__item">
+    [(#GET{docs}|oui) <li class="toc-list__item [t-(#ID_RUBRIQUE)__toc-item]">
       <a class="toc__link js-scroll" href="#documents"><:pratiques_picturales:documents:></a>
     </li> ]
-    [(#BIBLIOGRAPHIE|oui) <li class="toc-list__item">
+    [(#BIBLIOGRAPHIE|oui) <li class="toc-list__item [t-(#ID_RUBRIQUE)__toc-item]">
       <a class="toc__link js-scroll" href="#bibliographie"><:pratiques_picturales:bibliographie:></a>
     </li> ]
-    <li class="toc-list__item">
+    <li class="toc-list__item [t-(#ID_RUBRIQUE)__toc-item]">
       <a class="toc__link js-scroll" href="#reference"><:pratiques_picturales:citer_article:></a>
     </li>
-    [(#GET{article_pdf}|oui) <li class="toc-list__item">
+    [(#GET{article_pdf}|oui) <li class="toc-list__item [t-(#ID_RUBRIQUE)__toc-item]">
       <a class="toc__link js-scroll" href="#pdf"><:pratiques_picturales:article_pdf_court:></a>
     </li> ]
   </ul>

@@ -33,13 +33,10 @@
     padding-left: $spacing-unit;
     @include inuit-font-size(18px);
 
-    // @media max-width: 350px
-    // @media screen and (max-width: 350px) {
-    //   width: 50%; // u-1/2
-    // }
     @include media-query(palm) {
       width: 50%; // u-1/2
     }
+    
     @include media-query(desk) {
       width: 18.18182%; // u-2/11
     }
@@ -48,19 +45,6 @@
     .site-nav__item {}
 
       .site-nav__link {
-        position: relative;
-        text-decoration: none;
-
-        > svg {
-          position: absolute;
-          top: -2px;
-          left: -12px;
-        }
-
-        > span {
-          color: $black-color;
-          @include transition(color);
-        }
 
         .active & {
           font-weight: bold;

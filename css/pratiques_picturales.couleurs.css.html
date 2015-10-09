@@ -19,47 +19,57 @@
   [(#SET{desk, "screen and (min-width: 750px)"})]
 
 [(#REM) définition principale ]
-  .t-rub[(#ID_RUBRIQUE)]__color
+  .t-[(#ID_RUBRIQUE)]__color,
+  .t-[(#ID_RUBRIQUE)]__color-nav,
+  .active .t-[(#ID_RUBRIQUE)]__color-nav,
+  .active .t-[(#ID_RUBRIQUE)]__color-nav > .nav__label,
+  .t-[(#ID_RUBRIQUE)]__color-nav:hover,
+  .t-[(#ID_RUBRIQUE)]__color-nav:hover > .nav__label,
+  .t-[(#ID_RUBRIQUE)]__color-nav.is-active > .nav__label,
+  .t-[(#ID_RUBRIQUE)]__toc .toc__link:hover
   {
     color: [#(#GET{couleur})];
   }
 
 [(#REM) border ]
-  .t-rub[(#ID_RUBRIQUE)]__border
+  .t-[(#ID_RUBRIQUE)]__border
   {
     border-color: [#(#GET{couleur})];
   }
 
 [(#REM) background ]
   .t-[(#ID_RUBRIQUE)]-bg,
-  .t-rub[(#ID_RUBRIQUE)]__bg--hover:hover
+  .t-[(#ID_RUBRIQUE)]__bg--hover:hover
   {
     color: [#(#GET{couleur}|couleur_extreme)];
     background: [#(#GET{couleur})];
   }
 
 [(#REM) hN ]
-  .t-rub[(#ID_RUBRIQUE)]__hN,
+  .t-[(#ID_RUBRIQUE)]__hN,
 [(#REM) btn--action ]
-  .t-rub[(#ID_RUBRIQUE)]__btn--action
+  .t-[(#ID_RUBRIQUE)]__btn--action,
+[(#REM) toc-item]
+  .t-[(#ID_RUBRIQUE)]__toc-item.is-active,
+  .t-[(#ID_RUBRIQUE)]__toc-item.is-active .toc__link
   {
     color: [#(#GET{couleur})];
     border-color: [#(#GET{couleur})];
   }
 
-  .t-rub[(#ID_RUBRIQUE)]__btn--action:before,
+  .t-[(#ID_RUBRIQUE)]__btn--action:before
   {
     background: [#(#GET{couleur})];
   }
 
-  .t-rub[(#ID_RUBRIQUE)]__btn--action:active
+  .t-[(#ID_RUBRIQUE)]__btn--action:active
   {
     background: [#(#GET{couleur}|couleur_luminance{0.6})];
   }
 
 [(#REM) box-arrow ]
-  .t-rub[(#ID_RUBRIQUE)]__box-arrow,
-  .t-rub[(#ID_RUBRIQUE)]__box-arrow:before
+  .t-[(#ID_RUBRIQUE)]__box-arrow,
+  .t-[(#ID_RUBRIQUE)]__box-arrow:before
   {
     border-top-color: [#(#GET{couleur})];
     color: [#(#GET{couleur})];
@@ -68,21 +78,21 @@
 [(#REM) articles-connexes / version palm uniquement  ]
   @media [(#GET{palm})]
   {
-    .t-rub[(#ID_RUBRIQUE)]__articles-connexes
+    .t-[(#ID_RUBRIQUE)]__articles-connexes
     {
       background-color: [#(#GET{couleur}|couleur_saturation{0.1})];
     }
   }
 
 [(#REM) toc ]
-  .t-rub[(#ID_RUBRIQUE)]__toc
+  .t-[(#ID_RUBRIQUE)]__toc
   {
     background-color: [#(#GET{couleur}|couleur_saturation{0.1})];
   }
 
   @media [(#GET{desk})]
   {
-    .t-rub[(#ID_RUBRIQUE)]__toc
+    .t-[(#ID_RUBRIQUE)]__toc
     {
       background-color: #fff;
     }
@@ -90,11 +100,12 @@
 
 [(#ID_RUBRIQUE|=={#ID_SECTEUR}|oui)
   [(#REM) navigation principale ]
-    .t-rub[(#ID_RUBRIQUE)]__color-nav,
-    .active .t-rub[(#ID_RUBRIQUE)]__color-nav,
-    .active .t-rub[(#ID_RUBRIQUE)]__color-nav > span,
-    .t-rub[(#ID_RUBRIQUE)]__color-nav:hover,
-    .t-rub[(#ID_RUBRIQUE)]__color-nav:hover > span
+    .t-[(#ID_RUBRIQUE)]__color-nav,
+    .active .t-[(#ID_RUBRIQUE)]__color-nav,
+    .active .t-[(#ID_RUBRIQUE)]__color-nav > .nav__label,
+    .t-[(#ID_RUBRIQUE)]__color-nav:hover,
+    .t-[(#ID_RUBRIQUE)]__color-nav:hover > .nav__label,
+    .t-[(#ID_RUBRIQUE)]__color-nav.is-active > .nav__label
      {
        color: [#(#GET{couleur})];
      }
@@ -105,7 +116,7 @@
 
 
 [(#REM) couleurs des pages autres que les rubriques ]
-[(#SET{pages,#ARRAY{auteurs,'f5a623',mots,'4a90e2',recherche,'9013fe'}})]
+[(#SET{pages,#ARRAY{auteurs,'f5a623',mots,'4a90e2',recherche,'df69e8',home,'dacd23'}})]
 
 <BOUCLE_pages(DATA){source tableau,#GET{pages}}>
 
@@ -115,11 +126,11 @@
 [(#REM) navigation principale ]
   .t-[(#CLE)]__color-nav,
   .active .t-[(#CLE)]__color-nav,
-  .active .t-[(#CLE)]__color-nav > span,
+  .active .t-[(#CLE)]__color-nav > .nav__label,
   .t-[(#CLE)]__color-nav:hover,
-  .t-[(#CLE)]__color-nav:hover > span
-  \{
+  .t-[(#CLE)]__color-nav:hover > .nav__label
+  {
     color: [#(#VALEUR)];
-  \}
+  }
 
 </BOUCLE_pages>

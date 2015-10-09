@@ -2,29 +2,35 @@
    #TOC
    ========================================================================== */
 
-.toc {}
+.toc {
+  padding: $spacing-unit--small;
+  column-count: 2;
+  @include media-query(desk) {
+    column-count: auto;
+    padding: 0;
+  }
+}
 
   .toc-list {
-    padding: $spacing-unit--small $spacing-unit--small $spacing-unit--tiny;
     @include media-query(desk) {
       padding: $spacing-unit 0 0;
     }
   }
 
-   .toc-list__item {
-     margin-bottom: $spacing-unit--tiny;
-     text-transform: uppercase;
-     &.is-active {
-       border-bottom: 1px solid #000;
-       & .toc__link {
-         color: #000;
-       }
-     }
-   }
+  .toc-list__item {
+    margin-bottom: $spacing-unit--tiny;
+    text-transform: uppercase;
+
+    &.is-active {
+      border-bottom: 1px solid #000;
+
+      & .toc__link {
+        color: #000;
+      }
+    }
+  }
 
    .toc__link {
      text-decoration: none;
-     @include media-query(desk) {
-       color: $gray-color;
-     }
+     color: $gray-color;
    }

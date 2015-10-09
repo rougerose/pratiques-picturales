@@ -1,0 +1,21 @@
+/* ==========================================================================
+   #NAV
+   ========================================================================== */
+
+.nav {}
+
+  .nav__link {
+    position: relative;
+    text-decoration: none;
+  }
+
+    .nav__icon {
+      position: absolute;
+      top: -2px;
+      left: -12px;
+    }
+
+    .nav__label {
+      color: $black-color;
+      @include transition(color);
+    }
