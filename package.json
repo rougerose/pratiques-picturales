@@ -9,7 +9,7 @@
   "devDependencies": {
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
-    "gulp-concat": "latest",
+    "gulp-concat": "^2.6.0",
     "gulp-csslint": "^0.2.0",
     "gulp-cssnano": "latest",
     "gulp-notify": "^2.2.0",

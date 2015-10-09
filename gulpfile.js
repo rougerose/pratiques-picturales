@@ -42,22 +42,12 @@ gulp.task('css', function () {
 
 gulp.task('copy', function() {
   gulp.src([
-    'node_modules/gumshoe/dist/js/gumshoe.js',
+    'bower_components/sticky-kit/jquery.sticky-kit.js',
     'node_modules/smooth-scroll/dist/js/smooth-scroll.js',
-    'bower_components/jquery-sticky/jquery.sticky.js',
     'bower_components/Scrollspy/scrollspy.js'
   ])
     .pipe(gulp.dest('./js/src'));
 });
-
-// librairies js: concat;
-// gulp.task('js_lib', function () {
-//   gulp.src([
-//     'node_modules/gumshoe/dist/js/gumshoe.min.js'
-//   ])
-//     .pipe(concat('libs.js',{newLine: ';\r\n'}))
-//     .pipe(gulp.dest('./js'));
-// });
 
 // minifyjs : uglify;
 gulp.task('minifyjs', function () {
@@ -76,7 +66,7 @@ gulp.task('concat_compo_article_numero', function() {
   return gulp.src([
     './js/dist/utils.min.js',
     './js/dist/scrollspy.min.js',
-    './js/dist/jquery.sticky.min.js',
+    './js/dist/jquery.sticky-kit.min.js',
     './js/dist/smooth-scroll.min.js'
   ])
     .pipe(concat('article_numero.min.js', {newLine: '\n;'}))

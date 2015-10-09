@@ -9,13 +9,17 @@ $(document).ready(function(){
       offset: 24
     });
 
-    //jquery.sticky.js
-    $("#js-toc").sticky({
-      responsiveWidth: true,
-      getWidthFrom: 'objet__content--sub',
-      className: 'is-fixed',
-      offset: 24
+    $("#js-toc").stick_in_parent({
+      parent: "#js-toc-parent"
     });
+
+    //jquery.sticky.js
+    // $("#js-toc").sticky({
+    //   responsiveWidth: true,
+    //   getWidthFrom: 'objet__content--main',
+    //   className: 'is-fixed',
+    //   offset: 24
+    // });
   }
 
 });

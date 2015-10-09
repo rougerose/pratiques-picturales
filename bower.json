@@ -17,6 +17,7 @@
   ],
   "devDependencies": {
     "Scrollspy": "https://github.com/rougerose/Scrollspy.git#bd14033051",
-    "jquery-sticky": "https://github.com/rougerose/sticky.git#c644c00ad5"
+    "jquery-sticky": "https://github.com/rougerose/sticky.git#c644c00ad5",
+    "sticky-kit": "~1.1.2"
   }
 }
