@@ -98,6 +98,16 @@
     }
   }
 
+[(#REM) icon-next]
+  .t-[(#ID_RUBRIQUE)]__icon-next .icon-next
+  {
+    background: [#(#GET{couleur}|couleur_extreme)];
+  }
+  .t-[(#ID_RUBRIQUE)]__icon-next .icon-next__fill
+  {
+    fill: [#(#GET{couleur})];
+  }
+
 [(#ID_RUBRIQUE|=={#ID_SECTEUR}|oui)
   [(#REM) navigation principale ]
     .t-[(#ID_RUBRIQUE)]__color-nav,

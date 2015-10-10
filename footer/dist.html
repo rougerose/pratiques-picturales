@@ -31,6 +31,7 @@
         --></BOUCLE_rubrique_apropos><B_issue_last><section class="related related-issue layout__item u-2/4-lap-and-up">
           <h1 class="related__title"><:pratiques_picturales:issue_last:></h1>
           <BOUCLE_issue_last(RUBRIQUES){id_parent=1}{!par date}>
+          <B_couverture>
           <div class="cover">
             <a class="cover__link" href="#URL_RUBRIQUE">
               <BOUCLE_couverture(DOCUMENTS spip_mots_liens){id_rubrique}{extension IN jpg,gif,png}{id_mot=5}>
@@ -39,10 +40,11 @@
               <div class="cover__body cover__body--issue [t-(#ID_RUBRIQUE)-bg]">
                 <h2 class="element__title cover__desc gamma">#TITRE</h2>
                 [<p class="element__subtitle cover__desc cover__desc--subtitle">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
-                <p class="cover__desc cover__desc--next">Lire le sommaire</p>
+                <p class="cover__desc cover__desc--next [t-(#ID_RUBRIQUE)__icon-next]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg})]</p>
               </div>
             </a>
           </div>
+          </B_couverture>
           </BOUCLE_issue_last>
         </section><!-- /.related-issue /.layout__item -->
         </B_issue_last>
