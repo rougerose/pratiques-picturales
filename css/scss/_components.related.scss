@@ -9,10 +9,33 @@
   }
 }
 
+.related-about {
+  margin-bottom: $spacing-unit--large;
+  @include media-query(desk) {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+@include media-query(desk) {
+  .related-about,
+  .related-issue {
+    width: 50%;
+    float: left;
+  }
+
+  .related-about {
+    padding-right: $spacing-unit--small;
+  }
+
+  .related-issue {
+    padding-left: $spacing-unit--small;
+  }
+}
+
 .related__title {
   color: $black-color;
   text-align: center;
-  @include media-query(lap-and-up) {
+  @include media-query(desk) {
     text-align: left;
   }
 }
@@ -44,8 +67,8 @@
   .related__logo-aff {
     display: block;
     margin: $spacing-unit--tiny $spacing-unit--tiny $spacing-unit--tiny 0;
-    width: round(846px * 0.45);
-    height: round(150px * 0.45);
+    width: 100%;
+    height: round(150px * 0.35);
     background: url('../img/institut-acte.svg') no-repeat;
     background-size: contain;
     text-indent: -9999px;

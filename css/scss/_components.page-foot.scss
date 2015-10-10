@@ -7,9 +7,9 @@
 }
 
   .page-sub-footer {
-    @extend .page-head__layout;
+    @extend .clearfix;
     @extend .site-nav;
-    margin-bottom: $spacing-unit;
+    // margin-bottom: $spacing-unit;
     @include media-query(palm) {
       padding-right: 12px;
     }

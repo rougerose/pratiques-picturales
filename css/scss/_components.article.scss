@@ -14,22 +14,3 @@
       @include inuit-font-size(18px);
       color: darken($text-color,15%);
     }
-
-
-/*
-   #ARTICLE-LAYOUT
-   ========================================================================== */
-
-@include media-query(lap) {
-  .article-layout__item,
-  .article-layout__item--header {
-    margin-left: (1 / 12) * 100%;
-  }
-}
-
-.article-layout__item--header,
-.article-layout__item--content {
-  @include media-query(desk) {
-    margin-left: (1 / 4) * 100%;
-  }
-}
