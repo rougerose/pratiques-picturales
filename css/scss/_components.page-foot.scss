@@ -9,7 +9,6 @@
   .page-sub-footer {
     @extend .clearfix;
     @extend .site-nav;
-    // margin-bottom: $spacing-unit;
     @include media-query(palm) {
       padding-right: 12px;
     }

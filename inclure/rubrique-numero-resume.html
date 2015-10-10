@@ -1,0 +1,12 @@
+<BOUCLE_rubrique_numero_resume(RUBRIQUES){id_rubrique}>
+<article class="cover">
+  <BOUCLE_couverture(DOCUMENTS spip_mots_liens){id_rubrique}{extension IN jpg,gif,png}{id_mot=5}>
+  [<img class="cover__img" src="(#FICHIER|adaptive_images{500})"[ alt="(#TITRE)"]>]
+  </BOUCLE_couverture>
+  <div class="cover__body [t-(#ID_RUBRIQUE)-bg]">
+    <h2 class="element__title cover__desc gamma">#TITRE</h2>
+    [<p class="element__subtitle cover__desc cover__desc--subtitle">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
+    <p class="cover__desc cover__desc--next [t-(#ID_RUBRIQUE)__icon-next]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg})]</p>
+  </div>
+</article>
+</BOUCLE_rubrique_numero_resume>
