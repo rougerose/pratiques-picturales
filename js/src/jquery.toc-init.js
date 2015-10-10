@@ -12,14 +12,6 @@ $(document).ready(function(){
     $("#js-toc").stick_in_parent({
       parent: "#js-toc-parent"
     });
-
-    //jquery.sticky.js
-    // $("#js-toc").sticky({
-    //   responsiveWidth: true,
-    //   getWidthFrom: 'objet__content--main',
-    //   className: 'is-fixed',
-    //   offset: 24
-    // });
   }
 
 });

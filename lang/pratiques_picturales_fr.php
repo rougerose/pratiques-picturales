@@ -17,8 +17,19 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   // D
   'documents' => 'Documents',
 
+  // F
+  'footer_co_editorial' => 'Le comité éditorial',
+  'footer_co_scientifique' => 'Le comité scientifique',
+  'footer_equipe' => "L'équipe",
+  'footer_revue' => 'La revue',
+
   // I
   'info_document' => 'Document',
+  'issue_last' => 'dernier numéro',
+
+
+  // M
+  'mention_affiliation' => "Pratiques picturales est un programme de recherches",
 
   // N
   'nom_menu_objet'         => 'Plugin Pratiques picturales : Article, rubrique ou autre objet SPIP',

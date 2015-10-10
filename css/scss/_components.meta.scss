@@ -18,6 +18,5 @@
     color: $gray-color;
     @include media-query(desk) {
       margin-bottom: 0;
-      // @include inuit-font-size(14px,2);
     }
   }

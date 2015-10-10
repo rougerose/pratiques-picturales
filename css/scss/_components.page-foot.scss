@@ -3,11 +3,32 @@
    ========================================================================== */
 
 .page-foot {
-  padding-right: 12px;
-  border-left: 12px solid $black-color;
-
-  @include media-query(lap-and-up) {
-    border-left-width: 24px;
-    padding-right: 24px;
-  }
+  @extend .page-head;
 }
+
+  .page-sub-footer {
+    @extend .page-head__layout;
+    @extend .site-nav;
+    margin-bottom: $spacing-unit;
+    @include media-query(palm) {
+      padding-right: 12px;
+    }
+  }
+
+  .page-footer__item {
+    text-align: center;
+    margin: 0;
+    @include inuit-font-size(13px);
+  }
+
+  .page-footer__logo {
+    width: 70%;
+    @include media-query(lap-and-up) {
+      width: 30%;
+    }
+  }
+
+  .page-footer__link {
+    display: inline-block;
+    margin: 0 $spacing-unit--tiny;
+  }

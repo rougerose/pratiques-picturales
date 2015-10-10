@@ -18,4 +18,6 @@
     <necessite nom="sommaire" compatibilite="[1.2.1;[" />
     <necessite nom="intertitres" compatibilite="[0.1.0;[" />
     <necessite nom="adaptive_images" compatibilite="[1.9.1;[" />
+    <necessite nom="critere_mots" compatibilite="[2.1.6;[" />
+    <necessite nom="pages" compatibilite="[1.2.10;[" />
 </paquet>

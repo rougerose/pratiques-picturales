@@ -75,10 +75,10 @@
     color: [#(#GET{couleur})];
   }
 
-[(#REM) articles-connexes / version palm uniquement  ]
+[(#REM) related-articles / version palm uniquement  ]
   @media [(#GET{palm})]
   {
-    .t-[(#ID_RUBRIQUE)]__articles-connexes
+    .t-[(#ID_RUBRIQUE)]__related-articles
     {
       background-color: [#(#GET{couleur}|couleur_saturation{0.1})];
     }

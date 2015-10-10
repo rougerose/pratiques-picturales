@@ -54,7 +54,7 @@
           <div class="c-action">
             <!-- TODO: Terminer bouton Partager -->
             <button type="button" class="btn btn--action c-action__toggle [t-(#ID_RUBRIQUE)__color][ t-(#ID_RUBRIQUE)__border][t-(#ID_RUBRIQUE)__bg--before]">
-              <span class="btn__label">Partagez</span>
+              <span class="btn__label">!Partagez</span>
             </button>
             <div class="c-action__content[ t-(#ID_RUBRIQUE)__bg]">
               <span id="socialtags"></span>
@@ -67,7 +67,7 @@
       </section><!-- /.element__meta -->
 
     </div><!-- /.layout__item -->
-    <div class="layout__item u-11/12-lap u-3/4-desk article-layout__item article-layout__item--content">
+    <div id="js-toc-parent" class="layout__item u-11/12-lap u-3/4-desk article-layout__item article-layout__item--content">
       <section class="layout layout--rev element__content">
         <div class="layout__item u-1/3-desk element__content--sub">
           [(#INCLURE{fond=inclure/article-toc, id_article})]
@@ -167,7 +167,7 @@
             [(#SET{_articles_connexes,#GET{_articles_connexes}|push{#ID_MOT}})]
           </BOUCLE_mots_articles_connexes>
           <B_articles_connexes>
-            <section class="element__section u-text-center-palm [t-(#ID_RUBRIQUE)__articles-connexes]">
+            <aside class="element__section related-articles [t-(#ID_RUBRIQUE)__related-articles]">
               <h1 class="box-arrow delta [t-(#ID_RUBRIQUE)__box-arrow]"><:pratiques_picturales:articles_connexes:></h1>
 
               <div class="flex-grid u-flex-1/2-lap-and-up">
@@ -176,7 +176,7 @@
                 </BOUCLE_articles_connexes>
               </div><!-- /.flex-grid -->
 
-            </section><!-- /.article_related -->
+            </aside><!-- /.article_related -->
           </B_articles_connexes_1>
 
         </div><!-- /.content--main -->

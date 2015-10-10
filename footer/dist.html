@@ -1,4 +1,70 @@
 #SET{page-variable,#ENV{page-variable}}
-<footer class="page-foot[ t-(#GET{page-variable})__border]">
+<div class="page-foot [t-(#GET{page-variable})__border]">
+  <div class="wrapper">
+    <div class="layout">
+      <aside class="page-sub-footer">
 
-</footer>
+        <BOUCLE_rubrique_apropos(RUBRIQUES){id_rubrique=2}>
+        <section class="related related-about layout__item u-2/4-lap-and-up">
+          <h1 class="related__title">#TITRE</h1>
+          [<p class="related__desc">(#DESCRIPTIF|PtoBR)</p>]
+          <p class="related__desc related__desc--about-links">
+            <a class="related__link nav__link [t-(#ID_RUBRIQUE)__color-nav]" href="#URL_SITE_SPIP">
+              <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
+              <span class="nav__label"><:pratiques_picturales:footer_revue:></span>
+            </a>
+            <a class="related__link nav__link [t-(#ID_RUBRIQUE)__color-nav]" href="#URL_SITE_SPIP">
+              <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
+              <span class="nav__label"><:pratiques_picturales:footer_co_editorial:></span>
+            </a>
+            <a class="related__link nav__link [t-(#ID_RUBRIQUE)__color-nav]" href="#URL_SITE_SPIP">
+              <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
+              <span class="nav__label"><:pratiques_picturales:footer_equipe:></span>
+            </a>
+            <a class="related__link nav__link [t-(#ID_RUBRIQUE)__color-nav]" href="#URL_SITE_SPIP">
+              <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
+              <span class="nav__label"><:pratiques_picturales:footer_co_scientifique:></span>
+            </a>
+          </p>
+          <p class="related__desc related__desc--aff"><:pratiques_picturales:mention_affiliation:> <a href="http://www.institut-acte.cnrs.fr" class="related__logo-aff">Institut Acte</a></p>
+        </section><!-- /.related-site /.layout__item
+        --></BOUCLE_rubrique_apropos><B_issue_last><section class="related related-issue layout__item u-2/4-lap-and-up">
+          <h1 class="related__title"><:pratiques_picturales:issue_last:></h1>
+          <BOUCLE_issue_last(RUBRIQUES){id_parent=1}{!par date}>
+          <div class="cover">
+            <a class="cover__link" href="#URL_RUBRIQUE">
+              <BOUCLE_couverture(DOCUMENTS spip_mots_liens){id_rubrique}{extension IN jpg,gif,png}{id_mot=5}>
+              [<img class="cover__img" src="(#FICHIER|adaptive_images{500})"[ alt="(#TITRE)"]>]
+              </BOUCLE_couverture>
+              <div class="cover__body cover__body--issue [t-(#ID_RUBRIQUE)-bg]">
+                <h2 class="element__title cover__desc gamma">#TITRE</h2>
+                [<p class="element__subtitle cover__desc cover__desc--subtitle">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
+                <p class="cover__desc cover__desc--next">Lire le sommaire</p>
+              </div>
+            </a>
+          </div>
+          </BOUCLE_issue_last>
+        </section><!-- /.related-issue /.layout__item -->
+        </B_issue_last>
+      </aside><!-- /.page-sub-footer -->
+    </div><!-- /.layout -->
+
+    <footer class="page-footer">
+      [<p class="page-footer__item">(#INCLURE{fond=header/site-nav__home,class=page-footer__logo})</p>]
+      <p class="page-footer__item">
+        <BOUCLE_mentions(ARTICLES){page=mentions}>
+          <a class="page-footer__link nav__link t-home__color-nav" href="#URL_PAGE_UNIQUE{mentions}">
+            <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
+            <span class="nav__label">#TITRE</span>
+          </a>
+        </BOUCLE_mentions><BOUCLE_contact(ARTICLES){page=contact}>
+          <a class="page-footer__link nav__link t-home__color-nav" href="#URL_PAGE_UNIQUE{contact}">
+            <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
+            <span class="nav__label">#TITRE</span>
+          </a>
+        </BOUCLE_contact>
+      </p>
+    </footer><!-- /.page-footer -->
+
+  </div><!-- /.wrapper -->
+</div><!-- /.page-foot -->

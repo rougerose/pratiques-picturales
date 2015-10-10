@@ -73,6 +73,7 @@
 @import "components.page-head";
 @import "components.page-body";
 @import "components.page-content";
+@import "components.page-foot";
 
 @import "components.headings";
 
@@ -92,6 +93,7 @@
 @import "components.cover";
 @import "components.meta";
 @import "components.breadcrumb";
+@import "components.related";
 
 @import "components.images";
 @import "components.lists";
@@ -109,7 +111,6 @@
 // @import "node_modules/inuit-spacing/trumps.spacing";
 // @import "node_modules/inuit-responsive-spacing/trumps.spacing-responsive";
 @import "trumps.headings";
-@import "trumps.text";
 
 @import "trumps.col";
 @import "node_modules/inuit-widths/trumps.widths";

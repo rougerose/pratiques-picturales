@@ -24,6 +24,12 @@
     }
   }
 
+  .cover__body--issue {
+    @include media-query(desk) {
+      width: 70%;
+    }
+  }
+
     .cover__desc {
       margin: $spacing-unit--tiny 0 0;
     }
