@@ -1,12 +1,26 @@
 <BOUCLE_rubrique_numero_resume(RUBRIQUES){id_rubrique}>
 <article class="cover">
-  <BOUCLE_couverture(DOCUMENTS spip_mots_liens){id_rubrique}{extension IN jpg,gif,png}{id_mot=5}>
-  [<img class="cover__img" src="(#FICHIER|adaptive_images{500})"[ alt="(#TITRE)"]>]
-  </BOUCLE_couverture>
-  <div class="cover__body [t-(#ID_RUBRIQUE)-bg]">
-    <h2 class="element__title cover__desc gamma">#TITRE</h2>
-    [<p class="element__subtitle cover__desc cover__desc--subtitle">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
-    <p class="cover__desc cover__desc--next [t-(#ID_RUBRIQUE)__icon-next]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg})]</p>
-  </div>
+  <a href="#URL_RUBRIQUE" class="cover__link">
+    <BOUCLE_couverture(DOCUMENTS spip_mots_liens){id_rubrique}{extension IN jpg,gif,png}{id_mot=5}>
+    [(#SET{img,#FICHIER|image_passe_partout{1600,600}|image_recadre{1600,600,center}|extraire_attribut{src}})]
+    [<img class="cover__img" src="(#GET{img}|adaptive_images{480})"[ alt="(#TITRE)"]>]
+    </BOUCLE_couverture>
+    <div class="cover__body [t-(#ID_RUBRIQUE)__bg]">
+      <h2 class="element__title cover__title beta">#TITRE</h2>
+      [<p class="element__subtitle cover__subtitle cover__subtitle--std">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
+      [(#AFFICHER_DIRECTION|oui)
+        [<p class="cover__desc cover__desc-direction">
+          <:pratiques_picturales:numero_direction:>
+          (#INCLURE{fond=inclure/rubrique-auteurs-direction,id_rubrique,contexte=resume})
+        </p>]
+      ]
+      [<p class="cover__desc">(#DESCRIPTIF|PtoBR)</p>]
+      [<p class="cover__desc cover__desc-contributions">
+        <:pratiques_picturales:numero_contributions:>
+        (#INCLURE{fond=inclure/rubrique-auteurs-contributions,id_rubrique})
+      </p>]
+      <p class="cover__desc cover__desc-next [t-(#ID_RUBRIQUE)__icon-next]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg})]</p>
+    </div>
+  </a>
 </article>
 </BOUCLE_rubrique_numero_resume>

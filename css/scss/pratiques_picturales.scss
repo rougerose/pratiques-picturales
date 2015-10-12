@@ -82,18 +82,24 @@
 
 @import "components.element";
 
+//rubrique
+@import "components.rubrique";
+
+@import "components.cover";
+
+//article
 @import "components.article";
 @import "components.article-resume";
 @import "components.toc";
-@import "components.auteur";
 @import "components.notes";
 @import "components.tags";
 @import "components.bibliographie";
 @import "components.documents";
-@import "components.cover";
 @import "components.meta";
 @import "components.breadcrumb";
 @import "components.related";
+
+@import "components.auteur";
 
 @import "components.images";
 @import "components.lists";

@@ -12,7 +12,7 @@
  *
  */
 
-// .element {}
+.element {}
 
 .element__section {
   margin-bottom: $spacing-unit;
@@ -30,6 +30,10 @@
 
   .element__title {
     margin-bottom: 0;
+  }
+
+  .element__title--section {
+    text-transform: uppercase;
   }
 
   .element__subtitle {

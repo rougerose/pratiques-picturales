@@ -38,6 +38,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'nom_menu_objet'         => 'Plugin Pratiques picturales : Article, rubrique ou autre objet SPIP',
   'nom_menu_page_speciale' => 'Plugin Pratiques picturales : Lien vers un squelette page ',
   'notes'                  => 'Notes',
+  'numero_direction' => 'Sous la direction de',
+  'numero_contributions' => 'Avec les contributions de',
 
   // P
   'par_auteur'             => 'par',

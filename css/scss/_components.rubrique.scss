@@ -1,16 +1,9 @@
 /* ==========================================================================
-   #ARTICLE
+   #RUBRIQUE
    ========================================================================== */
 
-.article {
+.rubrique {
   @include media-query(palm) {
-    padding-left: 16px;
     padding-right: $spacing-unit--tiny;
   }
 }
-
-    .article__texte--chapo {
-      margin-bottom: $spacing-unit--large;
-      @include inuit-font-size(18px);
-      color: darken($text-color,15%);
-    }

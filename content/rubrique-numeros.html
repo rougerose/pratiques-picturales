@@ -1,9 +1,11 @@
 <BOUCLE_numeros(RUBRIQUES){id_rubrique}>
 <article class="element rubrique">
+
   <div class="layout">
+
     <div class="layout__item u-11/12-lap-and-up u-1/12-push-lap-and-up">
       <header class="element__header element__section">
-        <h1 class="element__title alpha [t-(#ID_RUBRIQUE)__color]">#TITRE</h1>
+        <h1 class="element__title element__title--section [t-(#ID_RUBRIQUE)__color]">#TITRE</h1>
         [<p class="element__subtitle gamma">(#SOUSTITRE)</p>]
       </header>
       [<div class="element__section">
@@ -17,7 +19,9 @@
       </section><!-- /.notes -->]
     </div><!-- /.layout__item -->
 
-    [(#INCLURE{fond=inclure/liste-rubriques,id_rubrique,ajax})]
+    <div class="layout__item">
+      [(#INCLURE{fond=inclure/liste-rubriques,id_rubrique,ajax})]
+    </div><!-- /.layout__item -->
 
   </div><!-- /.layout -->
 </article>

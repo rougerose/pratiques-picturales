@@ -1,0 +1,20 @@
+[(#REM)
+  Cover d'un numéro, version courte.
+  ==================================
+  Ce fichier doit être inclus dans un div.cover ou aside.cover selon le contexte:
+  voir content/article-numero.html ou footer/dist.html
+
+]<BOUCLE_rubrique_numero_cover(RUBRIQUES){id_rubrique}>
+<B_couverture>
+<a class="cover__link" href="#URL_RUBRIQUE">
+  <BOUCLE_couverture(DOCUMENTS spip_mots_liens){id_rubrique}{extension IN jpg,gif,png}{id_mot=5}>
+  [<img class="cover__img" src="(#FICHIER|adaptive_images{550})"[ alt="(#TITRE)"]>]
+  </BOUCLE_couverture>
+  <div class="cover__body cover__body--animate [t-(#ID_RUBRIQUE)__bg]">
+    <h2 class="element__title cover__title gamma">#TITRE</h2>
+    [<p class="element__subtitle cover__subtitle">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
+    <p class="cover__desc cover__desc-next cover__desc-next--animate [t-(#ID_RUBRIQUE)__icon-next]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg})]</p>
+  </div>
+</a>
+</B_couverture>
+</BOUCLE_rubrique_numero_cover>
