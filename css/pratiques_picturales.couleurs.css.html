@@ -13,10 +13,10 @@
 [(#SET{couleur_lum06,[(#GET{couleur}|couleur_luminance{0.6})]})]
 
 [(#REM) mediaqueries ]
-  [(#SET{palm, "screen and (max-width: 499px)"})]
-  [(#SET{lap, "screen and (min-width: 500px) and (max-width: 749px)"})]
-  [(#SET{lap-and-up, "screen and (min-width: 750px)"})]
-  [(#SET{desk, "screen and (min-width: 750px)"})]
+  [(#SET{s, "screen and (max-width: 499px)"})]
+  [(#SET{m, "screen and (min-width: 500px) and (max-width: 749px)"})]
+  [(#SET{m-and-l, "screen and (min-width: 750px)"})]
+  [(#SET{l, "screen and (min-width: 750px)"})]
 
 [(#REM) définition principale ]
   .t-[(#ID_RUBRIQUE)]__color,
@@ -78,8 +78,8 @@
     color: [#(#GET{couleur})];
   }
 
-[(#REM) related-articles / version palm uniquement  ]
-  @media [(#GET{palm})]
+[(#REM) related-articles / version s uniquement  ]
+  @media [(#GET{s})]
   {
     .t-[(#ID_RUBRIQUE)]__related-articles
     {
@@ -93,7 +93,7 @@
     background-color: [#(#GET{couleur}|couleur_saturation{0.1})];
   }
 
-  @media [(#GET{desk})]
+  @media [(#GET{l})]
   {
     .t-[(#ID_RUBRIQUE)]__toc
     {

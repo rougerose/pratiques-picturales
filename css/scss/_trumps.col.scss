@@ -2,8 +2,8 @@
    #COL
    ========================================================================== */
 
-.u-col2-lap-and-up {
-  @include media-query(lap-and-up) {
+.u-col2-m-and-l {
+  @include media-query(m-and-l) {
     column-count: 2;
   }
 }

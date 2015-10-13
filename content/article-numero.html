@@ -6,51 +6,47 @@
       L'image en document doit avoir le mot-clé 5.
     ]
     <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
-    <B_couverture>
-    <div class="layout__item u-2/3-lap u-2/4-desk">
+    <div class="layout__item u-10/12-m u-8/12-l">
 
       [<aside class="cover">
         (#INCLURE{fond=inclure/rubrique-numero-cover-short,id_rubrique})
       </aside>]
 
     </div><!-- /.layout__item -->
-    </B_couverture>
     </BOUCLE_rubrique>
 
-    <div class="layout__item u-11/12-lap u-1/12-push-lap u-3/4-desk u-3/12-push-desk">
+    <div class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l">
 
       <header class="element__header element__section">
         <h1 class="element__title alpha [t-(#ID_RUBRIQUE)__color]">#TITRE</h1>
         [<p class="element__subtitle gamma">(#SOUSTITRE)</p>]
       </header>
 
-    </div><!-- /.layout__item
-    --><div class="layout__item">
+    </div><!-- /.layout__item -->
+    <div class="layout__item">
 
       <aside class="element__section element__meta">
 
         <div class="layout">
 
-          <div class="layout__item u-11/12-lap u-1/12-push-lap u-1/4-desk">
+          <div class="layout__item u-11/12-m u-1/12-push-m u-3/12-l">
             [<p class="meta__date">
               <time pubdate datetime="[(#DATE|date_iso)]">(#DATE|affdate)</time>
             </p>]
-          </div><!-- /.layout__item
-          --><div class="layout__item u-11/12-lap u-1/12-push-lap u-2/4-desk">
+          </div><!-- /.layout__item --><div class="layout__item u-11/12-m u-1/12-push-m u-6/12-l">
             [<p class="meta__auteurs">
               <:pratiques_picturales:par_auteur:> (#INCLURE{fond=inclure/article-auteurs,id_article})
             </p>]
-          </div><!-- /.layout__item
-          --><div class="layout__item u-11/12-lap u-1/12-push-lap u-1/4-desk">
-          <div class="c-action">
-            <!-- TODO: Terminer bouton Partager -->
-            <button type="button" class="btn btn--action c-action__toggle [t-(#ID_RUBRIQUE)__color][ t-(#ID_RUBRIQUE)__border][t-(#ID_RUBRIQUE)__bg--before]">
-              <span class="btn__label">!Partagez</span>
-            </button>
-            <div class="c-action__content[ t-(#ID_RUBRIQUE)__bg]">
-              <span id="socialtags"></span>
-            </div>
-          </div><!-- /.c-action -->
+          </div><!-- /.layout__item --><div class="layout__item u-11/12-m u-1/12-push-m u-3/12-l">
+            <div class="c-action">
+              <!-- TODO: Terminer bouton Partager -->
+              <button type="button" class="btn btn--action c-action__toggle [t-(#ID_RUBRIQUE)__color][ t-(#ID_RUBRIQUE)__border][t-(#ID_RUBRIQUE)__bg--before]">
+                <span class="btn__label">!Partagez</span>
+              </button>
+              <div class="c-action__content[ t-(#ID_RUBRIQUE)__bg]">
+                <span id="socialtags"></span>
+              </div>
+            </div><!-- /.c-action -->
           </div><!-- /.layout__item -->
 
         </div><!-- /.layout -->
@@ -58,12 +54,12 @@
       </aside><!-- /.element__meta -->
 
     </div><!-- /.layout__item -->
-    <div id="js-toc-parent" class="layout__item u-11/12-lap u-1/12-push-lap u-3/4-desk u-3/12-push-desk">
-      <section class="layout layout--rev element__content">
-        <div class="layout__item u-1/3-desk element__content--sub">
+    <div id="js-toc-parent" class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l element__content">
+      <div class="layout layout--rev">
+        <div class="layout__item u-4/12-l element__content--sub">
           [(#INCLURE{fond=inclure/article-toc, id_article})]
-        </div><!-- /.content--sub
-        --><div class="layout__item u-2/3-desk element__content--main">
+        </div><!-- /.content--sub --><div class="layout__item u-8/12-l element__content--main">
+
           [<section id="resume" class="element__section">
             <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:resume:></h1>
             (#DESCRIPTIF)
@@ -91,7 +87,7 @@
 
           [<section class="element__section">
             <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
-            <div class="notes u-col2-lap-and-up">
+            <div class="notes u-col2-m-and-l">
               (#NOTES)
             </div>
           </section><!-- /.article__notes -->]
@@ -123,6 +119,7 @@
                 [(#ID_DOCUMENT|unique|oui) #SET{_id_docs,#GET{_id_docs}|push{#ID_DOCUMENT}} ]
             </BOUCLE_documents>
           </B_documents>
+
           [(#REM)
             Afficher les documents si le test est positif.
           ][<section id="documents" class="element__section">
@@ -131,11 +128,11 @@
           </section><!-- /.article_documents -->]
 
           <div class="layout">
-            [<section id="bibliographie" class="layout__item u-2/4-desk element__section">
+            [<section id="bibliographie" class="layout__item u-6/12-l element__section">
               <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:bibliographie:></h1>
                 (#BIBLIOGRAPHIE)
             </section><!-- /bibliographie
-            -->]<section id="reference" class="layout__item u-2/4-desk element__section">
+            -->]<section id="reference" class="layout__item u-6/12-l element__section">
               <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:citer_article:></h1>
               <p class="bibliographie-ref">
                 [(#INCLURE{fond=inclure/article-auteurs,id_article,contexte=resume}), ][«&nbsp;(#TITRE) [(#SOUSTITRE)]&nbsp;».][ <span class="bibliographie-ref__titre">(#NOM_SITE_SPIP)[&nbsp;: (#INFO_TITRE{rubrique,#ID_RUBRIQUE})]</span>, ][(#INFO_SOUSTITRE{rubrique,#ID_RUBRIQUE}), ][(#INFO_DATE_NUMERO{rubrique,#ID_RUBRIQUE}|affdate_mois_annee).]
@@ -161,7 +158,7 @@
             <aside class="element__section related-articles [t-(#ID_RUBRIQUE)__related-articles]">
               <h1 class="box-arrow delta [t-(#ID_RUBRIQUE)__box-arrow]"><:pratiques_picturales:articles_connexes:></h1>
 
-              <div class="flex-grid u-flex-1/2-lap-and-up">
+              <div class="flex-grid u-flex-6/12-m-and-l">
                 <BOUCLE_articles_connexes(ARTICLES){id_article!=#ID_ARTICLE}{mots 50% #GET{_articles_connexes} !tri}{0,4}>
                 <INCLURE{fond=inclure/article-resume,id_article,layout=flex-grid__item} />
                 </BOUCLE_articles_connexes>
@@ -171,7 +168,9 @@
           </B_articles_connexes_1>
 
         </div><!-- /.content--main -->
-      </section><!-- /.element__content -->
+
+      </div><!-- /.layout /.element__content -->
+
     </div><!-- /.layout__item -->
     [<div class="layout__item">
       (#INCLURE{fond=breadcrumb/article,id_article})

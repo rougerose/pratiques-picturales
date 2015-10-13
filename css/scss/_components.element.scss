@@ -63,7 +63,7 @@
 // .element__content {}
 
   .element__content--main {
-    @include media-query(lap) {
+    @include media-query(m) {
       max-width: 500px;
     }
   }

@@ -9,7 +9,7 @@
   .page-sub-footer {
     @extend .clearfix;
     @extend .site-nav;
-    @include media-query(palm) {
+    @include media-query(s) {
       padding-right: 12px;
     }
   }
@@ -22,7 +22,7 @@
 
   .page-footer__logo {
     width: 70%;
-    @include media-query(lap-and-up) {
+    @include media-query(m-and-l) {
       width: 30%;
     }
   }

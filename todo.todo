@@ -5,8 +5,6 @@ Questions:
   de l'aplat de couleur, dans l'hypothèse où le texte serait un peu important.
 
 Prioritaire:
-  ✔ icon lien "voir suite" @done(2015-10-13 13:47) @project(Prioritaire)
-  ☐ grille sur 12 colonnes uniquement
   ☐ mise en forme des contenus dans #TEXTE
   ☐ article : liens précédent/suivant
 
@@ -22,3 +20,8 @@ Penser à:
 
 Avant mise en prod:
   ☐ filtre |compacte sur fichier couleurs.css
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+  ✔ icon lien "voir suite" @done(2015-10-13 13:47) @project(Prioritaire)
+  ✔ grille sur 12 colonnes uniquement @done(2015-10-13 15:09) @project(Prioritaire)

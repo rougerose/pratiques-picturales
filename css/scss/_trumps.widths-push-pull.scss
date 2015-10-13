@@ -2,26 +2,24 @@
    #PUSH-PULL-WIDTHS
    ========================================================================== */
 
-$col: 12;
-
-@include media-query(lap) {
-  .u-1\/12-push-lap {
-    margin-left: (1 / $col) * 100%;
+@include media-query(m) {
+  .u-1\/12-push-m {
+    margin-left: (1 / $columns) * 100%;
   }
 }
 
-@include media-query(lap-and-up) {
-  .u-1\/12-push-lap-and-up {
-    margin-left: (1 / $col) * 100%;
+@include media-query(m-and-l) {
+  .u-1\/12-push-m-and-l {
+    margin-left: (1 / $columns) * 100%;
   }
 }
 
-@include media-query(desk) {
-  .u-1\/12-push-desk {
-    margin-left: (1 / $col) * 100%;
+@include media-query(l) {
+  .u-1\/12-push-l {
+    margin-left: (1 / $columns) * 100%;
   }
 
-  .u-3\/12-push-desk {
-    margin-left: (3 / $col) * 100%;
+  .u-3\/12-push-l {
+    margin-left: (3 / $columns) * 100%;
   }
 }

@@ -8,7 +8,7 @@
         <!-- <a href="#URL_RUBRIQUE" class="cover__link"> -->
           [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|inserer_attribut{class,cover__img}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{960})]
           <div class="layout">
-            <div class="layout__item u-10/12-lap u-1/12-push-lap u-7/12-desk u-1/12-push-desk">
+            <div class="layout__item u-10/12-m u-1/12-push-m u-7/12-l u-1/12-push-l">
               <div class="cover__body cover__body--issue-toc [t-(#ID_RUBRIQUE)__bg]">
                 <header>
                   <h1 class="element__title cover__title beta">#TITRE</h1>
@@ -34,13 +34,13 @@
 
     </div><!-- /.layout__item -->
 
-    <div class="layout__item u-10/12-lap u-1/12-push-lap u-7/12-desk u-1/12-push-desk">
+    <div class="layout__item u-10/12-m u-1/12-push-m u-7/12-l u-1/12-push-l">
       [<div class="element__section">
         (#TEXTE)
       </div>]
       [<section class="element__section">
         <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
-        <div class="notes u-col2-lap-and-up">
+        <div class="notes u-col2-m-and-l">
           (#NOTES)
         </div>
       </section><!-- /.notes -->]

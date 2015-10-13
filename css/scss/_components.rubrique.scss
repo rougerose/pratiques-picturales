@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .rubrique {
-  @include media-query(palm) {
+  @include media-query(s) {
     padding-right: $spacing-unit--tiny;
   }
 }

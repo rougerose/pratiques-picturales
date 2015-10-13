@@ -5,14 +5,14 @@
 .toc {
   padding: $spacing-unit--small;
   column-count: 2;
-  @include media-query(desk) {
+  @include media-query(l) {
     column-count: auto;
     padding: 0;
   }
 }
 
   .toc-list {
-    @include media-query(desk) {
+    @include media-query(l) {
       padding: $spacing-unit 0 0;
     }
   }

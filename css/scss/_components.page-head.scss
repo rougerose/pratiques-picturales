@@ -5,7 +5,7 @@
 .page-head {
   padding: $spacing-unit 0;
   border-left: $spacing-unit--small solid $black-color;
-  @include media-query(lap-and-up) {
+  @include media-query(m-and-l) {
     border-left-width: $spacing-unit;
     padding-right: $spacing-unit;
   }
