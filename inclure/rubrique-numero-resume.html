@@ -1,10 +1,7 @@
 <BOUCLE_rubrique_numero_resume(RUBRIQUES){id_rubrique}>
 <article class="cover">
   <a href="#URL_RUBRIQUE" class="cover__link">
-    <BOUCLE_couverture(DOCUMENTS spip_mots_liens){id_rubrique}{extension IN jpg,gif,png}{id_mot=5}>
-    [(#SET{img,#FICHIER|image_passe_partout{1600,600}|image_recadre{1600,600,center}|extraire_attribut{src}})]
-    [<img class="cover__img" src="(#GET{img}|adaptive_images{480})"[ alt="(#TITRE)"]>]
-    </BOUCLE_couverture>
+    [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|inserer_attribut{class,cover__img}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{960})]
     <div class="cover__body [t-(#ID_RUBRIQUE)__bg]">
       <h2 class="element__title cover__title beta">#TITRE</h2>
       [<p class="element__subtitle cover__subtitle cover__subtitle--std">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
