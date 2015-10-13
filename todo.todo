@@ -1,9 +1,12 @@
 Questions:
   ☐ Antoine -> résumé d'article dans #DESCRIPTIF ou bien champs spécifique ?
   ☐ la rubrique Numéros : problème des blancs trop important à droite ?
+  ☐ rubrique-numero : le texte de présentation est présenté en dehors
+  de l'aplat de couleur, dans l'hypothèse où le texte serait un peu important.
 
 Prioritaire:
-  ☐ icon lien "voir suite"
+  ✔ icon lien "voir suite" @done(2015-10-13 13:47) @project(Prioritaire)
+  ☐ grille sur 12 colonnes uniquement
   ☐ mise en forme des contenus dans #TEXTE
   ☐ article : liens précédent/suivant
 

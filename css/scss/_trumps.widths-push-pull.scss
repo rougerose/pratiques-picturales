@@ -17,6 +17,10 @@ $col: 12;
 }
 
 @include media-query(desk) {
+  .u-1\/12-push-desk {
+    margin-left: (1 / $col) * 100%;
+  }
+
   .u-3\/12-push-desk {
     margin-left: (3 / $col) * 100%;
   }

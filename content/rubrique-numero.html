@@ -3,10 +3,48 @@
 
   <div class="layout">
 
-    <div class="layout__item u-11/12-lap-and-up u-1/12-push-lap-and-up">
-      [(#LOGO_RUBRIQUE|inserer_attribut{class,cover__img}|adaptive_images{550})]
+    <div class="layout__item">
+      <div class="cover">
+        <!-- <a href="#URL_RUBRIQUE" class="cover__link"> -->
+          [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|inserer_attribut{class,cover__img}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{960})]
+          <div class="layout">
+            <div class="layout__item u-10/12-lap u-1/12-push-lap u-7/12-desk u-1/12-push-desk">
+              <div class="cover__body cover__body--issue-toc [t-(#ID_RUBRIQUE)__bg]">
+                <header>
+                  <h1 class="element__title cover__title beta">#TITRE</h1>
+                  [<p class="element__subtitle cover__subtitle cover__subtitle--std">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
+                </header>
+                [(#AFFICHER_DIRECTION|oui)
+                  [<p class="cover__desc cover__desc-direction">
+                    <:pratiques_picturales:numero_direction:>
+                    (#INCLURE{fond=inclure/rubrique-auteurs-direction,id_rubrique,contexte=resume})
+                  </p>]
+                ]
+                <!-- [<p class="cover__desc">(#DESCRIPTIF|PtoBR)</p>] -->
+                [<p class="cover__desc cover__desc-contributions">
+                  <:pratiques_picturales:numero_contributions:>
+                  (#INCLURE{fond=inclure/rubrique-auteurs-contributions,id_rubrique})
+                </p>]
+                <!-- <p class="cover__desc cover__desc-next [t-(#ID_RUBRIQUE)__icon-next]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg})]</p> -->
+              </div>
+            </div><!-- /.layout__item -->
+          </div><!-- /.layout -->
+        <!-- </a> -->
+      </div><!-- /.cover -->
+
     </div><!-- /.layout__item -->
 
+    <div class="layout__item u-10/12-lap u-1/12-push-lap u-7/12-desk u-1/12-push-desk">
+      [<div class="element__section">
+        (#TEXTE)
+      </div>]
+      [<section class="element__section">
+        <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
+        <div class="notes u-col2-lap-and-up">
+          (#NOTES)
+        </div>
+      </section><!-- /.notes -->]
+    </div><!-- /.layout__item -->
 
     [<div class="layout__item">
       (#INCLURE{fond=breadcrumb/rubrique,id_rubrique})

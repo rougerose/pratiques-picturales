@@ -3,15 +3,16 @@
   <a href="#URL_RUBRIQUE" class="cover__link">
     [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|inserer_attribut{class,cover__img}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{960})]
     <div class="cover__body [t-(#ID_RUBRIQUE)__bg]">
-      <h2 class="element__title cover__title beta">#TITRE</h2>
-      [<p class="element__subtitle cover__subtitle cover__subtitle--std">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
+      <header>
+        <h1 class="element__title cover__title beta">#TITRE</h1>
+        [<p class="element__subtitle cover__subtitle cover__subtitle--std">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
+      </header>
       [(#AFFICHER_DIRECTION|oui)
         [<p class="cover__desc cover__desc-direction">
           <:pratiques_picturales:numero_direction:>
           (#INCLURE{fond=inclure/rubrique-auteurs-direction,id_rubrique,contexte=resume})
         </p>]
-      ]
-      [<p class="cover__desc">(#DESCRIPTIF|PtoBR)</p>]
+      ][<p class="cover__desc">(#DESCRIPTIF|PtoBR)</p>]
       [<p class="cover__desc cover__desc-contributions">
         <:pratiques_picturales:numero_contributions:>
         (#INCLURE{fond=inclure/rubrique-auteurs-contributions,id_rubrique})
