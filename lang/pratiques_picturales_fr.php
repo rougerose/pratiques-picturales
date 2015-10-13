@@ -42,6 +42,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'numero_contributions' => 'Avec les contributions de',
 
   // P
+  'pagination_prev' => '❮',
+  'pagination_next' => '❯',
   'par_auteur'             => 'par',
   'plan'                   => 'Plan',
 

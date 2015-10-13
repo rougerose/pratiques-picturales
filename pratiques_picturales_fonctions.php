@@ -44,4 +44,9 @@ function nom($texte) {
     }
 }
 
+function zerofill ($num, $zerofill = 2) {
+  return str_pad($num, $zerofill, '0', STR_PAD_LEFT);
+}
+
+
 ?>

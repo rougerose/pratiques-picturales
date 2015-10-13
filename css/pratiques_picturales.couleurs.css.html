@@ -32,14 +32,16 @@
   }
 
 [(#REM) border ]
-  .t-[(#ID_RUBRIQUE)]__border
+  .t-[(#ID_RUBRIQUE)]__border,
+  .t-[(#ID_RUBRIQUE)]__pagination > strong
   {
     border-color: [#(#GET{couleur})];
   }
 
 [(#REM) background ]
   .t-[(#ID_RUBRIQUE)]__bg,
-  .t-[(#ID_RUBRIQUE)]__bg--hover:hover
+  .t-[(#ID_RUBRIQUE)]__bg--hover:hover,
+  .t-[(#ID_RUBRIQUE)]__pagination > strong
   {
     color: [#(#GET{couleur}|couleur_extreme)];
     background: [#(#GET{couleur})];
@@ -51,7 +53,8 @@
   .t-[(#ID_RUBRIQUE)]__btn--action,
 [(#REM) toc-item]
   .t-[(#ID_RUBRIQUE)]__toc-item.is-active,
-  .t-[(#ID_RUBRIQUE)]__toc-item.is-active .toc__link
+  .t-[(#ID_RUBRIQUE)]__toc-item.is-active .toc__link,
+  .t-[(#ID_RUBRIQUE)]__pagination > a:hover
   {
     color: [#(#GET{couleur})];
     border-color: [#(#GET{couleur})];
@@ -107,6 +110,7 @@
   {
     fill: [#(#GET{couleur})];
   }
+
 
 [(#ID_RUBRIQUE|=={#ID_SECTEUR}|oui)
   [(#REM) navigation principale ]

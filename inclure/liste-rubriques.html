@@ -1,15 +1,15 @@
 <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
-<B_liste_rubriques>
+<B_numeros>
   <div class="">
     #ANCRE_PAGINATION
     <div class="">
-      <BOUCLE_liste_rubriques(RUBRIQUES){id_parent}{!par num titre, titre}{pagination 12}>
+      <BOUCLE_numeros(RUBRIQUES){id_parent}{!par num titre, titre}{pagination 2}>
         [(#INCLURE{fond=inclure/rubrique-numero-resume,id_rubrique})]
-      </BOUCLE_liste_rubriques>
+      </BOUCLE_numeros>
     </div><!-- /.grid -->
-  [<nav class="pagination pagination--bottom pagination--page">
-    (#PAGINATION)
+  [<nav class="pagination pagination--bottom">
+    (#PAGINATION{numeros,id_rubrique})
   </nav>]
 </div>
-</B_liste_rubriques>
+</B_numeros>
 </BOUCLE_rubrique>
