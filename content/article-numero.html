@@ -160,7 +160,7 @@
 
               <div class="flex-grid u-flex-6/12-m-and-l">
                 <BOUCLE_articles_connexes(ARTICLES){id_article!=#ID_ARTICLE}{mots 50% #GET{_articles_connexes} !tri}{0,4}>
-                <INCLURE{fond=inclure/article-resume,id_article,layout=flex-grid__item} />
+                <INCLURE{fond=inclure/article-resume,id_article,layout=flex-grid__item,type=article-resume--related} />
                 </BOUCLE_articles_connexes>
               </div><!-- /.flex-grid -->
 

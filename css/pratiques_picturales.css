@@ -682,7 +682,7 @@ img {
    ========================================================================== */
 @media screen and (min-width: 500px) {
   /* line 620, stdin */
-  .u-flex-6\/12-lap-and-up > .flex-grid__item, .u-flex-6\/12-lap-and-up > .related__link {
+  .u-flex-6\/12-m-and-l > .flex-grid__item, .u-flex-6\/12-m-and-l > .related__link {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 50%;
         -ms-flex: 0 0 50%;
@@ -1124,34 +1124,37 @@ h6.spip {
 /* ==========================================================================
    #ARTICLE-RESUME
    ========================================================================== */
-@media screen and (max-width: 499px) {
-  /* line 993, stdin */
-  .article-resume {
-    margin: 0 6px; } }
+/* line 992, stdin */
+.article-resume {
+  margin: 24px 0; }
 
-/* line 996, stdin */
+@media screen and (max-width: 499px) {
+  /* line 996, stdin */
+  .article-resume--related {
+    padding: 0 6px; } }
+
+/* line 999, stdin */
 .article-resume__link {
   display: block;
-  padding: 6px 6px 0;
   text-decoration: none; }
 
-/* line 1001, stdin */
+/* line 1003, stdin */
 .article-resume__desc > p {
   margin-bottom: 0; }
 
-/* line 1004, stdin */
+/* line 1006, stdin */
 .article-resume__next {
   margin-top: 12px;
   margin-bottom: 6px; }
 
-/* line 1008, stdin */
+/* line 1010, stdin */
 .article-resume__next:after {
   height: 1px; }
 
 /* ==========================================================================
    #TOC
    ========================================================================== */
-/* line 1014, stdin */
+/* line 1016, stdin */
 .toc {
   padding: 12px;
   -webkit-column-count: 2;
@@ -1159,7 +1162,7 @@ h6.spip {
           column-count: 2; }
 
 @media screen and (min-width: 750px) {
-  /* line 1019, stdin */
+  /* line 1021, stdin */
   .toc {
     -webkit-column-count: auto;
        -moz-column-count: auto;
@@ -1167,24 +1170,24 @@ h6.spip {
     padding: 0; } }
 
 @media screen and (min-width: 750px) {
-  /* line 1024, stdin */
+  /* line 1026, stdin */
   .toc-list {
     padding: 24px 0 0; } }
 
-/* line 1027, stdin */
+/* line 1029, stdin */
 .toc-list__item {
   margin-bottom: 6px;
   text-transform: uppercase; }
 
-/* line 1031, stdin */
+/* line 1033, stdin */
 .toc-list__item.is-active {
   border-bottom: 1px solid #000; }
 
-/* line 1034, stdin */
+/* line 1036, stdin */
 .toc-list__item.is-active .toc__link {
   color: #000; }
 
-/* line 1037, stdin */
+/* line 1039, stdin */
 .toc__link {
   text-decoration: none;
   color: #9b9b9b; }
@@ -1192,12 +1195,12 @@ h6.spip {
 /* ==========================================================================
    #NOTES
    ========================================================================== */
-/* line 1044, stdin */
+/* line 1046, stdin */
 .notes > div {
   margin-bottom: 24px;
   margin-bottom: 1.5rem; }
 
-/* line 1048, stdin */
+/* line 1050, stdin */
 .notes > div > p {
   margin: 0; }
 
@@ -1207,36 +1210,36 @@ h6.spip {
 /*
    #TAGS__LIST
    ========================================================================== */
-/* line 1057, stdin */
+/* line 1059, stdin */
 .tags__item:before {
   content: '# '; }
 
 /* ==========================================================================
    #BIBLIOGRAPHIE
    ========================================================================== */
-/* line 1063, stdin */
+/* line 1065, stdin */
 .bibliographie-ref__titre {
   font-style: italic; }
 
 /* ==========================================================================
    #DOCUMENTS
    ========================================================================== */
-/* line 1069, stdin */
+/* line 1071, stdin */
 .document__link {
   display: block;
   border-bottom: 1px dotted #ddd;
   padding: 12px 0;
   text-decoration: none; }
 
-/* line 1075, stdin */
+/* line 1077, stdin */
 .document__link--first {
   padding-top: 0; }
 
-/* line 1078, stdin */
+/* line 1080, stdin */
 .document__info {
   margin-left: 100px; }
 
-/* line 1081, stdin */
+/* line 1083, stdin */
 .document__descriptif {
   display: block; }
 
@@ -1246,76 +1249,76 @@ h6.spip {
 /* ==========================================================================
    #BREADCRUMB
    ========================================================================== */
-/* line 1090, stdin */
+/* line 1092, stdin */
 .breadcrumb {
   margin: 24px 0; }
 
 @media screen and (max-width: 499px) {
-  /* line 1094, stdin */
+  /* line 1096, stdin */
   .breadcrumb {
     display: none; } }
 
-/* line 1097, stdin */
+/* line 1099, stdin */
 .breadcrumb__item {
   margin: 0 6px; }
 
-/* line 1100, stdin */
+/* line 1102, stdin */
 .breadcrumb__item > .nav__icon {
   top: -4px; }
 
 /* ==========================================================================
    #RELATED
    ========================================================================== */
-/* line 1106, stdin */
+/* line 1108, stdin */
 .related-articles {
   margin-bottom: 0; }
 
 @media screen and (max-width: 499px) {
-  /* line 1110, stdin */
+  /* line 1112, stdin */
   .related-articles {
     text-align: center; } }
 
-/* line 1113, stdin */
+/* line 1115, stdin */
 .related-about {
   margin-bottom: 48px; }
 
 @media screen and (min-width: 750px) {
-  /* line 1117, stdin */
+  /* line 1119, stdin */
   .related-about {
     margin-bottom: 24px; } }
 
 @media screen and (min-width: 750px) {
-  /* line 1122, stdin */
+  /* line 1124, stdin */
   .related-about,
   .related-issue {
     width: 50%;
     float: left; }
-  /* line 1125, stdin */
+  /* line 1127, stdin */
   .related-about {
     padding-right: 12px; }
-  /* line 1127, stdin */
+  /* line 1129, stdin */
   .related-issue {
     padding-left: 12px; } }
 
-/* line 1130, stdin */
+/* line 1132, stdin */
 .related__title {
   color: #000;
   text-align: center; }
 
 @media screen and (min-width: 750px) {
-  /* line 1135, stdin */
+  /* line 1137, stdin */
   .related__title {
     text-align: left; } }
 
-/* line 1138, stdin */
+/* line 1140, stdin */
 .related__desc {
   margin-bottom: 0; }
 
-/* line 1141, stdin */
+/* line 1143, stdin */
 .related__desc--about-links {
   margin-left: 12px; }
 
-/* line 1144, stdin */
+/* line 1146, stdin */
 .related__link {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 50%;
@@ -1329,13 +1332,13 @@ h6.spip {
   padding-left: 0;
   margin-left: 0; }
 
-/* line 1151, stdin */
+/* line 1153, stdin */
 .related__desc--aff {
   font-style: italic;
   font-weight: bold;
   color: #000; }
 
-/* line 1156, stdin */
+/* line 1158, stdin */
 .related__logo-aff {
   display: block;
   margin: 6px 6px 6px 0;
@@ -1357,11 +1360,11 @@ h6.spip {
    Classe utilisée par le plugin adaptive-images. Les balises width et height
    étant renseignées, il faut garder des images fluides.
    ========================================================================== */
-/* line 1177, stdin */
+/* line 1179, stdin */
 .adapt-img-wrapper {
   background-size: cover; }
 
-/* line 1180, stdin */
+/* line 1182, stdin */
 .adapt-img {
   max-width: 100% !important;
   height: auto; }
@@ -1372,17 +1375,17 @@ h6.spip {
 /*
    #SPIP LIST
    ========================================================================== */
-/* line 1190, stdin */
+/* line 1192, stdin */
 ul.spip {
   list-style: square inside; }
 
-/* line 1194, stdin */
+/* line 1196, stdin */
 ul.spip,
 ol.spip {
   margin: 0;
   padding: 0; }
 
-/* line 1199, stdin */
+/* line 1201, stdin */
 ul.spip ul,
 ol.spip ol {
   padding-left: 0.75em; }
@@ -1393,15 +1396,16 @@ ol.spip ol {
 /*
    #BOX-ARROW
    ========================================================================== */
-/* line 1208, stdin */
+/* line 1210, stdin */
 .box-arrow {
   position: relative;
   padding-top: 24px;
+  margin-bottom: 0;
   border-top: 1px solid #000;
   text-align: center;
   text-transform: uppercase; }
 
-/* line 1216, stdin */
+/* line 1219, stdin */
 .box-arrow:before,
 .box-arrow:after {
   position: absolute;
@@ -1413,13 +1417,13 @@ ol.spip ol {
   content: " ";
   pointer-events: none; }
 
-/* line 1226, stdin */
+/* line 1229, stdin */
 .box-arrow:before {
   border-top-color: #000;
   border-width: 13px;
   margin-left: -13px; }
 
-/* line 1231, stdin */
+/* line 1234, stdin */
 .box-arrow:after {
   border-top-color: #fff;
   border-width: 12px;
@@ -1428,20 +1432,20 @@ ol.spip ol {
 /* ==========================================================================
    #ICONS
    ========================================================================== */
-/* line 1239, stdin */
+/* line 1242, stdin */
 .icon-svg-source {
   display: none; }
 
-/* line 1242, stdin */
+/* line 1245, stdin */
 .icon-oblique {
   width: 9px;
   height: 19px; }
 
-/* line 1246, stdin */
+/* line 1249, stdin */
 .icon-oblique__stroke {
   stroke: currentColor; }
 
-/* line 1249, stdin */
+/* line 1252, stdin */
 .icon-next {
   width: 24px;
   height: 24px;
@@ -1450,7 +1454,7 @@ ol.spip ol {
   -webkit-transition: all 0.4s ease;
           transition: all 0.4s ease; }
 
-/* line 1256, stdin */
+/* line 1259, stdin */
 .icon-next__fill {
   -webkit-transition: all 0.4s ease;
           transition: all 0.4s ease; }
@@ -1458,18 +1462,18 @@ ol.spip ol {
 /* ==========================================================================
    #BUTTONS
    ========================================================================== */
-/* line 1262, stdin */
+/* line 1265, stdin */
 .btn {
   font-weight: bold; }
 
-/* line 1265, stdin */
+/* line 1268, stdin */
 .btn--action {
   position: relative;
   background: none;
   -webkit-transition: color 0.4s ease;
           transition: color 0.4s ease; }
 
-/* line 1270, stdin */
+/* line 1273, stdin */
 .btn--action:before {
   position: absolute;
   top: 0;
@@ -1484,29 +1488,29 @@ ol.spip ol {
   -webkit-transition: -webkit-transform 0.4s ease, opacity 0.4s ease;
           transition: transform 0.4s ease, opacity 0.4s ease; }
 
-/* line 1282, stdin */
+/* line 1285, stdin */
 .btn--action:hover:before {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0); }
 
-/* line 1286, stdin */
+/* line 1289, stdin */
 .btn__label {
   text-transform: uppercase; }
 
 /* ==========================================================================
    #ACTION
    ========================================================================== */
-/* line 1292, stdin */
+/* line 1295, stdin */
 .c-action {
   position: relative; }
 
-/* line 1295, stdin */
+/* line 1298, stdin */
 .c-action__toggle {
   width: 100px;
   height: 30px; }
 
-/* line 1299, stdin */
+/* line 1302, stdin */
 .c-action__content {
   position: absolute;
   top: 50px;
@@ -1515,18 +1519,18 @@ ol.spip ol {
 /* ==========================================================================
    #PAGINATION
    ========================================================================== */
-/* line 1307, stdin */
+/* line 1310, stdin */
 .pagination-list {
   list-style: none;
   margin: 12px 0;
   padding: 0;
   text-align: center; }
 
-/* line 1313, stdin */
+/* line 1316, stdin */
 .pagination-list__item {
   display: inline-block; }
 
-/* line 1317, stdin */
+/* line 1320, stdin */
 .pagination-list__item > strong,
 .pagination-list__item > a {
   display: block;
@@ -1534,11 +1538,11 @@ ol.spip ol {
   border: 1px solid #eee;
   text-decoration: none; }
 
-/* line 1323, stdin */
+/* line 1326, stdin */
 .pagination-list__item--disabled {
   color: #eee; }
 
-/* line 1326, stdin */
+/* line 1329, stdin */
 .pagination-list__item--disabled > strong {
   border-color: #eee; }
 
@@ -1549,14 +1553,14 @@ ol.spip ol {
  * Styles générés par spip
  */
 /* Sommaire d'article */
-/* line 1336, stdin */
+/* line 1339, stdin */
 .sommaire-back {
   display: none; }
 
 /* ==========================================================================
    #SPIP-ADMIN
    ========================================================================== */
-/* line 1343, stdin */
+/* line 1346, stdin */
 body .spip-admin-bloc,
 body .spip-admin-float {
   z-index: 99999;
@@ -1566,12 +1570,12 @@ body .spip-admin-float {
   -webkit-transition: right 0.35s ease;
           transition: right 0.35s ease; }
 
-/* line 1351, stdin */
+/* line 1354, stdin */
 body .spip-admin-bloc:hover,
 body .spip-admin-float:hover {
   right: 0; }
 
-/* line 1354, stdin */
+/* line 1357, stdin */
 .spip-admin-float .spip-admin-boutons {
   display: block;
   margin-bottom: 5px;
@@ -1586,7 +1590,7 @@ body .spip-admin-float:hover {
  * Extend the clearfix class with Sass to avoid the `.clearfix` class appearing
  * over and over in your markup.
  */
-/* line 1371, stdin */
+/* line 1374, stdin */
 .clearfix:after,
 .page-sub-footer:after,
 .media:after,
@@ -1611,37 +1615,37 @@ body .spip-admin-float:hover {
   * Surcharge du fichier inuit-headings-trums/_trumps.headings.scss,
   * afin de pouvoir définir l'interlignage
   */
-/* line 1392, stdin */
+/* line 1395, stdin */
 .alpha {
   font-size: 30px;
   font-size: 1.875rem;
   line-height: 1.1; }
 
-/* line 1397, stdin */
+/* line 1400, stdin */
 .beta {
   font-size: 26px;
   font-size: 1.625rem;
   line-height: 1.1; }
 
-/* line 1402, stdin */
+/* line 1405, stdin */
 .gamma {
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 1.1; }
 
-/* line 1407, stdin */
+/* line 1410, stdin */
 .delta {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.1; }
 
-/* line 1412, stdin */
+/* line 1415, stdin */
 .epsilon {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.1; }
 
-/* line 1417, stdin */
+/* line 1420, stdin */
 .zeta {
   font-size: 16px;
   font-size: 1rem;
@@ -1651,7 +1655,7 @@ body .spip-admin-float:hover {
    #COL
    ========================================================================== */
 @media screen and (min-width: 500px) {
-  /* line 1426, stdin */
+  /* line 1429, stdin */
   .u-col2-m-and-l {
     -webkit-column-count: 2;
        -moz-column-count: 2;
@@ -1666,47 +1670,47 @@ body .spip-admin-float:hover {
  *
  * <div class="u-7/12">
  */
-/* line 1438, stdin */
+/* line 1441, stdin */
 .u-1\/12 {
   width: 8.33333%; }
 
-/* line 1441, stdin */
+/* line 1444, stdin */
 .u-2\/12 {
   width: 16.66667%; }
 
-/* line 1444, stdin */
+/* line 1447, stdin */
 .u-3\/12 {
   width: 25%; }
 
-/* line 1447, stdin */
+/* line 1450, stdin */
 .u-4\/12 {
   width: 33.33333%; }
 
-/* line 1450, stdin */
+/* line 1453, stdin */
 .u-5\/12 {
   width: 41.66667%; }
 
-/* line 1453, stdin */
+/* line 1456, stdin */
 .u-6\/12 {
   width: 50%; }
 
-/* line 1456, stdin */
+/* line 1459, stdin */
 .u-7\/12 {
   width: 58.33333%; }
 
-/* line 1459, stdin */
+/* line 1462, stdin */
 .u-8\/12 {
   width: 66.66667%; }
 
-/* line 1462, stdin */
+/* line 1465, stdin */
 .u-9\/12 {
   width: 75%; }
 
-/* line 1465, stdin */
+/* line 1468, stdin */
 .u-10\/12 {
   width: 83.33333%; }
 
-/* line 1468, stdin */
+/* line 1471, stdin */
 .u-11\/12 {
   width: 91.66667%; }
 
@@ -1716,142 +1720,142 @@ body .spip-admin-float:hover {
  * Responsive width classes based on your responsive settings.
  */
 @media screen and (max-width: 499px) {
-  /* line 1477, stdin */
+  /* line 1480, stdin */
   .u-1\/12-s {
     width: 8.33333%; }
-  /* line 1479, stdin */
+  /* line 1482, stdin */
   .u-2\/12-s {
     width: 16.66667%; }
-  /* line 1481, stdin */
+  /* line 1484, stdin */
   .u-3\/12-s {
     width: 25%; }
-  /* line 1483, stdin */
+  /* line 1486, stdin */
   .u-4\/12-s {
     width: 33.33333%; }
-  /* line 1485, stdin */
+  /* line 1488, stdin */
   .u-5\/12-s {
     width: 41.66667%; }
-  /* line 1487, stdin */
+  /* line 1490, stdin */
   .u-6\/12-s {
     width: 50%; }
-  /* line 1489, stdin */
+  /* line 1492, stdin */
   .u-7\/12-s {
     width: 58.33333%; }
-  /* line 1491, stdin */
+  /* line 1494, stdin */
   .u-8\/12-s {
     width: 66.66667%; }
-  /* line 1493, stdin */
+  /* line 1496, stdin */
   .u-9\/12-s {
     width: 75%; }
-  /* line 1495, stdin */
+  /* line 1498, stdin */
   .u-10\/12-s {
     width: 83.33333%; }
-  /* line 1497, stdin */
+  /* line 1500, stdin */
   .u-11\/12-s {
     width: 91.66667%; } }
 
 @media screen and (min-width: 500px) and (max-width: 749px) {
-  /* line 1501, stdin */
+  /* line 1504, stdin */
   .u-1\/12-m {
     width: 8.33333%; }
-  /* line 1503, stdin */
+  /* line 1506, stdin */
   .u-2\/12-m {
     width: 16.66667%; }
-  /* line 1505, stdin */
+  /* line 1508, stdin */
   .u-3\/12-m {
     width: 25%; }
-  /* line 1507, stdin */
+  /* line 1510, stdin */
   .u-4\/12-m {
     width: 33.33333%; }
-  /* line 1509, stdin */
+  /* line 1512, stdin */
   .u-5\/12-m {
     width: 41.66667%; }
-  /* line 1511, stdin */
+  /* line 1514, stdin */
   .u-6\/12-m {
     width: 50%; }
-  /* line 1513, stdin */
+  /* line 1516, stdin */
   .u-7\/12-m {
     width: 58.33333%; }
-  /* line 1515, stdin */
+  /* line 1518, stdin */
   .u-8\/12-m {
     width: 66.66667%; }
-  /* line 1517, stdin */
+  /* line 1520, stdin */
   .u-9\/12-m {
     width: 75%; }
-  /* line 1519, stdin */
+  /* line 1522, stdin */
   .u-10\/12-m {
     width: 83.33333%; }
-  /* line 1521, stdin */
+  /* line 1524, stdin */
   .u-11\/12-m {
     width: 91.66667%; } }
 
 @media screen and (min-width: 500px) {
-  /* line 1525, stdin */
+  /* line 1528, stdin */
   .u-1\/12-m-and-l {
     width: 8.33333%; }
-  /* line 1527, stdin */
+  /* line 1530, stdin */
   .u-2\/12-m-and-l {
     width: 16.66667%; }
-  /* line 1529, stdin */
+  /* line 1532, stdin */
   .u-3\/12-m-and-l {
     width: 25%; }
-  /* line 1531, stdin */
+  /* line 1534, stdin */
   .u-4\/12-m-and-l {
     width: 33.33333%; }
-  /* line 1533, stdin */
+  /* line 1536, stdin */
   .u-5\/12-m-and-l {
     width: 41.66667%; }
-  /* line 1535, stdin */
+  /* line 1538, stdin */
   .u-6\/12-m-and-l {
     width: 50%; }
-  /* line 1537, stdin */
+  /* line 1540, stdin */
   .u-7\/12-m-and-l {
     width: 58.33333%; }
-  /* line 1539, stdin */
+  /* line 1542, stdin */
   .u-8\/12-m-and-l {
     width: 66.66667%; }
-  /* line 1541, stdin */
+  /* line 1544, stdin */
   .u-9\/12-m-and-l {
     width: 75%; }
-  /* line 1543, stdin */
+  /* line 1546, stdin */
   .u-10\/12-m-and-l {
     width: 83.33333%; }
-  /* line 1545, stdin */
+  /* line 1548, stdin */
   .u-11\/12-m-and-l {
     width: 91.66667%; } }
 
 @media screen and (min-width: 750px) {
-  /* line 1549, stdin */
+  /* line 1552, stdin */
   .u-1\/12-l {
     width: 8.33333%; }
-  /* line 1551, stdin */
+  /* line 1554, stdin */
   .u-2\/12-l {
     width: 16.66667%; }
-  /* line 1553, stdin */
+  /* line 1556, stdin */
   .u-3\/12-l {
     width: 25%; }
-  /* line 1555, stdin */
+  /* line 1558, stdin */
   .u-4\/12-l {
     width: 33.33333%; }
-  /* line 1557, stdin */
+  /* line 1560, stdin */
   .u-5\/12-l {
     width: 41.66667%; }
-  /* line 1559, stdin */
+  /* line 1562, stdin */
   .u-6\/12-l {
     width: 50%; }
-  /* line 1561, stdin */
+  /* line 1564, stdin */
   .u-7\/12-l {
     width: 58.33333%; }
-  /* line 1563, stdin */
+  /* line 1566, stdin */
   .u-8\/12-l {
     width: 66.66667%; }
-  /* line 1565, stdin */
+  /* line 1568, stdin */
   .u-9\/12-l {
     width: 75%; }
-  /* line 1567, stdin */
+  /* line 1570, stdin */
   .u-10\/12-l {
     width: 83.33333%; }
-  /* line 1569, stdin */
+  /* line 1572, stdin */
   .u-11\/12-l {
     width: 91.66667%; } }
 
@@ -1859,19 +1863,19 @@ body .spip-admin-float:hover {
    #PUSH-PULL-WIDTHS
    ========================================================================== */
 @media screen and (min-width: 500px) and (max-width: 749px) {
-  /* line 1576, stdin */
+  /* line 1579, stdin */
   .u-1\/12-push-m {
     margin-left: 8.33333%; } }
 
 @media screen and (min-width: 500px) {
-  /* line 1580, stdin */
+  /* line 1583, stdin */
   .u-1\/12-push-m-and-l {
     margin-left: 8.33333%; } }
 
 @media screen and (min-width: 750px) {
-  /* line 1584, stdin */
+  /* line 1587, stdin */
   .u-1\/12-push-l {
     margin-left: 8.33333%; }
-  /* line 1586, stdin */
+  /* line 1589, stdin */
   .u-3\/12-push-l {
     margin-left: 25%; } }

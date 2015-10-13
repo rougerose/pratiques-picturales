@@ -30,7 +30,7 @@
    ========================================================================== */
 
 
-.u-flex-6\/12-lap-and-up {
+.u-flex-6\/12-m-and-l {
   @include media-query(m-and-l) {
     & > .flex-grid__item {
       flex: 0 0 50%;

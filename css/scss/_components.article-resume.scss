@@ -3,14 +3,17 @@
    ========================================================================== */
 
 .article-resume {
+  margin: $spacing-unit 0;
+}
+
+.article-resume--related {
   @include media-query(s) {
-    margin: 0 $spacing-unit--tiny;
+    padding: 0 $spacing-unit--tiny;
   }
 }
 
   .article-resume__link {
     display: block;
-    padding: $spacing-unit--tiny $spacing-unit--tiny 0;
     text-decoration: none;
   }
 

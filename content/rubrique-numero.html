@@ -8,7 +8,7 @@
       <div class="cover">
         [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|inserer_attribut{class,cover__img}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{960})]
         <div class="layout">
-          <div class="layout__item u-10/12-m u-1/12-push-m u-7/12-l u-1/12-push-l">
+          <div class="layout__item u-10/12-m u-1/12-push-m u-8/12-l u-1/12-push-l">
             <div class="cover__body cover__body--issue-toc [t-(#ID_RUBRIQUE)__bg]">
               <header>
                 <h1 class="element__title cover__title beta">#TITRE</h1>
@@ -30,7 +30,7 @@
 
     </div><!-- /.layout__item -->
 
-    <div class="layout__item u-10/12-m u-1/12-push-m u-7/12-l u-1/12-push-l">
+    <div class="layout__item u-10/12-m u-1/12-push-m u-8/12-l u-1/12-push-l">
       [<div class="element__section">
         (#TEXTE)
       </div>]
@@ -45,7 +45,15 @@
     <div class="layout__item u-10/12-m-and-l u-1/12-push-m-and-l">
       <section class="element__content">
         <h1 class="element__title element__title--section alpha [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:sommaire:></h1>
+
+        <div class="flex-grid u-flex-6/12-m-and-l">
+          <BOUCLE_sommaire(ARTICLES){id_rubrique}>
+            <INCLURE{fond=inclure/article-resume,id_article,layout=flex-grid__item} />
+          </BOUCLE_sommaire>
+        </div><!-- /.flex-grid -->
+        </BOUCLE_sommaire>
       </section><!-- /.element__content -->
+
     </div><!-- /.layout__item -->
 
     [<div class="layout__item">
