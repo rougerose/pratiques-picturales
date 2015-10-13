@@ -4,32 +4,28 @@
   <div class="layout">
 
     <div class="layout__item">
+
       <div class="cover">
-        <!-- <a href="#URL_RUBRIQUE" class="cover__link"> -->
-          [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|inserer_attribut{class,cover__img}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{960})]
-          <div class="layout">
-            <div class="layout__item u-10/12-m u-1/12-push-m u-7/12-l u-1/12-push-l">
-              <div class="cover__body cover__body--issue-toc [t-(#ID_RUBRIQUE)__bg]">
-                <header>
-                  <h1 class="element__title cover__title beta">#TITRE</h1>
-                  [<p class="element__subtitle cover__subtitle cover__subtitle--std">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
-                </header>
-                [(#AFFICHER_DIRECTION|oui)
-                  [<p class="cover__desc cover__desc-direction">
-                    <:pratiques_picturales:numero_direction:>
-                    (#INCLURE{fond=inclure/rubrique-auteurs-direction,id_rubrique,contexte=resume})
-                  </p>]
-                ]
-                <!-- [<p class="cover__desc">(#DESCRIPTIF|PtoBR)</p>] -->
-                [<p class="cover__desc cover__desc-contributions">
-                  <:pratiques_picturales:numero_contributions:>
-                  (#INCLURE{fond=inclure/rubrique-auteurs-contributions,id_rubrique})
+        [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|inserer_attribut{class,cover__img}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{960})]
+        <div class="layout">
+          <div class="layout__item u-10/12-m u-1/12-push-m u-7/12-l u-1/12-push-l">
+            <div class="cover__body cover__body--issue-toc [t-(#ID_RUBRIQUE)__bg]">
+              <header>
+                <h1 class="element__title cover__title beta">#TITRE</h1>
+                [<p class="element__subtitle cover__subtitle cover__subtitle--std">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
+              </header>
+              [(#AFFICHER_DIRECTION|oui)
+                [<p class="cover__desc cover__desc-direction">
+                  <:pratiques_picturales:numero_direction:>
+                  (#INCLURE{fond=inclure/rubrique-auteurs-direction,id_rubrique,contexte=resume})
                 </p>]
-                <!-- <p class="cover__desc cover__desc-next [t-(#ID_RUBRIQUE)__icon-next]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg})]</p> -->
-              </div>
-            </div><!-- /.layout__item -->
-          </div><!-- /.layout -->
-        <!-- </a> -->
+              ][<p class="cover__desc cover__desc-contributions">
+                <:pratiques_picturales:numero_contributions:>
+                (#INCLURE{fond=inclure/rubrique-auteurs-contributions,id_rubrique})
+              </p>]
+            </div><!-- /.cover__body -->
+          </div><!-- /.layout__item -->
+        </div><!-- /.layout -->
       </div><!-- /.cover -->
 
     </div><!-- /.layout__item -->
@@ -44,6 +40,12 @@
           (#NOTES)
         </div>
       </section><!-- /.notes -->]
+    </div><!-- /.layout__item -->
+
+    <div class="layout__item u-10/12-m-and-l u-1/12-push-m-and-l">
+      <section class="element__content">
+        <h1 class="element__title element__title--section alpha [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:sommaire:></h1>
+      </section><!-- /.element__content -->
     </div><!-- /.layout__item -->
 
     [<div class="layout__item">

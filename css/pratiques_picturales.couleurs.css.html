@@ -20,6 +20,7 @@
 
 [(#REM) définition principale ]
   .t-[(#ID_RUBRIQUE)]__color,
+  .t-[(#ID_RUBRIQUE)]__color--hover:hover,
   .t-[(#ID_RUBRIQUE)]__color-nav,
   .active .t-[(#ID_RUBRIQUE)]__color-nav,
   .active .t-[(#ID_RUBRIQUE)]__color-nav > .nav__label,
@@ -104,31 +105,59 @@
 [(#REM) cover ]
   .cover__link:hover > [.t-(#ID_RUBRIQUE)__bg]
   {
-    background: [#(#GET{couleur}|couleur_luminance{0.7})]
-
+    background: [#(#GET{couleur}|couleur_luminance{0.7})];
   }
 
 [(#REM) icon-next]
-  .t-[(#ID_RUBRIQUE)]__icon-next .icon-next
-  {
-    background: [#(#GET{couleur}|couleur_extreme)];
-  }
-  .t-[(#ID_RUBRIQUE)]__icon-next .icon-next__fill
-  {
-    fill: [#(#GET{couleur})];
-  }
-  a:hover .t-[(#ID_RUBRIQUE)]__icon-next
+  [(#REM) icon-next--article-resume ]
+  .t-[(#ID_RUBRIQUE)]__icon-next--article-resume
   {
     color: [#(#GET{couleur})];
   }
-  a:hover .t-[(#ID_RUBRIQUE)]__icon-next .icon-next
+  .t-[(#ID_RUBRIQUE)]__icon-next--article-resume .icon-next
   {
     background: [#(#GET{couleur})];
   }
-  a:hover .t-[(#ID_RUBRIQUE)]__icon-next .icon-next__fill
+  .t-[(#ID_RUBRIQUE)]__icon-next--article-resume .icon-next__fill
   {
     fill: [#(#GET{couleur}|couleur_extreme)];
   }
+  a:hover .t-[(#ID_RUBRIQUE)]__icon-next--article-resume
+  {
+    color: #000;
+  }
+  a:hover .t-[(#ID_RUBRIQUE)]__icon-next--article-resume .icon-next
+  {
+    background: #000
+  }
+  [(#REM) icon-next--cover ]
+  .t-[(#ID_RUBRIQUE)]__icon-next--cover
+  {
+    color: [#(#GET{couleur}|couleur_luminance{0.8})];
+  }
+  .t-[(#ID_RUBRIQUE)]__icon-next--cover .icon-next
+  {
+    background: [#(#GET{couleur}|couleur_luminance{0.8})];
+  }
+  .t-[(#ID_RUBRIQUE)]__icon-next--cover .icon-next__fill
+  {
+    fill: [#(#GET{couleur})];
+  }
+  a:hover .t-[(#ID_RUBRIQUE)]__icon-next--cover
+  {
+    color: [#(#GET{couleur}|couleur_extreme)];
+  }
+  a:hover .t-[(#ID_RUBRIQUE)]__icon-next--cover .icon-next,
+  .t-[(#ID_RUBRIQUE)]__bg .cover__subtitle--std:after,
+  .t-[(#ID_RUBRIQUE)]__bg .element__next:before
+  {
+    background: [#(#GET{couleur}|couleur_extreme)];
+  }
+  a:hover .t-[(#ID_RUBRIQUE)]__icon-next--cover .icon-next__fill
+  {
+    fill: [#(#GET{couleur}|couleur_luminance{0.7})];
+  }
+
 
 
 [(#ID_RUBRIQUE|=={#ID_SECTEUR}|oui)

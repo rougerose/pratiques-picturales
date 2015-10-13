@@ -2,14 +2,19 @@
 <BOUCLE_article_resume(ARTICLES){id_article}>
 [(#GET{layout}|=={flex-grid__item}|oui)<div class="flex-grid__item">]
   <article class="article-resume">
-    <header class="element__header">
-      <h1 class="element__title epsilon">[<a href="#URL_ARTICLE">(#TITRE)</a>]</h1>
-      [<p class="element__subtitle element__subtitle--resume zeta">(#SOUSTITRE)</p>]
-    </header>
-    [<p class="element__authors">
-      <:pratiques_picturales:par_auteur:> (#INCLURE{fond=inclure/article-auteurs,id_article,contexte=resume})
-    </p>]
-    [(#INTRODUCTION)]
+    <a href="#URL_ARTICLE" class="article-resume__link [t-(#ID_RUBRIQUE)__color--hover]">
+      <header class="element__header">
+        <h1 class="element__title epsilon">#TITRE</h1>
+        [<p class="element__subtitle element__subtitle--resume zeta">(#SOUSTITRE)</p>]
+      </header>
+      [<p class="element__authors">
+        <:pratiques_picturales:par_auteur:> (#INCLURE{fond=inclure/article-auteurs,id_article,contexte=resume})
+      </p>]
+      [<div class="article-resume__desc">
+        (#INTRODUCTION)
+      </div>]
+      <p class="element__next article-resume__next [t-(#ID_RUBRIQUE)__icon-next] [t-(#ID_RUBRIQUE)__icon-next--article-resume]"><:pratiques_picturales:lire_texte_integral:> [(#INCLURE{fond=img/icon-next.svg})]</p>
+    </a>
   </article><!-- /.article-resume -->
 [(#GET{layout}|=={flex-grid__item}|oui)</div>]
 </BOUCLE_article_resume>

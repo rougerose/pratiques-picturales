@@ -7,3 +7,24 @@
     margin: 0 $spacing-unit--tiny;
   }
 }
+
+  .article-resume__link {
+    display: block;
+    padding: $spacing-unit--tiny $spacing-unit--tiny 0;
+    text-decoration: none;
+  }
+
+  .article-resume__desc {
+    > p {
+      margin-bottom: 0;
+    }
+  }
+
+  .article-resume__next {
+    margin-top: $spacing-unit--small;
+    margin-bottom: $spacing-unit--tiny;
+
+    &:after {
+      height: 1px;
+    }
+  }

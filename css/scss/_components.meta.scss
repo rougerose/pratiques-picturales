@@ -1,22 +1,3 @@
 /* ==========================================================================
    #META
    ========================================================================== */
-
-// .meta {}
-
-  .meta__auteurs {
-    margin-top: 0;
-    font-style: italic;
-    @include inuit-font-size(18px);
-    @include media-query(l) {
-      margin-bottom: 0;
-    }
-  }
-
-  .meta__date {
-    margin-top: 0;
-    color: $gray-color;
-    @include media-query(l) {
-      margin-bottom: 0;
-    }
-  }

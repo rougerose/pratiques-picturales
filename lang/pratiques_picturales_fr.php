@@ -29,6 +29,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
   // L
   'lire_sommaire'          => 'Lire le sommaire',
+  'lire_texte_integral' => 'Texte intégral',
 
 
   // M
@@ -49,6 +50,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
   // R
   'resume'                 => 'Résumé',
+
+  // S
+  'sommaire' => 'Sommaire',
 
   // T
   'tags'                   => 'Mots-clés',

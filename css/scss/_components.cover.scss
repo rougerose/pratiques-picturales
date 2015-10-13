@@ -23,7 +23,7 @@
   }
 
   @include media-query(m-and-l) {
-    width: 70%;
+    width: 60%;
   }
 }
 
@@ -74,18 +74,10 @@
     }
   }
 
-  .cover__desc-next {
-    text-align: right;
-    font-weight: bold;
-    @include transition(color);
+  .cover__next {
+    // @include transition(color);
 
     &:before {
-      margin-bottom: $spacing-unit--tiny;
-      display: block;
-      content: '';
-      width: 20%;
       height: 1px;
-      background-color: currentColor;
-      text-align: inherit;
     }
   }

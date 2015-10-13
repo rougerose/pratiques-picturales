@@ -44,17 +44,34 @@
 
   .element__subtitle--resume {
     margin-top: $spacing-unit--tiny;
-    color: $text-color;
-  }
-
-  .element__authors {
-    font-style: italic;
-    color: $black-color;
+    color: inherit;
   }
 
 .element__meta {
   position: relative;
 }
+  .element__authors {
+    font-style: italic;
+  }
+
+  .element__authors--article {
+    margin-top: 0;
+    @include inuit-font-size(18px);
+    @include media-query(l) {
+      margin-bottom: 0;
+    }
+  }
+
+  .element__date {
+    color: $gray-color;
+  }
+
+  .element__date--article {
+    margin-top: 0;
+    @include media-query(l) {
+      margin-bottom: 0;
+    }
+  }
 
 /*
    element__content
@@ -62,12 +79,26 @@
 
 // .element__content {}
 
-  .element__content--main {
-    @include media-query(m) {
-      max-width: 500px;
-    }
+.element__content--main {
+  @include media-query(m) {
+    max-width: 500px;
   }
+}
 
-  .element__content--sub {
-    @extend .element__content--main;
+.element__content--sub {
+  @extend .element__content--main;
+}
+
+.element__next {
+  text-align: right;
+  font-weight: bold;
+  &:before,
+  &:after {
+    margin-bottom: $spacing-unit--tiny;
+    display: block;
+    content: '';
+    width: 20%;
+    height: 0;
+    background-color: currentColor;
   }
+}
