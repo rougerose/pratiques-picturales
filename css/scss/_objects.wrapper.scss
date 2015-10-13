@@ -5,7 +5,7 @@
 .wrapper {
   max-width: 1100px;
 
-  @include media-query(lap-and-up) {
+  @include media-query(m-and-l) {
     padding-right: $inuit-base-spacing-unit--small;
   }
 }

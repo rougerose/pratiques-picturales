@@ -35,26 +35,17 @@ $inuit-heading-lineheight-6          : 1.1 !default;
 $inuit-enable-layout--rev: true;
 
 // columns                           : trumps.widths
-$inuit-widths-columns                : (3,4,6,12) !default;
+$columns: 12 !default;
+$inuit-widths-columns                : (12) !default;
 
 // responsive columns                : trumps.widths-responsive
-$inuit-widths-columns-responsive     : (3,4,6,12) !default;
+$inuit-widths-columns-responsive     : (12) !default;
 
-// breakpoints                       : settings.responsive
-// $breakpoints                         : (
-//   "palm"       "screen and (max-width: 44.9375em)",
-//   "lap-and-up" "screen and (min-width: 45em)",
-// );
-
-// s : =< 500px
-// m : => 500 et =< 750px
-// m and l : => 750px
-// l: >= 751px
 $breakpoints : (
-  "palm"       "screen and (max-width: 499px)",
-  "lap"        "screen and (min-width: 500px) and (max-width: 749px)",
-  "lap-and-up" "screen and (min-width: 500px)",
-  "desk"       "screen and (min-width: 750px)"
+  "s"       "screen and (max-width: 499px)",
+  "m"        "screen and (min-width: 500px) and (max-width: 749px)",
+  "m-and-l" "screen and (min-width: 500px)",
+  "l"       "screen and (min-width: 750px)"
 );
 
 // buttons settings

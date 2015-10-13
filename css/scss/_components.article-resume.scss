@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .article-resume {
-  @include media-query(palm) {
+  @include media-query(s) {
     margin: 0 $spacing-unit--tiny;
   }
 }

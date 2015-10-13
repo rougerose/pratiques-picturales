@@ -8,7 +8,6 @@
     display: block;
     border-bottom: 1px dotted #ddd;
     padding: $spacing-unit--small 0;
-    //padding: (($spacing-unit--small / $base-font-size) * 1rem) 0;
     text-decoration: none;
     @extend %clearfix;
   }

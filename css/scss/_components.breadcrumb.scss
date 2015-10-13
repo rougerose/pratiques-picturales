@@ -4,7 +4,7 @@
 
 .breadcrumb {
   margin: $spacing-unit 0;
-  @include media-query(palm) {
+  @include media-query(s) {
     display: none;
   }
 }

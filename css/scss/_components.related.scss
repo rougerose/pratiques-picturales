@@ -4,19 +4,19 @@
 
 .related-articles {
   margin-bottom: 0;
-  @include media-query(palm) {
+  @include media-query(s) {
     text-align: center;
   }
 }
 
 .related-about {
   margin-bottom: $spacing-unit--large;
-  @include media-query(desk) {
+  @include media-query(l) {
     margin-bottom: $spacing-unit;
   }
 }
 
-@include media-query(desk) {
+@include media-query(l) {
   .related-about,
   .related-issue {
     width: 50%;
@@ -35,7 +35,7 @@
 .related__title {
   color: $black-color;
   text-align: center;
-  @include media-query(desk) {
+  @include media-query(l) {
     text-align: left;
   }
 }

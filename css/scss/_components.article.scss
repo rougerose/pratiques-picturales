@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .article {
-  @include media-query(palm) {
+  @include media-query(s) {
     padding-left: 16px;
     padding-right: $spacing-unit--tiny;
   }
