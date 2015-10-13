@@ -101,6 +101,13 @@
     }
   }
 
+[(#REM) cover ]
+  .cover__link:hover > [.t-(#ID_RUBRIQUE)__bg]
+  {
+    background: [#(#GET{couleur}|couleur_luminance{0.7})]
+
+  }
+
 [(#REM) icon-next]
   .t-[(#ID_RUBRIQUE)]__icon-next .icon-next
   {
@@ -109,6 +116,18 @@
   .t-[(#ID_RUBRIQUE)]__icon-next .icon-next__fill
   {
     fill: [#(#GET{couleur})];
+  }
+  a:hover .t-[(#ID_RUBRIQUE)]__icon-next
+  {
+    color: [#(#GET{couleur})];
+  }
+  a:hover .t-[(#ID_RUBRIQUE)]__icon-next .icon-next
+  {
+    background: [#(#GET{couleur})];
+  }
+  a:hover .t-[(#ID_RUBRIQUE)]__icon-next .icon-next__fill
+  {
+    fill: [#(#GET{couleur}|couleur_extreme)];
   }
 
 
