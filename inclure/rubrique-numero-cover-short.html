@@ -5,7 +5,7 @@
   voir content/article-numero.html ou footer/dist.html
 
 ]<BOUCLE_rubrique_numero_cover(RUBRIQUES){id_rubrique}>
-<a class="cover__link" href="#URL_RUBRIQUE">
+<a class="element__link element__link--color" href="#URL_RUBRIQUE">
   [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|inserer_attribut{class,cover__img}|image_reduire{750,0})]
   <div class="cover__body cover__body--short [t-(#ID_RUBRIQUE)__bg]">
     <h2 class="element__title cover__title gamma">#TITRE</h2>

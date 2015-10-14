@@ -8,10 +8,6 @@
   overflow: hidden;
 }
 
-.cover__link {
-  text-decoration: none;
-}
-
 .cover__body {
   position: relative;
   margin-top: -10%;
@@ -27,8 +23,17 @@
   }
 }
 
-.cover__body--issue-toc {
-  width: 100%;
+.cover__body--toc,
+.cover__body--all {
+  @include media-query(m) {
+    @extend .u-10\/12-m;
+  }
+  @include media-query(m-and-l) {
+    @extend .u-1\/12-push-m-and-l;
+  }
+  @include media-query(l) {
+    @extend .u-8\/12-l;
+  }
 }
 
 @include media-query(m-and-l) {
@@ -75,8 +80,6 @@
   }
 
   .cover__next {
-    // @include transition(color);
-
     &:before {
       height: 1px;
     }

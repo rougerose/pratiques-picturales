@@ -12,14 +12,19 @@
  *
  */
 
-.element {}
+//.element {}
 
 .element__section {
   margin-bottom: $spacing-unit;
 }
 
-.element__section--large {
-  margin-bottom: $spacing-unit--large;
+.element__section--issue {
+  > h1 {
+    @include media-query(m-and-l) {
+      @extend .u-1\/12-push-m-and-l;
+      margin-bottom: $spacing-unit;
+    }
+  }
 }
 
 /*
@@ -89,16 +94,24 @@
   @extend .element__content--main;
 }
 
+.element__link {
+  text-decoration: none;
+  display: block;
+}
+
 .element__next {
+  margin-top: $spacing-unit--small;
+  margin-bottom: $spacing-unit--tiny;
   text-align: right;
   font-weight: bold;
+  @include transition(color);
   &:before,
   &:after {
     margin-bottom: $spacing-unit--tiny;
     display: block;
     content: '';
     width: 20%;
-    height: 0;
+    height: 0; // la taille est définie par une classe spécifique à l'élément.
     background-color: currentColor;
   }
 }

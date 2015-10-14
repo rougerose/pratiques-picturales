@@ -7,7 +7,7 @@
           <BOUCLE_rubrique_apropos(RUBRIQUES){id_rubrique=2}>
           <section class="related-about">
             <h1 class="related__title">#TITRE</h1>
-            [<p class="related__desc">(#DESCRIPTIF|PtoBR)</p>]
+            [<div class="related__desc-block">(#DESCRIPTIF)</div>]
             <BOUCLE_article_apropos(ARTICLES){id_rubrique}>
             <p class="related__desc related__desc--about-links">
               <a class="related__link nav__link [t-(#ID_RUBRIQUE)__color-nav]" href="#URL_ARTICLE">
@@ -32,7 +32,7 @@
           </section><!-- /.related-site --></BOUCLE_rubrique_apropos>
           <B_issue_last><section class="related-issue">
             <h1 class="related__title"><:pratiques_picturales:issue_last:></h1>
-            <BOUCLE_issue_last(RUBRIQUES){id_parent=1}{!par date}{0,1}>
+            <BOUCLE_issue_last(RUBRIQUES){id_parent=1}{!par num titre}{0,1}>
             [<div class="cover">
               (#INCLURE{fond=inclure/rubrique-numero-cover-short,id_rubrique})
             </div>]

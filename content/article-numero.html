@@ -8,7 +8,7 @@
     <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
     <div class="layout__item u-10/12-m u-8/12-l">
 
-      [<aside class="cover">
+      [<aside class="element cover">
         (#INCLURE{fond=inclure/rubrique-numero-cover-short,id_rubrique})
       </aside>]
 
@@ -143,9 +143,9 @@
             </section><!-- /citer_article -->
           </div><!-- /.layout -->
 
-          [<section id="pdf" class="element__section element__section--large">
+          [<section id="pdf" class="element__section Xelement__section--large">
             (#GET{_id_doc_pdf}|oui)
-              <h1 class="epsilon"><a href="#INFO_URL{document,#GET{_id_doc_pdf}}" class="btn btn--full btn--action [t-(#ID_RUBRIQUE)__btn--action]"><span class="btn__label"><:pratiques_picturales:article_pdf:></span></a></h1>
+              <h1 class="epsilon"><a href="#INFO_URL{document,#GET{_id_doc_pdf}}" class="btn btn--full btn--action btn--download [t-(#ID_RUBRIQUE)__btn--action]"><span class="btn__label"><:pratiques_picturales:article_pdf:></span></a></h1>
           </section><!-- /.article_pdf -->]
 
           [(#REM)

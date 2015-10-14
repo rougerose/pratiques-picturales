@@ -3,6 +3,7 @@ Questions:
   ☐ la rubrique Numéros : problème des blancs trop important à droite ?
   ☐ rubrique-numero : le texte de présentation est présenté en dehors
   de l'aplat de couleur, dans l'hypothèse où le texte serait un peu important.
+  ☐ rubrique-numero : pagination dans la liste des articles du sommaire ?
 
 Prioritaire:
   ☐ mise en forme des contenus dans #TEXTE
@@ -17,6 +18,8 @@ Todo:
 Penser à:
   ☐ http://webdevchecklist.com
   ☐ open graph http://ogp.me
+  ☐ footer/dist.html : ajouter les ancres (revue, équipe, etc.)
+  dans les url vers l'article de présentation de la revue. 
 
 Avant mise en prod:
   ☐ filtre |compacte sur fichier couleurs.css

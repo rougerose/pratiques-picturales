@@ -2,12 +2,20 @@
    #RELATED
    ========================================================================== */
 
+/*
+   #RELATED-ARTICLES (article-numero.html)
+   ========================================================================== */
+
 .related-articles {
   margin-bottom: 0;
   @include media-query(s) {
     text-align: center;
   }
 }
+
+/*
+   #RELATED-ABOUT (footer)
+   ========================================================================== */
 
 .related-about {
   margin-bottom: $spacing-unit--large;
@@ -37,6 +45,12 @@
   text-align: center;
   @include media-query(l) {
     text-align: left;
+  }
+}
+
+.related__desc-block {
+  > p {
+    @extend .related__desc;
   }
 }
 

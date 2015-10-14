@@ -1,11 +1,41 @@
-<section>
+<div class="element sommaire">
+
   <div class="layout">
-    <div class="layout__item u-1/12-lap-and-up">
-      <p class="debug">1</p>
-    </div><div class="layout__item u-2/12-lap-and-up">
-      <p class="debug">2</p>
-    </div><div class="layout__item u-2/12-lap-and-up">
-      <p class="debug">2</p>
-    </div>
+    <BOUCLE_rubrique_apropos(RUBRIQUES){id_rubrique=2}>
+      <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
+
+        <section class="element__section promo">
+          <h1 class="element__title alpha [t-(#ID_RUBRIQUE)__color]">#TITRE</h1>
+
+          <div class="layout">
+            [<div class="layout__item u-9/12-m-and-l">
+              <div class="element promo__desc lede">
+                <a href="#URL_ARTICLE" class="element__link [t-(#ID_RUBRIQUE)__color--hover]">
+                  (#DESCRIPTIF)
+                  <p class="element__next promo__next [t-(#ID_RUBRIQUE)__icon-next] [t-(#ID_RUBRIQUE)__icon-next--std]"><:pratiques_picturales:lire_suite:> [(#INCLURE{fond=img/icon-next.svg})]</p>
+                </a>
+              </div>
+            </div>]<div class="layout__item u-3/12-m-and-l">
+              <p class="related__desc related__desc--aff [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:mention_affiliation:><a href="http://www.institut-acte.cnrs.fr" class="related__logo-aff">Institut Acte</a></p>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </BOUCLE_rubrique_apropos>
+    <B_dernier_numero>
+      <div class="layout__item">
+        <section class="element__section element__section--issue">
+          <BOUCLE_dernier_numero(RUBRIQUES){id_parent=1}{!par num titre}{0,1}>
+          <h1 class="element__title alpha [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:issue_last:></h1>
+          [<article class="element cover">
+            (#INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, contexte=all})
+          </article>]
+          </BOUCLE_dernier_numero>
+        </section>
+      </div>
+    </B_dernier_numero>
   </div>
-</section>
+
+</div>

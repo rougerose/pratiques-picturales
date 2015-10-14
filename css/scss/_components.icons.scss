@@ -21,9 +21,9 @@
   height: 24px;
   border-radius: 24px;
   vertical-align: bottom;
-  @include transition(all);
+  @include transition(background);
 }
 
   .icon-next__fill {
-    @include transition(all);
+    @include transition(fill);
   }

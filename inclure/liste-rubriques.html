@@ -2,7 +2,9 @@
 <B_numeros>
   #ANCRE_PAGINATION
   <BOUCLE_numeros(RUBRIQUES){id_parent}{!par num titre, titre}{pagination 4}>
-    [(#INCLURE{fond=inclure/rubrique-numero-resume,id_rubrique})]
+    [<article class="element cover">
+      (#INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, contexte=all})
+    </article>]
   </BOUCLE_numeros>
   [<nav class="pagination pagination--bottom">
     (#PAGINATION{numeros,id_rubrique})
