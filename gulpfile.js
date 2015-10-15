@@ -6,7 +6,7 @@ var gulp = require('gulp')
     , concat = require('gulp-concat')
     , uglify = require('gulp-uglify')
     , autoprefixer = require('gulp-autoprefixer')
-    //, nano = require('gulp-cssnano')
+    , nano = require('gulp-cssnano')
     , plumber = require('gulp-plumber')
     , notify = require('gulp-notify')
     , rename = require('gulp-rename')
@@ -30,7 +30,7 @@ gulp.task('css', function () {
     .pipe(sass({ sourceMap: false }))
     .pipe(sass({ sourceComments: true }))
     .pipe(autoprefixer())
-    //.pipe(nano())
+    .pipe(nano())
     .pipe(gulp.dest('./css'))
     .pipe(notify({
       title: 'Gulp',
