@@ -11,7 +11,7 @@
 
 ]<BOUCLE_rubrique_numero_cover(RUBRIQUES){id_rubrique}>
   [(#ENV{contexte}|=={all}|?{<a href="#URL_RUBRIQUE" class="element__link element__link--cover">})]
-    [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{960})]
+    [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{1090})]
     <div class="cover__body [cover__body--(#ENV{contexte})] [t-(#ID_RUBRIQUE)__bg]">
       <header>
         <h1 class="element__title cover__title beta">#TITRE</h1>
