@@ -1,0 +1,11 @@
+/* ==========================================================================
+   #ARTICLE
+   ========================================================================== */
+
+.article {}
+
+    .article__texte--chapo {
+      margin-bottom: $spacing-unit--large;
+      @include inuit-font-size(18px);
+      color: darken($text-color,15%);
+    }

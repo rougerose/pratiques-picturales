@@ -1,0 +1,32 @@
+/* ==========================================================================
+   #ARTICLE-RESUME
+   ========================================================================== */
+
+.article-resume {
+  margin: $spacing-unit 0;
+}
+
+.article-resume--related {
+  @include media-query(s) {
+    padding: 0 $spacing-unit--tiny;
+  }
+}
+
+  .article-resume__desc {
+    > p {
+      margin-bottom: 0;
+    }
+  }
+
+  .article-resume__desc--logo {
+    margin-top: $spacing-unit;
+  }
+
+  .article-resume__next {
+    margin-top: $spacing-unit--small;
+    margin-bottom: $spacing-unit--tiny;
+
+    &:after {
+      height: 1px;
+    }
+  }

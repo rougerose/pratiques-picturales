@@ -1,0 +1,35 @@
+[(#REM)
+  Cover d'un numéro, version standard.
+  ===================================
+  Ce fichier doit être inclus dans un div.cover ou aside.cover selon le contexte:
+  voir content/article-numero.html ou footer/dist.html.
+
+  #ENV{contexte} peut contenir:
+    - toc => composition rubrique-numero.html
+    - all => compositions rubrique-numeros.html et sommaire
+
+
+]<BOUCLE_rubrique_numero_cover(RUBRIQUES){id_rubrique}>
+  [(#ENV{contexte}|=={all}|?{<a href="#URL_RUBRIQUE" class="element__link element__link--cover">})]
+    [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{960})]
+    <div class="cover__body [cover__body--(#ENV{contexte})] [t-(#ID_RUBRIQUE)__bg]">
+      <header>
+        <h1 class="element__title cover__title beta">#TITRE</h1>
+        [<p class="element__subtitle cover__subtitle cover__subtitle--std">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
+      </header>
+      [(#AFFICHER_DIRECTION|oui)
+        [<p class="cover__desc cover__desc-direction">
+          <:pratiques_picturales:numero_direction:>
+          (#INCLURE{fond=inclure/rubrique-auteurs-direction,id_rubrique,contexte=resume})
+        </p>]
+      ][<p class="cover__desc">(#DESCRIPTIF|PtoBR)</p>]
+      [<p class="cover__desc cover__desc-contributions">
+        <:pratiques_picturales:numero_contributions:>
+        (#INCLURE{fond=inclure/rubrique-auteurs-contributions,id_rubrique})
+      </p>]
+      [(#ENV{contexte}|=={all}|oui)
+        <p class="element__next cover__desc cover__next [t-(#ID_RUBRIQUE)__icon-next--cover]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg})]</p>
+      ]
+    </div>
+  [(#ENV{contexte}|=={all}|?{</a>})]
+</BOUCLE_rubrique_numero_cover>

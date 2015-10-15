@@ -1,0 +1,36 @@
+/* ==========================================================================
+   #TOC
+   ========================================================================== */
+
+.toc {
+  padding: $spacing-unit--small;
+  column-count: 2;
+  @include media-query(l) {
+    column-count: auto;
+    padding: 0;
+  }
+}
+
+  .toc-list {
+    @include media-query(l) {
+      padding: $spacing-unit 0 0;
+    }
+  }
+
+  .toc-list__item {
+    margin-bottom: $spacing-unit--tiny;
+    text-transform: uppercase;
+
+    &.is-active {
+      border-bottom: 1px solid #000;
+
+      & .toc__link {
+        color: #000;
+      }
+    }
+  }
+
+   .toc__link {
+     text-decoration: none;
+     color: $gray-color;
+   }

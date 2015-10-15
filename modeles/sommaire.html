@@ -1,0 +1,9 @@
+#SET{liste, '*'}
+[(#CONFIG{sommaire_automatique_numerote}|=={on}|oui)
+  #SET{liste, '#'}
+]
+<B_somm>
+  <BOUCLE_somm(POUR){tableau #ENV{sommaire}}>
+-[(#GET{liste}|str_pad{#VALEUR{niveau},#GET{liste}})]<a class="js-smooth-scroll" href="#VALEUR{href}">#VALEUR{titre}</a></BOUCLE_somm>
+</B_somm>
+#FILTRE{propre}

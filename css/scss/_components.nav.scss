@@ -1,0 +1,31 @@
+/* ==========================================================================
+   #NAV
+   ========================================================================== */
+
+/**
+ * classes utilisées sur des éléments de navigation. Par exemple pour un item
+ * breadcrumb :
+   <a href="[url]" class="breadcrumb__item nav__link">
+     <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
+     <span class="nav__label">[titre]</span>
+   </a>
+ *
+ */
+
+.nav {}
+
+  .nav__link {
+    position: relative;
+    text-decoration: none;
+  }
+
+    .nav__icon {
+      position: absolute;
+      top: -2px;
+      left: -12px;
+    }
+
+    .nav__label {
+      color: $black-color;
+      @include transition(color);
+    }

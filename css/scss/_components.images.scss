@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #IMAGES
+   ========================================================================== */
+
+
+/*
+   .adapt-img
+   --------------------------------------------------------------------------
+   Classe utilisée par le plugin adaptive-images. Les balises width et height
+   étant renseignées, il faut garder des images fluides.
+   ========================================================================== */
+
+.adapt-img-wrapper {
+  background-size: cover;
+}
+
+.adapt-img {
+  max-width: 100% !important;
+  height: auto;
+}

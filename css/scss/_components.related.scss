@@ -1,0 +1,89 @@
+/* ==========================================================================
+   #RELATED
+   ========================================================================== */
+
+/*
+   #RELATED-ARTICLES (article-numero.html)
+   ========================================================================== */
+
+.related-articles {
+  margin-bottom: 0;
+  @include media-query(s) {
+    text-align: center;
+  }
+}
+
+/*
+   #RELATED-ABOUT (footer)
+   ========================================================================== */
+
+.related-about {
+  margin-bottom: $spacing-unit--large;
+  @include media-query(l) {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+@include media-query(l) {
+  .related-about,
+  .related-issue {
+    width: 50%;
+    float: left;
+  }
+
+  .related-about {
+    padding-right: $spacing-unit--small;
+  }
+
+  .related-issue {
+    padding-left: $spacing-unit--small;
+  }
+}
+
+.related__title {
+  color: $black-color;
+  text-align: center;
+  @include media-query(l) {
+    text-align: left;
+  }
+}
+
+.related__desc-block {
+  > p {
+    @extend .related__desc;
+  }
+}
+
+.related__desc {
+  margin-bottom: 0;
+}
+
+.related__desc--about-links {
+  @extend .flex-grid;
+  margin-left: 12px;
+}
+
+  .related__link {
+    @extend .flex-grid__item;
+    flex: 0 0 50%;
+    margin-bottom: $spacing-unit--tiny;
+    justify-content: flex-start;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+.related__desc--aff {
+  font-style: italic;
+  font-weight: bold;
+  color: $black-color;
+}
+
+  .related__logo-aff {
+    display: block;
+    margin: $spacing-unit--tiny $spacing-unit--tiny $spacing-unit--tiny 0;
+    width: 100%;
+    height: round(150px * 0.35);
+    background: url('../img/institut-acte.svg') no-repeat;
+    background-size: contain;
+    text-indent: -9999px;
+  }

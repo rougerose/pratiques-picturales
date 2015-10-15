@@ -1,0 +1,64 @@
+// ==========================================================================
+// #GLOBAL
+// ==========================================================================
+
+//
+// #INUIT SETTINGS
+// ==========================================================================
+
+// $base-font-size alias
+$base-font-size                      : $inuit-base-font-size;
+
+// $spacing-unit alias
+$spacing-unit                        : $inuit-base-spacing-unit;
+$spacing-unit--tiny                  : $inuit-base-spacing-unit--tiny;
+$spacing-unit--small                 : $inuit-base-spacing-unit--small;
+$spacing-unit--large                 : $inuit-base-spacing-unit--large;
+$spacing-unit--huge                  : $inuit-base-spacing-unit--huge;
+
+// _trumps.headings sizes
+$inuit-heading-size-1                : 30px !default;
+$inuit-heading-lineheight-1          : 1.1 !default;
+$inuit-heading-size-2                : 26px !default;
+$inuit-heading-lineheight-2          : 1.1 !default;
+$inuit-heading-size-3                : 22px !default;
+$inuit-heading-lineheight-3          : 1.1 !default;
+$inuit-heading-size-4                : 20px !default;
+$inuit-heading-lineheight-4          : 1.1 !default;
+$inuit-heading-size-5                : 18px !default;
+$inuit-heading-lineheight-5          : 1.1 !default;
+$inuit-heading-size-6                : 16px !default;
+$inuit-heading-lineheight-6          : 1.1 !default;
+
+// Layout & grid settings
+
+$inuit-enable-layout--rev: true;
+
+// columns                           : trumps.widths
+$columns: 12 !default;
+$inuit-widths-columns                : (12) !default;
+
+// responsive columns                : trumps.widths-responsive
+$inuit-widths-columns-responsive     : (12) !default;
+
+$breakpoints : (
+  "s"       "screen and (max-width: 499px)",
+  "m"        "screen and (min-width: 500px) and (max-width: 749px)",
+  "m-and-l" "screen and (min-width: 500px)",
+  "l"       "screen and (min-width: 750px)"
+);
+
+// buttons settings
+$inuit-enable-btn--small: true;
+$inuit-enable-btn--full: true;
+
+// $inuit-btn-padding                   : 2px;
+$inuit-btn-border-width: 2px;
+$inuit-btn-radius                    : 2px;
+
+
+//
+// #PRATIQUES-PICTURALES SETTINGS
+// ==========================================================================
+
+$debug: false;

@@ -1,0 +1,14 @@
+/* ==========================================================================
+   #PAGE-BODY
+   ========================================================================== */
+
+.page-body {
+  @include media-query(l) {
+    // Permet de déclencher ou non les scripts liés à la Table des matières
+    // dans la composition article-numero.
+    &:before {
+      content: 'large';
+      display: none;
+    }
+  }
+}

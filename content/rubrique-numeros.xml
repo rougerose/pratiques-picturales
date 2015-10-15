@@ -1,0 +1,7 @@
+<composition>
+    <nom>Les numéros</nom>
+    <description>Composition pour la page de tous les numéros</description>
+    <icon>img/composition-rubrique-numeros.svg</icon>
+    <branche type="article" composition="numero" />
+    <branche type="rubrique" composition="numero" />
+</composition>

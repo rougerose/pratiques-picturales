@@ -1,0 +1,129 @@
+/* ==========================================================================
+   #ELEMENT
+   ========================================================================== */
+
+/**
+ *
+ * La notion d'élément s'entend ici selon ceux utilisés par SPIP. Élément article,
+ * rubrique, mot-clé...
+ *
+ * Il s'agit de regrouper à partir d'une seule dénomination des caractéristiques
+ * communes pour chaque élément.
+ *
+ */
+
+//.element {}
+
+
+/* pour le premier élément et englobant l'ensemble du contenu de la page */
+.element--container {
+  @include media-query(s) {
+    padding-right: $spacing-unit--tiny;
+  }
+}
+
+.element__section {
+  margin-bottom: $spacing-unit;
+}
+
+.element__section--issue {
+  > h1 {
+    @include media-query(m-and-l) {
+      @extend .u-1\/12-push-m-and-l;
+      margin-bottom: $spacing-unit;
+    }
+  }
+}
+
+/*
+   element__header
+   ========================================================================== */
+
+.element__header {}
+
+  .element__title {
+    margin-bottom: 0;
+  }
+
+  .element__title--section {
+    text-transform: uppercase;
+  }
+
+  .element__title--selection {
+    margin-bottom: $spacing-unit;
+  }
+
+  .element__subtitle {
+    margin-bottom: 0;
+    font-style: italic;
+    color: $black-color;
+  }
+
+  .element__subtitle--resume {
+    margin-top: $spacing-unit--tiny;
+    color: inherit;
+  }
+
+.element__meta {
+  position: relative;
+}
+  .element__authors {
+    font-style: italic;
+  }
+
+  .element__authors--article {
+    margin-top: 0;
+    @include inuit-font-size(18px);
+    @include media-query(l) {
+      margin-bottom: 0;
+    }
+  }
+
+  .element__date {
+    color: $gray-color;
+  }
+
+  .element__date--article {
+    margin-top: 0;
+    @include media-query(l) {
+      margin-bottom: 0;
+    }
+  }
+
+/*
+   element__content
+   ========================================================================== */
+
+// .element__content {}
+
+.element__content--main {
+  @include media-query(m) {
+    max-width: 500px;
+  }
+}
+
+.element__content--sub {
+  @extend .element__content--main;
+}
+
+.element__link {
+  text-decoration: none;
+  display: block;
+}
+
+.element__next {
+  margin-top: $spacing-unit--small;
+  margin-bottom: $spacing-unit--tiny;
+  text-align: right;
+  font-weight: bold;
+  @include transition(color);
+  &:before,
+  &:after {
+    margin-bottom: $spacing-unit--tiny;
+    display: block;
+    content: '';
+    width: 20%;
+    height: 0; // la taille est définie par une classe spécifique à l'élément.
+    background-color: currentColor;
+  }
+}

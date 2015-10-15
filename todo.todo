@@ -1,0 +1,30 @@
+Questions:
+  ☐ Antoine -> résumé d'article dans #DESCRIPTIF ou bien champs spécifique ?
+  ☐ la rubrique Numéros : problème des blancs trop important à droite ?
+  ☐ rubrique-numero : le texte de présentation est présenté en dehors
+  de l'aplat de couleur, dans l'hypothèse où le texte serait un peu important.
+  ☐ rubrique-numero : pagination dans la liste des articles du sommaire ?
+
+Prioritaire:
+  ☐ mise en forme des contenus dans #TEXTE
+  ☐ article-numéro, rubrique-numéro : liens précédent/suivant
+
+Todo:
+  ☐ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie
+  ☐ plugin sélections éditoriales http://plugins.spip.net/selections_editoriales.html
+  ☐ régler la gestion des images via mediabox
+  ☐ passer les scripts dans le pied de page
+
+Penser à:
+  ☐ http://webdevchecklist.com
+  ☐ open graph http://ogp.me
+  ☐ footer/dist.html : ajouter les ancres (revue, équipe, etc.)
+  dans les url vers l'article de présentation de la revue. 
+
+Avant mise en prod:
+  ☐ filtre |compacte sur fichier couleurs.css
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+  ✔ icon lien "voir suite" @done(2015-10-13 13:47) @project(Prioritaire)
+  ✔ grille sur 12 colonnes uniquement @done(2015-10-13 15:09) @project(Prioritaire)

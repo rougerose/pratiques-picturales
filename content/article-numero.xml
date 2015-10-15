@@ -1,0 +1,5 @@
+<composition>
+    <nom>Article d'un numéro</nom>
+    <description>Composition <strong>par défaut</strong> pour les articles d'un numéro.</description>
+    <icon>img/composition-article-numero.svg</icon>
+</composition>

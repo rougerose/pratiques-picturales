@@ -1,0 +1,86 @@
+/* ==========================================================================
+   #COVER
+   ========================================================================== */
+
+.cover {
+  position: relative;
+  margin-bottom: $spacing-unit--large;
+  overflow: hidden;
+}
+
+.cover__body {
+  position: relative;
+  margin-top: -10%;
+  padding: $spacing-unit--small;
+  @include transition(background);
+
+  @include media-query(s) {
+    width: 100%;
+  }
+
+  @include media-query(m-and-l) {
+    width: 60%;
+  }
+}
+
+.cover__body--toc,
+.cover__body--all {
+  @include media-query(m) {
+    @extend .u-10\/12-m;
+  }
+  @include media-query(m-and-l) {
+    @extend .u-1\/12-push-m-and-l;
+  }
+  @include media-query(l) {
+    @extend .u-8\/12-l;
+  }
+}
+
+@include media-query(m-and-l) {
+  .cover__body--short {
+    position: absolute;
+    bottom: 0px;
+  }
+}
+
+  .cover__title {
+    margin-top: 0;
+  }
+
+  .cover__subtitle {
+    margin-top: $spacing-unit--tiny;
+    text-transform: uppercase;
+    color: inherit;
+  }
+
+  .cover__subtitle--std {
+    &:after {
+      display: block;
+      content: '';
+      width: 20%;
+      height: 1px;
+      margin-top: $spacing-unit--tiny;
+      background-color: currentColor;
+    }
+  }
+
+  .cover__desc {
+    margin-bottom: $spacing-unit--tiny;
+  }
+
+  .cover__desc-direction {
+    font-weight: bold;
+  }
+
+  .cover__desc-contributions {
+    font-style: italic;
+    > span {
+      font-weight: bold;
+    }
+  }
+
+  .cover__next {
+    &:before {
+      height: 1px;
+    }
+  }

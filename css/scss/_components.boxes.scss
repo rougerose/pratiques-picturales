@@ -1,0 +1,41 @@
+/* ==========================================================================
+   #BOXES
+   ========================================================================== */
+
+
+/*
+   #BOX-ARROW
+   ========================================================================== */
+
+  .box-arrow {
+    position: relative;
+    padding-top: $spacing-unit;
+    margin-bottom: 0;
+    border-top: 1px solid $black-color;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      height: 0;
+      width: 0;
+      border: solid transparent;
+      content: " ";
+      pointer-events: none;
+    }
+
+    &:before {
+      border-top-color: $black-color;
+      border-width: 13px;
+      margin-left: -13px;
+    }
+
+    &:after {
+      border-top-color: $white-color;
+      border-width: 12px;
+      margin-left: -12px;
+    }
+  }

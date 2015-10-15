@@ -1,0 +1,32 @@
+<BOUCLE_numeros(RUBRIQUES){id_rubrique}>
+<article class="element element--container rubrique">
+
+  <div class="layout">
+
+    <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
+      <header class="element__header element__section">
+        <h1 class="element__title element__title--section [t-(#ID_RUBRIQUE)__color]">#TITRE</h1>
+        [<p class="element__subtitle gamma">(#SOUSTITRE)</p>]
+      </header>
+      [<div class="element__section">
+        (#TEXTE)
+      </div>]
+      [<section class="element__section">
+        <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
+        <div class="notes u-col2-m-and-l">
+          (#NOTES)
+        </div>
+      </section><!-- /.notes -->]
+    </div><!-- /.layout__item -->
+
+    <div class="layout__item">
+      [(#INCLURE{fond=inclure/liste-rubriques,id_rubrique,ajax})]
+    </div><!-- /.layout__item -->
+
+    [<div class="layout__item">
+      (#INCLURE{fond=breadcrumb/rubrique,id_rubrique})
+    </div><!-- /.layout__item -->]
+
+  </div><!-- /.layout -->
+</article>
+</BOUCLE_numeros>

@@ -1,0 +1,46 @@
+<BOUCLE_numeros(RUBRIQUES){id_rubrique}>
+<article class="element element--container rubrique">
+
+  <div class="layout">
+
+    [<div class="layout__item">
+      <div class="element cover">
+        (#INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, contexte=toc})
+      </div>
+    </div>]
+
+    <div class="layout__item u-10/12-m u-1/12-push-m u-8/12-l u-1/12-push-l">
+      [<div class="element__section">
+        (#TEXTE)
+      </div>]
+      [<section class="element__section">
+        <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
+        <div class="notes u-col2-m-and-l">
+          (#NOTES)
+        </div>
+      </section>]
+    </div>
+
+    <B_sommaire>
+    <div class="layout__item u-10/12-m-and-l u-1/12-push-m-and-l">
+      <section class="element__content">
+        <h1 class="element__title element__title--section alpha [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:sommaire:></h1>
+
+        <div class="flex-grid u-flex-6/12-m-and-l">
+          <BOUCLE_sommaire(ARTICLES){id_rubrique}>
+            <INCLURE{fond=inclure/article-resume,id_article,layout=flex-grid__item} />
+          </BOUCLE_sommaire>
+        </div>
+        </BOUCLE_sommaire>
+      </section>
+
+    </div>
+    </B_sommaire>
+
+    [<div class="layout__item">
+      (#INCLURE{fond=breadcrumb/rubrique,id_rubrique})
+    </div>]
+
+  </div>
+</article>
+</BOUCLE_numeros>

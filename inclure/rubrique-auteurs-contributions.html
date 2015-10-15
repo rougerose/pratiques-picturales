@@ -1,0 +1,12 @@
+[(#REM) Liste des auteurs du numéro ]
+#SET{liste_auteurs,#ARRAY}
+<BOUCLE_rubrique_numero(RUBRIQUES){id_rubrique}>
+  <BOUCLE_articles(ARTICLES){id_rubrique}>
+    <BOUCLE_liste_auteurs(AUTEURS){id_article}{doublons}>
+      [(#SET{liste_auteurs,#GET{liste_auteurs}|push{#ID_AUTEUR}})]
+    </BOUCLE_liste_auteurs>
+  </BOUCLE_articles>
+  <BOUCLE_auteurs(AUTEURS){id_auteur IN #GET{liste_auteurs}}{par nom}{tout}>
+    [(#COMPTEUR_BOUCLE|=={1}|?{'',[(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|?{' &amp;&nbsp;',', '})]})][<span rel="author">(#NOM|prenom_nom)</span>]
+  </BOUCLE_auteurs>
+</BOUCLE_rubrique_numero>
