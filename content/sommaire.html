@@ -1,11 +1,11 @@
-<div class="element sommaire">
+<div class="element element--container sommaire">
 
   <div class="layout">
     <BOUCLE_rubrique_apropos(RUBRIQUES){id_rubrique=2}>
       <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
 
         <section class="element__section promo">
-          <h1 class="element__title alpha [t-(#ID_RUBRIQUE)__color]">#TITRE</h1>
+          <h1 class="element__title element__title--section beta [t-(#ID_RUBRIQUE)__color]">#TITRE</h1>
 
           <div class="layout">
             [<div class="layout__item u-9/12-m-and-l">
@@ -28,14 +28,40 @@
       <div class="layout__item">
         <section class="element__section element__section--issue">
           <BOUCLE_dernier_numero(RUBRIQUES){id_parent=1}{!par num titre}{0,1}>
-          <h1 class="element__title alpha [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:issue_last:></h1>
-          [<article class="element cover">
-            (#INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, contexte=all})
-          </article>]
+          <h1 class="element__title element__title--section beta [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:issue_last:></h1>
+          <article class="cover">
+            <INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, contexte=all} />
+          </article>
           </BOUCLE_dernier_numero>
         </section>
       </div>
     </B_dernier_numero>
+
+    <!-- actualités -->
+    <BOUCLE_actus(SELECTIONS){identifiant=actualites}>
+    <B_liste_actus>
+      <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
+        <section class="element__section">
+          <h1 class="element__title element__title--section beta t-6__color">#TITRE</h1>
+          <div class="layout">
+            <BOUCLE_liste_actus(SELECTIONS_CONTENUS){id_selection}{par num titre}><article class="element selection article-resume layout__item u-6/12-m-and-l">
+              <a href="#URL" class="element__link t-6__color--hover">
+                <header class="element__header">
+                  <h1 class="element__title element__title--selection gamma">#TITRE</h1>
+                </header>
+                [(#LOGO_SELECTIONS_CONTENU|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,900}|image_recadre{1200,900}|adaptive_images{600})]
+                [<div class="article-resume__desc [(#LOGO_SELECTIONS_CONTENU|oui)article-resume__desc--logo]">
+                  (#DESCRIPTIF)
+                </div>]
+                <p class="element__next article-resume__next t-6__icon-next t-6__icon-next--std"><:pratiques_picturales:lire_suite:> [(#INCLURE{fond=img/icon-next.svg})]</p>
+              </a>
+            </article></BOUCLE_liste_actus>
+          </div>
+        </section>
+      </div>
+    </B_liste_actus>
+    </BOUCLE_actus>
+
   </div>
 
 </div>

@@ -10,9 +10,9 @@
 
 
 ]<BOUCLE_rubrique_numero_cover(RUBRIQUES){id_rubrique}>
-  <a href="#URL_RUBRIQUE" class="element__link element__link--cover">
-    [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|inserer_attribut{class,cover__img}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{960})]
-    <div class="cover__body [(#ENV{contexte}|=={toc}|?{cover__body--toc})] [(#ENV{contexte}|=={all}|?{cover__body--all})] [t-(#ID_RUBRIQUE)__bg]">
+  [(#ENV{contexte}|=={all}|?{<a href="#URL_RUBRIQUE" class="element__link element__link--cover">})]
+    [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{960})]
+    <div class="cover__body [cover__body--(#ENV{contexte})] [t-(#ID_RUBRIQUE)__bg]">
       <header>
         <h1 class="element__title cover__title beta">#TITRE</h1>
         [<p class="element__subtitle cover__subtitle cover__subtitle--std">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
@@ -31,5 +31,5 @@
         <p class="element__next cover__desc cover__next [t-(#ID_RUBRIQUE)__icon-next--cover]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg})]</p>
       ]
     </div>
-  </a>
+  [(#ENV{contexte}|=={all}|?{</a>})]
 </BOUCLE_rubrique_numero_cover>

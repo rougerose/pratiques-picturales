@@ -1,0 +1,26 @@
+#SET{page-variable,#ENV{page-variable}}
+<div class="page-foot [t-(#GET{page-variable})__border]">
+  <div class="wrapper">
+    <div class="layout">
+      <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
+        <footer class="page-footer">
+          [<p class="page-footer__item">(#INCLURE{fond=img/pratiques-picturales.svg,class=page-footer__logo})</p>]
+          <p class="page-footer__item">
+            <BOUCLE_mentions(ARTICLES){page=mentions}>
+              <a class="page-footer__link nav__link t-home__color-nav" href="#URL_PAGE_UNIQUE{mentions}">
+                <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
+                <span class="nav__label">#TITRE</span>
+              </a>
+            </BOUCLE_mentions><BOUCLE_contact(ARTICLES){page=contact}>
+              <a class="page-footer__link nav__link t-home__color-nav" href="#URL_PAGE_UNIQUE{contact}">
+                <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
+                <span class="nav__label">#TITRE</span>
+              </a>
+            </BOUCLE_contact>
+          </p>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+</div>

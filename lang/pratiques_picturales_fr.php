@@ -29,8 +29,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
   // L
   'lire_sommaire'          => 'Lire le sommaire',
-  'lire_suite' => 'La suite',
-  'lire_texte_integral' => 'Texte intégral',
+  'lire_suite'             => 'La suite',
+  'lire_texte_integral'    => 'Texte intégral',
 
 
   // M
@@ -40,12 +40,12 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'nom_menu_objet'         => 'Plugin Pratiques picturales : Article, rubrique ou autre objet SPIP',
   'nom_menu_page_speciale' => 'Plugin Pratiques picturales : Lien vers un squelette page ',
   'notes'                  => 'Notes',
-  'numero_direction' => 'Sous la direction de',
-  'numero_contributions' => 'Avec les contributions de',
+  'numero_direction'       => 'Sous la direction de',
+  'numero_contributions'   => 'Avec les contributions de',
 
   // P
-  'pagination_prev' => '❮',
-  'pagination_next' => '❯',
+  'pagination_prev'        => '❮',
+  'pagination_next'        => '❯',
   'par_auteur'             => 'par',
   'plan'                   => 'Plan',
 
@@ -53,7 +53,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'resume'                 => 'Résumé',
 
   // S
-  'sommaire' => 'Sommaire',
+  'sommaire'               => 'Sommaire',
 
   // T
   'tags'                   => 'Mots-clés',

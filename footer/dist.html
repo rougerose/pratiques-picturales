@@ -33,9 +33,9 @@
           <B_issue_last><section class="related-issue">
             <h1 class="related__title"><:pratiques_picturales:issue_last:></h1>
             <BOUCLE_issue_last(RUBRIQUES){id_parent=1}{!par num titre}{0,1}>
-            [<div class="cover">
-              (#INCLURE{fond=inclure/rubrique-numero-cover-short,id_rubrique})
-            </div>]
+            <div class="cover">
+              <INCLURE{fond=inclure/rubrique-numero-cover-short,id_rubrique} />
+            </div>
             </BOUCLE_issue_last>
           </section><!-- /.related-issue /.layout__item -->
           </B_issue_last>
@@ -56,9 +56,9 @@
               </a>
             </BOUCLE_contact>
           </p>
-        </footer><!-- /.page-footer -->
+        </footer>
 
-      </div><!-- /.layout__item -->
-    </div><!-- /.layout -->
-  </div><!-- /.wrapper -->
-</div><!-- /.page-foot -->
+      </div>
+    </div>
+  </div>
+</div>

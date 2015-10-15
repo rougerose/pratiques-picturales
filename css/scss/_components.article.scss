@@ -2,12 +2,7 @@
    #ARTICLE
    ========================================================================== */
 
-.article {
-  @include media-query(s) {
-    padding-left: 16px;
-    padding-right: $spacing-unit--tiny;
-  }
-}
+.article {}
 
     .article__texte--chapo {
       margin-bottom: $spacing-unit--large;
