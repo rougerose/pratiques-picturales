@@ -3,11 +3,14 @@ Questions:
   ☐ la rubrique Numéros : problème des blancs trop important à droite ?
   ☐ rubrique-numero : le texte de présentation est présenté en dehors
   de l'aplat de couleur, dans l'hypothèse où le texte serait un peu important.
-  ☐ rubrique-numero : pagination dans la liste des articles du sommaire ?
+  ☐ rubrique-numero : pagination dans la liste des articles du sommaire ? non
 
 Prioritaire:
   ☐ mise en forme des contenus dans #TEXTE
   ☐ article-numéro, rubrique-numéro : liens précédent/suivant
+  ☐ Bug script Table des matières + Safari
+  ☐ Rubrique-numéros -> présentation sur 2 colonnes. Rubrique-numéro -> image
+  couverture moins large + suppression du résumé de présentation.
 
 Todo:
   ☐ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie
@@ -19,7 +22,7 @@ Penser à:
   ☐ http://webdevchecklist.com
   ☐ open graph http://ogp.me
   ☐ footer/dist.html : ajouter les ancres (revue, équipe, etc.)
-  dans les url vers l'article de présentation de la revue. 
+  dans les url vers l'article de présentation de la revue.
 
 Avant mise en prod:
   ☐ filtre |compacte sur fichier couleurs.css

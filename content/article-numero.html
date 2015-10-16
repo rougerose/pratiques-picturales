@@ -12,7 +12,7 @@
         (#INCLURE{fond=inclure/rubrique-numero-cover-short,id_rubrique})
       </aside>]
 
-    </div><!-- /.layout__item -->
+    </div>
     </BOUCLE_rubrique>
 
     <div class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l">
@@ -22,7 +22,7 @@
         [<p class="element__subtitle gamma">(#SOUSTITRE)</p>]
       </header>
 
-    </div><!-- /.layout__item -->
+    </div>
     <div class="layout__item">
 
       <aside class="element__section element__meta">
@@ -33,11 +33,11 @@
             [<p class="element__date element__date--article">
               <time pubdate datetime="[(#DATE|date_iso)]">(#DATE|affdate)</time>
             </p>]
-          </div><!-- /.layout__item --><div class="layout__item u-11/12-m u-1/12-push-m u-6/12-l">
+          </div><div class="layout__item u-11/12-m u-1/12-push-m u-6/12-l">
             [<p class="element__authors element__authors--article">
               <:pratiques_picturales:par_auteur:> (#INCLURE{fond=inclure/article-auteurs,id_article})
             </p>]
-          </div><!-- /.layout__item --><div class="layout__item u-11/12-m u-1/12-push-m u-3/12-l">
+          </div><div class="layout__item u-11/12-m u-1/12-push-m u-3/12-l">
             <div class="c-action">
               <!-- TODO: Terminer bouton Partager -->
               <!-- <button type="button" class="btn btn--action c-action__toggle [t-(#ID_RUBRIQUE)__color][ t-(#ID_RUBRIQUE)__border][t-(#ID_RUBRIQUE)__bg--before]">
@@ -46,51 +46,51 @@
               <div class="c-action__content[ t-(#ID_RUBRIQUE)__bg]">
                 <span id="socialtags"></span>
               </div>
-            </div><!-- /.c-action -->
-          </div><!-- /.layout__item -->
+            </div>
+          </div>
 
-        </div><!-- /.layout -->
+        </div>
 
-      </aside><!-- /.element__meta -->
+      </aside>
 
-    </div><!-- /.layout__item -->
+    </div>
     <div id="js-toc-parent" class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l element__content">
       <div class="layout layout--rev">
-        <div class="layout__item u-4/12-l element__content--sub">
-          [(#INCLURE{fond=inclure/article-toc, id_article})]
-        </div><!-- /.content--sub --><div class="layout__item u-8/12-l element__content--main">
+        [<div class="layout__item u-4/12-l element__content--sub">
+          (#INCLURE{fond=inclure/article-toc, id_article, type-page=#ENV{type-page}, composition=#ENV{composition}})
+        </div>]<div class="layout__item u-8/12-l element__content--main">
 
           [<section id="resume" class="element__section">
             <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:resume:></h1>
             (#DESCRIPTIF)
-          </section><!-- /.article__resume -->]
+          </section>]
 
           [<section class="element__section">
             <h1 id="plan" class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:plan:></h1>
             <div class="article__plan">
               (#SOMMAIRE{#TEXTE})
             </div>
-          </section><!-- /.article__plan -->]
+          </section>]
 
           <section id="texte" class="element__section">
             <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:texte_integral:></h1>
 
             [<div class="article__texte--chapo">
               (#CHAPO)
-            </div><!-- article__texte--chapo -->]
+            </div>]
 
             [<div class="article__texte--texte">
               (#TEXTE|ancres_sommaire)
-            </div><!-- article__texte--texte -->]
+            </div>]
 
-          </section><!-- /.article__texte -->
+          </section>
 
           [<section class="element__section">
             <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
             <div class="notes u-col2-m-and-l">
               (#NOTES)
             </div>
-          </section><!-- /.article__notes -->]
+          </section>]
 
           [(#SET{_id_rubrique,#ID_RUBRIQUE})]
           <B_tags>
@@ -99,7 +99,7 @@
             <p class="tags__list">
               <BOUCLE_tags(MOTS){id_article}{id_groupe!=2}{par titre}{' '}>[<span class="tags__item [t-(#GET{_id_rubrique})__color]"><a href="#URL_MOT">(#TITRE)</a></span>]</BOUCLE_tags>
             </p>
-          </section><!-- /.article__notes -->
+          </section>
           </B_tags>
 
           [(#REM)
@@ -125,14 +125,13 @@
           ][<section id="documents" class="element__section">
             <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:documents:></h1>
             (#GET{_id_docs}|count|>{0}|oui) #INCLURE{fond=inclure/documents-article, id_article, id_rubrique, _id_docs=#GET{_id_docs}}
-          </section><!-- /.article_documents -->]
+          </section>]
 
           <div class="layout">
             [<section id="bibliographie" class="layout__item u-6/12-l element__section">
               <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:bibliographie:></h1>
                 (#BIBLIOGRAPHIE)
-            </section><!-- /bibliographie
-            -->]<section id="reference" class="layout__item u-6/12-l element__section">
+            </section>]<section id="reference" class="layout__item u-6/12-l element__section">
               <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:citer_article:></h1>
               <p class="bibliographie-ref">
                 [(#INCLURE{fond=inclure/article-auteurs,id_article,contexte=resume}), ][«&nbsp;(#TITRE) [(#SOUSTITRE)]&nbsp;».][ <span class="bibliographie-ref__titre">(#NOM_SITE_SPIP)[&nbsp;: (#INFO_TITRE{rubrique,#ID_RUBRIQUE})]</span>, ][(#INFO_SOUSTITRE{rubrique,#ID_RUBRIQUE}), ][(#INFO_DATE_NUMERO{rubrique,#ID_RUBRIQUE}|affdate_mois_annee).]
@@ -140,13 +139,13 @@
               [<p>
                 <a href="(#URL_ARTICLE|url_absolue)" rel="bookmark">[(#URL_ARTICLE|url_absolue)]</a>
               </p>]
-            </section><!-- /citer_article -->
-          </div><!-- /.layout -->
+            </section>
+          </div>
 
-          [<section id="pdf" class="element__section Xelement__section--large">
+          [<section id="pdf" class="element__section">
             (#GET{_id_doc_pdf}|oui)
               <h1 class="epsilon"><a href="#INFO_URL{document,#GET{_id_doc_pdf}}" class="btn btn--full btn--action btn--download [t-(#ID_RUBRIQUE)__btn--action]"><span class="btn__label"><:pratiques_picturales:article_pdf:></span></a></h1>
-          </section><!-- /.article_pdf -->]
+          </section>]
 
           [(#REM)
             Array des articles connexes
@@ -162,21 +161,21 @@
                 <BOUCLE_articles_connexes(ARTICLES){id_article!=#ID_ARTICLE}{mots 50% #GET{_articles_connexes} !tri}{0,4}>
                 <INCLURE{fond=inclure/article-resume,id_article,layout=flex-grid__item,type=article-resume--related} />
                 </BOUCLE_articles_connexes>
-              </div><!-- /.flex-grid -->
+              </div>
 
-            </aside><!-- /.article_related -->
+            </aside>
           </B_articles_connexes_1>
 
-        </div><!-- /.content--main -->
+        </div>
 
-      </div><!-- /.layout /.element__content -->
+      </div>
 
-    </div><!-- /.layout__item -->
+    </div>
     [<div class="layout__item">
       (#INCLURE{fond=breadcrumb/article,id_article})
-    </div><!-- /.layout__item -->]
+    </div>]
 
-  </div><!-- /.layout -->
+  </div>
 
   [<script src="(#CHEMIN{js/src/jquery.toc-init.js})" charset="utf-8"></script>]
   <!-- smooth-scroll.js -->
