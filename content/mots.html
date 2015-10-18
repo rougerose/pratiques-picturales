@@ -1,0 +1,36 @@
+<div class="element element--container auteurs">
+  <div class="layout">
+    <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
+      <header class="element__header element__section">
+        <h1 class="element__title element__title--section alpha t-mots__color"><:pratiques_picturales:_tags:></h1>
+      </header>
+      [   (#SET{alphabet,#ARRAY})
+      ][  (#SET{alphabet, #GET{alphabet,#VAL{abcdefghijklmnopqrstuvwxyz}|str_split}})]
+      [(#SET{t,#ARRAY})]
+
+      <BOUCLE_liste_alpha(MOTS){id_groupe!=2}{par titre}>[(#SET{t,#GET{t}|push{#TITRE|desaccentuer_initiale}})][
+        (#SET_PUSH{commence_par[(#TITRE|desaccentuer_initiale)],#ID_MOT})
+      ]</BOUCLE_liste_alpha>
+
+      <BOUCLE_alphabet(POUR){tableau #GET{alphabet}}>
+      <B_mots>
+        <section class="element__section index">
+          <div class="element__header index__header">
+            <h1 class="index__title t-mots__color">#VALEUR</h1>
+          </div>
+          <div class="element__content index__content">
+            <ul class="list-bare index__list">
+              <BOUCLE_mots(MOTS){id_groupe!=2}{id_mot IN #GET{commence_par#VALEUR}}><li class="index__item">[<a href="#URL_MOT">(#TITRE)</a>]</li
+              ></BOUCLE_mots>
+            </ul>
+          </div>
+        </section>
+      </B_mots>
+      </BOUCLE_alphabet>
+
+    </div>
+    [<div class="layout__item">
+      (#INCLURE{fond=breadcrumb/mots})
+    </div>]
+  </div>
+</div>

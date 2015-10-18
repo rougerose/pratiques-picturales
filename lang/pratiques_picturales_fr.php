@@ -57,6 +57,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'sommaire'               => 'Sommaire',
 
   // T
+  '_tags'                  => 'Les mots-clés',
   'tags'                   => 'Mots-clés',
   'texte_integral'         => 'Texte intégral',
 
