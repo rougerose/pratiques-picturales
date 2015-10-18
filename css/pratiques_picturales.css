@@ -457,7 +457,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #f84212; }
+  color: #000; }
 
 /*------------------------------------*    #PAGE
 \*------------------------------------*/
@@ -1381,6 +1381,78 @@ h6.spip {
    #AUTEUR
    ========================================================================== */
 /* ==========================================================================
+   #INDEX
+   ========================================================================== */
+/* line 1199, stdin */
+.index {
+  position: relative; }
+
+@media screen and (max-width: 499px) {
+  /* line 1203, stdin */
+  .index {
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.1); } }
+
+@media screen and (min-width: 500px) {
+  /* line 1207, stdin */
+  .index__header {
+    position: absolute;
+    width: 25%;
+    top: 0;
+    left: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.5); } }
+
+/* line 1214, stdin */
+.index__title {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2; }
+
+@media screen and (min-width: 500px) {
+  /* line 1222, stdin */
+  .index__title {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding-top: 24px; } }
+
+@media screen and (min-width: 500px) {
+  /* line 1229, stdin */
+  .index__content {
+    border-top: 1px dotted rgba(0, 0, 0, 0.1);
+    margin-left: 25%;
+    width: 75%; } }
+
+/* line 1234, stdin */
+.index__list {
+  margin-bottom: 24px;
+  margin-left: -24px;
+  padding-top: 12px; }
+
+@media screen and (min-width: 500px) {
+  /* line 1240, stdin */
+  .index__list {
+    padding-top: 24px; } }
+
+/* line 1243, stdin */
+.index__item {
+  width: 50%;
+  float: left;
+  margin-bottom: 12px;
+  padding-left: 24px; }
+
+@media screen and (min-width: 500px) {
+  /* line 1250, stdin */
+  .index__item {
+    margin-bottom: 0; } }
+
+@media screen and (min-width: 750px) {
+  /* line 1254, stdin */
+  .index__item {
+    width: 33.33333%; } }
+
+/* ==========================================================================
    #IMAGES
    ========================================================================== */
 /*
@@ -1389,11 +1461,11 @@ h6.spip {
    Classe utilisée par le plugin adaptive-images. Les balises width et height
    étant renseignées, il faut garder des images fluides.
    ========================================================================== */
-/* line 1205, stdin */
+/* line 1266, stdin */
 .adapt-img-wrapper {
   background-size: cover; }
 
-/* line 1208, stdin */
+/* line 1269, stdin */
 .adapt-img {
   max-width: 100% !important;
   height: auto; }
@@ -1404,17 +1476,17 @@ h6.spip {
 /*
    #SPIP LIST
    ========================================================================== */
-/* line 1218, stdin */
+/* line 1279, stdin */
 ul.spip {
   list-style: square inside; }
 
-/* line 1222, stdin */
+/* line 1283, stdin */
 ul.spip,
 ol.spip {
   margin: 0;
   padding: 0; }
 
-/* line 1227, stdin */
+/* line 1288, stdin */
 ul.spip ul,
 ol.spip ol {
   padding-left: 0.75em; }
@@ -1425,7 +1497,7 @@ ol.spip ol {
 /*
    #BOX-ARROW
    ========================================================================== */
-/* line 1236, stdin */
+/* line 1297, stdin */
 .box-arrow {
   position: relative;
   padding-top: 24px;
@@ -1434,7 +1506,7 @@ ol.spip ol {
   text-align: center;
   text-transform: uppercase; }
 
-/* line 1245, stdin */
+/* line 1306, stdin */
 .box-arrow:before,
 .box-arrow:after {
   position: absolute;
@@ -1446,13 +1518,13 @@ ol.spip ol {
   content: " ";
   pointer-events: none; }
 
-/* line 1255, stdin */
+/* line 1316, stdin */
 .box-arrow:before {
   border-top-color: #000;
   border-width: 13px;
   margin-left: -13px; }
 
-/* line 1260, stdin */
+/* line 1321, stdin */
 .box-arrow:after {
   border-top-color: #fff;
   border-width: 12px;
@@ -1461,48 +1533,55 @@ ol.spip ol {
 /* ==========================================================================
    #ICONS
    ========================================================================== */
-/* line 1268, stdin */
+/* line 1329, stdin */
 .icon-svg-source {
   display: none; }
 
-/* line 1271, stdin */
+/* line 1332, stdin */
 .icon-oblique {
   width: 9px;
   height: 19px; }
 
-/* line 1275, stdin */
+/* line 1336, stdin */
 .icon-oblique__stroke {
   stroke: currentColor; }
 
-/* line 1278, stdin */
+/* line 1339, stdin */
 .icon-next {
   width: 24px;
   height: 24px;
   border-radius: 24px;
-  vertical-align: bottom;
+  vertical-align: middle;
   -webkit-transition: background 0.4s ease;
           transition: background 0.4s ease; }
 
-/* line 1285, stdin */
+/* line 1346, stdin */
 .icon-next__fill {
   -webkit-transition: fill 0.4s ease;
           transition: fill 0.4s ease; }
 
+/* line 1349, stdin */
+.icon-plus {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  vertical-align: middle; }
+
 /* ==========================================================================
    #BUTTONS
    ========================================================================== */
-/* line 1291, stdin */
+/* line 1358, stdin */
 .btn {
   font-weight: bold; }
 
-/* line 1294, stdin */
+/* line 1361, stdin */
 .btn--action {
   position: relative;
   background: none;
   -webkit-transition: color 0.4s ease;
           transition: color 0.4s ease; }
 
-/* line 1299, stdin */
+/* line 1366, stdin */
 .btn--action:before {
   position: absolute;
   top: 0;
@@ -1517,33 +1596,33 @@ ol.spip ol {
   -webkit-transition: -webkit-transform 0.4s ease, opacity 0.4s ease;
           transition: transform 0.4s ease, opacity 0.4s ease; }
 
-/* line 1311, stdin */
+/* line 1378, stdin */
 .btn--action:hover:before {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0); }
 
-/* line 1315, stdin */
+/* line 1382, stdin */
 .btn__label {
   text-transform: uppercase; }
 
-/* line 1318, stdin */
+/* line 1385, stdin */
 .btn--download {
   margin-bottom: 24px; }
 
 /* ==========================================================================
    #ACTION
    ========================================================================== */
-/* line 1324, stdin */
+/* line 1391, stdin */
 .c-action {
   position: relative; }
 
-/* line 1327, stdin */
+/* line 1394, stdin */
 .c-action__toggle {
   width: 100px;
   height: 30px; }
 
-/* line 1331, stdin */
+/* line 1398, stdin */
 .c-action__content {
   position: absolute;
   top: 50px;
@@ -1552,31 +1631,35 @@ ol.spip ol {
 /* ==========================================================================
    #PAGINATION
    ========================================================================== */
-/* line 1339, stdin */
+/* line 1406, stdin */
 .pagination-list {
   list-style: none;
   margin: 12px 0;
-  padding: 0;
+  padding: 0; }
+
+/* line 1411, stdin */
+.pagination-list--center {
   text-align: center; }
 
-/* line 1345, stdin */
-.pagination-list__item {
+/* line 1414, stdin */
+.pagination__item {
   display: inline-block; }
 
-/* line 1349, stdin */
-.pagination-list__item > strong,
-.pagination-list__item > a {
+/* line 1418, stdin */
+.pagination__item > strong,
+.pagination__item > a {
   display: block;
   padding: 6px;
   border: 1px solid #eee;
-  text-decoration: none; }
+  text-decoration: none;
+  font-weight: bold; }
 
-/* line 1355, stdin */
-.pagination-list__item--disabled {
-  color: #eee; }
+/* line 1425, stdin */
+.pagination__item--disabled {
+  color: #ccc; }
 
-/* line 1358, stdin */
-.pagination-list__item--disabled > strong {
+/* line 1428, stdin */
+.pagination__item--disabled > strong {
   border-color: #eee; }
 
 /* ==========================================================================
@@ -1586,14 +1669,14 @@ ol.spip ol {
  * Styles générés par spip
  */
 /* Sommaire d'article */
-/* line 1368, stdin */
+/* line 1438, stdin */
 .sommaire-back {
   display: none; }
 
 /* ==========================================================================
    #SPIP-ADMIN
    ========================================================================== */
-/* line 1375, stdin */
+/* line 1445, stdin */
 body .spip-admin-bloc,
 body .spip-admin-float {
   z-index: 99999;
@@ -1603,12 +1686,12 @@ body .spip-admin-float {
   -webkit-transition: right 0.35s ease;
           transition: right 0.35s ease; }
 
-/* line 1383, stdin */
+/* line 1453, stdin */
 body .spip-admin-bloc:hover,
 body .spip-admin-float:hover {
   right: 0; }
 
-/* line 1386, stdin */
+/* line 1456, stdin */
 .spip-admin-float .spip-admin-boutons {
   display: block;
   margin-bottom: 5px;
@@ -1623,9 +1706,10 @@ body .spip-admin-float:hover {
  * Extend the clearfix class with Sass to avoid the `.clearfix` class appearing
  * over and over in your markup.
  */
-/* line 1403, stdin */
+/* line 1474, stdin */
 .clearfix:after,
 .page-sub-footer:after,
+.index__list:after,
 .media:after,
 .document__link:after {
   content: "";
@@ -1648,37 +1732,37 @@ body .spip-admin-float:hover {
   * Surcharge du fichier inuit-headings-trums/_trumps.headings.scss,
   * afin de pouvoir définir l'interlignage
   */
-/* line 1424, stdin */
+/* line 1495, stdin */
 .alpha {
   font-size: 30px;
   font-size: 1.875rem;
   line-height: 1.1; }
 
-/* line 1429, stdin */
+/* line 1500, stdin */
 .beta {
   font-size: 26px;
   font-size: 1.625rem;
   line-height: 1.1; }
 
-/* line 1434, stdin */
+/* line 1505, stdin */
 .gamma {
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 1.1; }
 
-/* line 1439, stdin */
+/* line 1510, stdin */
 .delta {
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 1.1; }
 
-/* line 1444, stdin */
+/* line 1515, stdin */
 .epsilon {
   font-size: 18px;
   font-size: 1.125rem;
   line-height: 1.1; }
 
-/* line 1449, stdin */
+/* line 1520, stdin */
 .zeta {
   font-size: 16px;
   font-size: 1rem;
@@ -1688,7 +1772,7 @@ body .spip-admin-float:hover {
    #COL
    ========================================================================== */
 @media screen and (min-width: 500px) {
-  /* line 1458, stdin */
+  /* line 1529, stdin */
   .u-col2-m-and-l {
     -webkit-column-count: 2;
        -moz-column-count: 2;
@@ -1703,47 +1787,47 @@ body .spip-admin-float:hover {
  *
  * <div class="u-7/12">
  */
-/* line 1470, stdin */
+/* line 1541, stdin */
 .u-1\/12 {
   width: 8.33333%; }
 
-/* line 1473, stdin */
+/* line 1544, stdin */
 .u-2\/12 {
   width: 16.66667%; }
 
-/* line 1476, stdin */
+/* line 1547, stdin */
 .u-3\/12 {
   width: 25%; }
 
-/* line 1479, stdin */
+/* line 1550, stdin */
 .u-4\/12 {
   width: 33.33333%; }
 
-/* line 1482, stdin */
+/* line 1553, stdin */
 .u-5\/12 {
   width: 41.66667%; }
 
-/* line 1485, stdin */
+/* line 1556, stdin */
 .u-6\/12 {
   width: 50%; }
 
-/* line 1488, stdin */
+/* line 1559, stdin */
 .u-7\/12 {
   width: 58.33333%; }
 
-/* line 1491, stdin */
+/* line 1562, stdin */
 .u-8\/12 {
   width: 66.66667%; }
 
-/* line 1494, stdin */
+/* line 1565, stdin */
 .u-9\/12 {
   width: 75%; }
 
-/* line 1497, stdin */
+/* line 1568, stdin */
 .u-10\/12 {
   width: 83.33333%; }
 
-/* line 1500, stdin */
+/* line 1571, stdin */
 .u-11\/12 {
   width: 91.66667%; }
 
@@ -1753,144 +1837,144 @@ body .spip-admin-float:hover {
  * Responsive width classes based on your responsive settings.
  */
 @media screen and (max-width: 499px) {
-  /* line 1509, stdin */
+  /* line 1580, stdin */
   .u-1\/12-s {
     width: 8.33333%; }
-  /* line 1511, stdin */
+  /* line 1582, stdin */
   .u-2\/12-s {
     width: 16.66667%; }
-  /* line 1513, stdin */
+  /* line 1584, stdin */
   .u-3\/12-s {
     width: 25%; }
-  /* line 1515, stdin */
+  /* line 1586, stdin */
   .u-4\/12-s {
     width: 33.33333%; }
-  /* line 1517, stdin */
+  /* line 1588, stdin */
   .u-5\/12-s {
     width: 41.66667%; }
-  /* line 1519, stdin */
+  /* line 1590, stdin */
   .u-6\/12-s {
     width: 50%; }
-  /* line 1521, stdin */
+  /* line 1592, stdin */
   .u-7\/12-s {
     width: 58.33333%; }
-  /* line 1523, stdin */
+  /* line 1594, stdin */
   .u-8\/12-s {
     width: 66.66667%; }
-  /* line 1525, stdin */
+  /* line 1596, stdin */
   .u-9\/12-s {
     width: 75%; }
-  /* line 1527, stdin */
+  /* line 1598, stdin */
   .u-10\/12-s {
     width: 83.33333%; }
-  /* line 1529, stdin */
+  /* line 1600, stdin */
   .u-11\/12-s {
     width: 91.66667%; } }
 
 @media screen and (min-width: 500px) and (max-width: 749px) {
-  /* line 1533, stdin */
+  /* line 1604, stdin */
   .u-1\/12-m {
     width: 8.33333%; }
-  /* line 1535, stdin */
+  /* line 1606, stdin */
   .u-2\/12-m {
     width: 16.66667%; }
-  /* line 1537, stdin */
+  /* line 1608, stdin */
   .u-3\/12-m {
     width: 25%; }
-  /* line 1539, stdin */
+  /* line 1610, stdin */
   .u-4\/12-m {
     width: 33.33333%; }
-  /* line 1541, stdin */
+  /* line 1612, stdin */
   .u-5\/12-m {
     width: 41.66667%; }
-  /* line 1543, stdin */
+  /* line 1614, stdin */
   .u-6\/12-m {
     width: 50%; }
-  /* line 1545, stdin */
+  /* line 1616, stdin */
   .u-7\/12-m {
     width: 58.33333%; }
-  /* line 1547, stdin */
+  /* line 1618, stdin */
   .u-8\/12-m {
     width: 66.66667%; }
-  /* line 1549, stdin */
+  /* line 1620, stdin */
   .u-9\/12-m {
     width: 75%; }
-  /* line 1552, stdin */
+  /* line 1623, stdin */
   .u-10\/12-m, .cover__body--toc,
   .cover__body--all {
     width: 83.33333%; }
-  /* line 1554, stdin */
+  /* line 1625, stdin */
   .u-11\/12-m {
     width: 91.66667%; } }
 
 @media screen and (min-width: 500px) {
-  /* line 1558, stdin */
+  /* line 1629, stdin */
   .u-1\/12-m-and-l {
     width: 8.33333%; }
-  /* line 1560, stdin */
+  /* line 1631, stdin */
   .u-2\/12-m-and-l {
     width: 16.66667%; }
-  /* line 1562, stdin */
+  /* line 1633, stdin */
   .u-3\/12-m-and-l {
     width: 25%; }
-  /* line 1564, stdin */
+  /* line 1635, stdin */
   .u-4\/12-m-and-l {
     width: 33.33333%; }
-  /* line 1566, stdin */
+  /* line 1637, stdin */
   .u-5\/12-m-and-l {
     width: 41.66667%; }
-  /* line 1568, stdin */
+  /* line 1639, stdin */
   .u-6\/12-m-and-l {
     width: 50%; }
-  /* line 1570, stdin */
+  /* line 1641, stdin */
   .u-7\/12-m-and-l {
     width: 58.33333%; }
-  /* line 1572, stdin */
+  /* line 1643, stdin */
   .u-8\/12-m-and-l {
     width: 66.66667%; }
-  /* line 1574, stdin */
+  /* line 1645, stdin */
   .u-9\/12-m-and-l {
     width: 75%; }
-  /* line 1576, stdin */
+  /* line 1647, stdin */
   .u-10\/12-m-and-l {
     width: 83.33333%; }
-  /* line 1578, stdin */
+  /* line 1649, stdin */
   .u-11\/12-m-and-l {
     width: 91.66667%; } }
 
 @media screen and (min-width: 750px) {
-  /* line 1582, stdin */
+  /* line 1653, stdin */
   .u-1\/12-l {
     width: 8.33333%; }
-  /* line 1584, stdin */
+  /* line 1655, stdin */
   .u-2\/12-l {
     width: 16.66667%; }
-  /* line 1586, stdin */
+  /* line 1657, stdin */
   .u-3\/12-l {
     width: 25%; }
-  /* line 1588, stdin */
+  /* line 1659, stdin */
   .u-4\/12-l {
     width: 33.33333%; }
-  /* line 1590, stdin */
+  /* line 1661, stdin */
   .u-5\/12-l {
     width: 41.66667%; }
-  /* line 1592, stdin */
+  /* line 1663, stdin */
   .u-6\/12-l {
     width: 50%; }
-  /* line 1594, stdin */
+  /* line 1665, stdin */
   .u-7\/12-l {
     width: 58.33333%; }
-  /* line 1597, stdin */
+  /* line 1668, stdin */
   .u-8\/12-l, .cover__body--toc,
   .cover__body--all {
     width: 66.66667%; }
-  /* line 1599, stdin */
+  /* line 1670, stdin */
   .u-9\/12-l {
     width: 75%; }
-  /* line 1601, stdin */
+  /* line 1672, stdin */
   .u-10\/12-l {
     width: 83.33333%; }
-  /* line 1603, stdin */
+  /* line 1674, stdin */
   .u-11\/12-l {
     width: 91.66667%; } }
 
@@ -1898,20 +1982,20 @@ body .spip-admin-float:hover {
    #PUSH-PULL-WIDTHS
    ========================================================================== */
 @media screen and (min-width: 500px) and (max-width: 749px) {
-  /* line 1610, stdin */
+  /* line 1681, stdin */
   .u-1\/12-push-m {
     margin-left: 8.33333%; } }
 
 @media screen and (min-width: 500px) {
-  /* line 1615, stdin */
+  /* line 1686, stdin */
   .u-1\/12-push-m-and-l, .element__section--issue > h1, .cover__body--toc,
   .cover__body--all {
     margin-left: 8.33333%; } }
 
 @media screen and (min-width: 750px) {
-  /* line 1619, stdin */
+  /* line 1690, stdin */
   .u-1\/12-push-l {
     margin-left: 8.33333%; }
-  /* line 1621, stdin */
+  /* line 1692, stdin */
   .u-3\/12-push-l {
     margin-left: 25%; } }

@@ -7,6 +7,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'article_pdf'            => 'Télécharger la version PDF de cet article',
   'article_pdf_court'      => 'Version PDF',
   'articles_connexes'      => 'Lire également',
+  'authors'                => 'Les auteurs',
 
   // B
   'bibliographie'          => 'Bibliographie',
