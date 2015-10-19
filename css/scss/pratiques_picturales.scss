@@ -64,7 +64,7 @@
 @import "node_modules/inuit-media/objects.media";
 // @import "node_modules/inuit-pack/objects.pack";
 // @import "node_modules/inuit-tables/objects.tables";
-// @import "node_modules/inuit-tabs/objects.tabs";
+@import "node_modules/inuit-tabs/objects.tabs";
 
 @import "objects.wrapper";
 
@@ -84,6 +84,7 @@
 
 //rubrique
 @import "components.rubrique";
+@import "components.rubrique-resume";
 
 @import "components.cover";
 
@@ -112,6 +113,9 @@
 @import "components.buttons";
 @import "components.action";
 @import "components.pagination";
+@import "components.tabs";
+
+@import "components.info";
 
 @import "components.spip";
 @import "components.spip-admin";

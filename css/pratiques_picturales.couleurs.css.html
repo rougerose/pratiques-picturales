@@ -15,7 +15,7 @@
 [(#REM) mediaqueries ]
   [(#SET{s, "screen and (max-width: 499px)"})]
   [(#SET{m, "screen and (min-width: 500px) and (max-width: 749px)"})]
-  [(#SET{m-and-l, "screen and (min-width: 750px)"})]
+  [(#SET{m-and-l, "screen and (min-width: 500px)"})]
   [(#SET{l, "screen and (min-width: 750px)"})]
 
 [(#REM) définition principale ]
@@ -33,8 +33,7 @@
   }
 
 [(#REM) border ]
-  .t-[(#ID_RUBRIQUE)]__border,
-  .t-[(#ID_RUBRIQUE)]__pagination > strong
+  .t-[(#ID_RUBRIQUE)]__border
   {
     border-color: [#(#GET{couleur})];
   }
@@ -180,6 +179,8 @@
 [(#SET{pages,#ARRAY{auteurs,'f5a623',mots,'4a90e2',recherche,'df69e8',home,'a70a37'}})]
 <BOUCLE_pages(DATA){source tableau,#GET{pages}}>
 
+[(#REM) tabs-color ]
+  .t-[(#CLE)]__tabs-color .tabs__item--current,
 [(#REM) définition principale ]
   .t-[(#CLE)]__color,
   .t-[(#CLE)]__color--hover:hover,
@@ -189,7 +190,8 @@
   .active .t-[(#CLE)]__color-nav > .nav__label,
   .t-[(#CLE)]__color-nav:hover,
   .t-[(#CLE)]__color-nav:hover > .nav__label,
-  .t-[(#CLE)]__color-nav.is-active > .nav__label
+  .t-[(#CLE)]__color-nav.is-active > .nav__label,
+  .t-[(#CLE)]__pagination > a:hover
   {
     color: [#(#VALEUR)];
   }
@@ -199,7 +201,8 @@
     border-color: [#(#VALEUR)];
   }
 [(#REM) background ]
-  .t-[(#CLE)]__bg
+  .t-[(#CLE)]__bg,
+  .t-[(#CLE)]__pagination > strong
   {
     color: [#(#VALEUR|couleur_extreme)];
     background: [#(#VALEUR)];
@@ -218,5 +221,25 @@
   .t-[(#CLE)]__icon-fill
   {
     fill: [#(#VALEUR|couleur_extreme)];
+  }
+[(#REM) media-queries ]
+  @media [(#GET{s})]
+  {
+    .t-[(#CLE)]__tabs-color .tabs__item--current
+    {
+      background-color: [#(#VALEUR)];
+      color: [#(#VALEUR|couleur_extreme)];
+    }
+    .tabs-nav.t-[(#CLE)]__tabs-border:after
+    {
+      border-color: [#(#VALEUR)];
+    }
+  }
+  @media [(#GET{m-and-l})]
+  {
+    .tabs__item.t-[(#CLE)]__tabs-border:after
+    {
+      border-color: [#(#VALEUR)];
+    }
   }
 </BOUCLE_pages>

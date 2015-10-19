@@ -4,13 +4,17 @@
   Ce fichier doit être inclus dans un div.cover ou aside.cover selon le contexte:
   voir content/article-numero.html ou footer/dist.html.
 
-  #ENV{contexte} peut contenir:
+  La valeur de #ENV{contexte} est soit:
+    - simple => les infos texte sont disposées sous l'image.
     - toc => composition rubrique-numero.html
     - all => compositions rubrique-numeros.html et sommaire
 
 
+][
+  (#SET{afficher_lien,''})][
+  (#ENV{contexte}match{simple|all}|oui) #SET{afficher_lien,' '}
 ]<BOUCLE_rubrique_numero_cover(RUBRIQUES){id_rubrique}>
-  [(#ENV{contexte}|=={all}|?{<a href="#URL_RUBRIQUE" class="element__link element__link--cover">})]
+  [(#GET{afficher_lien}|?{<a href="#URL_RUBRIQUE" class="element__link element__link--cover">})]
     [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{1090})]
     <div class="cover__body [cover__body--(#ENV{contexte})] [t-(#ID_RUBRIQUE)__bg]">
       <header>
@@ -27,9 +31,9 @@
         <:pratiques_picturales:numero_contributions:>
         (#INCLURE{fond=inclure/rubrique-auteurs-contributions,id_rubrique})
       </p>]
-      [(#ENV{contexte}|=={all}|oui)
+      [(#GET{afficher_lien}|oui)
         <p class="element__next cover__desc cover__next [t-(#ID_RUBRIQUE)__icon-next--cover]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg})]</p>
       ]
     </div>
-  [(#ENV{contexte}|=={all}|?{</a>})]
+  [(#GET{afficher_lien}|?{</a>})]
 </BOUCLE_rubrique_numero_cover>

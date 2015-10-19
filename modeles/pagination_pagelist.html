@@ -1,0 +1,39 @@
+[(#SET{class_color,#ENV{class_color}})]
+#ENV*{bloc_ancre}
+#SET{bornes,#ENV{page_courante}|bornes_pagination{#ENV{nombre_pages},10}}
+#SET{premiere, #GET{bornes}|reset}
+#SET{derniere, #GET{bornes}|end}
+#SET{pages,#GET{premiere}|range{#GET{derniere}}}
+#SET{sep,#ENV{separateur,' | '}}
+<B_pages>
+  <h1 class="pagination__label"><:pratiques_picturales:pagination_page:> #ENV{page_courante}/[(#GET{derniere}|<{#ENV{nombre_pages}}|?{#ENV{nombre_pages},#GET{derniere}})]</h1>
+  [(#SET{item, #ENV{page_courante}|moins{2}|mult{#ENV{pas}} })]
+  <ul class="pagination-list">
+    [<li class="pagination__item[ (#ENV{page_courante}|<={1}|?{pagination__item--disabled,[ t-(#ENV{class_color})__pagination]})]"> (#ENV{url_precedent,#ENV{url}
+    |parametre_url{#ENV{debut},#GET{item}|?{#GET{item}}}}
+    |ancre_url{#ENV{ancre}}
+    |lien_ou_expose{#ENV{label_precedent,<:pratiques_picturales:pagination_prev:>},#ENV{page_courante}|<={1},'pagination__link','',nofollow}
+    |inserer_attribut{rel,prev}
+    )</li>]
+    [<li class="pagination__item[ t-(#ENV{class_color})__pagination]">
+      <a href='[(#ENV{url}|parametre_url{#ENV{debut},''})]##ENV{ancre}' class='lien_pagination' rel='nofollow'>(#GET{premiere}|>{1}|?{1})</a>
+    </li>][<li class="pagination__item">(#GET{premiere}|>{2}|oui)<span class="pagination__tbc">&hellip;</span></li>]<BOUCLE_pages(POUR){tableau #GET{pages}}>[(#SET{item, #VALEUR|moins{1}|mult{#ENV{pas}} })][<li class="pagination__item[ t-(#ENV{class_color})__pagination][ (#VALEUR|=={#ENV{page_courante}}|oui)nav-item--is-active]">
+      (#ENV{url}
+      |parametre_url{#ENV{debut},#GET{item}|?{#GET{item}}}
+      |ancre_url{#ENV{ancre}}
+      |lien_ou_expose{#VALEUR,#VALEUR|=={#ENV{page_courante}},pagination__link,'',nofollow})
+    </li>]</BOUCLE_pages>[<li class="pagination__item">
+      <span class="pagination__tbc">&hellip;</span>
+    </li><li class="pagination__item[ t-(#ENV{class_color})__pagination]">
+      <a href='[(#ENV{url}|parametre_url{#ENV{debut},#ENV{nombre_pages}|moins{1}|mult{#ENV{pas}}})]##ENV{ancre}' class='pagination__link' rel='nofollow'>(#GET{derniere}|<{#ENV{nombre_pages}}|?{#ENV{nombre_pages}})</a>
+    </li>][
+      (#SET{item, #ENV{page_courante}|mult{#ENV{pas}} })
+    ][<li
+    class="pagination__item[ (#ENV{page_courante}|>={#ENV{nombre_pages}}|?{pagination__item--disabled,[ t-(#ENV{class_color})__pagination]})]">(#ENV{url_suivant,#ENV{url}
+    |parametre_url{#ENV{debut},#GET{item}|?{#GET{item}}}}
+    |ancre_url{#ENV{ancre}}
+    |lien_ou_expose{#ENV{label_suivant,<:pratiques_picturales:pagination_next:>},#ENV{page_courante}|>={#ENV{nombre_pages}},'pagination__link','',nofollow}
+    |inserer_attribut{rel,next}
+    )</span>]
+  </ul>
+</B_pages>

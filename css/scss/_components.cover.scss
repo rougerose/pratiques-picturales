@@ -23,6 +23,11 @@
   }
 }
 
+.cover__body--simple {
+  margin-top: 0;
+  width: 100%;
+}
+
 .cover__body--toc,
 .cover__body--all {
   @include media-query(m) {

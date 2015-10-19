@@ -1,0 +1,14 @@
+[(#SET{articles,#ENV{articles}})]
+<B_articles>
+  #ANCRE_PAGINATION
+  <h1 class="tabs-content__title t-mots__color">[(#GET{articles}|count|singulier_ou_pluriel{pratiques_picturales:nombre_article,pratiques_picturales:nombre_articles})]</h1>
+  <div class="layout">
+    <BOUCLE_articles(ARTICLES){id_article IN #GET{articles}}{!par date}{pagination 4}
+    >[<div class="layout__item u-6/12-m-and-l">
+        (#INCLURE{fond=inclure/article-resume, id_article})
+      </div>]</BOUCLE_articles>
+  </div>
+  [<nav class="pagination pagination--bottom pagination--center">
+    (#PAGINATION{pagelist,class_color=mots})
+  </nav>]
+</B_articles>

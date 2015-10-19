@@ -2,19 +2,11 @@
    #DOCUMENTS
    ========================================================================== */
 
-.document {}
-
-  .document__link {
-    display: block;
-    border-bottom: 1px dotted #ddd;
-    padding: $spacing-unit--small 0;
-    text-decoration: none;
-    @extend %clearfix;
-  }
-
-  .document__link--first {
-    padding-top: 0;
-  }
+.document {
+  border-bottom: 1px dotted #ddd;
+  padding: $spacing-unit--small 0;
+  text-decoration: none;
+}
 
   .document__info {
     margin-left: 100px;

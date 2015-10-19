@@ -6,9 +6,11 @@ a {
   color: $link-color;
   text-decoration: underline;
   @include transition(all);
-  &:hover,
+  &:hover {
+    color: $link-color-hover;
+  }
   &:active,
   &:focus {
-    color: $link-color-hover;
+    color: currentColor;
   }
 }

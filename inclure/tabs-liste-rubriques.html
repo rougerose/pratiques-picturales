@@ -1,0 +1,14 @@
+[(#SET{rubriques,#ENV{rubriques}})]
+<B_rubriques>
+  #ANCRE_PAGINATION
+  <h1 class="tabs-content__title t-mots__color">[(#GET{rubriques}|count|singulier_ou_pluriel{pratiques_picturales:nombre_rubrique,pratiques_picturales:nombre_rubriques})]</h1>
+  <div class="layout">
+    <BOUCLE_rubriques(RUBRIQUES){id_rubrique IN #GET{rubriques}}{par titre}{pagination 6}
+    >[<div class="layout__item u-6/12-m-and-l element">
+        (#INCLURE{fond=inclure/rubrique-resume, id_rubrique})
+      </div>]</BOUCLE_rubriques>
+    [<nav class="pagination pagination--bottom">
+      (#PAGINATION{pagelist,class_color=mots})
+    </nav>]
+  </div>
+</B_rubriques>
