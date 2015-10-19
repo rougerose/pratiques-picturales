@@ -8,7 +8,7 @@
       ][  (#SET{alphabet, #GET{alphabet,#VAL{abcdefghijklmnopqrstuvwxyz}|str_split}})]
       [(#SET{t,#ARRAY})]
 
-      <BOUCLE_liste_alpha(MOTS){id_groupe!=2}{par titre}>[(#SET{t,#GET{t}|push{#TITRE|desaccentuer_initiale}})][
+      <BOUCLE_liste_alpha(MOTS mots_liens){id_groupe!=2}{objet IN article,document,rubrique}{par titre}>[(#SET{t,#GET{t}|push{#TITRE|desaccentuer_initiale}})][
         (#SET_PUSH{commence_par[(#TITRE|desaccentuer_initiale)],#ID_MOT})
       ]</BOUCLE_liste_alpha>
 
