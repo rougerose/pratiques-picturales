@@ -177,7 +177,7 @@
 </BOUCLE_rubriques>
 
 [(#REM) couleurs des pages autres que les rubriques ]
-[(#SET{pages,#ARRAY{auteurs,'f5a623',mots,'4a90e2',recherche,'df69e8',home,'dacd23'}})]
+[(#SET{pages,#ARRAY{auteurs,'f5a623',mots,'4a90e2',recherche,'df69e8',home,'a70a37'}})]
 <BOUCLE_pages(DATA){source tableau,#GET{pages}}>
 
 [(#REM) définition principale ]
@@ -203,5 +203,20 @@
   {
     color: [#(#VALEUR|couleur_extreme)];
     background: [#(#VALEUR)];
+  }
+[(#REM) hN ]
+  .t-[(#CLE)]__hN
+  {
+    color: [#(#VALEUR)];
+    border-color: [#(#VALEUR)];
+  }
+[(#REM) icon ]
+  .t-[(#CLE)]__icon
+  {
+    background: [#(#VALEUR)];
+  }
+  .t-[(#CLE)]__icon-fill
+  {
+    fill: [#(#VALEUR|couleur_extreme)];
   }
 </BOUCLE_pages>

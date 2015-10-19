@@ -8,9 +8,10 @@ Questions:
 Prioritaire:
   ☐ mise en forme des contenus dans #TEXTE
   ☐ article-numéro, rubrique-numéro : liens précédent/suivant
-  ☐ Bug script Table des matières + Safari
-  ☐ Rubrique-numéros -> présentation sur 2 colonnes. Rubrique-numéro -> image
+  ☐ Correction: Bug script Table des matières + Safari
+  ☐ Correction: Rubrique-numéros -> présentation sur 2 colonnes. Rubrique-numéro -> image
   couverture moins large + suppression du résumé de présentation.
+  ☐ Correction: supprimer flex
 
 Todo:
   ☐ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie

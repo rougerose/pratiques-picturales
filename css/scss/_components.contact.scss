@@ -1,0 +1,32 @@
+/* ==========================================================================
+   #CONTACT
+   ========================================================================== */
+
+// .contact__list {}
+
+  .contact__item {
+    position: relative;
+  }
+
+    .contact__link {
+      // position: relative;
+      display: block;
+      text-decoration: none;
+      > .icon {
+        // position: absolute;
+
+      }
+      &:hover {
+        .icon {
+          transform: scale(1.5);
+        }
+        .contact__label {
+
+        }
+      }
+    }
+
+    .contact__label {
+      text-transform: uppercase;
+      transition: transform 0.3s ease-in-out;
+    }

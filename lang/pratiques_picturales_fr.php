@@ -8,6 +8,11 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'article_pdf_court'      => 'Version PDF',
   'articles_connexes'      => 'Lire également',
   'authors'                => 'Les auteurs',
+  'author_bio' => 'À propos',
+  'author_articles' => 'Ses articles',
+  'author_contact' => 'Contact',
+  'author_contact_mail' => 'Envoyer un mail',
+  'author_contact_web' => 'Site internet',
 
   // B
   'bibliographie'          => 'Bibliographie',

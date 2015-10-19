@@ -2,6 +2,26 @@
    #ICONS
    ========================================================================== */
 
+// TODO: harmoniser l'ensemble des icones avec .icon
+.icon {
+  vertical-align: middle;
+  transition: transform 0.1s cubic-bezier(0.550, 0.055, 0.675, 0.190);
+}
+
+  .icon--round {
+    border-radius: 50%;
+  }
+
+  .icon--24 {
+    width: 24px;
+    height: 24px;
+  }
+
+  .icon--40 {
+    width: 40px;
+    height: 40px;
+  }
+
 .icon-svg-source {
   display: none;
 }
@@ -15,7 +35,6 @@
     stroke: currentColor;
   }
 
-
 .icon-next {
   width: 24px;
   height: 24px;
@@ -27,10 +46,3 @@
   .icon-next__fill {
     @include transition(fill);
   }
-
-.icon-plus {
-  width: 32px;
-  height: 32px;
-  border-radius: 32px;
-  vertical-align: middle;
-}
