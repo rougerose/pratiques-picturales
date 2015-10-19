@@ -15,7 +15,7 @@
           <section id="articles" class="element__section">
             <h1 class="delta hN t-auteurs__hN"><:pratiques_picturales:author_articles:></h1>
             <BOUCLE_articles_auteurs(ARTICLES){id_auteur}{!par date}>
-              <INCLURE{fond=inclure/article-resume,id_article} />
+              <INCLURE{fond=inclure/article-resume, id_article, class_color=auteurs, lien_suite=suite, } />
             </BOUCLE_articles_auteurs>
           </section>
 

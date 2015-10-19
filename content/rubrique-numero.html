@@ -24,16 +24,15 @@
     <B_sommaire>
     <div class="layout__item u-10/12-m-and-l u-1/12-push-m-and-l">
       <section class="element__content">
-        <h1 class="element__title element__title--section alpha [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:sommaire:></h1>
-
-        <div class="flex-grid u-flex-6/12-m-and-l">
-          <BOUCLE_sommaire(ARTICLES){id_rubrique}>
-            <INCLURE{fond=inclure/article-resume,id_article,layout=flex-grid__item} />
-          </BOUCLE_sommaire>
+        <h1 class="element__title element__title--section element__title--mb alpha [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:sommaire:></h1>
+        <div class="layout">
+          <BOUCLE_sommaire(ARTICLES){id_rubrique}
+          ><div class="layout__item u-6/12-l">
+            <INCLURE{fond=inclure/article-resume, id_article, class_color=#ID_RUBRIQUE, lien_suite=texte} />
+          </div
+          ></BOUCLE_sommaire>
         </div>
-        </BOUCLE_sommaire>
       </section>
-
     </div>
     </B_sommaire>
 

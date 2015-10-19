@@ -165,13 +165,13 @@
           <B_articles_connexes>
             <aside class="element__section related-articles [t-(#ID_RUBRIQUE)__related-articles]">
               <h1 class="box-arrow delta [t-(#ID_RUBRIQUE)__box-arrow]"><:pratiques_picturales:articles_connexes:></h1>
-
-              <div class="flex-grid u-flex-6/12-m-and-l">
-                <BOUCLE_articles_connexes(ARTICLES){id_article!=#ID_ARTICLE}{mots 50% #GET{_articles_connexes} !tri}{0,4}>
-                <INCLURE{fond=inclure/article-resume,id_article,layout=flex-grid__item,type=article-resume--related} />
-                </BOUCLE_articles_connexes>
+              <div class="layout">
+                <BOUCLE_articles_connexes(ARTICLES){id_article!=#ID_ARTICLE}{mots 50% #GET{_articles_connexes} !tri}{0,4}
+                ><div class="layout__item u-6/12-l">
+                  <INCLURE{fond=inclure/article-resume, id_article, class_color=#ID_RUBRIQUE, lien_suite=texte, class_block_modifier=article-resume--related} />
+                </div
+                ></BOUCLE_articles_connexes>
               </div>
-
             </aside>
           </B_articles_connexes_1>
 

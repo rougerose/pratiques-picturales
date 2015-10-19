@@ -117,7 +117,8 @@
   {
     background: [#(#GET{couleur})];
   }
-  .t-[(#ID_RUBRIQUE)]__icon-next--std .icon-next__fill
+  .t-[(#ID_RUBRIQUE)]__icon-next--std .icon-next__fill,
+  a:hover .t-[(#ID_RUBRIQUE)]__icon-next--std .icon-next__fill
   {
     fill: #fff;
   }
@@ -128,10 +129,6 @@
   a:hover .t-[(#ID_RUBRIQUE)]__icon-next--std .icon-next
   {
     background: #000
-  }
-  a:hover .t-[(#ID_RUBRIQUE)]__icon-next--std .icon-next__fill
-  {
-    fill: #fff;
   }
   [(#REM) icon-next--cover ]
   .t-[(#ID_RUBRIQUE)]__icon-next--cover
@@ -195,11 +192,13 @@
   {
     color: [#(#VALEUR)];
   }
+
 [(#REM) border ]
   .t-[(#CLE)]__border
   {
     border-color: [#(#VALEUR)];
   }
+
 [(#REM) background ]
   .t-[(#CLE)]__bg,
   .t-[(#CLE)]__pagination > strong
@@ -207,21 +206,72 @@
     color: [#(#VALEUR|couleur_extreme)];
     background: [#(#VALEUR)];
   }
+
 [(#REM) hN ]
   .t-[(#CLE)]__hN
   {
     color: [#(#VALEUR)];
     border-color: [#(#VALEUR)];
   }
+
 [(#REM) icon ]
-  .t-[(#CLE)]__icon
-  {
-    background: [#(#VALEUR)];
-  }
   .t-[(#CLE)]__icon-fill
   {
     fill: [#(#VALEUR|couleur_extreme)];
   }
+
+[(#REM) icon-next]
+  [(#REM) icon-next--std ]
+  .t-[(#CLE)]__icon-next--std
+  {
+    color: [#(#VALEUR)];
+  }
+  .t-[(#CLE)]__icon-next--std .icon-next,
+  .t-[(#CLE)]__icon
+  {
+    background: [#(#VALEUR)];
+  }
+  .t-[(#CLE)]__icon-next--std .icon-next__fill,
+  a:hover .t-[(#CLE)]__icon-next--std .icon-next__fill
+  {
+    fill: #fff;
+  }
+  a:hover .t-[(#CLE)]__icon-next--std
+  {
+    color: #000;
+  }
+  a:hover .t-[(#CLE)]__icon-next--std .icon-next
+  {
+    background: #000
+  }
+  [(#REM) icon-next--cover ]
+  .t-[(#CLE)]__icon-next--cover
+  {
+    color: [#(#VALEUR|couleur_luminance{0.8})];
+  }
+  .t-[(#CLE)]__icon-next--cover .icon-next
+  {
+    background: [#(#VALEUR|couleur_luminance{0.8})];
+  }
+  .t-[(#CLE)]__icon-next--cover .icon-next__fill
+  {
+    fill: [#(#VALEUR)];
+  }
+  a:hover .t-[(#CLE)]__icon-next--cover
+  {
+    color: [#(#VALEUR|couleur_extreme)];
+  }
+  a:hover .t-[(#CLE)]__icon-next--cover .icon-next,
+  .t-[(#CLE)]__bg .cover__subtitle--std:after,
+  .t-[(#CLE)]__bg .element__next:before
+  {
+    background: [#(#VALEUR|couleur_extreme)];
+  }
+  a:hover .t-[(#CLE)]__icon-next--cover .icon-next__fill
+  {
+    fill: [#(#VALEUR|couleur_luminance{0.7})];
+  }
+
 [(#REM) media-queries ]
   @media [(#GET{s})]
   {

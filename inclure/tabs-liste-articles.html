@@ -5,7 +5,7 @@
   <div class="layout">
     <BOUCLE_articles(ARTICLES){id_article IN #GET{articles}}{!par date}{pagination 4}
     >[<div class="layout__item u-6/12-m-and-l">
-        (#INCLURE{fond=inclure/article-resume, id_article})
+        (#INCLURE{fond=inclure/article-resume, id_article, class_color=#ID_RUBRIQUE, lien_suite=suite})
       </div>]</BOUCLE_articles>
   </div>
   [<nav class="pagination pagination--bottom pagination--center">
