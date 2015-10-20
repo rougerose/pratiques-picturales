@@ -1,7 +1,7 @@
 [(#SET{articles,#ENV{articles}})]
 <B_articles>
   #ANCRE_PAGINATION
-  <h1 class="tabs-content__title t-mots__color">[(#GET{articles}|count|singulier_ou_pluriel{pratiques_picturales:nombre_article,pratiques_picturales:nombre_articles})]</h1>
+  <h1 class="tabs-content__title t-mots__color">[(#GET{articles}|count|singulier_ou_pluriel{pratiques_picturales:nombre_article_mot,pratiques_picturales:nombre_articles_mot})[ «&#8239;(#ENV{titre-mot})&#8239;»]]</h1>
   <div class="layout">
     <BOUCLE_articles(ARTICLES){id_article IN #GET{articles}}{!par date}{pagination 4}
     >[<div class="layout__item u-6/12-m-and-l">

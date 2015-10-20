@@ -41,15 +41,15 @@
             <div class="tabs-content">
               [<section id="articles" class="tabs-content__item">
                 (#GET{articles}|count|oui)
-                  [(#INCLURE{fond=inclure/tabs-liste-articles,articles=#GET{articles},ajax,env})]
+                  [(#INCLURE{fond=inclure/tabs-liste-articles, articles=#GET{articles}, titre-mot=#TITRE, ajax, env})]
               </section>]
               [<section id="numeros" class="tabs-content__item">
                 (#GET{numeros}|count|oui)
-                  [(#INCLURE{fond=inclure/tabs-liste-numeros,numeros=#GET{numeros},ajax,env})]
+                  [(#INCLURE{fond=inclure/tabs-liste-numeros, numeros=#GET{numeros}, titre-mot=#TITRE, ajax, env})]
               </section>]
               [<section id="rubriques" class="tabs-content__item">
                 (#GET{rubriques}|count|oui)
-                  [(#INCLURE{fond=inclure/tabs-liste-rubriques,rubriques=#GET{rubriques},ajax,env})]
+                  [(#INCLURE{fond=inclure/tabs-liste-rubriques, rubriques=#GET{rubriques}, titre-mot=#TITRE, ajax, env})]
               </section>]
             </div>
           </div>

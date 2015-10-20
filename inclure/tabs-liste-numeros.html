@@ -1,7 +1,7 @@
 [(#SET{numeros,#ENV{numeros}})]
 <B_numeros>
   #ANCRE_PAGINATION
-  <h1 class="tabs-content__title t-mots__color">[(#GET{numeros}|count|singulier_ou_pluriel{pratiques_picturales:nombre_numero,pratiques_picturales:nombre_numeros})]</h1>
+  <h1 class="tabs-content__title t-mots__color">[(#GET{numeros}|count|singulier_ou_pluriel{pratiques_picturales:nombre_numero_mot,pratiques_picturales:nombre_numeros_mot})[ «&#8239;(#ENV{titre-mot})&#8239;»]]</h1>
   <div class="layout">
     <BOUCLE_numeros(RUBRIQUES){id_rubrique IN #GET{numeros}}{!par num titre, titre}{pagination 4}
     >[<article class="layout__item u-6/12-m-and-l element cover">
