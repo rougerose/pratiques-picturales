@@ -6,6 +6,8 @@ Questions:
   ☐ rubrique-numero : pagination dans la liste des articles du sommaire ? non
 
 Prioritaire:
+  ☐ article-resumé : mettre introduction et non pas descriptif
+  ☐ rubrique-numero : il manque les auteurs dans les résumés d'article
   ☐ mise en forme des contenus dans #TEXTE
   ☐ article-numéro, rubrique-numéro : liens précédent/suivant
   ☐ Correction: Bug script Table des matières + Safari
