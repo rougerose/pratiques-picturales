@@ -1,0 +1,16 @@
+<footer class="page-footer">
+  [<p class="page-footer__item">(#INCLURE{fond=img/pratiques-picturales.svg,class=page-footer__logo})</p>]
+  <p class="page-footer__item">
+    <BOUCLE_mentions(ARTICLES){page=mentions}>
+      <a class="page-footer__link nav__link t-sommaire__color-nav" href="#URL_PAGE_UNIQUE{mentions}">
+        <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
+        <span class="nav__label">#TITRE</span>
+      </a>
+    </BOUCLE_mentions><BOUCLE_contact(ARTICLES){page=contact}>
+      <a class="page-footer__link nav__link t-sommaire__color-nav" href="#URL_PAGE_UNIQUE{contact}">
+        <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
+        <span class="nav__label">#TITRE</span>
+      </a>
+    </BOUCLE_contact>
+  </p>
+</footer>

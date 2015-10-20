@@ -8,6 +8,12 @@
   }
 }
 
+  .site-nav__container {
+    @extend .clearfix;
+    margin-left: -$spacing-unit;
+    margin-bottom: $spacing-unit;
+  }
+
   .site-nav__home {
     width: 100%;
   }

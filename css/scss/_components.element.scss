@@ -113,28 +113,39 @@
   @extend .element__content--main;
 }
 
-.element__link {
-  text-decoration: none;
-  display: block;
-}
-
-.element__contact {
-  text-align: center;
-}
-
-.element__next {
-  margin-top: $spacing-unit--small;
-  margin-bottom: $spacing-unit--tiny;
-  text-align: right;
-  font-weight: bold;
-  @include transition(color);
-  &:before,
-  &:after {
-    margin-bottom: $spacing-unit--tiny;
-    display: block;
-    content: '';
-    width: 20%;
-    height: 0; // la taille est définie par une classe spécifique à l'élément.
-    background-color: currentColor;
+  .element__texte {
+    margin-bottom: $spacing-unit--large;
   }
-}
+
+  .element__texte--chapo {
+    margin-bottom: $spacing-unit--large;
+    @include inuit-font-size(18px);
+    color: darken($text-color,15%);
+  }
+
+
+  .element__link {
+    text-decoration: none;
+    display: block;
+  }
+
+  .element__contact {
+    text-align: center;
+  }
+
+  .element__next {
+    margin-top: $spacing-unit--small;
+    margin-bottom: $spacing-unit--tiny;
+    text-align: right;
+    font-weight: bold;
+    @include transition(color);
+    &:before,
+    &:after {
+      margin-bottom: $spacing-unit--tiny;
+      display: block;
+      content: '';
+      width: 20%;
+      height: 0; // la taille est définie par une classe spécifique à l'élément.
+      background-color: currentColor;
+    }
+  }
