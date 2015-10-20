@@ -9,44 +9,46 @@
 }
 
 .cover__body {
-  position: relative;
-  margin-top: -10%;
   padding: $spacing-unit--small;
   @include transition(background);
 
-  @include media-query(s) {
+  // @include media-query(s) {
+  //   width: 100%;
+  // }
+  //
+  // @include media-query(m-and-l) {
+  //   width: 60%;
+  // }
+}
+
+  .cover__body--simple {
     width: 100%;
   }
 
-  @include media-query(m-and-l) {
-    width: 60%;
-  }
-}
-
-.cover__body--simple {
-  margin-top: 0;
-  width: 100%;
-}
-
-.cover__body--toc,
-.cover__body--all {
-  @include media-query(m) {
-    @extend .u-10\/12-m;
-  }
-  @include media-query(m-and-l) {
-    @extend .u-1\/12-push-m-and-l;
-  }
-  @include media-query(l) {
-    @extend .u-8\/12-l;
-  }
-}
-
-@include media-query(m-and-l) {
   .cover__body--short {
-    position: absolute;
-    bottom: 0px;
+    width: 100%;
+    @include media-query(m-and-l) {
+      position: absolute;
+      bottom: 0px;
+      width: 60%;
+    }
   }
-}
+
+  .cover__body--stack {
+    position: relative;
+    margin-top: -10%;
+    @include media-query(m-and-l) {
+      @extend .u-1\/12-push-m-and-l;
+    }
+
+    @include media-query(m) {
+      @extend .u-10\/12-m;
+    }
+
+    @include media-query(l) {
+      @extend .u-8\/12-l;
+    }
+  }
 
   .cover__title {
     margin-top: 0;

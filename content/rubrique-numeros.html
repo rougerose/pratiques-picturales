@@ -16,17 +16,19 @@
         <div class="notes u-col2-m-and-l">
           (#NOTES)
         </div>
-      </section><!-- /.notes -->]
-    </div><!-- /.layout__item -->
+      </section>]
+    </div>
 
-    <div class="layout__item">
-      [(#INCLURE{fond=inclure/liste-rubriques-numeros,id_rubrique,ajax})]
-    </div><!-- /.layout__item -->
+    [<div class="layout__item">
+      <div class="layout">
+        (#INCLURE{fond=inclure/liste-rubriques-numeros, id_rubrique, contexte=simple, ajax})
+      </div>
+    </div>]
 
     [<div class="layout__item">
       (#INCLURE{fond=breadcrumb/rubrique,id_rubrique})
-    </div><!-- /.layout__item -->]
+    </div>]
 
-  </div><!-- /.layout -->
+  </div>
 </article>
 </BOUCLE_numeros>

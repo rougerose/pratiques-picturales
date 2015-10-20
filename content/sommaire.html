@@ -30,7 +30,7 @@
           <BOUCLE_dernier_numero(RUBRIQUES){id_parent=1}{!par num titre}{0,1}>
           <h1 class="element__title element__title--section beta [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:issue_last:></h1>
           <article class="cover">
-            <INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, contexte=all} />
+            <INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, layout=stack, link=1, descriptif=1, adaptive=1} />
           </article>
           </BOUCLE_dernier_numero>
         </section>

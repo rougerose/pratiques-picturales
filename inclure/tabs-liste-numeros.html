@@ -5,7 +5,7 @@
   <div class="layout">
     <BOUCLE_numeros(RUBRIQUES){id_rubrique IN #GET{numeros}}{!par num titre, titre}{pagination 4}
     >[<article class="layout__item u-6/12-m-and-l element cover">
-        (#INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, contexte=simple})
+        (#INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, layout=simple, link=1, descriptif=1, adaptive=0})
       </article>]</BOUCLE_numeros>
     [<nav class="pagination pagination--bottom">
       (#PAGINATION{numeros,id_rubrique})

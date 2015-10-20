@@ -1,11 +1,13 @@
 <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
 <B_numeros>
   #ANCRE_PAGINATION
-  <BOUCLE_numeros(RUBRIQUES){id_parent}{!par num titre, titre}{pagination 4}>
+  <BOUCLE_numeros(RUBRIQUES){id_parent}{!par num titre, titre}{pagination 4}
+  ><div class="layout__item u-6/12-l">
     [<article class="element cover">
-      (#INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, contexte=all})
+      (#INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, contexte=#ENV{contexte}})
     </article>]
-  </BOUCLE_numeros>
+  </div
+  ></BOUCLE_numeros>
   [<nav class="pagination pagination--bottom">
     (#PAGINATION{numeros,id_rubrique})
   </nav>]
