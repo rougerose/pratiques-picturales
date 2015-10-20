@@ -83,14 +83,11 @@
 
 @import "components.element";
 
-//rubrique
+// rubrique
 @import "components.rubrique";
 @import "components.rubrique-resume";
 
-@import "components.cover";
-
-//article
-@import "components.article";
+// article
 @import "components.article-resume";
 @import "components.toc";
 @import "components.notes";
@@ -107,6 +104,7 @@
 
 @import "components.index";
 
+@import "components.cover";
 @import "components.images";
 @import "components.lists";
 @import "components.boxes";
