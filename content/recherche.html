@@ -1,0 +1,65 @@
+#SET{total,''} #SET{total_articles,''} #SET{total_auteurs,''} #SET{total_mots,''} #SET{total_rubriques,''}
+
+<BOUCLE_articles(ARTICLES){recherche}{!par points}{lang}> </BOUCLE_articles>[(#SET{total_articles,#TOTAL_BOUCLE})]</B_articles>
+<BOUCLE_auteurs(AUTEURS){recherche}> </BOUCLE_auteurs>[(#SET{total_auteurs,#TOTAL_BOUCLE})]</B_auteurs>
+<BOUCLE_mots(MOTS){recherche}{!par points}> </BOUCLE_mots>[(#SET{total_mots,#TOTAL_BOUCLE})]</B_mots>
+<BOUCLE_rubriques(RUBRIQUES){recherche}{!par points}> </BOUCLE_rubriques>[(#SET{total_rubriques,#TOTAL_BOUCLE})]</B_rubriques>
+[(#SET{total,#GET{total_articles}|plus{#GET{total_rubriques}}|plus{#GET{total_auteurs}}|plus{#GET{total_mots}}})]
+<div class="element element--container recherche">
+  <div class="layout">
+    <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
+      <header class="element__header element__section">
+        <h1 class="element__title alpha t-recherche__color"><:pratiques_picturales:titre_recherche:></h1>
+      </header>
+    </div>
+    <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l element__content">
+      <div class="layout">
+        <div class="layout__item u-8/12-l">
+          #FORMULAIRE_RECHERCHE
+        </div>
+
+        [(#GET{total}|>{0}|oui)
+          <div id="js-tabs" class="layout__item">
+            <nav class="tabs-nav t-recherche__tabs-border">
+              <h1 class="">[(#GET{total}|singulier_ou_pluriel{pratiques_picturales:nombre_resultat,pratiques_picturales:nombre_resultats})]</h1>
+              <ul class="tabs tabs__list t-recherche__tabs-color">
+                [<li class="tabs__item t-recherche__tabs-border"><a href="#articles" class="tabs__link">(#GET{total_articles}|singulier_ou_pluriel{pratiques_picturales:nombre_article,pratiques_picturales:nombre_articles})</a></li>]
+                [<li class="tabs__item t-recherche__tabs-border"><a href="#rubriques" class="tabs__link">(#GET{total_rubriques}|singulier_ou_pluriel{pratiques_picturales:nombre_rubrique,pratiques_picturales:nombre_rubriques})</a></li>]
+                [<li class="tabs__item t-recherche__tabs-border"><a href="#auteurs" class="tabs__link">(#GET{total_auteurs}|singulier_ou_pluriel{pratiques_picturales:nombre_auteur,pratiques_picturales:nombre_auteurs})</a></li>]
+                [<li class="tabs__item t-recherche__tabs-border"><a href="#mots" class="tabs__link">(#GET{total_mots}|singulier_ou_pluriel{pratiques_picturales:nombre_mot,pratiques_picturales:nombre_mots})</a></li>]
+              </ul>
+            </nav>
+            <div class="tabs-content">
+              [<div id="articles" class="tabs-content__item tabs-content__item--recherche">
+                (#GET{total_articles}|>{0}|oui)
+                  [(#INCLURE{fond=inclure/tabs-recherche-liste-articles,ajax,env})]
+              </div>]
+              [<div id="rubriques" class="tabs-content__item tabs-content__item--recherche">
+                (#GET{total_rubriques}|>{0}|oui)
+                  [(#INCLURE{fond=inclure/tabs-recherche-liste-rubriques,ajax,env})]
+              </div>]
+              [<div id="auteurs" class="tabs-content__item tabs-content__item--recherche">
+                (#GET{total_auteurs}|>{0}|oui)
+                  [(#INCLURE{fond=inclure/tabs-recherche-liste-auteurs,ajax,env})]
+              </div>]
+              [<div id="mots" class="tabs-content__item tabs-content__item--recherche">
+                (#GET{total_mots}|>{0}|oui)
+                  [(#INCLURE{fond=inclure/tabs-recherche-liste-mots,ajax,env})]
+              </div>]
+            </div>
+          </div>
+        ][(#GET{total}|=={0}|?{
+          <div class="layout__item">
+            <p class="info info--error"><:pratiques_picturales:info_error_resultat_aucun:></p>
+          </div>
+        })]
+
+      </div>
+    </div>
+
+    [<div class="layout__item">
+      (#INCLURE{fond=breadcrumb/recherche})
+    </div>]
+
+  </div>
+</div>

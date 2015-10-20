@@ -31,6 +31,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   // I
   'info_document'                => 'Document',
   'info_error_mot_aucun_contenu' => "Aucun contenu n'est lié à ce mot-clé",
+  'info_error_resultat_aucun' => "Votre critère de recherche de donne aucun résultat",
   'issue_last'                   => 'dernier numéro',
 
   // L
@@ -47,10 +48,16 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'nom_menu_page_speciale'       => 'Plugin Pratiques picturales : Lien vers un squelette page ',
   'nombre_article'               => '1 article',
   'nombre_articles'              => '@nb@ articles',
+  'nombre_auteur'               => '1 auteur',
+  'nombre_auteurs'              => '@nb@ auteurs',
   'nombre_document'              => '1 document',
   'nombre_documents'             => '@nb@ documents',
+  'nombre_mot'               => '1 mot-clé',
+  'nombre_mots'              => '@nb@ mots-clés',
   'nombre_numero'                => '1 numéro',
   'nombre_numeros'               => '@nb@ numéros',
+  'nombre_resultat'              => '1 résultat',
+  'nombre_resultats'             => '@nb@ résultats',
   'nombre_rubrique'              => '1 rubrique',
   'nombre_rubriques'             => '@nb@ rubriques',
   'notes'                        => 'Notes',
@@ -78,6 +85,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'titre_rubriques'              => 'Rubriques',
   'titre_numeros'                => 'Numéros',
   'titre_documents'              => 'Documents',
+  'titre_recherche' => 'Recherche',
 
 );
 

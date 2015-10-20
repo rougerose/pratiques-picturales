@@ -1,0 +1,11 @@
+<BOUCLE_auteur_resume(AUTEURS){id_auteur}>
+  <article class="element auteur-resume">
+    <a href="#URL_AUTEUR" class="element__link t-auteurs__color--hover">
+      [<h1 class="element__title delta">(#NOM|prenom_nom)</h1>]
+      [<div class="article-resume__desc">
+        (#BIO)
+      </div>]
+      <p class="element__next article-resume__next t-auteurs__icon-next t-auteurs__icon-next--std"><:pratiques_picturales:lire_suite:> [(#INCLURE{fond=img/icon-next.svg})]</p>
+    </a>
+  </article>
+</BOUCLE_auteur_resume>

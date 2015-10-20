@@ -1,0 +1,20 @@
+#SET{defaut_tri,#ARRAY{points,-1,date,-1}}
+<B_auteurs>
+  #ANCRE_PAGINATION
+  <!-- <nav class="tri tri--recherche nav--position nav--is-top">
+    <h1>Trier les résultats</h1>
+    <ul class="bare-list">
+      <li class="[(#TRI|=={date}|oui)nav-item--is-active]">[(#TRI{date,<:tri_date:>,ajax})]</li>
+      <li class="[(#TRI|=={points}|oui)nav-item--is-active]">[(#TRI{points,<:tri_pertinence:>,ajax})]</li>
+    </ul>
+  </nav> -->
+  <div class="layout">
+    <BOUCLE_auteurs(AUTEURS){recherche}{tri points,#GET{defaut_tri}}{pagination 5}
+    >[<div class="layout__item u-6/12-m-and-l">
+        (#INCLURE{fond=inclure/auteur-resume, id_auteur, class_color=auteurs, lien_suite=suite})
+      </div>]</BOUCLE_auteurs>
+  </div>
+  [<nav class="pagination pagination--bottom pagination--center">
+    (#PAGINATION{pagelist,class_color=auteurs})
+  </nav>]
+</B_auteurs>
