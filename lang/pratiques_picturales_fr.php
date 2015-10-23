@@ -31,7 +31,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   // I
   'info_document'                => 'Document',
   'info_error_mot_aucun_contenu' => "Aucun contenu n'est lié à ce mot-clé",
-  'info_error_resultat_aucun'    => "Votre critère de recherche de donne aucun résultat",
+  'info_error_resultat_aucun'    => "Votre critère de recherche ne donne aucun résultat",
+  'info_rechercher' => 'Votre recherche…',
   'issue_last'                   => 'dernier numéro',
 
   // L
