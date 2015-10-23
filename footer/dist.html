@@ -6,7 +6,7 @@
         <aside class="page-sub-footer">
           <BOUCLE_article_apropos(ARTICLES){page=apropos}>
           <section class="related-about">
-            <h1 class="related__title">#TITRE</h1>
+            <h1 class="related__title t-apropos__color"><:pratiques_picturales:apropos_titre:></h1>
             [<div class="related__desc-block">(#DESCRIPTIF)</div>]
 
             <p class="related__desc related__desc--about-links">
@@ -30,15 +30,14 @@
             <p class="related__desc related__desc--aff"><:pratiques_picturales:mention_affiliation:><a href="http://www.institut-acte.cnrs.fr" class="related__logo-aff">Institut Acte</a></p>
           </section>
           </BOUCLE_article_apropos>
-          <B_issue_last><section class="related-issue">
-            <h1 class="related__title"><:pratiques_picturales:issue_last:></h1>
-            <BOUCLE_issue_last(RUBRIQUES){id_parent=1}{!par num titre}{0,1}>
+          <BOUCLE_issue_last(RUBRIQUES){id_parent=1}{!par num titre}{0,1}>
+          <section class="related-issue">
+            <h1 class="related__title [t-(#ID_SECTEUR)__color]"><:pratiques_picturales:issue_last:></h1>
             <div class="cover">
               <INCLURE{fond=inclure/rubrique-numero-cover-short,id_rubrique} />
             </div>
-            </BOUCLE_issue_last>
-          </section><!-- /.related-issue /.layout__item -->
-          </B_issue_last>
+          </section>
+          </BOUCLE_issue_last>
         </aside>
 
         [(#INCLURE{fond=inclure/page-footer})]

@@ -4,6 +4,7 @@ if (!defined("_ECRIRE_INC_VERSION")) return;
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
   // A
+  'apropos_titre' => 'À propos',
   'article_pdf'                  => 'Télécharger la version PDF de cet article',
   'article_pdf_court'            => 'Version PDF',
   'articles_connexes'            => 'Lire également',
@@ -33,7 +34,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'info_error_mot_aucun_contenu' => "Aucun contenu n'est lié à ce mot-clé",
   'info_error_resultat_aucun'    => "Votre critère de recherche ne donne aucun résultat",
   'info_rechercher' => 'Votre recherche…',
-  'issue_last'                   => 'dernier numéro',
+  'issue_last'                   => 'Dernier numéro',
 
   // L
   'lire_auteur'                  => 'Plus sur cet auteur',
