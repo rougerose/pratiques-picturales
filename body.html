@@ -1,5 +1,6 @@
 [(#SET{page-variable,#ENV{type-page,page}})]
   [(#GET{page-variable}|match{rubrique|article}|?{#SET{page-variable,#ID_RUBRIQUE}})]
+  [(#ENV{composition}|=={apropos}|?{#SET{page-variable,apropos}})]
   [(#GET{page-variable}|=={auteur}|?{#SET{page-variable,auteurs}})]
   [(#GET{page-variable}|=={mot}|?{#SET{page-variable,mots}})]
 [(#SET{class,[page_(#ENV{type-page,page})[ #ENV{type-page,page}_(#ENV{composition,''})]][ composition_(#ENV{composition})]})]

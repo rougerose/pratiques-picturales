@@ -173,14 +173,16 @@
 </BOUCLE_rubriques>
 
 [(#REM) couleurs des pages autres que les rubriques ]
-[(#SET{pages,#ARRAY{auteurs,'f5a623',mots,'4a90e2',recherche,'df69e8',sommaire,'a70a37'}})]
+[(#SET{pages,#ARRAY{auteurs,'f5a623',mots,'4a90e2',recherche,'df69e8',sommaire,'a70a37',apropos,'f84212'}})]
+
 <BOUCLE_pages(DATA){source tableau,#GET{pages}}>
 
-[(#REM) tabs-color ]
-  .t-[(#CLE)]__tabs-color .tabs__item--current,
 [(#REM) définition principale ]
   .t-[(#CLE)]__color,
+  .t-[(#CLE)]__color--inter h2,
   .t-[(#CLE)]__color--hover:hover,
+[(#REM) tabs-color ]
+  .t-[(#CLE)]__tabs-color .tabs__item--current,
 [(#REM) navigation principale ]
   .t-[(#CLE)]__color-nav,
   .active .t-[(#CLE)]__color-nav,
@@ -191,6 +193,15 @@
   .t-[(#CLE)]__pagination > a:hover
   {
     color: [#(#VALEUR)];
+  }
+
+[(#REM) intertitres ]
+  .t-[(#CLE)]__color--inter h3,
+  .t-[(#CLE)]__color--inter h4,
+  .t-[(#CLE)]__color--inter h5,
+  .t-[(#CLE)]__color--inter h6
+  {
+    color: [#(#VALEUR|couleur_luminance{0.55})]
   }
 
 [(#REM) border ]

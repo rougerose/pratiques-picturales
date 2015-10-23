@@ -39,7 +39,9 @@
    element__header
    ========================================================================== */
 
-.element__header {}
+.element__header {
+  margin-bottom: $spacing-unit--large;
+}
 
   .element__title {
     margin-bottom: 0;
@@ -113,7 +115,9 @@
   @extend .element__content--main;
 }
 
-  .element__texte {
+  .element__texte {}
+
+  .element__texte--mb {
     margin-bottom: $spacing-unit--large;
   }
 
