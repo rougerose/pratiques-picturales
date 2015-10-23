@@ -7,15 +7,18 @@ var utils = (function(){
     el,
     pseudo,
     detection = false;
-    width = '"'+ width +'"'; // pseudo est une chaîne de la forme "pseudo"
+
     if (window.getComputedStyle && doc.querySelector) {
-      el = doc.querySelector('#js-page-body');
-      pseudo = window.getComputedStyle(el, ':before').getPropertyValue('content');
-      if (pseudo === width) {
+      el = doc.querySelector("#js-page-body");
+      pseudo = window.getComputedStyle(el, ":before").getPropertyValue("content");
+      // Safari pseudo = large ; Chrome et Firefox pseudo = "large"
+      if (pseudo.indexOf("large" != -1)) {
         detection = true;
       }
     }
+
     return detection;
   }
+
   return u;
 })();

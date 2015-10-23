@@ -26,6 +26,7 @@ Todo:
 Penser à:
   ☐ http://webdevchecklist.com
   ☐ open graph http://ogp.me
+  ☐ mettre en place des head/xxx.html spécifique aux pages ?
   ☐ footer/dist.html : ajouter les ancres (revue, équipe, etc.)
   dans les url vers l'article de présentation de la revue.
 
