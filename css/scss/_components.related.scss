@@ -59,15 +59,15 @@
 }
 
 .related__desc--about-links {
-  @extend .flex-grid;
+  // @extend .flex-grid;
   margin-left: 12px;
 }
 
   .related__link {
-    @extend .flex-grid__item;
-    flex: 0 0 50%;
+    // @extend .flex-grid__item;
+    // flex: 0 0 50%;
     margin-bottom: $spacing-unit--tiny;
-    justify-content: flex-start;
+    // justify-content: flex-start;
     padding-left: 0;
     margin-left: 0;
   }

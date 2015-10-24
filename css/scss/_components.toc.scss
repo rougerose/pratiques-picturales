@@ -4,9 +4,8 @@
 
 .toc {
   padding: $spacing-unit--small;
-  column-count: 2;
+  margin-bottom: $spacing-unit;
   @include media-query(l) {
-    column-count: auto;
     padding: 0;
   }
 }
@@ -21,23 +20,24 @@
     margin-top: $spacing-unit--tiny;
     margin-bottom: $spacing-unit--tiny;
     text-transform: uppercase;
+    color: $gray-color;
+    @include transition(color);
 
-    // &.is-active {
-    //   border-bottom: 1px solid #000;
-    //
-    //   & .toc__link {
-    //     color: #000;
-    //   }
-    // }
+    &.is-active {
+
+      > a {
+        border-bottom-color: $black-color;
+        color: $black-color;
+      }
+    }
   }
 
    .toc__link {
+    //  display: block;
+     border-bottom: 1px solid $white-color;
      text-decoration: none;
      color: $gray-color;
-     &.is-active {
-       border-bottom: 1px solid $black-color;
-       color: $black-color;
-     }
+     @include transition(border-color);
    }
 
 
@@ -52,13 +52,13 @@
        @extend .list-bare;
        @include inuit-font-size(14px,1.4);
        @include media-query(l) {
-         padding: $spacing-unit 0 0;
+         padding: 0;
        }
      }
 
      .toc--apropos ul.spip ul {
        padding-top: 0;
-      //  padding-left: 12px;
+       padding-left: $spacing-unit--small;
        list-style: square inside;
      }
 

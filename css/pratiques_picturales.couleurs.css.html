@@ -27,7 +27,8 @@
   .t-[(#ID_RUBRIQUE)]__color-nav:hover,
   .t-[(#ID_RUBRIQUE)]__color-nav:hover > .nav__label,
   .t-[(#ID_RUBRIQUE)]__color-nav.is-active > .nav__label,
-  .t-[(#ID_RUBRIQUE)]__toc .toc__link:hover
+  .t-[(#ID_RUBRIQUE)]__toc .toc__link:hover,
+  .t-[(#ID_RUBRIQUE)]__pagination > a:hover,
   {
     color: [#(#GET{couleur})];
   }
@@ -195,6 +196,30 @@
     color: [#(#VALEUR)];
   }
 
+[(#REM) toc ]
+  [(#CLE|=={apropos}|oui)
+    .t-[(#CLE)]__toc li.is-active > a
+    {
+      color: [#(#VALEUR)];
+      border-color: [#(#VALEUR)];
+    }
+    .t-[(#CLE)]__toc a:hover
+    {
+      color: [#(#VALEUR)];
+    }
+    .t-[(#CLE)]__toc
+    {
+      background-color: [#(#GET{couleur}|couleur_saturation{0.1})];
+    }
+    @media [(#GET{l})]
+    {
+      .t-[(#CLE)]__toc
+      {
+        background-color: #fff;
+      }
+    }
+  ]
+
 [(#REM) intertitres ]
   .t-[(#CLE)]__color--inter h3,
   .t-[(#CLE)]__color--inter h4,
@@ -219,7 +244,13 @@
   }
 
 [(#REM) hN ]
-  .t-[(#CLE)]__hN
+  .t-[(#CLE)]__hN,
+  .t-[(#CLE)]__pagination > a:hover,
+[(#REM) toc-item ]
+  [(#CLE|=={apropos}|oui)
+  .t-[(#CLE)]__toc li.is-active,
+  .t-[(#CLE)]__toc li.is-active > a
+  ]
   {
     color: [#(#VALEUR)];
     border-color: [#(#VALEUR)];
