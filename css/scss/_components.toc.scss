@@ -20,8 +20,11 @@
     margin-top: $spacing-unit--tiny;
     margin-bottom: $spacing-unit--tiny;
     text-transform: uppercase;
-    color: $gray-color;
     @include transition(color);
+
+    @include media-query(l) {
+      color: $gray-color;
+    }
 
     &.is-active {
 
@@ -33,11 +36,13 @@
   }
 
    .toc__link {
-    //  display: block;
      border-bottom: 1px solid $white-color;
      text-decoration: none;
-     color: $gray-color;
      @include transition(border-color);
+
+     @include media-query(l) {
+       color: $gray-color;
+     }
    }
 
 
