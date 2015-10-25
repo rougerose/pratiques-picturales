@@ -6,19 +6,18 @@
 
   .contact__item {
     position: relative;
+    margin-bottom: $spacing-unit;
   }
 
     .contact__link {
-      // position: relative;
       display: block;
       text-decoration: none;
       > .icon {
-        // position: absolute;
-
+        margin-right: $spacing-unit--tiny;
       }
       &:hover {
         .icon {
-          transform: scale(1.5);
+          transform: scale(1.2);
         }
         .contact__label {
 

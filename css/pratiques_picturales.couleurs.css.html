@@ -178,7 +178,10 @@
 
 <BOUCLE_pages(DATA){source tableau,#GET{pages}}>
 
-[(#REM) définition principale ]
+[(#REM) auteurs ]
+[(#CLE|=={auteurs}|oui)
+  .t-[(#CLE)]__contact:hover,
+][(#REM) définition principale ]
   .t-[(#CLE)]__color,
   .t-[(#CLE)]__color--inter h2,
   .t-[(#CLE)]__color--hover:hover,
@@ -243,14 +246,17 @@
     background: [#(#VALEUR)];
   }
 
-[(#REM) hN ]
-  .t-[(#CLE)]__hN,
-  .t-[(#CLE)]__pagination > a:hover,
 [(#REM) toc-item ]
+  [(#CLE|=={auteurs}|oui)
+  .t-[(#CLE)]__toc-item.is-active,
+  .t-[(#CLE)]__toc-item.is-active .toc__link,
+  ]
   [(#CLE|=={apropos}|oui)
   .t-[(#CLE)]__toc li.is-active,
-  .t-[(#CLE)]__toc li.is-active > a
-  ]
+  .t-[(#CLE)]__toc li.is-active > a, ]
+[(#REM) hN ]
+  .t-[(#CLE)]__hN,
+  .t-[(#CLE)]__pagination > a:hover
   {
     color: [#(#VALEUR)];
     border-color: [#(#VALEUR)];
