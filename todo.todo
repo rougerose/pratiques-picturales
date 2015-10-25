@@ -1,12 +1,11 @@
 Questions:
-  ☐ Antoine -> résumé d'article dans #DESCRIPTIF ou bien champs spécifique ?
-  ☐ la rubrique Numéros : problème des blancs trop important à droite ?
-  ☐ rubrique-numero : le texte de présentation est présenté en dehors
-  de l'aplat de couleur, dans l'hypothèse où le texte serait un peu important.
-  ☐ rubrique-numero : pagination dans la liste des articles du sommaire ? non
+  ✔ Antoine -> résumé d'article dans #DESCRIPTIF ou bien champs spécifique ? @done(2015-10-25 18:23) @project(Questions)
+  ✔ la rubrique Numéros : problème des blancs trop important à droite ? @done(2015-10-25 18:23) @project(Questions)
+  ✔ rubrique-numero : le texte de présentation est présenté en dehors de l'aplat de couleur, dans l'hypothèse où le texte serait un peu important. @done(2015-10-25 18:23) @project(Questions)
+  ✔ rubrique-numero : pagination dans la liste des articles du sommaire ? non @done(2015-10-25 18:23) @project(Questions)
 
 Prioritaire:
-  ☐ article-resumé : mettre introduction et non pas descriptif
+  ✔ article-resumé : mettre introduction et non pas descriptif @done(2015-10-25 18:28) @project(Prioritaire)
   ☐ rubrique-numero : il manque les auteurs dans les résumés d'article
   ☐ mise en forme des contenus dans #TEXTE
   ☐ article-numéro, rubrique-numéro : liens précédent/suivant
@@ -16,6 +15,8 @@ Prioritaire:
   ☐ Correction: supprimer flex
   ☐ recherche : mettre en place les critères de tri
   ☐ recherche : formulaire en overlay ?
+  ☐ date article : replacer dans colonne principale
+  ☐ vérifier la mise en forme de la pagination dans les numéros par exemple
 
 Todo:
   ☐ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie

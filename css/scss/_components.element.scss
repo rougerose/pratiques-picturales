@@ -43,6 +43,10 @@
   margin-bottom: $spacing-unit--large;
 }
 
+.element__header--resume-logo {
+  margin-bottom: 0;
+}
+
   .element__title {
     margin-bottom: 0;
   }
@@ -56,14 +60,14 @@
   }
 
   .element__subtitle {
-    margin-bottom: 0;
+    margin: $spacing-unit--tiny 0 0;
     font-style: italic;
-    color: $black-color;
+    color: $gray-color;
   }
 
   .element__subtitle--resume {
     margin-top: $spacing-unit--tiny;
-    color: inherit;
+    color: $gray-color;
   }
 
 .element__meta {
@@ -79,6 +83,11 @@
     @include media-query(l) {
       margin-bottom: 0;
     }
+  }
+
+  .element__authors--resume {
+    margin-top: $spacing-unit--tiny;
+    @include inuit-font-size(16px);
   }
 
   .element__date {

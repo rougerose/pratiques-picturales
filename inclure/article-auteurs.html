@@ -1,3 +1,1 @@
-<BOUCLE_auteurs(AUTEURS){id_article}{par nom}>
-[(#COMPTEUR_BOUCLE|=={1}|?{'',[(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|?{' &amp;&nbsp;',', '})]})][
-(#ENV{contexte}|=={resume}|?{<span rel="author">,<a href="#URL_AUTEUR" rel="author">})][(#NOM|prenom_nom)][(#ENV{contexte}|=={resume}|?{</span>,</a>})]</BOUCLE_auteurs>
+<BOUCLE_auteurs(AUTEURS){id_article}{par nom}>[(#COMPTEUR_BOUCLE|=={1}|?{'',[(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|?{' &amp;&nbsp;',', '})]})][(#ENV{contexte}|=={resume}|?{<span rel="author">,<a href="#URL_AUTEUR" rel="author">})][(#NOM|prenom_nom)][(#ENV{contexte}|=={resume}|?{</span>,</a>})]</BOUCLE_auteurs>

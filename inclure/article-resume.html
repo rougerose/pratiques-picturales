@@ -2,12 +2,14 @@
 <BOUCLE_article_resume(ARTICLES){id_article}>
 <article class="element article-resume[ (#ENV{class_block_modifier})]">
   <a href="#URL_ARTICLE" class="element__link[ t-(#ENV{class_color})__color--hover]">
-    <header class="element__header">
-      <h1 class="element__title element__title--mb gamma">#TITRE</h1>
+    <header class="element__header [(#LOGO_ARTICLE|oui)element__header--resume-logo]">
+      <h1 class="element__title gamma">#TITRE</h1>
+      [<p class="element__subtitle element__subtitle--resume epsilon">(#SOUSTITRE)</p>]
+      [<p class="element__authors element__authors--article element__authors--resume">(#INCLURE{fond=inclure/article-auteurs,id_article,contexte=resume})</p>]
     </header>
     [(#LOGO_ARTICLE||inserer_attribut{alt,#TITRE}|image_passe_partout{1200,900}|image_recadre{1200,900}|adaptive_images{600})]
     [<div class="article-resume__desc [(#LOGO_ARTICLE|oui)article-resume__desc--logo]">
-      (#DESCRIPTIF)
+      (#INTRODUCTION)
     </div>]
     <p class="element__next article-resume__next[ t-(#ENV{class_color})__icon-next][ t-(#ENV{class_color})__icon-next--std]">[(#ENV{lien_suite}|=={texte}|?{<:pratiques_picturales:lire_texte_integral:>,<:pratiques_picturales:lire_suite:>}) ][(#INCLURE{fond=img/icon-next.svg})]</p>
   </a>
