@@ -43,7 +43,7 @@
         (#INCLURE{fond=inclure/rubrique-auteurs-contributions,id_rubrique})
       </p>]
       [(#ENV{link}|oui)
-        <p class="element__next cover__desc cover__next [t-(#ID_RUBRIQUE)__icon-next--cover]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg})]</p>
+        <p class="element__next cover__desc cover__next [t-(#ID_RUBRIQUE)__icon-next--cover]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg, class=icon icon-next, class-fill=icon-next__fill})]</p>
       ]
     </div>
   [(#ENV{link}|=={1}|?{</a>})]

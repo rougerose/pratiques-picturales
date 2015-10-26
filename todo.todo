@@ -5,7 +5,6 @@ Prioritaire:
   ☐ Correction: Rubrique-numéros -> présentation sur 2 colonnes. Rubrique-numéro -> image
   couverture moins large + suppression du résumé de présentation.
   ☐ Correction: supprimer flex
-  ☐ recherche : mettre en place les critères de tri
   ☐ recherche : formulaire en overlay ?
   ☐ date article : replacer dans colonne principale
   ☐ vérifier la mise en forme de la pagination dans les numéros par exemple
@@ -20,8 +19,6 @@ Penser à:
   ☐ http://webdevchecklist.com
   ☐ open graph http://ogp.me
   ☐ mettre en place des head/xxx.html spécifique aux pages ?
-  ☐ footer/dist.html : ajouter les ancres (revue, équipe, etc.)
-  dans les url vers l'article de présentation de la revue.
 
 Avant mise en prod:
   ☐ filtre |compacte sur fichier couleurs.css
@@ -30,6 +27,8 @@ Pour mémoire:
   ☐ ratio des images: 1.5
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ footer/dist.html : ajouter les ancres (revue, équipe, etc.) dans les url vers l'article de présentation de la revue. @done(2015-10-26 13:26) @project(Penser à)
+  ✔ recherche : mettre en place les critères de tri @done(2015-10-26 13:25) @project(Prioritaire)
   ✔ Antoine -> résumé d'article dans #DESCRIPTIF ou bien champs spécifique ? @done(2015-10-25 18:23) @project(Questions)
   ✔ la rubrique Numéros : problème des blancs trop important à droite ? @done(2015-10-25 18:23) @project(Questions)
   ✔ rubrique-numero : le texte de présentation est présenté en dehors de l'aplat de couleur, dans l'hypothèse où le texte serait un peu important. @done(2015-10-25 18:23) @project(Questions)
