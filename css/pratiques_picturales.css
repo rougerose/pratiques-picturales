@@ -1991,13 +1991,13 @@ ol.spip ol {
 .pagination__item > strong,
 .pagination__item > a {
   display: block;
-  padding: 3px 10px 0;
+  padding: 0 6px 0;
   margin: 0;
   text-decoration: none; }
 
 /* line 1715, stdin */
 .pagination__item > strong {
-  border-radius: 50%;
+  border-radius: 4px;
   font-weight: bold; }
 
 /* line 1719, stdin */
