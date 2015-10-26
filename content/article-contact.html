@@ -1,0 +1,74 @@
+<BOUCLE_article_contact(ARTICLES){id_article}>
+<article class="element element--container article">
+  <div class="layout">
+    <div class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l">
+      <header class="element__header element__section">
+        <h1 class="element__title alpha t-apropos__color">#TITRE</h1>
+        [<p class="element__subtitle gamma">(#SOUSTITRE)</p>]
+      </header>
+    </div>
+    <div class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l element__content">
+      <div class="layout">
+        <div class="layout__item u-8/12-l element__content--main">
+
+          <section id="texte" class="element__section">
+
+            [<div class="element__texte--chapo">
+              (#CHAPO)
+            </div>]
+
+            [<div>
+              (#TEXTE)
+            </div>]
+
+          </section>
+
+          [<section class="element__section">
+            <h1 class="delta hN t-apropos__hN"><:pratiques_picturales:notes:></h1>
+            <div class="notes u-col2-m-and-l">
+              (#NOTES)
+            </div>
+          </section>]
+
+          <section id="contact" class="element__section">
+            [(#REM) Formulaire de contact. Si id_auteur est présent dans l'url,
+            le visiteur vient de la page de l'auteur et souhaite lui envoyer
+            un mail. Sinon, c'est le formulaire de la page Contact avec
+            l'adresse mail de l'auteur de la page. ]
+            <BOUCLE_auteur(AUTEURS){id_auteur=#ENV{id_auteur}}{tout}>
+              [(#FORMULAIRE_ECRIRE_AUTEUR{#ID_AUTEUR})]
+            </BOUCLE_auteur>
+            [(#FORMULAIRE_ECRIRE_AUTEUR)]
+            <//B_auteur>
+          </section>
+
+          [(#REM)
+            Array des documents à afficher,
+            autres que la version pdf de l'article (id_mot 4).
+          ][
+            (#SET{_id_docs,#ARRAY})
+          ][(#REM)
+            id du document pour la version PDF de l'article
+          ][
+            (#SET{_id_doc_pdf,''})
+          ]<B_documents>
+            <BOUCLE_documents(DOCUMENTS){id_article}{mode=document}{vu=non}>
+                <BOUCLE_technique_mot_article_pdf(MOTS){id_document}{id_mot=4}>
+                  [(#ID_DOCUMENT|unique|oui) #SET{_id_doc_pdf,#ID_DOCUMENT} ]
+                </BOUCLE_technique_mot_article_pdf>
+                [(#ID_DOCUMENT|unique|oui) #SET{_id_docs,#GET{_id_docs}|push{#ID_DOCUMENT}} ]
+            </BOUCLE_documents>
+          </B_documents>
+
+        </div>
+
+      </div>
+
+    </div>
+    [<div class="layout__item">
+      (#INCLURE{fond=breadcrumb/page-unique, id_article, page-variable=#ENV{page-variable}})
+    </div>]
+
+  </div>
+</article>
+</BOUCLE_article_contact>

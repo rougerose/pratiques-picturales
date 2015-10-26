@@ -201,7 +201,8 @@
 
 [(#REM) toc ]
   [(#CLE|=={apropos}|oui)
-    .t-[(#CLE)]__toc li.is-active > a
+    .t-[(#CLE)]__toc li.is-active > a,
+    .t-[(#CLE)]__btn--submit
     {
       color: [#(#VALEUR)];
       border-color: [#(#VALEUR)];
@@ -239,6 +240,8 @@
   }
 
 [(#REM) background ]
+  [(#CLE|=={apropos}|oui)
+  .t-[(#CLE)]__btn--submit:hover, ]
   .t-[(#CLE)]__bg,
   .t-[(#CLE)]__pagination > strong
   {

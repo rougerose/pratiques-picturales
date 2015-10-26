@@ -6,6 +6,16 @@
   font-weight: bold;
 }
 
+// BTN--SUBMIT
+
+.btn--submit {
+  background: none;
+  transition: color 0.4s, background 0.4s;
+}
+
+
+/* BTN--ACTION */
+
 .btn--action {
   position: relative;
   background: none;

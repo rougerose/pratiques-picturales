@@ -2,31 +2,83 @@
    #FORMS
    ========================================================================== */
 
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 $spacing-unit;
+}
+
+textarea {
+  min-height: 5em;
+  vertical-align: top;
+  font-family: inherit;
+  font-size: inherit;
+  resize: vertical;
+}
+
+input,
+textarea {
+  border: 1px solid $lightest-gray-color;
+}
+
+
+.form {}
+
+.form__item {
+  position: relative;
+  margin: 0 0 $spacing-unit;
+}
+
+.form__field {
+  width: 100%;
+
+  .form__item--error & {
+    border-color: $error-color;
+  }
+}
 
 /*
-   #SEARCH
+   #FORM-CONTACT
    ========================================================================== */
 
-.search__container {
+.form-contact__legend {
+  margin-bottom: $spacing-unit--small;
+  font-weight: bold;
+}
+
+.form-contact__label {
+  display: block;
+  font-style: italic;
+}
+
+.form-contact__textarea {
+  min-height: 10em;
+}
+
+
+/*
+   #FORM-SEARCH
+   ========================================================================== */
+
+.form-search__container {
   margin-bottom: $spacing-unit--large;
 }
 
-.search__form {
+.form-search {
   @extend .clearfix;
-  border: 1px solid #e2e2e2;
+  border: 1px solid $lightest-gray-color;
   border-radius: 5px;
-  box-shadow: inset 0 1px 2px rgba($black-color, 0.1);
   padding: 3px 6px 0;
+  box-shadow: inset 0 1px 2px rgba($black-color, 0.1);
 }
 
 // .search__label {}
 
-.search__field {
+.form-search__field {
   width: 80%;
   float: left;
   border: none;
   color: $black-color;
-  // @include inuit-font-size(28px,false);
   @include inuit-font-size(20px,false);
   &::placeholder {
     color: $gray-color;
@@ -36,7 +88,7 @@
   }
 }
 
-.search__submit {
+.form-search__submit {
   width: 15%;
   float: right;
   background: $white-color;

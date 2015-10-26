@@ -20,10 +20,14 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
   // C
   'citer_article'                => 'Pour citer cet article',
+  'contact_previsu_email' => 'Votre adresse email',
+  'contact_previsu_message' => 'Texte de votre message',
+  'contact_previsu_sujet' => 'Sujet de votre message',
 
   // D
 
   // F
+  'form_prop_envoyer' => 'Envoyer votre message',
   'footer_co_editorial'          => 'Le comité éditorial',
   'footer_co_scientifique'       => 'Le comité scientifique',
   'footer_equipe'                => "L'équipe",
