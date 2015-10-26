@@ -1,13 +1,13 @@
 #SET{defaut_tri,#ARRAY{points,-1,date,-1}}
 <B_auteurs>
   #ANCRE_PAGINATION
-  <!-- <nav class="tri tri--recherche nav--position nav--is-top">
-    <h1>Trier les résultats</h1>
-    <ul class="bare-list">
-      <li class="[(#TRI|=={date}|oui)nav-item--is-active]">[(#TRI{date,<:tri_date:>,ajax})]</li>
-      <li class="[(#TRI|=={points}|oui)nav-item--is-active]">[(#TRI{points,<:tri_pertinence:>,ajax})]</li>
+  <nav class="sort">
+    <h1 class="sort__title epsilon [t-(#ENV{page-variable})__color]"><:pratiques_picturales:tri_resultats:></h1>
+    <ul class="list-bare sort__list">
+      <li class="sort__item[(#TRI|=={date}|oui)[ t-(#ENV{page-variable})__bg]]">[(#TRI{date,<:pratiques_picturales:tri_date:>,ajax})]</li
+      ><li class="sort__item[ (#TRI|=={points}|oui)[t-(#ENV{page-variable})__bg]]">[(#TRI{points,<:pratiques_picturales:tri_pertinence:>,ajax})]</li>
     </ul>
-  </nav> -->
+  </nav>
   <div class="layout">
     <BOUCLE_auteurs(AUTEURS){recherche}{tri points,#GET{defaut_tri}}{pagination 6}
     >[<div class="layout__item u-6/12-m-and-l">

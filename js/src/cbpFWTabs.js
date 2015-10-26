@@ -39,7 +39,7 @@
 
   CBPFWTabs.prototype._init = function() {
     // tabs elemes
-    this.tabs = [].slice.call( this.el.querySelectorAll( 'nav > ul > li' ) );
+    this.tabs = [].slice.call( this.el.querySelectorAll( '.tabs-nav > ul > li' ) );
     // content items
     this.items = [].slice.call( this.el.querySelectorAll( '.tabs-content > .tabs-content__item' ) );
     // current index

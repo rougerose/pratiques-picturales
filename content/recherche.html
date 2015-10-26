@@ -21,7 +21,7 @@
         [(#GET{total}|>{0}|oui)
           <div id="js-tabs" class="layout__item">
             <nav class="tabs-nav t-recherche__tabs-border">
-              <h1 class="">[(#GET{total}|singulier_ou_pluriel{pratiques_picturales:nombre_resultat,pratiques_picturales:nombre_resultats})]</h1>
+              <h1 class="t-recherche__color beta">[(#GET{total}|singulier_ou_pluriel{pratiques_picturales:nombre_resultat,pratiques_picturales:nombre_resultats})]</h1>
               <ul class="tabs tabs__list t-recherche__tabs-color">
                 [<li class="tabs__item t-recherche__tabs-border"><a href="#articles" class="tabs__link">(#GET{total_articles}|singulier_ou_pluriel{pratiques_picturales:nombre_article,pratiques_picturales:nombre_articles})</a></li>]
                 [<li class="tabs__item t-recherche__tabs-border"><a href="#rubriques" class="tabs__link">(#GET{total_rubriques}|singulier_ou_pluriel{pratiques_picturales:nombre_rubrique,pratiques_picturales:nombre_rubriques})</a></li>]
@@ -32,19 +32,19 @@
             <div class="tabs-content">
               [<div id="articles" class="tabs-content__item tabs-content__item--recherche">
                 (#GET{total_articles}|>{0}|oui)
-                  [(#INCLURE{fond=inclure/tabs-recherche-liste-articles,ajax,env})]
+                  [(#INCLURE{fond=inclure/tabs-recherche-liste-articles, page-variable=#ENV{page-variable}, ajax, env})]
               </div>]
               [<div id="rubriques" class="tabs-content__item tabs-content__item--recherche">
                 (#GET{total_rubriques}|>{0}|oui)
-                  [(#INCLURE{fond=inclure/tabs-recherche-liste-rubriques,ajax,env})]
+                  [(#INCLURE{fond=inclure/tabs-recherche-liste-rubriques, page-variable=#ENV{page-variable}, ajax, env})]
               </div>]
               [<div id="auteurs" class="tabs-content__item tabs-content__item--recherche">
                 (#GET{total_auteurs}|>{0}|oui)
-                  [(#INCLURE{fond=inclure/tabs-recherche-liste-auteurs,ajax,env})]
+                  [(#INCLURE{fond=inclure/tabs-recherche-liste-auteurs, page-variable=#ENV{page-variable}, ajax, env})]
               </div>]
               [<div id="mots" class="tabs-content__item tabs-content__item--recherche">
                 (#GET{total_mots}|>{0}|oui)
-                  [(#INCLURE{fond=inclure/tabs-recherche-liste-mots,ajax,env})]
+                  [(#INCLURE{fond=inclure/tabs-recherche-liste-mots, page-variable=#ENV{page-variable}, ajax, env})]
               </div>]
             </div>
           </div>

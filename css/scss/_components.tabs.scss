@@ -55,12 +55,6 @@
   .tabs-content__title {
     margin-top: $spacing-unit;
     text-align: center;
-    text-transform: uppercase;
-    font-weight: normal;
-    @include inuit-font-size(16px);
-    @include media-query(m-and-l) {
-      @include inuit-font-size(24px);
-    }
   }
 
   .tabs-content__item {

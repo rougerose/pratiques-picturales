@@ -82,10 +82,10 @@
 @import "components.nav";
 
 @import "components.element";
+@import "components.resumes";
 
 // rubrique
 @import "components.rubrique";
-@import "components.rubrique-resume";
 
 // article
 @import "components.article-resume";
@@ -113,6 +113,7 @@
 @import "components.action";
 @import "components.pagination";
 @import "components.tabs";
+@import "components.sort";
 
 @import "components.info";
 

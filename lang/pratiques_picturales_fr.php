@@ -100,6 +100,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'titre_numeros'                => 'Numéros',
   'titre_documents'              => 'Documents',
   'titre_recherche'              => 'Recherche',
+  'tri_date' => 'date',
+  'tri_pertinence' => 'pertinence',
+  'tri_resultats' => 'Trier les résultats par&nbsp;:',
 
 );
 
