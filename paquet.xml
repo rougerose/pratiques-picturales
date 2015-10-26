@@ -22,4 +22,5 @@
     <necessite nom="pages" compatibilite="[1.2.10;[" />
     <necessite nom="adaptive_images" compatibilite="[1.9.1;[" />
     <utilise nom="bellespuces" compatibilite="[0.1.5;[" />
+    <utilise nom="socialtags" compatibilite="[1.0.9;[" />
 </paquet>

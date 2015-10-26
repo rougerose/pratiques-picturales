@@ -9,6 +9,22 @@
       </header>
 
     </div>
+    <div class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l">
+
+      <aside class="element__section element__meta">
+        <div class="layout">
+          <div class="layout__item u-8/12-m-and-l">
+            [<p class="element__byline">
+              [<time class="element__date" pubdate datetime="[(#DATE|date_iso)]">(#DATE|affdate)</time>]<span class="element__authors element__authors--article"><:pratiques_picturales:par_auteur:> (#INCLURE{fond=inclure/article-auteurs,id_article})</span>
+            </p>]
+          </div>[<div class="layout__item u-4/12-m-and-l">
+            (#PLUGIN{socialtags}|oui)
+              [(#INCLURE{fond=inclure/share})]
+          </div>]
+        </div>
+      </aside>
+
+    </div>
     <div class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l element__content">
       <div id="js-toc-parent" class="layout layout--rev">
         [<div class="layout__item u-4/12-l element__content--sub">

@@ -4,7 +4,7 @@ if (!defined("_ECRIRE_INC_VERSION")) return;
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
   // A
-  'apropos_titre' => 'À propos',
+  'apropos_titre'                => 'À propos',
   'article_pdf'                  => 'Télécharger la version PDF de cet article',
   'article_pdf_court'            => 'Version PDF',
   'articles_connexes'            => 'Lire également',
@@ -20,14 +20,14 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
   // C
   'citer_article'                => 'Pour citer cet article',
-  'contact_previsu_email' => 'Votre adresse email',
-  'contact_previsu_message' => 'Texte de votre message',
-  'contact_previsu_sujet' => 'Sujet de votre message',
+  'contact_previsu_email'        => 'Votre adresse email',
+  'contact_previsu_message'      => 'Texte de votre message',
+  'contact_previsu_sujet'        => 'Sujet de votre message',
 
   // D
 
   // F
-  'form_prop_envoyer' => 'Envoyer votre message',
+  'form_prop_envoyer'            => 'Envoyer votre message',
   'footer_co_editorial'          => 'Le comité éditorial',
   'footer_co_scientifique'       => 'Le comité scientifique',
   'footer_equipe'                => "L'équipe",
@@ -37,7 +37,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'info_document'                => 'Document',
   'info_error_mot_aucun_contenu' => "Aucun contenu n'est lié à ce mot-clé",
   'info_error_resultat_aucun'    => "Votre critère de recherche ne donne aucun résultat",
-  'info_rechercher' => 'Votre recherche…',
+  'info_rechercher'              => 'Votre recherche…',
   'issue_last'                   => 'Dernier numéro',
 
   // L
@@ -89,6 +89,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'resume'                       => 'Résumé',
 
   // S
+  'share'                        => 'Partagez',
   'sommaire'                     => 'Sommaire',
 
   // T
@@ -100,9 +101,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'titre_numeros'                => 'Numéros',
   'titre_documents'              => 'Documents',
   'titre_recherche'              => 'Recherche',
-  'tri_date' => 'date',
-  'tri_pertinence' => 'pertinence',
-  'tri_resultats' => 'Trier les résultats par&nbsp;:',
+  'tri_date'                     => 'date',
+  'tri_pertinence'               => 'pertinence',
+  'tri_resultats'                => 'Trier les résultats par&nbsp;:',
 
 );
 

@@ -5,7 +5,7 @@
     <header class="element__header [(#LOGO_ARTICLE|oui)element__header--resume-logo]">
       <h1 class="element__title gamma">#TITRE</h1>
       [<p class="element__subtitle element__subtitle--resume epsilon">(#SOUSTITRE)</p>]
-      [<p class="element__authors element__authors--article element__authors--resume">(#INCLURE{fond=inclure/article-auteurs,id_article,contexte=resume})</p>]
+      [<p class="element__authors element__authors--resume">(#INCLURE{fond=inclure/article-auteurs,id_article,contexte=resume})</p>]
     </header>
     [(#LOGO_ARTICLE||inserer_attribut{alt,#TITRE}|image_passe_partout{1200,900}|image_recadre{1200,900}|adaptive_images{600})]
     [<div class="article-resume__desc [(#LOGO_ARTICLE|oui)article-resume__desc--logo]">

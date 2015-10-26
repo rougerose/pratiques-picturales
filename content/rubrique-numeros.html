@@ -8,15 +8,27 @@
         <h1 class="element__title element__title--section [t-(#ID_RUBRIQUE)__color]">#TITRE</h1>
         [<p class="element__subtitle gamma">(#SOUSTITRE)</p>]
       </header>
-      [<div class="element__section">
-        (#TEXTE)
-      </div>]
-      [<section class="element__section">
-        <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
-        <div class="notes u-col2-m-and-l">
-          (#NOTES)
+    </div>
+    <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
+      <div class="layout">
+        <div class="layout__item u-8/12-m-and-l">
+          [<div class="element__section element__section--mb-large">
+            (#TEXTE)
+          </div>
+          [<section class="element__section">
+            <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
+            <div class="notes u-col2-m-and-l">
+              (#NOTES)
+            </div>
+          </section>]]
+        </div><div class="layout__item u-4/12-m-and-l">
+          [<aside class="element__section element__section--mb-large element__meta">
+            (#PLUGIN{socialtags}|oui)
+              [(#INCLURE{fond=inclure/share})]
+          </aside>]
         </div>
-      </section>]
+      </div>
+
     </div>
 
     [<div class="layout__item">

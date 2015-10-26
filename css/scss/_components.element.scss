@@ -26,6 +26,10 @@
   margin-bottom: $spacing-unit;
 }
 
+.element__section--mb-large {
+  margin-bottom: $spacing-unit--large;
+}
+
 .element__section--issue {
   > h1 {
     @include media-query(m-and-l) {
@@ -40,7 +44,7 @@
    ========================================================================== */
 
 .element__header {
-  margin-bottom: $spacing-unit--large;
+  // margin-bottom: $spacing-unit--large;
 }
 
 .element__header--resume-logo {
@@ -70,19 +74,21 @@
     color: $gray-color;
   }
 
-.element__meta {
-  position: relative;
-}
+// .element__meta {}
+
+  .element__byline {}
+
   .element__authors {
     font-style: italic;
   }
 
   .element__authors--article {
-    margin-top: 0;
-    @include inuit-font-size(18px);
-    @include media-query(l) {
-      margin-bottom: 0;
+    &:before {
+      content: ' | ';
+      color: $gray-color;
     }
+    // margin-top: 0;
+    // @include inuit-font-size(16px);
   }
 
   .element__authors--resume {
@@ -92,20 +98,24 @@
 
   .element__date {
     color: $gray-color;
-    transition-property: color;
-    a:hover & {
-      color: currentColor;
-    }
-    &:after {
-      content: ' | ';
-    }
+    // &:after {
+    //   content: ' | ';
+    // }
   }
 
+  // .element__date--resume {
+  //   transition-property: color;
+  //   a:hover & {
+  //     color: currentColor;
+  //   }
+  // }
+
   .element__date--article {
-    margin-top: 0;
-    @include media-query(l) {
-      margin-bottom: 0;
-    }
+    // margin-top: 0;
+    // display: inline-block;
+    // @include media-query(l) {
+    //   // margin-bottom: 0;
+    // }
   }
 
 /*

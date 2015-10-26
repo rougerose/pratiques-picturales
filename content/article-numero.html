@@ -23,34 +23,19 @@
       </header>
 
     </div>
-    <div class="layout__item">
+    <div class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l">
 
       <aside class="element__section element__meta">
-
         <div class="layout">
-
-          <div class="layout__item u-11/12-m u-1/12-push-m u-3/12-l">
-            [<p class="element__date element__date--article">
-              <time pubdate datetime="[(#DATE|date_iso)]">(#DATE|affdate)</time>
+          <div class="layout__item u-8/12-m-and-l">
+            [<p class="element__byline">
+              [<time class="element__date" pubdate datetime="[(#DATE|date_iso)]">(#DATE|affdate)</time>]<span class="element__authors element__authors--article"><:pratiques_picturales:par_auteur:> (#INCLURE{fond=inclure/article-auteurs,id_article})</span>
             </p>]
-          </div><div class="layout__item u-11/12-m u-1/12-push-m u-6/12-l">
-            [<p class="element__authors element__authors--article">
-              <:pratiques_picturales:par_auteur:> (#INCLURE{fond=inclure/article-auteurs,id_article})
-            </p>]
-          </div><div class="layout__item u-11/12-m u-1/12-push-m u-3/12-l">
-            <div class="c-action">
-              <!-- TODO: Terminer bouton Partager -->
-              <!-- <button type="button" class="btn btn--action c-action__toggle [t-(#ID_RUBRIQUE)__color][ t-(#ID_RUBRIQUE)__border][t-(#ID_RUBRIQUE)__bg--before]">
-                <span class="btn__label">!Partagez</span>
-              </button> -->
-              <div class="c-action__content[ t-(#ID_RUBRIQUE)__bg]">
-                <span id="socialtags"></span>
-              </div>
-            </div>
-          </div>
-
+          </div>[<div class="layout__item u-4/12-m-and-l">
+            (#PLUGIN{socialtags}|oui)
+              [(#INCLURE{fond=inclure/share})]
+          </div>]
         </div>
-
       </aside>
 
     </div>
