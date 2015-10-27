@@ -20,6 +20,7 @@
 
 [(#REM) définition principale ]
   .t-[(#ID_RUBRIQUE)]__color,
+  .t-[(#ID_RUBRIQUE)]__color--inter h2.spip,
   .t-[(#ID_RUBRIQUE)]__color--hover:hover,
   .t-[(#ID_RUBRIQUE)]__color-nav,
   .active .t-[(#ID_RUBRIQUE)]__color-nav,
@@ -32,7 +33,14 @@
   {
     color: [#(#GET{couleur})];
   }
-
+[(#REM) intertitres ]
+  .t-[(#ID_RUBRIQUE)]__color--inter h3.spip,
+  .t-[(#ID_RUBRIQUE)]__color--inter h4.spip,
+  .t-[(#ID_RUBRIQUE)]__color--inter h5.spip,
+  .t-[(#ID_RUBRIQUE)]__color--inter h6.spip
+  {
+    color: [#(#GET{couleur}|couleur_luminance{0.55})];
+  }
 [(#REM) border ]
   .t-[(#ID_RUBRIQUE)]__border
   {
@@ -183,7 +191,7 @@
   .t-[(#CLE)]__contact:hover,
 ][(#REM) définition principale ]
   .t-[(#CLE)]__color,
-  .t-[(#CLE)]__color--inter h2,
+  .t-[(#CLE)]__color--inter h2.spip,
   .t-[(#CLE)]__color--hover:hover,
 [(#REM) tabs-color ]
   .t-[(#CLE)]__tabs-color .tabs__item--current,
@@ -225,10 +233,10 @@
   ]
 
 [(#REM) intertitres ]
-  .t-[(#CLE)]__color--inter h3,
-  .t-[(#CLE)]__color--inter h4,
-  .t-[(#CLE)]__color--inter h5,
-  .t-[(#CLE)]__color--inter h6
+  .t-[(#CLE)]__color--inter h3.spip,
+  .t-[(#CLE)]__color--inter h4.spip,
+  .t-[(#CLE)]__color--inter h5.spip,
+  .t-[(#CLE)]__color--inter h6.spip
   {
     color: [#(#VALEUR|couleur_luminance{0.55})]
   }

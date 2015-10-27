@@ -1,13 +1,11 @@
 <BOUCLE_documents_joints(DOCUMENTS){id_document}>
 <a href="[(#URL_DOCUMENT)]" type="#MIME_TYPE" class="media[ (#ENV{class_doc})]">
-  [<img src="(#LOGO_DOCUMENT|extraire_attribut{src})"[ alt="(#TITRE|couper{40})"] class="media__img">]
-  <div class="media__body document__info">
-    <h2 class="epsilon">[(#TITRE|couper{80})]</h2>
-    <p>
-      [<span class="document__descriptif">(#DESCRIPTIF|PtoBR)</span>]
-      [<span class="document__descriptif">(#CREDITS)</span>]
-      [<abbr title="<:pratiques_picturales:info_document:> #TYPE_DOCUMENT" class="ext">(#EXTENSION|strtoupper)</abbr> - ][<span>(#TAILLE|taille_en_octets)</span>]
-    </p>
+  [<img src="(#LOGO_DOCUMENT|extraire_attribut{src})"[ alt="(#TITRE|couper{40})"] class="media__img media__img--doc">]
+  <div class="media__body media__body--doc">
+    [<h3 class="media__titre">(#TITRE)</h3>]
+    [<p class="media__descriptif">(#DESCRIPTIF|PtoBR)</p>]
+    [<p class="media__credit">(#CREDITS)</p>]
+    <p class="media__type-info">[<abbr title="<:pratiques_picturales:info_document:> #TYPE_DOCUMENT" class="ext">(#EXTENSION|strtoupper)</abbr> - ][<span>(#TAILLE|taille_en_octets)</span>]</p>
   </div>
 </a>
 </BOUCLE_documents_joints>

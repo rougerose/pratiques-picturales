@@ -12,11 +12,11 @@
   </BOUCLE_documents>
 
 <nav id="js-toc" class="toc [t-(#ID_RUBRIQUE)__toc]">
-  <ul class="list-bare toc-list">
+  <ul class="list-bare toc-list[(#GET{compo}|=={article-numero}|oui) toc-list--article-numero]">
     [(#GET{compo}|=={article-numero}|et{#DESCRIPTIF}|oui)<li class="toc-list__item [t-(#ID_RUBRIQUE)__toc-item]">
       <a class="toc__link js-scroll" href="#resume"><:pratiques_picturales:resume:></a>
     </li>]
-    [(#SOMMAIRE|{#TEXTE}|oui)<li class="toc-list__item [t-(#ID_RUBRIQUE)__toc-item]">
+    [(#GET{composition}|et{#SOMMAIRE{#TEXTE}}|oui)<li class="toc-list__item [t-(#ID_RUBRIQUE)__toc-item]">
       <a class="toc__link js-scroll" href="#plan"><:pratiques_picturales:plan:></a>
     </li>]
     [(#GET{compo}|=={article-numero}|et{#TEXTE}|oui)<li class="toc-list__item [t-(#ID_RUBRIQUE)__toc-item]">

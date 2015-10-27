@@ -60,11 +60,11 @@
           <section id="texte" class="element__section">
             <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:texte_integral:></h1>
 
-            [<div class="element__texte--chapo">
+            [<div class="element__chapo">
               (#CHAPO)
             </div>]
 
-            [<div>
+            [<div[ class="t-(#ID_RUBRIQUE)__color--inter"]>
               (#TEXTE|ancres_sommaire)
             </div>]
 
@@ -112,7 +112,7 @@
               <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:titre_documents:></h1>
               <ul class="list-bare">
                 <BOUCLE_documents_article(DOCUMENTS){id_document IN #GET{_id_docs}}{vu=non}{par num titre, date}>
-                [(#SET{class_doc,document [t-(#ENV{page-variable})__bg--hover]})]
+                [(#SET{class_doc,media--doc [t-(#ENV{page-variable})__bg--hover]})]
                 [<li>
                   (#INCLURE{fond=inclure/document,id_document,class_doc=#GET{class_doc}})
                 </li>]

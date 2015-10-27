@@ -11,14 +11,10 @@
 }
 
   .toc-list {
-    @include media-query(l) {
-      padding: $spacing-unit 0 0;
-    }
+    padding-top: $spacing-unit;
   }
 
   .toc-list__item {
-    margin-top: $spacing-unit--tiny;
-    margin-bottom: $spacing-unit--tiny;
     text-transform: uppercase;
     @include transition(color);
 
@@ -45,32 +41,45 @@
      }
    }
 
+/**
+ * Composition article-numero
+ * ==========================
+ */
+.toc-list--article-numero {
+  @include media-query(l) {
+    padding-top: $spacing-unit;
+  }
+}
 
-   /**
-    * Composition A propos:
-    * =====================
-    * la Table est fabriquée par le modèle sommaire.html, d'où une liste avec
-    * des classes .spip.
-    */
 
-     .toc--apropos ul.spip {
-       @extend .list-bare;
-       @include inuit-font-size(14px,1.4);
-       @include media-query(l) {
-         padding: 0;
-       }
-     }
 
-     .toc--apropos ul.spip ul {
-       padding-top: 0;
-       padding-left: $spacing-unit--small;
-       list-style: square inside;
-     }
+/**
+* Composition A propos:
+* =====================
+* la Table est fabriquée par le modèle sommaire.html, d'où une liste avec
+* des classes .spip.
+*/
 
-     .toc--apropos li {
-       @extend .toc-list__item;
-     }
+.toc--apropos ul.spip {
+ @extend .list-bare;
+ @include inuit-font-size(14px,1.4);
+ @include media-query(l) {
+   padding: 0;
+ }
+}
 
-     .toc--apropos a {
-       @extend .toc__link;
-     }
+  .toc--apropos ul.spip ul {
+   padding-top: 0;
+   padding-left: $spacing-unit--small;
+   list-style: square inside;
+  }
+
+  .toc--apropos li {
+   @extend .toc-list__item;
+   margin-top: $spacing-unit--tiny;
+   margin-bottom: $spacing-unit--tiny;
+  }
+
+    .toc--apropos a {
+     @extend .toc__link;
+    }

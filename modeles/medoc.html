@@ -1,0 +1,60 @@
+<BOUCLE_doc(DOCUMENTS){id_document}{tout}>
+[(#REM)
+
+  Modele CONSTANT pour <doc> en dl/dt/dd
+  cf. http://pompage.net/pompe/listesdefinitions/
+
+  La largeur du titre est egale a la largeur de la vignette,
+  avec un minimum de 120px et un maximum de 350px.
+
+]
+
+[(#SET{fichier,[(#LOGO_DOCUMENT)]})]
+[(#SET{url,#URL_DOCUMENT})]
+[(#SET{titre,[(#TITRE|sinon{[(#FICHIER|basename)]})]})]
+[(#SET{title,[(#GET{titre}|couper{80})][ (#MODELE{info_document})]})]
+[(#SET{alt,[(#GET{title})]})]
+
+[(#REM)
+
+  Dans le cas d'une simple image, on affiche sa vignette,
+  avec lien vers la version originale, si elle est plus grande.
+
+]
+[(#EXTENSION|match{jpg|gif|png}|oui)
+  [(#REM)
+  <!--   Si largeur ou hauteur sont présents dans les paramètres,
+        redimensionner.
+        Sinon, utiliser la taille indiquée dans spip_meta.
+  -->
+  ][(#ENV{largeur}|ou{#ENV{hauteur}}|?{
+    [(#SET{fichier,[(#FICHIER|image_reduire{#ENV{largeur,0},#ENV{hauteur,0}})]})]
+    ,
+    [(#SET{fichier,[(#FICHIER|image_reduire{#CONFIG{taille_preview}})]})]
+  })]
+  [(#SET{titre,''})]
+  [(#LARGEUR|>{150}|?{
+    [(#SET{url,#URL_DOCUMENT})]
+    [(#SET{title,[(#TITRE|sinon{[(#FICHIER|basename)]}|couper{80})]})]
+    [(#SET{alt,[(#GET{title})]})]
+  ,
+    [(#SET{url,''})]
+    [(#SET{title,''})]
+    [(#SET{alt,[(#TITRE|couper{60})]})]
+  })]
+]
+
+#SET{width,#GET{fichier}|largeur}
+#SET{height,#GET{fichier}|hauteur}
+#SET{fichier,#GET{fichier}|extraire_attribut{src}}
+
+<figure class="media[ (#ENV{align}|oui)media--emb][ (#ENV{align}|match{left}|oui)media--left][ (#ENV{align}|match{right}|oui)media--right] [ (#ENV{align}|match{center}|oui)media--center]">
+  [<a href="(#GET{url})"[ type="(#MIME_TYPE)"][ (#DISTANT|=={oui}?{rel="external"})] class="[(#ENV{lien_class})] media__link">]<img src='#GET{fichier}'[ alt="(#GET{alt}|attribut_html)"][(#GET{url}|oui)[ title="(#GET{title}|attribut_html)"]] class="media__img media__img--emb" />[(#GET{url}|?{</a>})][
+  (#TITRE|ou{#DESCRIPTIF}|ou{#CREDITS}|oui)
+  <figcaption class="media__body media__body--emb"[(#ENV{align}|?{[(#GET{width}|<{520}|?{[ style='width:(#GET{width})px;']})]})]>
+    [<h3 class="media__titre">(#TITRE)</h3>]
+    [<p class="media__descriptif">(#DESCRIPTIF|PtoBR)</p>]
+    [<p class="media__credit">(#CREDITS)</p>]
+  </figcaption>]
+</figure>
+</BOUCLE_doc>
