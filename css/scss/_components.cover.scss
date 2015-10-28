@@ -11,14 +11,6 @@
 .cover__body {
   padding: $spacing-unit--small;
   @include transition(background);
-
-  // @include media-query(s) {
-  //   width: 100%;
-  // }
-  //
-  // @include media-query(m-and-l) {
-  //   width: 60%;
-  // }
 }
 
   .cover__body--simple {
@@ -38,7 +30,8 @@
     position: relative;
     margin-top: -10%;
     @include media-query(m-and-l) {
-      @extend .u-1\/12-push-m-and-l;
+      // @extend .u-1\/12-push-m-and-l;
+      margin-left: (1/9)*100%;
     }
 
     @include media-query(m) {
@@ -46,7 +39,7 @@
     }
 
     @include media-query(l) {
-      @extend .u-8\/12-l;
+      // @extend .u-11\/12-l;
     }
   }
 

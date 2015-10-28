@@ -1,6 +1,14 @@
 <BOUCLE_article(ARTICLES){id_article}>
 <article class="element element--container article">
   <div class="layout">
+    [(#LOGO)]
+    [<div class="layout__item u-10/12-m u-8/12-l">
+
+      <aside class="element cover">
+        (#LOGO_ARTICLE|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,800}|image_recadre{1200,800,center}|adaptive_images{1090})
+      </aside>
+
+    </div>]
     <div class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l">
       <header class="element__header element__section">
         <h1 class="element__title alpha [t-(#ID_RUBRIQUE)__color]">#TITRE</h1>
