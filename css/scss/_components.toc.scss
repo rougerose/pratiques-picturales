@@ -41,24 +41,30 @@
      }
    }
 
+/*
+   #ARTICLE-NUMERO
+   ========================================================================== */
+
 /**
- * Composition article-numero
- * ==========================
+ * Règle spécifique à la composition article-numero.html
  */
+
 .toc-list--article-numero {
   @include media-query(l) {
     padding-top: $spacing-unit;
   }
 }
 
-
+/*
+   #ARTICLE-APROPOS
+   ========================================================================== */
 
 /**
-* Composition A propos:
-* =====================
-* la Table est fabriquée par le modèle sommaire.html, d'où une liste avec
-* des classes .spip.
-*/
+*  La table des matières est générée par le modèle sommaire.html,
+*  sans possibilité de produire des css identiques à la table des matières
+*  ci-dessus.
+*  Les règles s'appliquent uniquement pour la composition article-apropos.html
+**/
 
 .toc--apropos ul.spip {
  @extend .list-bare;
@@ -83,3 +89,13 @@
     .toc--apropos a {
      @extend .toc__link;
     }
+
+/*
+   Plugin SPIP Sommaire
+   ========================================================================== */
+
+/* Code généré automatiquement par le plugin. Ne pas faire apparaître. */
+
+.sommaire-back {
+  display: none;
+}

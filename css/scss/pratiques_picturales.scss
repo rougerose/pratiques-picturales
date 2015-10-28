@@ -69,14 +69,26 @@
 @import "objects.wrapper";
 
 // COMPONENTS:
+
+// page
 @import "components.page";
 @import "components.page-head";
 @import "components.page-body";
 @import "components.page-content";
 @import "components.page-foot";
 
+//
 @import "components.forms";
+@import "components.info";
 @import "components.headings";
+@import "components.hr";
+@import "components.quotes";
+@import "components.tables";
+
+@import "components.media";
+@import "components.images";
+
+@import "components.lists";
 
 @import "components.site-nav";
 @import "components.nav";
@@ -104,10 +116,8 @@
 @import "components.index";
 
 @import "components.cover";
-@import "components.media";
-@import "components.images";
 
-@import "components.lists";
+
 @import "components.boxes";
 @import "components.icons";
 @import "components.buttons";
@@ -116,9 +126,6 @@
 @import "components.sort";
 @import "components.share";
 
-@import "components.info";
-
-@import "components.spip";
 @import "components.spip-admin";
 
 // TRUMPS:

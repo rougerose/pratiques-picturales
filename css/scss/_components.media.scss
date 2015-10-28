@@ -66,14 +66,16 @@
   .media__body--doc {
     padding: $spacing-unit--small 0;
 
-    .media__titre {
-      margin-top: 0;
-    }
   }
 
     .media__titre {
       margin-bottom: 0;
       @include inuit-font-size(14px);
+
+      .media__body--doc & {
+        margin-top: 0;
+        @include inuit-font-size(16px);
+      }
     }
 
     .media__descriptif,

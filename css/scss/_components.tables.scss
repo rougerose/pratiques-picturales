@@ -1,0 +1,21 @@
+/* ==========================================================================
+   #TABLES
+   ========================================================================== */
+
+table.spip {
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid lighten($gray-color, 20%);
+
+  th,
+  td {
+    border: 1px solid lighten($gray-color, 20%);
+    border-width: 1px 0;
+    padding: quarter($spacing-unit--small);
+  }
+
+  caption {
+    font-style: italic;
+    color: $gray-color;
+  }
+}

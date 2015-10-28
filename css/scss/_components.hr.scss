@@ -1,12 +1,9 @@
 /* ==========================================================================
-   #SPIP
+   #HR
    ========================================================================== */
 
-/**
- * Styles générés par spip
- */
-
-/* Sommaire d'article */
-.sommaire-back {
-  display: none;
+hr.spip {
+ border: none;
+ height: 1px;
+ background: linear-gradient(to right, white 0%, black 50%, white 100%);
 }
