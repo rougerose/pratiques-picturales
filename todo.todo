@@ -1,14 +1,7 @@
 Prioritaire:
   ☐ mise en forme des contenus dans #TEXTE
-  ☐ logo d'article
   ☐ article-numéro, rubrique-numéro : liens précédent/suivant
-  ☐ Correction: Bug script Table des matières + Safari
-  ☐ Correction: Rubrique-numéros -> présentation sur 2 colonnes. Rubrique-numéro -> image
-  couverture moins large + suppression du résumé de présentation.
-  ☐ Correction: supprimer flex
   ☐ recherche : formulaire en overlay ?
-  ☐ date article : replacer dans colonne principale
-  ☐ vérifier la mise en forme de la pagination dans les numéros par exemple
 
 Todo:
   ☐ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie
@@ -28,6 +21,12 @@ Pour mémoire:
   ☐ ratio des images: 1.5
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ Correction: Rubrique-numéros -> présentation sur 2 colonnes. Rubrique-numéro -> image couverture moins large + suppression du résumé de présentation. @done(2015-10-28 14:55) @project(Prioritaire)
+  ✔ logo d'article @done(2015-10-28 14:54) @project(Prioritaire)
+  ✔ Correction: Bug script Table des matières + Safari @done(2015-10-28 14:54) @project(Prioritaire)
+  ✔ vérifier la mise en forme de la pagination dans les numéros par exemple @done(2015-10-28 14:54) @project(Prioritaire)
+  ✔ date article : replacer dans colonne principale @done(2015-10-28 14:54) @project(Prioritaire)
+  ✔ Correction: supprimer flex @done(2015-10-28 14:54) @project(Prioritaire)
   ✔ footer/dist.html : ajouter les ancres (revue, équipe, etc.) dans les url vers l'article de présentation de la revue. @done(2015-10-26 13:26) @project(Penser à)
   ✔ recherche : mettre en place les critères de tri @done(2015-10-26 13:25) @project(Prioritaire)
   ✔ Antoine -> résumé d'article dans #DESCRIPTIF ou bien champs spécifique ? @done(2015-10-25 18:23) @project(Questions)
