@@ -42,7 +42,7 @@
 
           [<section class="element__section">
             <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
-            <div class="notes u-col2-m-and-l">
+            <div class="notes">
               (#NOTES)
             </div>
           </section>]
@@ -95,7 +95,7 @@
             [<section id="bibliographie" class="layout__item u-6/12-l element__section">
               <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:bibliographie:></h1>
                 (#BIBLIOGRAPHIE)
-            </section>]<section id="reference" class="layout__item u-6/12-l element__section">
+            </section>]<section id="reference" class="layout__item[ (#BIBLIOGRAPHIE|oui)u-6/12-l] element__section">
               <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:citer_article:></h1>
               <p class="bibliographie-ref">
                 [(#INCLURE{fond=inclure/article-auteurs,id_article,contexte=resume}), ][«&nbsp;(#TITRE) [(#SOUSTITRE)]&nbsp;».][ <span class="bibliographie-ref__titre">(#NOM_SITE_SPIP)</span>, ][(#DATE|affdate).]
