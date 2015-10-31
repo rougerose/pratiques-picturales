@@ -52,6 +52,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'mention_affiliation'          => "Pratiques picturales est un programme de recherches",
 
   // N
+  'nav_prev_article'                 => 'Article précédent',
+  'nav_next_article'                 => 'Article suivant',
+  'nav_prev_numero' => 'Numéro précédent',
+  'nav_next_numero' => 'Numéro suivant',
   'nom_menu_objet'               => 'Plugin Pratiques picturales : Article, rubrique ou autre objet SPIP',
   'nom_menu_page_speciale'       => 'Plugin Pratiques picturales : Lien vers un squelette page ',
   'nombre_article'               => '1 article',

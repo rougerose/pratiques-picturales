@@ -1,8 +1,8 @@
 Prioritaire:
-  ☐ mise en forme des contenus dans #TEXTE
-  ☐ article-numéro, rubrique-numéro : liens précédent/suivant
-  ☐ recherche : formulaire en overlay ?
+  ☐ page 404
+  ☐ icone next à reprendre
   ☐ styles print
+  ☐ remplacer icone svg / par une simple barre de fraction ?
 
 Todo:
   ☐ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie
@@ -22,6 +22,9 @@ Pour mémoire:
   ☐ ratio des images: 1.5
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ mise en forme des contenus dans #TEXTE @done(2015-10-31 15:55) @project(Prioritaire)
+  ✔ article-numéro, rubrique-numéro : liens précédent/suivant @done(2015-10-31 15:55) @project(Prioritaire)
+  ✔ recherche : formulaire en overlay ? @done(2015-10-31 15:55) @project(Prioritaire)
   ✔ Correction: Rubrique-numéros -> présentation sur 2 colonnes. Rubrique-numéro -> image couverture moins large + suppression du résumé de présentation. @done(2015-10-28 14:55) @project(Prioritaire)
   ✔ logo d'article @done(2015-10-28 14:54) @project(Prioritaire)
   ✔ Correction: Bug script Table des matières + Safari @done(2015-10-28 14:54) @project(Prioritaire)

@@ -77,4 +77,13 @@ function array_sort($tableau) {
   return $tableau;
 }
 
+// convertir une couleur hexadécimale en valeurs RGB
+function couleur_hex2dec($couleur) {
+  $red = hexdec(substr($couleur, 0, 2));
+  $green = hexdec(substr($couleur, 2, 2));
+  $blue = hexdec(substr($couleur, 4, 2));
+  $couleur = $red.','.$green.','.$blue;
+  return $couleur;
+}
+
 ?>

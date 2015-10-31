@@ -9,9 +9,10 @@
     padding: 0;
   }
 }
-
-  .toc-list {
-    padding-top: $spacing-unit;
+  @include media-query(l) {
+    .toc-list {
+      padding-top: $spacing-unit;
+    }
   }
 
   .toc-list__item {

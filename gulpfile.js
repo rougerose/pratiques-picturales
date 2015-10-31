@@ -33,9 +33,9 @@ gulp.task('css', function () {
     //.pipe(nano())
     .pipe(gulp.dest('./css'))
     .pipe(notify({
-      title: 'Gulp',
-      subtitle: 'success',
-      message: 'css task',
+      //title: 'Gulp',
+      //subtitle: 'success',
+      //message: 'css task',
       sound: "Pop"
     }));
 });
