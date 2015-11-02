@@ -21,5 +21,5 @@
 ]
 [(#ENV{appel_menu}|et{#GET{afficher_entree}})
   <li class="menu-entree item[ (#ENV{css})][(#ENV{nom}|match{#ENV{env/type-page}}) on active]">
-    <a href="#URL_PAGE{#ENV{nom}, #ENV{parametres}}"[ class="(#ENV{css_lien})"]><svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg><span class="nav__label">#GET{titre}</span></a>
+    <a href="#URL_PAGE{#ENV{nom}, #ENV{parametres}}"[ class="(#ENV{css_lien})"]><span class="nav__label">#GET{titre}</span></a>
 ]

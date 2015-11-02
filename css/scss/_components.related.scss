@@ -62,7 +62,7 @@
   margin: $spacing-unit 0;
   @extend .clearfix;
   > div {
-    padding-left: $spacing-unit--small;
+    // padding-left: $spacing-unit--small;
     @include media-query(m-and-l) {
       float: left;
       width: 50%;

@@ -17,6 +17,10 @@
   .nav__link {
     position: relative;
     text-decoration: none;
+    &:before {
+      content: '/';
+      margin-right: 3px;
+    }
   }
 
     .nav__icon {

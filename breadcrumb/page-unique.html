@@ -1,13 +1,6 @@
 <BOUCLE_article(ARTICLES){id_article}>
 <div class="breadcrumb">
-  <a class="breadcrumb__item nav__link t-sommaire__color-nav" href="#URL_SITE_SPIP">
-    <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
-    <span class="nav__label"><:accueil_site:></span>
-  </a>
-  <strong class="breadcrumb__item nav__link is-active [t-(#ENV{page-variable})__color-nav]">
-    <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
-    <span class="nav__label">[(#TITRE|couper{80})]</span>
-  </strong>
+  <a class="breadcrumb__item nav__link t-sommaire__color-nav" href="#URL_SITE_SPIP"><span class="nav__label"><:accueil_site:></span></a>
+  <strong class="breadcrumb__item nav__link is-active [t-(#ENV{page-variable})__color-nav]"><span class="nav__label">[(#TITRE|couper{80})]</span></strong>
 </div>
-
 </BOUCLE_article>

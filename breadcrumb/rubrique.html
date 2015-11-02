@@ -1,18 +1,9 @@
 <BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
   <div class="breadcrumb">
-    <a class="breadcrumb__item nav__link t-sommaire__color-nav" href="#URL_SITE_SPIP">
-      <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
-      <span class="nav__label"><:accueil_site:></span>
-    </a>
+    <a class="breadcrumb__item nav__link t-sommaire__color-nav" href="#URL_SITE_SPIP"><span class="nav__label"><:accueil_site:></span></a>
     <BOUCLE_bc_rubrique(HIERARCHIE){id_rubrique}>
-    <a href="#URL_RUBRIQUE" class="breadcrumb__item nav__link [t-(#ID_RUBRIQUE)__color-nav]">
-      <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
-      <span class="nav__label">#TITRE</span>
-    </a>
+    <a href="#URL_RUBRIQUE" class="breadcrumb__item nav__link [t-(#ID_RUBRIQUE)__color-nav]"><span class="nav__label">#TITRE</span></a>
   </BOUCLE_bc_rubrique>
-    <strong class="breadcrumb__item nav__link is-active [t-(#ID_RUBRIQUE)__color-nav]">
-      <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
-      <span class="nav__label">#TITRE</span>
-    </strong>
+    <strong class="breadcrumb__item nav__link is-active [t-(#ID_RUBRIQUE)__color-nav]"><span class="nav__label">#TITRE</span></strong>
   </div>
 </BOUCLE_rubrique>
