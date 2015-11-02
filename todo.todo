@@ -2,7 +2,6 @@ Prioritaire:
   ☐ page 404
   ☐ icone next à reprendre
   ☐ styles print
-  ☐ remplacer icone svg / par une simple barre de fraction ?
 
 Todo:
   ☐ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie
@@ -22,6 +21,7 @@ Pour mémoire:
   ☐ ratio des images: 1.5
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ remplacer icone svg / par une simple barre de fraction ? @done(2015-11-02 19:12) @project(Prioritaire)
   ✔ mise en forme des contenus dans #TEXTE @done(2015-10-31 15:55) @project(Prioritaire)
   ✔ article-numéro, rubrique-numéro : liens précédent/suivant @done(2015-10-31 15:55) @project(Prioritaire)
   ✔ recherche : formulaire en overlay ? @done(2015-10-31 15:55) @project(Prioritaire)

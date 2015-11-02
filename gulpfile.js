@@ -61,15 +61,15 @@ gulp.task('minifyjs', function () {
     .pipe(gulp.dest('./js/dist/'));
 });
 
-// concat scripts pour composition article-numero
-gulp.task('concat_compo_article_numero', function() {
+// concat scripts
+gulp.task('concat_lib', function() {
   return gulp.src([
     './js/dist/utils.min.js',
     './js/dist/scrollspy.min.js',
     './js/dist/jquery.sticky-kit.min.js',
     './js/dist/smooth-scroll.min.js'
   ])
-    .pipe(concat('article_numero.min.js', {newLine: '\n;'}))
+    .pipe(concat('js-lib.min.js', {newLine: '\n;'}))
     .pipe(gulp.dest('./js/dist'));
 });
 
@@ -82,6 +82,5 @@ gulp.task('watch', function () {
 // tâches
 gulp.task('default', ['css']);
 gulp.task('jscopy', ['copy']);
-//gulp.task('jslib',['js_lib']);
 gulp.task('jsmini', ['minifyjs']);
-gulp.task('jsconcat',['concat_compo_article_numero']);
+gulp.task('jsconcat',['concat_lib']);
