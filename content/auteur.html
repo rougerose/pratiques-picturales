@@ -25,6 +25,7 @@
               (#BIO)
             </div>
           </section>]
+          [(#URL_SITE|ou{#EMAIL}|oui)
           <section id="contact" class="element__section">
             <h1 class="delta hN t-auteurs__hN"><:pratiques_picturales:author_contact:></h1>
             <ul class="list-bare contact__list">
@@ -32,7 +33,7 @@
               [(#EMAIL|oui)[<li class="contact__item"><a href="(#URL_PAGE_UNIQUE{contact}|parametre_url{id_auteur,#ID_AUTEUR}|ancre_url{contact})" class="contact__link t-auteurs__contact">[(#INCLURE{fond=img/icon-mail.svg,class=icon icon--round icon--40 t-auteurs__icon,class-fill=t-auteurs__icon-fill})] <span class="contact__label"><:pratiques_picturales:author_contact_mail:></span></a>
               </li>]]
             </ul>
-          </section>
+          </section>]
 
         </div>
       </div>
@@ -43,6 +44,6 @@
     </div>]
 
   </div>
-  
+
 </article>
 </BOUCLE_auteur>

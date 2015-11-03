@@ -8,12 +8,13 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'article_pdf'                  => 'Télécharger la version PDF de cet article',
   'article_pdf_court'            => 'Version PDF',
   'articles_connexes'            => 'Lire également',
-  'authors'                      => 'Les auteurs',
   'author_bio'                   => 'À propos',
   'author_articles'              => 'Ses articles',
   'author_contact'               => 'Contact',
   'author_contact_mail'          => 'Envoyer un mail',
   'author_contact_web'           => 'Site internet',
+  'authors'                      => 'Les auteurs',
+  'authors_page_description'     => 'Index alphabétique des auteurs de @nom_site@',
 
   // B
   'bibliographie'                => 'Bibliographie',
@@ -24,7 +25,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'contact_previsu_message'      => 'Texte de votre message',
   'contact_previsu_sujet'        => 'Sujet de votre message',
 
-  // D
+  // E
+  'erreur_404' => "La page demandée n'existe pas.",
 
   // F
   'form_prop_envoyer'            => 'Envoyer votre message',
@@ -52,10 +54,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
   'mention_affiliation'          => "Pratiques picturales est un programme de recherches",
 
   // N
-  'nav_prev_article'                 => 'Article précédent',
-  'nav_next_article'                 => 'Article suivant',
-  'nav_prev_numero' => 'Numéro précédent',
-  'nav_next_numero' => 'Numéro suivant',
+  'nav_prev_article'             => 'Article précédent',
+  'nav_next_article'             => 'Article suivant',
+  'nav_prev_numero'              => 'Numéro précédent',
+  'nav_next_numero'              => 'Numéro suivant',
   'nom_menu_objet'               => 'Plugin Pratiques picturales : Article, rubrique ou autre objet SPIP',
   'nom_menu_page_speciale'       => 'Plugin Pratiques picturales : Lien vers un squelette page ',
   'nombre_article'               => '1 article',
@@ -98,6 +100,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
   // T
   '_tags'                        => 'Les mots-clés',
+  'tags_page_description' => 'Index alphabétique des mots-clés de @nom_site@',
   'tags'                         => 'Mots-clés',
   'texte_integral'               => 'Texte intégral',
   'titre_articles'               => 'Articles',

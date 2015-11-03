@@ -1,0 +1,25 @@
+<article class="element element--container 404">
+  <div class="layout">
+    <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
+      <header class="element__header element__section">
+        <h1 class="element__title alpha t-apropos__color"><:pass_erreur:> 404</h1>
+      </header>
+    </div>
+    <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l element__content">
+      <div class="layout">
+        <div class="layout__item u-8/12-l">
+          <section class="element__texte--mb">
+            [(#ENV{erreur})]
+            <p><strong><:pratiques_picturales:erreur_404:></strong></p>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    [<div class="layout__item">
+      (#INCLURE{fond=breadcrumb/404})
+    </div>]
+
+  </div>
+</article>
+</BOUCLE_mot>
