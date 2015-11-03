@@ -12,28 +12,27 @@
 [(#SET{couleur,#ID_RUBRIQUE|couleur_rubrique|sinon{#ID_RUBRIQUE|couleur_secteur}|sinon{#GET{defaut}}})]
 [(#SET{couleur_lum06,[(#GET{couleur}|couleur_luminance{0.6})]})]
 
-[(#REM) mediaqueries ]
+[(#REM) <!-- mediaqueries  --> ]
   [(#SET{s, "screen and (max-width: 499px)"})]
   [(#SET{m, "screen and (min-width: 500px) and (max-width: 749px)"})]
   [(#SET{m-and-l, "screen and (min-width: 500px)"})]
   [(#SET{l, "screen and (min-width: 750px)"})]
 
-[(#REM) définition principale ]
-  .t-[(#ID_RUBRIQUE)]__color,
-  .t-[(#ID_RUBRIQUE)]__color--inter h2.spip,
-  .t-[(#ID_RUBRIQUE)]__color--hover:hover,
-  .t-[(#ID_RUBRIQUE)]__color-nav,
-  .active .t-[(#ID_RUBRIQUE)]__color-nav,
-  .active .t-[(#ID_RUBRIQUE)]__color-nav > .nav__label,
-  .t-[(#ID_RUBRIQUE)]__color-nav:hover,
-  .t-[(#ID_RUBRIQUE)]__color-nav:hover > .nav__label,
-  .t-[(#ID_RUBRIQUE)]__color-nav.is-active > .nav__label,
-  .t-[(#ID_RUBRIQUE)]__toc .toc__link:hover,
-  .t-[(#ID_RUBRIQUE)]__pagination > a:hover
-  {
+[(#REM) <!-- définition principale --> ]
+  [.t-(#ID_RUBRIQUE)__color,]
+  [.t-(#ID_RUBRIQUE)__color--inter h2.spip,]
+  [.t-(#ID_RUBRIQUE)__color--hover:hover,]
+  [.t-(#ID_RUBRIQUE)__color-nav,]
+  [.active .t-(#ID_RUBRIQUE)__color-nav,]
+  [.active .t-(#ID_RUBRIQUE]__color-nav > .nav__label,]
+  [.t-(#ID_RUBRIQUE)__color-nav:hover,]
+  [.t-(#ID_RUBRIQUE)__color-nav:hover > .nav__label,]
+  [.t-(#ID_RUBRIQUE)__color-nav.is-active > .nav__label,]
+  [.t-(#ID_RUBRIQUE)__toc .toc__link:hover,]
+  [.t-(#ID_RUBRIQUE)__pagination > a:hover] {
     color: [#(#GET{couleur})];
   }
-[(#REM) intertitres ]
+[(#REM) <!-- intertitres --> ]
   .t-[(#ID_RUBRIQUE)]__color--inter h3.spip,
   .t-[(#ID_RUBRIQUE)]__color--inter h4.spip,
   .t-[(#ID_RUBRIQUE)]__color--inter h5.spip,

@@ -6,7 +6,7 @@ var gulp = require('gulp')
     , concat = require('gulp-concat')
     , uglify = require('gulp-uglify')
     , autoprefixer = require('gulp-autoprefixer')
-    //, nano = require('gulp-cssnano')
+    , nano = require('gulp-cssnano')
     , plumber = require('gulp-plumber')
     , notify = require('gulp-notify')
     , rename = require('gulp-rename')
@@ -38,6 +38,16 @@ gulp.task('css', function () {
       //message: 'css task',
       sound: "Pop"
     }));
+});
+
+gulp.task('css-min', function () {
+  gulp.src(['./css/scss/pratiques_picturales.scss'])
+    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(sass({ sourceMap: false }))
+    .pipe(sass({ sourceComments: false }))
+    .pipe(autoprefixer())
+    .pipe(nano())
+    .pipe(gulp.dest('./css'));
 });
 
 gulp.task('copy', function() {
@@ -82,5 +92,6 @@ gulp.task('watch', function () {
 // tâches
 gulp.task('default', ['css']);
 gulp.task('jscopy', ['copy']);
-gulp.task('jsmini', ['minifyjs']);
+gulp.task('jsmin', ['minifyjs']);
+gulp.task('cssmin', ['css-min']);
 gulp.task('jsconcat',['concat_lib']);
