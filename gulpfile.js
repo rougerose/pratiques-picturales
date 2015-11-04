@@ -26,9 +26,9 @@ var onError = function(err) {
 gulp.task('css', function () {
   gulp.src(['./css/scss/pratiques_picturales.scss'])
     .pipe(plumber({errorHandler: onError}))
-    .pipe(sass({ outputStyle: 'expanded' }))
+    .pipe(sass({ outputStyle: 'compact' }))
     .pipe(sass({ sourceMap: false }))
-    .pipe(sass({ sourceComments: true }))
+    .pipe(sass({ sourceComments: false }))
     .pipe(autoprefixer())
     //.pipe(nano())
     .pipe(gulp.dest('./css'))

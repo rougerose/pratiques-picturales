@@ -37,7 +37,7 @@
 .element__section--issue {
   > h1 {
     @include media-query(m-and-l) {
-      @extend .u-1\/12-push-m-and-l;
+      // @extend .u-1\/12-push-m-and-l;
       margin-bottom: $spacing-unit;
     }
   }

@@ -12,7 +12,7 @@
 [(#REM) Balise permettant aux plugins d'inserer des fichiers CSS ]
   #INSERT_HEAD_CSS
 [(#REM) CSS fichier pratiques_picturales.couleurs.css.html ]
-[<link rel="stylesheet" href="(#PRODUIRE{fond=css/pratiques_picturales.couleurs.css})" type="text/css" media="screen" />]
+[<link rel="stylesheet" href="(#PRODUIRE{fond=css/pratiques_picturales.couleurs.css}|compacte)" type="text/css" media="screen" />]
 [(#CHEMIN{inc-theme-head.html}|oui)
   #INCLURE{fond=inc-theme-head,env}
 ]

@@ -25,7 +25,7 @@
       </div>
     </BOUCLE_article_apropos>
     <B_dernier_numero>
-      <div class="layout__item">
+      <div class="layout__item layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
         <section class="element__section element__section--issue">
           <BOUCLE_dernier_numero(RUBRIQUES){id_parent=1}{!par num titre}{0,1}>
           <h1 class="element__title element__title--section beta [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:issue_last:></h1>
@@ -44,12 +44,12 @@
         <section class="element__section">
           <h1 class="element__title element__title--section beta t-6__color">#TITRE</h1>
           <div class="layout">
-            <BOUCLE_liste_actus(SELECTIONS_CONTENUS){id_selection}{par num titre}><article class="element selection article-resume layout__item u-6/12-m-and-l">
+            <BOUCLE_liste_actus(SELECTIONS_CONTENUS){id_selection}{par num titre}><article class="element selection article-resume element__section--mb-large layout__item u-6/12-m-and-l">
               <a href="#URL" class="element__link t-6__color--hover">
                 <header class="element__header [(#LOGO_SELECTIONS_CONTENU|oui)element__header--resume-logo]">
                   <h1 class="element__title element__title--mb gamma">#TITRE</h1>
                 </header>
-                [(#LOGO_SELECTIONS_CONTENU|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,900}|image_recadre{1200,900}|adaptive_images{600})]
+                [(#LOGO_SELECTIONS_CONTENU|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,900}|image_recadre{980,0}|adaptive_images{490})]
                 [<div class="article-resume__desc [(#LOGO_SELECTIONS_CONTENU|oui)article-resume__desc--logo]">
                   (#DESCRIPTIF)
                 </div>]

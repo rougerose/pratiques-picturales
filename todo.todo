@@ -1,13 +1,14 @@
 Prioritaire:
-  ☐ page 404
-  ☐ icone next à reprendre
+  ✔ page 404 @done(2015-11-03 18:25) @project(Prioritaire)
+  ☐ favicon
+  ☐ robots.txt
   ☐ styles print
 
 Todo:
-  ☐ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie
-  ☐ plugin sélections éditoriales http://plugins.spip.net/selections_editoriales.html
-  ☐ régler la gestion des images via mediabox
-  ☐ passer les scripts dans le pied de page
+  ✔ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie @done(2015-11-03 18:41) @project(Todo)
+  ✔ plugin sélections éditoriales http://plugins.spip.net/selections_editoriales.html @done(2015-11-03 18:41) @project(Todo)
+  ✔ régler la gestion des images via mediabox @done(2015-11-03 18:41) @project(Todo)
+  ✔ passer les scripts dans le pied de page @done(2015-11-03 18:41) @project(Todo)
 
 Penser à:
   ☐ http://webdevchecklist.com
