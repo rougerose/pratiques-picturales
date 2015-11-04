@@ -1,8 +1,8 @@
 Prioritaire:
   ✔ page 404 @done(2015-11-03 18:25) @project(Prioritaire)
-  ☐ favicon
+  ✔ favicon @done(2015-11-04 18:11) @project(Prioritaire)
   ☐ robots.txt
-  ☐ styles print
+  ✔ styles print @done(2015-11-04 18:11) @project(Prioritaire)
 
 Todo:
   ✔ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie @done(2015-11-03 18:41) @project(Todo)
@@ -13,7 +13,7 @@ Todo:
 Penser à:
   ☐ http://webdevchecklist.com
   ☐ open graph http://ogp.me
-  ☐ mettre en place des head/xxx.html spécifique aux pages ?
+  ✔ mettre en place des head/xxx.html spécifique aux pages ? @done(2015-11-04 18:11) @project(Penser à)
 
 Avant mise en prod:
   ☐ filtre |compacte sur fichier couleurs.css
