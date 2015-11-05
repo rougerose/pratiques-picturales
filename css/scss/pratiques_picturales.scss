@@ -14,7 +14,6 @@
 // Trumps ------ Overrides and helper classes.
 
 // SETTINGS:
-@media screen {
   @import "node_modules/inuit-defaults/settings.defaults";
   @import "settings.colors";
   @import "settings.global";
@@ -40,6 +39,7 @@
   // BASE:
   // @import "base.fonts";
   @import "base.webfonts";
+
   @import "base.links";
 
   @import "node_modules/inuit-page/base.page";
@@ -137,10 +137,7 @@
   @import "node_modules/inuit-responsive-widths/trumps.widths-responsive";
   // @import "trumps.widths-layout";
   @import "trumps.widths-push-pull";
-}
+
 @media print {
-  @import "base.webfonts";
   @import "trumps.print";
 }
-//
-// @import "node_modules/inuit-print/trumps.print";

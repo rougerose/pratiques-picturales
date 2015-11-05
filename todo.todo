@@ -1,19 +1,11 @@
 Prioritaire:
-  ✔ page 404 @done(2015-11-03 18:25) @project(Prioritaire)
-  ✔ favicon @done(2015-11-04 18:11) @project(Prioritaire)
   ☐ robots.txt
-  ✔ styles print @done(2015-11-04 18:11) @project(Prioritaire)
 
 Todo:
-  ✔ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie @done(2015-11-03 18:41) @project(Todo)
-  ✔ plugin sélections éditoriales http://plugins.spip.net/selections_editoriales.html @done(2015-11-03 18:41) @project(Todo)
-  ✔ régler la gestion des images via mediabox @done(2015-11-03 18:41) @project(Todo)
-  ✔ passer les scripts dans le pied de page @done(2015-11-03 18:41) @project(Todo)
 
 Penser à:
   ☐ http://webdevchecklist.com
   ☐ open graph http://ogp.me
-  ✔ mettre en place des head/xxx.html spécifique aux pages ? @done(2015-11-04 18:11) @project(Penser à)
 
 Avant mise en prod:
   ☐ filtre |compacte sur fichier couleurs.css
@@ -22,6 +14,14 @@ Pour mémoire:
   ☐ ratio des images: 1.5
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ page 404 @done(2015-11-03 18:25) @project(Prioritaire)
+  ✔ favicon @done(2015-11-04 18:11) @project(Prioritaire)
+  ✔ styles print @done(2015-11-04 18:11) @project(Prioritaire)
+  ✔ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie @done(2015-11-03 18:41) @project(Todo)
+  ✔ plugin sélections éditoriales http://plugins.spip.net/selections_editoriales.html @done(2015-11-03 18:41) @project(Todo)
+  ✔ régler la gestion des images via mediabox @done(2015-11-03 18:41) @project(Todo)
+  ✔ passer les scripts dans le pied de page @done(2015-11-03 18:41) @project(Todo)
+  ✔ mettre en place des head/xxx.html spécifique aux pages ? @done(2015-11-04 18:11) @project(Penser à)
   ✔ remplacer icone svg / par une simple barre de fraction ? @done(2015-11-02 19:12) @project(Prioritaire)
   ✔ mise en forme des contenus dans #TEXTE @done(2015-10-31 15:55) @project(Prioritaire)
   ✔ article-numéro, rubrique-numéro : liens précédent/suivant @done(2015-10-31 15:55) @project(Prioritaire)
