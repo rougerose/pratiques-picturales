@@ -1,0 +1,80 @@
+/* ==========================================================================
+   #TABS
+   ========================================================================== */
+
+.tabs-nav,
+.tabs__item {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.tabs-nav {
+  &:after {
+    border-bottom: 1px solid rgba($black-color,0.1);
+  }
+}
+
+  .tabs__item {
+    text-transform: uppercase;
+    @include media-query(s) {
+      padding: 3px 0 0;
+      text-transform: none;
+    }
+    &:after {
+      margin: 0 auto;
+      text-align: center;
+      border-bottom: 1px solid rgba($black-color,1);
+      @include transition(transform);
+      transform: scaleX(0);
+    }
+    &.tabs__item--current:after {
+      transform: scaleX(1);
+    }
+  }
+
+  .tabs__item--current {
+    font-weight: bold;
+  }
+
+    .tabs__link {
+      text-decoration: none;
+      color: currentColor;
+    }
+
+.tabs-content {
+  border-bottom: 1px solid rgba($black-color,0.1);
+  margin-bottom: $spacing-unit;
+}
+
+  .tabs-content__title {
+    margin-top: $spacing-unit;
+    text-align: center;
+  }
+
+  .tabs-content__item {
+    display: none;
+  }
+
+  .tabs-content__item--recherche {
+    padding-top: $spacing-unit;
+  }
+
+  .tabs-content__item--current {
+    display: block;
+    animation: tabs-fade-in 1s;
+  }
+
+  @keyframes tabs-fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

@@ -4,10 +4,10 @@
 
 .notes {
   > div {
-    margin-bottom: $spacing-unit;
-    margin-bottom: ($spacing-unit / $base-font-size) * 1rem;
+    margin-bottom: $spacing-unit--tiny;
     > p {
       margin: 0;
+      @include inuit-font-size(14px,1.5);
     }
   }
 }

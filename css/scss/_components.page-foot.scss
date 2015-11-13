@@ -14,20 +14,25 @@
     }
   }
 
-  .page-footer__item {
-    text-align: center;
-    margin: 0;
-    @include inuit-font-size(13px);
+  .page-footer {
+    margin-bottom: $spacing-unit;
   }
 
-  .page-footer__logo {
-    width: 70%;
-    @include media-query(m-and-l) {
-      width: 30%;
+    .page-footer__item {
+      text-align: center;
+      margin: 0;
+      @include inuit-font-size(13px,1.4);
     }
-  }
 
-  .page-footer__link {
-    display: inline-block;
-    margin: 0 $spacing-unit--tiny;
-  }
+    .page-footer__logo {
+      width: 70%;
+      height: auto;
+      @include media-query(m-and-l) {
+        width: 30%;
+      }
+    }
+
+    .page-footer__link {
+      display: inline-block;
+      margin: 0 3px 0 0;
+    }

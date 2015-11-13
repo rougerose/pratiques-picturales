@@ -1,7 +1,7 @@
 <paquet
     prefix="pratiques_picturales"
-    version="0.1.0"
-    etat="dev"
+    version="0.1.1"
+    etat="test"
     categorie="squelette"
     compatibilite="[3.1.0-beta;3.1.*]"
     logo="img/pratiques_picturales-32.png"
@@ -21,4 +21,7 @@
     <necessite nom="critere_mots" compatibilite="[2.1.6;[" />
     <necessite nom="pages" compatibilite="[1.2.10;[" />
     <necessite nom="adaptive_images" compatibilite="[1.9.1;[" />
+    <utilise nom="bellespuces" compatibilite="[0.1.5;[" />
+    <utilise nom="socialtags" compatibilite="[1.0.9;[" />
+    <utilise nom="medoc" compatibilite="[2.2.6;[" />
 </paquet>

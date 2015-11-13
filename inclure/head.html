@@ -3,37 +3,23 @@
 	(title, description) figurent dans le squelette article.html
 ][
 (#REM) Fierement fabrique avec SPIP ]
-<meta name="generator" content="SPIP[ (#SPIP_VERSION)]" />
+<meta name="generator" content="SPIP" />
+[(#REM) Favicon ]
+[<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="(#CHEMIN{img/pratiques-picturales-144.png})" />]
+[<link rel="apple-touch-icon-precomposed" href="(#CHEMIN{img/pratiques-picturales-152.png})" />]
 
 [(#REM) Lien vers le flux RSS du site ]
 [<link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="(#URL_PAGE{backend})" />]
-
 [(#REM) Balise permettant aux plugins d'inserer des fichiers CSS ]
-#INSERT_HEAD_CSS
-
+  #INSERT_HEAD_CSS
 [(#REM) CSS fichier pratiques_picturales.couleurs.css.html ]
-[<link rel="stylesheet" href="(#PRODUIRE{fond=css/pratiques_picturales.couleurs.css}|compacte)" type="text/css" media="screen" charset="utf-8" />]
-
+[<link rel="stylesheet" href="(#PRODUIRE{fond=css/pratiques_picturales.couleurs.css}|compacte)" type="text/css" media="screen" />]
 [(#CHEMIN{inc-theme-head.html}|oui)
-#INCLURE{fond=inc-theme-head,env}
+  #INCLURE{fond=inc-theme-head,env}
 ]
-
 [(#REM) Balise permettant aux plugins d'inserer des appels javascript ou css ;
 	C'est ici que SPIP va inserer l'appel de la librairie jQuery
 	Et appeler a la fin compacte_head pour agreger et compacter tout le head dans des fichiers statiques
 	si l'option est cochee dans Configuration
-]
-#INSERT_HEAD
-
-<script type="text/javascript">
-    (function() {
-        var path = '//easy.myfonts.net/v2/js?sid=4188(font-family=URW+Classico+Regular)&sid=4189(font-family=URW+Classico+Medium)&sid=4190(font-family=URW+Classico+Bold)&key=SqOIyZncGs',
-            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
-            trial = document.createElement('script');
-        trial.type = 'text/javascript';
-        trial.async = true;
-        trial.src = protocol + path;
-        var head = document.getElementsByTagName("head")[0];
-        head.appendChild(trial);
-    })();
-</script>
+] #INSERT_HEAD

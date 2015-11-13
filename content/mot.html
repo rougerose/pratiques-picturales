@@ -1,0 +1,70 @@
+<BOUCLE_mot(MOTS){id_mot}>
+  [(#SET{total,''})] #SET{articles, #ARRAY} #SET{numeros,#ARRAY} #SET{rubriques, #ARRAY}
+  <BOUCLE_articles(ARTICLES){id_mot}>
+    [(#SET{articles,#GET{articles}|push{#ID_ARTICLE}})]
+  </BOUCLE_articles>
+  <BOUCLE_rubriques(RUBRIQUES){id_mot}>
+    [(#ID_SECTEUR|=={1}|oui) [(#ID_RUBRIQUE|=={1}|non) [(#SET{numeros,#GET{numeros}|push{#ID_RUBRIQUE}})] ] ]
+    [(#ID_SECTEUR|!=={1}|oui) [(#SET{rubriques,#GET{rubriques}|push{#ID_RUBRIQUE}})] ]
+  </BOUCLE_rubriques>
+  [(#SET{total,#GET{articles}|count|plus{#GET{rubriques}|count}})]
+<article class="element element--container mot">
+  <div class="layout">
+    <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
+      <header class="element__header element__section">
+        [<h1 class="element__title alpha t-mots__color">(#TITRE)</h1>]
+      </header>
+    </div>
+    <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l element__content">
+      <div class="layout">
+        <div class="layout__item u-8/12-l">
+          [<section class="element__texte--mb">
+            (#TEXTE)
+          </section>]
+          [<section class="element__section">
+            <h1 class="delta hN t-mots__hN"><:pratiques_picturales:notes:></h1>
+            <div class="notes">
+              (#NOTES)
+            </div>
+          </section>]
+        </div>
+
+        [(#GET{total}|>{0}|oui)
+          <div id="js-tabs" class="layout__item">
+            <nav class="tabs-nav t-mots__tabs-border">
+              <ul class="tabs tabs__list t-mots__tabs-color">
+                [<li class="tabs__item t-mots__tabs-border"><a href="#articles" class="tabs__link">(#GET{articles}|count|?{<:pratiques_picturales:titre_articles:>})</a></li>]
+                [<li class="tabs__item t-mots__tabs-border"><a href="#numeros" class="tabs__link t-mots__border">(#GET{numeros}|count|?{<:pratiques_picturales:titre_numeros:>})</a></li>]
+                [<li class="tabs__item t-mots__tabs-border"><a href="#rubriques" class="tabs__link t-mots__border">(#GET{rubriques}|count|?{<:pratiques_picturales:titre_rubriques:>})</a></li>]
+              </ul>
+            </nav>
+            <div class="tabs-content">
+              [<section id="articles" class="tabs-content__item">
+                (#GET{articles}|count|oui)
+                  [(#INCLURE{fond=inclure/tabs-liste-articles, articles=#GET{articles}, titre-mot=#TITRE, ajax, env})]
+              </section>]
+              [<section id="numeros" class="tabs-content__item">
+                (#GET{numeros}|count|oui)
+                  [(#INCLURE{fond=inclure/tabs-liste-numeros, numeros=#GET{numeros}, titre-mot=#TITRE, ajax, env})]
+              </section>]
+              [<section id="rubriques" class="tabs-content__item">
+                (#GET{rubriques}|count|oui)
+                  [(#INCLURE{fond=inclure/tabs-liste-rubriques, rubriques=#GET{rubriques}, titre-mot=#TITRE, ajax, env})]
+              </section>]
+            </div>
+          </div>
+        ][(#GET{total}|=={0}|?{
+          <div class="layout__item">
+            <p class="info info--error"><:pratiques_picturales:info_error_mot_aucun_contenu:></p>
+          </div>
+        })]
+      </div>
+    </div>
+
+    [<div class="layout__item">
+      (#INCLURE{fond=breadcrumb/mot,id_mot})
+    </div>]
+
+  </div>
+</article>
+</BOUCLE_mot>

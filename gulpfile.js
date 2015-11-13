@@ -26,18 +26,28 @@ var onError = function(err) {
 gulp.task('css', function () {
   gulp.src(['./css/scss/pratiques_picturales.scss'])
     .pipe(plumber({errorHandler: onError}))
-    .pipe(sass({ outputStyle: 'expanded' }))
+    .pipe(sass({ outputStyle: 'compact' }))
     .pipe(sass({ sourceMap: false }))
-    .pipe(sass({ sourceComments: true }))
+    .pipe(sass({ sourceComments: false }))
     .pipe(autoprefixer())
     .pipe(nano())
     .pipe(gulp.dest('./css'))
     .pipe(notify({
-      title: 'Gulp',
-      subtitle: 'success',
-      message: 'css task',
+      //title: 'Gulp',
+      //subtitle: 'success',
+      //message: 'css task',
       sound: "Pop"
     }));
+});
+
+gulp.task('css-min', function () {
+  gulp.src(['./css/scss/pratiques_picturales.scss'])
+    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(sass({ sourceMap: false }))
+    .pipe(sass({ sourceComments: false }))
+    .pipe(autoprefixer())
+    .pipe(nano())
+    .pipe(gulp.dest('./css'));
 });
 
 gulp.task('copy', function() {
@@ -61,15 +71,15 @@ gulp.task('minifyjs', function () {
     .pipe(gulp.dest('./js/dist/'));
 });
 
-// concat scripts pour composition article-numero
-gulp.task('concat_compo_article_numero', function() {
+// concat scripts
+gulp.task('concat_lib', function() {
   return gulp.src([
     './js/dist/utils.min.js',
     './js/dist/scrollspy.min.js',
     './js/dist/jquery.sticky-kit.min.js',
     './js/dist/smooth-scroll.min.js'
   ])
-    .pipe(concat('article_numero.min.js', {newLine: '\n;'}))
+    .pipe(concat('js-lib.min.js', {newLine: '\n;'}))
     .pipe(gulp.dest('./js/dist'));
 });
 
@@ -82,6 +92,6 @@ gulp.task('watch', function () {
 // tâches
 gulp.task('default', ['css']);
 gulp.task('jscopy', ['copy']);
-//gulp.task('jslib',['js_lib']);
-gulp.task('jsmini', ['minifyjs']);
-gulp.task('jsconcat',['concat_compo_article_numero']);
+gulp.task('jsmin', ['minifyjs']);
+gulp.task('cssmin', ['css-min']);
+gulp.task('jsconcat',['concat_lib']);

@@ -1,36 +1,36 @@
 <div class="element element--container sommaire">
 
   <div class="layout">
-    <BOUCLE_rubrique_apropos(RUBRIQUES){id_rubrique=2}>
+    <BOUCLE_article_apropos(ARTICLES){id_article=2}>
       <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
 
         <section class="element__section promo">
-          <h1 class="element__title element__title--section beta [t-(#ID_RUBRIQUE)__color]">#TITRE</h1>
+          <h1 class="element__title element__title--section beta t-apropos__color"><:pratiques_picturales:apropos_titre:></h1>
 
           <div class="layout">
             [<div class="layout__item u-9/12-m-and-l">
               <div class="element promo__desc lede">
-                <a href="#URL_ARTICLE" class="element__link [t-(#ID_RUBRIQUE)__color--hover]">
+                <a href="#URL_ARTICLE" class="element__link t-apropos__color--hover">
                   (#DESCRIPTIF)
-                  <p class="element__next promo__next [t-(#ID_RUBRIQUE)__icon-next] [t-(#ID_RUBRIQUE)__icon-next--std]"><:pratiques_picturales:lire_suite:> [(#INCLURE{fond=img/icon-next.svg})]</p>
+                  <p class="element__next promo__next t-apropos__icon-next t-apropos__icon-next--std"><:pratiques_picturales:lire_suite:> [(#INCLURE{fond=img/icon-next.svg, class=icon icon-next, class-fill=icon-next__fill})]</p>
                 </a>
               </div>
             </div>]<div class="layout__item u-3/12-m-and-l">
-              <p class="related__desc related__desc--aff [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:mention_affiliation:><a href="http://www.institut-acte.cnrs.fr" class="related__logo-aff">Institut Acte</a></p>
+              <p class="related__desc related__desc--aff t-apropos__color"><:pratiques_picturales:mention_affiliation:><a href="http://www.institut-acte.cnrs.fr" class="related__logo-aff">Institut Acte</a></p>
             </div>
           </div>
 
         </section>
 
       </div>
-    </BOUCLE_rubrique_apropos>
+    </BOUCLE_article_apropos>
     <B_dernier_numero>
-      <div class="layout__item">
+      <div class="layout__item layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
         <section class="element__section element__section--issue">
           <BOUCLE_dernier_numero(RUBRIQUES){id_parent=1}{!par num titre}{0,1}>
           <h1 class="element__title element__title--section beta [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:issue_last:></h1>
           <article class="cover">
-            <INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, contexte=all} />
+            <INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, layout=stack, link=1, descriptif=1, adaptive=1} />
           </article>
           </BOUCLE_dernier_numero>
         </section>
@@ -44,16 +44,16 @@
         <section class="element__section">
           <h1 class="element__title element__title--section beta t-6__color">#TITRE</h1>
           <div class="layout">
-            <BOUCLE_liste_actus(SELECTIONS_CONTENUS){id_selection}{par num titre}><article class="element selection article-resume layout__item u-6/12-m-and-l">
+            <BOUCLE_liste_actus(SELECTIONS_CONTENUS){id_selection}{par num titre}><article class="element selection article-resume element__section--mb-large layout__item u-6/12-m-and-l">
               <a href="#URL" class="element__link t-6__color--hover">
-                <header class="element__header">
-                  <h1 class="element__title element__title--selection gamma">#TITRE</h1>
+                <header class="element__header [(#LOGO_SELECTIONS_CONTENU|oui)element__header--resume-logo]">
+                  <h1 class="element__title element__title--mb gamma">#TITRE</h1>
                 </header>
-                [(#LOGO_SELECTIONS_CONTENU|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,900}|image_recadre{1200,900}|adaptive_images{600})]
+                [(#LOGO_SELECTIONS_CONTENU|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,900}|image_recadre{980,0}|adaptive_images{490})]
                 [<div class="article-resume__desc [(#LOGO_SELECTIONS_CONTENU|oui)article-resume__desc--logo]">
                   (#DESCRIPTIF)
                 </div>]
-                <p class="element__next article-resume__next t-6__icon-next t-6__icon-next--std"><:pratiques_picturales:lire_suite:> [(#INCLURE{fond=img/icon-next.svg})]</p>
+                <p class="element__next article-resume__next t-6__icon-next t-6__icon-next--std"><:pratiques_picturales:lire_suite:> [(#INCLURE{fond=img/icon-next.svg, class=icon icon-next, class-fill=icon-next__fill})]</p>
               </a>
             </article></BOUCLE_liste_actus>
           </div>

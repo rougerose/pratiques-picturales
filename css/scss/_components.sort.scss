@@ -1,0 +1,28 @@
+/* ==========================================================================
+   #SORT
+   ========================================================================== */
+
+.sort {
+  margin-bottom: $spacing-unit;
+  text-align: center;
+}
+
+.sort__title,
+.sort__list,
+.sort__item {
+  display: inline-block;
+  line-height: normal;
+}
+
+.sort__title {
+  // margin: 0 $spacing-unit--small 0 0;
+  margin: 0;
+}
+
+// .sort__list {}
+
+  .sort__item {
+    text-transform: uppercase;
+    padding: 3px $spacing-unit--tiny 0;
+    border-radius: 4px;
+  }

@@ -44,5 +44,5 @@
 
 [(#ENV{appel_menu}|et{#GET{visible}|=={oui}}|oui)
   <li class="menu-entree item[ (#ENV{css})][ (#ENV{id_objet}|menus_exposer{#ENV{type_objet},#ENV*{env}})]">
-    <a href="#INFO_URL{#ENV{type_objet}, #GET{id_objet}}"[ class="(#ENV{css_lien})"]><svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg><span class="nav__label">#GET{titre}</span></a>
+    <a href="#INFO_URL{#ENV{type_objet}, #GET{id_objet}}"[ class="(#ENV{css_lien})"]><span class="nav__label">#GET{titre}</span></a>
 ]

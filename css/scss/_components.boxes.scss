@@ -10,7 +10,7 @@
   .box-arrow {
     position: relative;
     padding-top: $spacing-unit;
-    margin-bottom: 0;
+    margin-bottom: $spacing-unit;
     border-top: 1px solid $black-color;
     text-align: center;
     text-transform: uppercase;

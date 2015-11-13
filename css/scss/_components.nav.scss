@@ -6,7 +6,6 @@
  * classes utilisées sur des éléments de navigation. Par exemple pour un item
  * breadcrumb :
    <a href="[url]" class="breadcrumb__item nav__link">
-     <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
      <span class="nav__label">[titre]</span>
    </a>
  *
@@ -17,6 +16,10 @@
   .nav__link {
     position: relative;
     text-decoration: none;
+    &:before {
+      content: '/';
+      margin-right: 3px;
+    }
   }
 
     .nav__icon {
@@ -29,3 +32,133 @@
       color: $black-color;
       @include transition(color);
     }
+
+/*
+   #NAV-PRVNXT
+   ========================================================================== */
+
+.nav-prvnxt {
+  margin-left: $spacing-unit--small;
+  margin-top: $spacing-unit;
+  padding-left: 12px;
+}
+
+.nav-prvnxt__item {
+  position: relative;
+  display: block;
+  margin: 6px 0;
+  text-decoration: none;
+  &.is-disabled {
+    display: none;
+  }
+}
+
+.nav-prvnxt__item--prev {
+  text-align: left;
+  .nav-prvnxt__icon {
+    left: 0;
+  }
+}
+
+.nav-prvnxt__item--next {
+  text-align: right;
+  .nav-prvnxt__icon {
+    right: 0;
+  }
+}
+
+.nav-prvnxt__icon {
+  display: block;
+  position: absolute;
+  height: 100%;
+  svg {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.nav-prvnxt__title {
+  margin: 0 32px;
+  padding: 6px 6px 3px;
+  white-space: nowrap;
+  @include inuit-font-size(14px);
+  font-style: italic;
+  span {
+    display: block;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+}
+
+@include media-query(l) {
+  // .nav-prvnxt {}
+
+  .nav-prvnxt__item {
+    position: absolute;
+    top: 150px;
+    z-index: 10;
+    height: 4em; // = 64px
+    perspective: 1000px;
+    div {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      border-width: 0 1px;
+      transition: transform 0.3s;
+    }
+    &:hover {
+      div {
+        transform: rotateY(0);
+      }
+    }
+    &.is-disabled {
+      display: block;
+    }
+  }
+
+  .nav-prvnxt__item--prev {
+    left: 0;
+    perspective-origin: 100% 50%;
+    div {
+      left: 100%;
+      border-left: 1px solid $white-color;
+      transform: rotateY(90deg);
+      transform-origin: 0% 50%;
+    }
+  }
+
+  .nav-prvnxt__item--next {
+    right: 0;
+    perspective-origin: 0% 50%;
+    div {
+      right: 100%;
+      border-right: 1px solid $white-color;
+      transform: rotateY(-90deg);
+      transform-origin: 100% 50%;
+    }
+  }
+
+  .nav-prvnxt__icon {
+    position: relative;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    .is-disabled & {
+      svg {
+        fill: $gray-color;
+      }
+    }
+  }
+
+  .nav-prvnxt__title {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0 $spacing-unit--small;
+    backface-visibility: hidden;
+  }
+}

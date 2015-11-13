@@ -8,11 +8,19 @@
   }
 }
 
+  .site-nav__container {
+    @extend .clearfix;
+    margin-left: -$spacing-unit;
+    margin-bottom: $spacing-unit;
+  }
+
   .site-nav__home {
     width: 100%;
   }
+
     .site-nav__logo {
       max-width: 477px;
+      width: 100%;
       margin-bottom: $spacing-unit--small;
     }
 
@@ -40,10 +48,9 @@
     }
   }
 
-    .site-nav__item {}
+    // .site-nav__item {}
 
       .site-nav__link {
-
         .active & {
           font-weight: bold;
         }

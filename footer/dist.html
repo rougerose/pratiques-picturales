@@ -4,59 +4,34 @@
     <div class="layout">
       <div class="layout__item u-11/12-m-and-l u-1/12-push-m-and-l">
         <aside class="page-sub-footer">
-          <BOUCLE_rubrique_apropos(RUBRIQUES){id_rubrique=2}>
+          <BOUCLE_article_apropos(ARTICLES){page=apropos}>
           <section class="related-about">
-            <h1 class="related__title">#TITRE</h1>
+            <h1 class="related__title t-apropos__color"><:pratiques_picturales:apropos_titre:></h1>
             [<div class="related__desc-block">(#DESCRIPTIF)</div>]
-            <BOUCLE_article_apropos(ARTICLES){id_rubrique}>
-            <p class="related__desc related__desc--about-links">
-              <a class="related__link nav__link [t-(#ID_RUBRIQUE)__color-nav]" href="#URL_ARTICLE">
-                <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
-                <span class="nav__label"><:pratiques_picturales:footer_revue:></span>
-              </a>
-              <a class="related__link nav__link [t-(#ID_RUBRIQUE)__color-nav]" href="#URL_ARTICLE">
-                <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
-                <span class="nav__label"><:pratiques_picturales:footer_co_editorial:></span>
-              </a>
-              <a class="related__link nav__link [t-(#ID_RUBRIQUE)__color-nav]" href="#URL_ARTICLE">
-                <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
-                <span class="nav__label"><:pratiques_picturales:footer_equipe:></span>
-              </a>
-              <a class="related__link nav__link [t-(#ID_RUBRIQUE)__color-nav]" href="#URL_ARTICLE">
-                <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
-                <span class="nav__label"><:pratiques_picturales:footer_co_scientifique:></span>
-              </a>
-            </p>
-            </BOUCLE_article_apropos>
+            <div class="related__desc related__desc--about-links">
+              <div>
+                <a class="related__link nav__link t-apropos__color-nav" href="[(#URL_ARTICLE|ancre_url{La-revue})]"><span class="nav__label"><:pratiques_picturales:footer_revue:></span></a>
+                <a class="related__link nav__link t-apropos__color-nav" href="[(#URL_ARTICLE|ancre_url{L-equipe})]"><span class="nav__label"><:pratiques_picturales:footer_equipe:></span></a>
+              </div>
+              <div>
+                <a class="related__link nav__link t-apropos__color-nav" href="[(#URL_ARTICLE|ancre_url{Le-comite-scientifique})]"><span class="nav__label"><:pratiques_picturales:footer_co_scientifique:></span></a>
+                <a class="related__link nav__link t-apropos__color-nav" href="[(#URL_ARTICLE|ancre_url{Le-comite-editorial})]"><span class="nav__label"><:pratiques_picturales:footer_co_editorial:></span></a>
+              </div>
+            </div>
             <p class="related__desc related__desc--aff"><:pratiques_picturales:mention_affiliation:><a href="http://www.institut-acte.cnrs.fr" class="related__logo-aff">Institut Acte</a></p>
-          </section><!-- /.related-site --></BOUCLE_rubrique_apropos>
-          <B_issue_last><section class="related-issue">
-            <h1 class="related__title"><:pratiques_picturales:issue_last:></h1>
-            <BOUCLE_issue_last(RUBRIQUES){id_parent=1}{!par num titre}{0,1}>
+          </section>
+          </BOUCLE_article_apropos>
+          <BOUCLE_issue_last(RUBRIQUES){id_parent=1}{!par num titre}{0,1}>
+          <section class="related-issue">
+            <h1 class="related__title [t-(#ID_SECTEUR)__color]"><:pratiques_picturales:issue_last:></h1>
             <div class="cover">
               <INCLURE{fond=inclure/rubrique-numero-cover-short,id_rubrique} />
             </div>
-            </BOUCLE_issue_last>
-          </section><!-- /.related-issue /.layout__item -->
-          </B_issue_last>
+          </section>
+          </BOUCLE_issue_last>
         </aside>
 
-        <footer class="page-footer">
-          [<p class="page-footer__item">(#INCLURE{fond=img/pratiques-picturales.svg,class=page-footer__logo})</p>]
-          <p class="page-footer__item">
-            <BOUCLE_mentions(ARTICLES){page=mentions}>
-              <a class="page-footer__link nav__link t-home__color-nav" href="#URL_PAGE_UNIQUE{mentions}">
-                <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
-                <span class="nav__label">#TITRE</span>
-              </a>
-            </BOUCLE_mentions><BOUCLE_contact(ARTICLES){page=contact}>
-              <a class="page-footer__link nav__link t-home__color-nav" href="#URL_PAGE_UNIQUE{contact}">
-                <svg viewBox="0 0 9 19" class="icon-oblique nav__icon"><use xlink:href="#svg-oblique"></use></svg>
-                <span class="nav__label">#TITRE</span>
-              </a>
-            </BOUCLE_contact>
-          </p>
-        </footer>
+        [(#INCLURE{fond=inclure/page-footer})]
 
       </div>
     </div>

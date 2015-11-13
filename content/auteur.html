@@ -1,0 +1,49 @@
+<BOUCLE_auteur(AUTEURS){id_auteur}{tout}>
+<article class="element element--container auteur">
+  <div class="layout">
+    <div class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l">
+      <header class="element__header element__section">
+        [<h1 class="element__title alpha t-auteurs__color">(#NOM|prenom_nom)</h1>]
+      </header>
+    </div>
+    <div id="js-toc-parent" class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l element__content">
+      <div class="layout layout--rev">
+        [<div class="layout__item u-4/12-l element__content--sub">
+          (#INCLURE{fond=inclure/auteur-toc, id_auteur})
+        </div>]<div class="layout__item u-8/12-l element__content--main">
+
+          <section id="articles" class="element__section">
+            <h1 class="delta hN t-auteurs__hN"><:pratiques_picturales:author_articles:></h1>
+            <BOUCLE_articles_auteurs(ARTICLES){id_auteur}{!par date}>
+              <INCLURE{fond=inclure/article-resume, id_article, class_color=auteurs, lien_suite=suite, } />
+            </BOUCLE_articles_auteurs>
+          </section>
+
+          [<section id="bio" class="element__section">
+            <h1 class="delta hN t-auteurs__hN"><:pratiques_picturales:author_bio:></h1>
+            <div>
+              (#BIO)
+            </div>
+          </section>]
+          [(#URL_SITE|ou{#EMAIL}|oui)
+          <section id="contact" class="element__section">
+            <h1 class="delta hN t-auteurs__hN"><:pratiques_picturales:author_contact:></h1>
+            <ul class="list-bare contact__list">
+              [(#URL_SITE|et{#NOM_SITE}|?{<li class="contact__item"><a href="#URL_SITE" class="contact__link t-auteurs__contact">[(#INCLURE{fond=img/icon-web.svg,class=icon icon--round icon--40 t-auteurs__icon,class-fill=t-auteurs__icon-fill})][ <span class="contact__label">(#NOM_SITE)</span>]</a></li>})]
+              [(#EMAIL|oui)[<li class="contact__item"><a href="(#URL_PAGE_UNIQUE{contact}|parametre_url{id_auteur,#ID_AUTEUR}|ancre_url{contact})" class="contact__link t-auteurs__contact">[(#INCLURE{fond=img/icon-mail.svg,class=icon icon--round icon--40 t-auteurs__icon,class-fill=t-auteurs__icon-fill})] <span class="contact__label"><:pratiques_picturales:author_contact_mail:></span></a>
+              </li>]]
+            </ul>
+          </section>]
+
+        </div>
+      </div>
+    </div>
+
+    [<div class="layout__item">
+      (#INCLURE{fond=breadcrumb/auteur,id_auteur})
+    </div>]
+
+  </div>
+
+</article>
+</BOUCLE_auteur>

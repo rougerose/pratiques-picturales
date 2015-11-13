@@ -2,7 +2,7 @@
 
 if (!defined("_ECRIRE_INC_VERSION")) return;
 
-$GLOBALS['z_blocs'] = array('content','head','head_js','header','footer','foot_js');
+$GLOBALS['z_blocs'] = array('content','head','header','footer','foot_js');
 
 // intertitres
 $GLOBALS['debut_intertitre'] = '<h2 class="spip">';
@@ -11,7 +11,7 @@ $GLOBALS['fin_intertitre'] = '</h2>';
 // titre des documents
 define('_TITRER_DOCUMENTS', true );
 
-define('_NO_CACHE', -1);
+//define('_NO_CACHE', -1);
 //define('_INTERDIRE_COMPACTE_HEAD_ECRIRE', true);
 error_reporting(E_ALL^E_NOTICE);
 ini_set ("display_errors", "On");

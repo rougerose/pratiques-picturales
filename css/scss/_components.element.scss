@@ -26,10 +26,18 @@
   margin-bottom: $spacing-unit;
 }
 
+.element__section--mt {
+  margin-top: $spacing-unit;
+}
+
+.element__section--mb-large {
+  margin-bottom: $spacing-unit--large;
+}
+
 .element__section--issue {
   > h1 {
     @include media-query(m-and-l) {
-      @extend .u-1\/12-push-m-and-l;
+      // @extend .u-1\/12-push-m-and-l;
       margin-bottom: $spacing-unit;
     }
   }
@@ -39,7 +47,13 @@
    element__header
    ========================================================================== */
 
-.element__header {}
+.element__header {
+  // margin-bottom: $spacing-unit--large;
+}
+
+.element__header--resume-logo {
+  margin-bottom: 0;
+}
 
   .element__title {
     margin-bottom: 0;
@@ -49,46 +63,46 @@
     text-transform: uppercase;
   }
 
-  .element__title--selection {
+  .element__title--mb {
     margin-bottom: $spacing-unit;
   }
 
   .element__subtitle {
-    margin-bottom: 0;
+    margin: $spacing-unit--tiny 0 0;
     font-style: italic;
-    color: $black-color;
+    color: $gray-color;
   }
 
   .element__subtitle--resume {
     margin-top: $spacing-unit--tiny;
-    color: inherit;
+    color: $gray-color;
   }
 
-.element__meta {
-  position: relative;
-}
+// .element__meta {}
+
+  .element__byline {}
+
   .element__authors {
     font-style: italic;
   }
 
   .element__authors--article {
-    margin-top: 0;
-    @include inuit-font-size(18px);
-    @include media-query(l) {
-      margin-bottom: 0;
+    &:before {
+      content: ' | ';
+      color: $gray-color;
     }
+  }
+
+  .element__authors--resume {
+    margin-top: $spacing-unit--tiny;
+    @include inuit-font-size(16px);
   }
 
   .element__date {
     color: $gray-color;
   }
 
-  .element__date--article {
-    margin-top: 0;
-    @include media-query(l) {
-      margin-bottom: 0;
-    }
-  }
+  // .element__date--article {}
 
 /*
    element__content
@@ -106,24 +120,41 @@
   @extend .element__content--main;
 }
 
-.element__link {
-  text-decoration: none;
-  display: block;
-}
+  // .element__texte {}
 
-.element__next {
-  margin-top: $spacing-unit--small;
-  margin-bottom: $spacing-unit--tiny;
-  text-align: right;
-  font-weight: bold;
-  @include transition(color);
-  &:before,
-  &:after {
-    margin-bottom: $spacing-unit--tiny;
-    display: block;
-    content: '';
-    width: 20%;
-    height: 0; // la taille est définie par une classe spécifique à l'élément.
-    background-color: currentColor;
+  .element__texte--mb {
+    margin-bottom: $spacing-unit--large;
   }
-}
+
+  .element__chapo {
+    margin-bottom: $spacing-unit--large;
+    @include inuit-font-size(18px);
+    color: darken($text-color,15%);
+  }
+
+
+  .element__link {
+    text-decoration: none;
+    display: block;
+  }
+
+  .element__contact {
+    text-align: center;
+  }
+
+  .element__next {
+    margin-top: $spacing-unit--small;
+    margin-bottom: $spacing-unit--tiny;
+    text-align: right;
+    font-weight: bold;
+    @include transition(color);
+    &:before,
+    &:after {
+      margin-bottom: $spacing-unit--tiny;
+      display: block;
+      content: '';
+      width: 20%;
+      height: 0; // la taille est définie par une classe spécifique à l'élément.
+      background-color: currentColor;
+    }
+  }

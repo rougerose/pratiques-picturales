@@ -1,18 +1,33 @@
 [(#REM)
-  Cover d'un numéro, version standard.
-  ===================================
-  Ce fichier doit être inclus dans un div.cover ou aside.cover selon le contexte:
-  voir content/article-numero.html ou footer/dist.html.
+  Cover d'un numéro
+  ==================
+  Ce fichier doit être inclus dans un element avec classe .cover:
+  voir par exemple content/article-numero.html ou footer/dist.html.
 
-  #ENV{contexte} peut contenir:
-    - toc => composition rubrique-numero.html
-    - all => compositions rubrique-numeros.html et sommaire
+  La valeur de #ENV{layout} est soit:
+    - simple => les infos texte sont disposées sous l'image
+    - stack => les infos texte sont superposées sur l'image
 
+  Afficher le lien vers la rubrique ou pas:
+    - #ENV{link} => 0 ou 1
 
-]<BOUCLE_rubrique_numero_cover(RUBRIQUES){id_rubrique}>
-  [(#ENV{contexte}|=={all}|?{<a href="#URL_RUBRIQUE" class="element__link element__link--cover">})]
-    [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1600,800}|image_recadre{1600,800,center}|adaptive_images{1090})]
-    <div class="cover__body [cover__body--(#ENV{contexte})] [t-(#ID_RUBRIQUE)__bg]">
+  Le traitement (adaptatif ou pas) du logo de la rubrique est déterminé
+  avec un paramètre transmis dans l'inclusion:
+    - #ENV{adaptive} => O ou 1
+
+  Le descriptif est affiché ou pas:
+    - #ENV{descriptif} => 0 ou 1
+
+][(#ENV{layout}match{simple|stack}|oui) #SET{afficher_lien,' '}]
+
+<BOUCLE_rubrique_numero_cover(RUBRIQUES){id_rubrique}>
+  [(#ENV{link}|=={1}|?{<a href="#URL_RUBRIQUE" class="element__link element__link--cover">})]
+    [(#ENV{adaptive}|=={1}|?{
+      [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,800}|image_recadre{1200,800,center}|adaptive_images{1090})],
+      [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{690,460}|image_recadre{690,460,center})]
+    })]
+
+    <div class="cover__body [cover__body--(#ENV{layout})] [t-(#ID_RUBRIQUE)__bg]">
       <header>
         <h1 class="element__title cover__title beta">#TITRE</h1>
         [<p class="element__subtitle cover__subtitle cover__subtitle--std">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]
@@ -22,14 +37,14 @@
           <:pratiques_picturales:numero_direction:>
           (#INCLURE{fond=inclure/rubrique-auteurs-direction,id_rubrique,contexte=resume})
         </p>]
-      ][<p class="cover__desc">(#DESCRIPTIF|PtoBR)</p>]
+      ][(#ENV{descriptif}|=={1}|?{[<p class="cover__desc">(#DESCRIPTIF|PtoBR)</p>]})]
       [<p class="cover__desc cover__desc-contributions">
         <:pratiques_picturales:numero_contributions:>
         (#INCLURE{fond=inclure/rubrique-auteurs-contributions,id_rubrique})
       </p>]
-      [(#ENV{contexte}|=={all}|oui)
-        <p class="element__next cover__desc cover__next [t-(#ID_RUBRIQUE)__icon-next--cover]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg})]</p>
+      [(#ENV{link}|oui)
+        <p class="element__next cover__desc cover__next [t-(#ID_RUBRIQUE)__icon-next--cover]"><:pratiques_picturales:lire_sommaire:> [(#INCLURE{fond=img/icon-next.svg, class=icon icon-next, class-fill=icon-next__fill})]</p>
       ]
     </div>
-  [(#ENV{contexte}|=={all}|?{</a>})]
+  [(#ENV{link}|=={1}|?{</a>})]
 </BOUCLE_rubrique_numero_cover>

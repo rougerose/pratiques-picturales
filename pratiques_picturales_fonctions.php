@@ -44,9 +44,46 @@ function nom($texte) {
     }
 }
 
+
 function zerofill ($num, $zerofill = 2) {
   return str_pad($num, $zerofill, '0', STR_PAD_LEFT);
 }
 
+// Supprimer les caractères accentués sur la première lettre d'une chaîne.
+// Si couper = false, la chaîne est reconstituée sur 31 caractères.
+// Si miniscule = false, la chaîne est conservée en lettre capitale.
+function desaccentuer_initiale($texte,$minuscule=true,$couper=true) {
+  $encoding = 'UTF-8';
+  $t = trim($texte);
+  $initiale = mb_strtoupper(mb_substr($t,0,1,$encoding),$encoding);
+  $accents = array('À' => 'A', 'Â' => 'A', 'Ä' => 'A', 'Æ' => 'A', 'É' => 'E', 'È' => 'E', 'Ê' => 'E', 'Ë' => 'E', 'Ì' => 'I', 'Í' => 'I', 'Î' => 'I', 'Ñ' => 'N', 'Œ' => 'O', 'Û' => 'U', 'Ù' => 'U', 'Ú' => 'U');
+  $t_initiale = strtr($initiale,$accents);
+  if ($minuscule) {
+    $t_initiale = mb_strtolower($t_initiale);
+  }
+  if (!$couper) {
+    $t_suite = mb_strtoupper(mb_substr($t,1,30,$encoding),$encoding);
+    $txt = $t_initiale.$t_suite;
+    return $txt;
+  }
+  return $t_initiale;
+}
+
+// trier un tableau #ARRAY
+function array_sort($tableau) {
+  if (is_array($tableau)) {
+    sort($tableau);
+  }
+  return $tableau;
+}
+
+// convertir une couleur hexadécimale en valeurs RGB
+function couleur_hex2dec($couleur) {
+  $red = hexdec(substr($couleur, 0, 2));
+  $green = hexdec(substr($couleur, 2, 2));
+  $blue = hexdec(substr($couleur, 4, 2));
+  $couleur = $red.','.$green.','.$blue;
+  return $couleur;
+}
 
 ?>

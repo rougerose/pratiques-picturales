@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #INFO
+   ========================================================================== */
+
+.info {
+  display: inline-block;
+  padding: $spacing-unit;
+  border: 1px solid rgba($light-gray-color, 0.1);
+  border-radius: 2px;
+  box-shadow: 2px 2px 7px rgba($dark-gray-color, 0.2);
+  text-align: center;
+  font-weight: bold;
+}
+
+  .info--error {
+    color: $error-color;
+  }
+
+  .info--ok {
+    color: $ok-color;
+  }
+
+.info-label {
+  font-weight: bold;
+}
+
+  .info-label--error {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include inuit-font-size(14px);
+    color: $error-color;
+  }

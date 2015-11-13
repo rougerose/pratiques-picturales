@@ -1,0 +1,85 @@
+/* ==========================================================================
+   #MEDIA
+   ========================================================================== */
+
+.media {
+  display: block;
+}
+
+.media--emb {
+  margin: 0.5em 0 1em;
+}
+
+.media--doc {
+  @extend .clearfix;
+  border-bottom: 1px dotted $light-gray-color;
+  padding: $spacing-unit--small 0;
+  text-decoration: none;
+}
+
+.media--left {
+  float: left;
+  margin-right: $spacing-unit;
+}
+
+.media--right {
+  float: right;
+  margin-left: $spacing-unit;
+}
+
+.media--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  .media__body {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+  .media__link {
+    display: block;
+  }
+
+  .media__img {}
+
+  .media__img--doc {
+    float: left;
+    margin-right: $spacing-unit;
+  }
+
+  .media__img--emb {
+    float: none;
+  }
+
+  .media__body {
+    overflow: hidden;
+    display: block;
+  }
+
+  .media__body--emb {
+    overflow: auto;
+    color: $gray-color;
+  }
+
+  // .media__body--doc {}
+
+    .media__titre {
+      margin-bottom: 0;
+      @include inuit-font-size(14px);
+
+      .media__body--doc & {
+        margin-top: 0;
+        @include inuit-font-size(16px);
+      }
+    }
+
+    .media__descriptif,
+    .media__credit,
+    .media__type-info {
+      margin: 0;
+      @include inuit-font-size(12px,1.2);
+    }
+
+    // .media__credit {}

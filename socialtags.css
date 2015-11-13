@@ -1,0 +1,23 @@
+/* Surcharge CSS plugin socialtags */
+
+div.socialtags {
+  display: inline-block;
+}
+
+.socialtags ul {
+  margin: 0;
+  padding: 0;
+}
+.socialtags ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 3px;
+}
+.socialtags img {
+  /*float: none;*/
+  width: auto;
+  height: 16px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}

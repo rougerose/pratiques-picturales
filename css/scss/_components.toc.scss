@@ -4,33 +4,99 @@
 
 .toc {
   padding: $spacing-unit--small;
-  column-count: 2;
+  margin-bottom: $spacing-unit;
   @include media-query(l) {
-    column-count: auto;
     padding: 0;
   }
 }
-
-  .toc-list {
-    @include media-query(l) {
-      padding: $spacing-unit 0 0;
+  @include media-query(l) {
+    .toc-list {
+      padding-top: $spacing-unit;
     }
   }
 
   .toc-list__item {
-    margin-bottom: $spacing-unit--tiny;
     text-transform: uppercase;
+    @include transition(color);
+
+    @include media-query(l) {
+      color: $gray-color;
+    }
 
     &.is-active {
-      border-bottom: 1px solid #000;
 
-      & .toc__link {
-        color: #000;
+      > a {
+        border-bottom-color: $black-color;
+        color: $black-color;
       }
     }
   }
 
    .toc__link {
+     border-bottom: 1px solid $white-color;
      text-decoration: none;
-     color: $gray-color;
+     @include transition(border-color);
+
+     @include media-query(l) {
+       color: $gray-color;
+     }
    }
+
+/*
+   #ARTICLE-NUMERO
+   ========================================================================== */
+
+/**
+ * Règle spécifique à la composition article-numero.html
+ */
+
+.toc-list--article-numero {
+  @include media-query(l) {
+    padding-top: $spacing-unit;
+  }
+}
+
+/*
+   #ARTICLE-APROPOS
+   ========================================================================== */
+
+/**
+*  La table des matières est générée par le modèle sommaire.html,
+*  sans possibilité de produire des css identiques à la table des matières
+*  ci-dessus.
+*  Les règles s'appliquent uniquement pour la composition article-apropos.html
+**/
+
+.toc--apropos ul.spip {
+ @extend .list-bare;
+ @include inuit-font-size(14px,1.4);
+ @include media-query(l) {
+   padding: 0;
+ }
+}
+
+  .toc--apropos ul.spip ul {
+   padding-top: 0;
+   padding-left: $spacing-unit--small;
+   list-style: square inside;
+  }
+
+  .toc--apropos li {
+   @extend .toc-list__item;
+   margin-top: $spacing-unit--tiny;
+   margin-bottom: $spacing-unit--tiny;
+  }
+
+    .toc--apropos a {
+     @extend .toc__link;
+    }
+
+/*
+   Plugin SPIP Sommaire
+   ========================================================================== */
+
+/* Code généré automatiquement par le plugin. Ne pas faire apparaître. */
+
+.sommaire-back {
+  display: none;
+}

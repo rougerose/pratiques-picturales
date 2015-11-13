@@ -1,30 +1,45 @@
-Questions:
-  ☐ Antoine -> résumé d'article dans #DESCRIPTIF ou bien champs spécifique ?
-  ☐ la rubrique Numéros : problème des blancs trop important à droite ?
-  ☐ rubrique-numero : le texte de présentation est présenté en dehors
-  de l'aplat de couleur, dans l'hypothèse où le texte serait un peu important.
-  ☐ rubrique-numero : pagination dans la liste des articles du sommaire ?
-
 Prioritaire:
-  ☐ mise en forme des contenus dans #TEXTE
-  ☐ article-numéro, rubrique-numéro : liens précédent/suivant
+  ☐ robots.txt
 
 Todo:
-  ☐ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie
-  ☐ plugin sélections éditoriales http://plugins.spip.net/selections_editoriales.html
-  ☐ régler la gestion des images via mediabox
-  ☐ passer les scripts dans le pied de page
 
 Penser à:
   ☐ http://webdevchecklist.com
   ☐ open graph http://ogp.me
-  ☐ footer/dist.html : ajouter les ancres (revue, équipe, etc.)
-  dans les url vers l'article de présentation de la revue. 
 
 Avant mise en prod:
   ☐ filtre |compacte sur fichier couleurs.css
 
+Pour mémoire:
+  ☐ ratio des images: 1.5
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ corriger le traitement des noms/prénoms auteurs dans le backend @done(2015-11-13 18:55) @project(Prioritaire)
+  ✔ page 404 @done(2015-11-03 18:25) @project(Prioritaire)
+  ✔ favicon @done(2015-11-04 18:11) @project(Prioritaire)
+  ✔ styles print @done(2015-11-04 18:11) @project(Prioritaire)
+  ✔ plugin doc unifié http://contrib.spip.net/Modele-doc-unifie @done(2015-11-03 18:41) @project(Todo)
+  ✔ plugin sélections éditoriales http://plugins.spip.net/selections_editoriales.html @done(2015-11-03 18:41) @project(Todo)
+  ✔ régler la gestion des images via mediabox @done(2015-11-03 18:41) @project(Todo)
+  ✔ passer les scripts dans le pied de page @done(2015-11-03 18:41) @project(Todo)
+  ✔ mettre en place des head/xxx.html spécifique aux pages ? @done(2015-11-04 18:11) @project(Penser à)
+  ✔ remplacer icone svg / par une simple barre de fraction ? @done(2015-11-02 19:12) @project(Prioritaire)
+  ✔ mise en forme des contenus dans #TEXTE @done(2015-10-31 15:55) @project(Prioritaire)
+  ✔ article-numéro, rubrique-numéro : liens précédent/suivant @done(2015-10-31 15:55) @project(Prioritaire)
+  ✔ recherche : formulaire en overlay ? @done(2015-10-31 15:55) @project(Prioritaire)
+  ✔ Correction: Rubrique-numéros -> présentation sur 2 colonnes. Rubrique-numéro -> image couverture moins large + suppression du résumé de présentation. @done(2015-10-28 14:55) @project(Prioritaire)
+  ✔ logo d'article @done(2015-10-28 14:54) @project(Prioritaire)
+  ✔ Correction: Bug script Table des matières + Safari @done(2015-10-28 14:54) @project(Prioritaire)
+  ✔ vérifier la mise en forme de la pagination dans les numéros par exemple @done(2015-10-28 14:54) @project(Prioritaire)
+  ✔ date article : replacer dans colonne principale @done(2015-10-28 14:54) @project(Prioritaire)
+  ✔ Correction: supprimer flex @done(2015-10-28 14:54) @project(Prioritaire)
+  ✔ footer/dist.html : ajouter les ancres (revue, équipe, etc.) dans les url vers l'article de présentation de la revue. @done(2015-10-26 13:26) @project(Penser à)
+  ✔ recherche : mettre en place les critères de tri @done(2015-10-26 13:25) @project(Prioritaire)
+  ✔ Antoine -> résumé d'article dans #DESCRIPTIF ou bien champs spécifique ? @done(2015-10-25 18:23) @project(Questions)
+  ✔ la rubrique Numéros : problème des blancs trop important à droite ? @done(2015-10-25 18:23) @project(Questions)
+  ✔ rubrique-numero : le texte de présentation est présenté en dehors de l'aplat de couleur, dans l'hypothèse où le texte serait un peu important. @done(2015-10-25 18:23) @project(Questions)
+  ✔ rubrique-numero : pagination dans la liste des articles du sommaire ? non @done(2015-10-25 18:23) @project(Questions)
+  ✔ article-resumé : mettre introduction et non pas descriptif @done(2015-10-25 18:28) @project(Prioritaire)
+  ✔ rubrique-numero : il manque les auteurs dans les résumés d'article @done(2015-10-25 20:35) @project(Prioritaire)
   ✔ icon lien "voir suite" @done(2015-10-13 13:47) @project(Prioritaire)
   ✔ grille sur 12 colonnes uniquement @done(2015-10-13 15:09) @project(Prioritaire)

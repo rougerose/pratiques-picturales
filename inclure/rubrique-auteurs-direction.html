@@ -1,12 +1,11 @@
 [(#REM)
   Liste des auteurs en charge de la direction du numéro.
   Les infos sont stockées dans la base via un champ extra #AUTEURS_DIRECTION
-  au niveau de la rubrique du numéro. 
+  au niveau de la rubrique du numéro.
 ]
 <BOUCLE_rubrique_auteurs(RUBRIQUES){id_rubrique}>
 [(#SET{auteurs,[(#AUTEURS_DIRECTION*|is_array|?{[(#AUTEURS_DIRECTION*)],[(#AUTEURS_DIRECTION*|explode{','})]})]})]
-<BOUCLE_AUTEURS(AUTEURS){id_auteur IN #GET*{auteurs}}{tout}>
-[(#COMPTEUR_BOUCLE|=={1}|?{'',[(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|?{' &amp;&nbsp;',', '})]})][
-(#ENV{contexte}|=={resume}|?{<span rel="author">,<a href="#URL_AUTEUR" rel="author">})][(#NOM|prenom_nom)][(#ENV{contexte}|=={resume}|?{</span>,</a>})]
-</BOUCLE_AUTEURS>
+<BOUCLE_AUTEURS(AUTEURS){id_auteur IN #GET*{auteurs}}{tout}
+>[(#COMPTEUR_BOUCLE|=={1}|?{'',[(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|?{' &amp;&nbsp;',', '})]})][
+(#ENV{contexte}|=={resume}|?{<span rel="author">,<a href="#URL_AUTEUR" rel="author">})][(#NOM|prenom_nom)][(#ENV{contexte}|=={resume}|?{</span>,</a>})]</BOUCLE_AUTEURS>
 </BOUCLE_rubrique_auteurs>

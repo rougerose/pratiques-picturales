@@ -1,0 +1,16 @@
+<BOUCLE_auteur_toc(AUTEURS){id_auteur}{tout}>
+<nav id="js-toc" class="toc t-auteurs__toc">
+  <ul class="list-bare toc-list">
+    <BOUCLE_articles_auteurs(ARTICLES){id_auteur}{0,1}> </BOUCLE_articles_auteurs>
+    <li class="toc-list__item t-auteurs__toc-item">
+      <a class="toc__link js-scroll" href="#articles"><:pratiques_picturales:author_articles:></a>
+    </li></B_articles_auteurs>
+    [(#BIO|oui)<li class="toc-list__item t-auteurs__toc-item">
+      <a class="toc__link js-scroll" href="#bio"><:pratiques_picturales:author_bio:></a>
+    </li>]
+    [(#EMAIL|oui)<li class="toc-list__item t-auteurs__toc-item">
+      <a class="toc__link js-scroll" href="#contact"><:pratiques_picturales:author_contact:></a>
+    </li>]
+  </ul>
+</nav>
+</BOUCLE_auteur_toc>

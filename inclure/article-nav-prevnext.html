@@ -1,0 +1,24 @@
+<BOUCLE_article(ARTICLES){id_article}>
+<nav id="js-nav-prvnxt" class="nav-prvnxt[ (#ENV{t-color})]">
+  <BOUCLE_precedent(ARTICLES){id_rubrique}{par num titre, date}{precedent}>
+    <a class="nav-prvnxt__item nav-prvnxt__item--prev is-enabled" href="#URL_ARTICLE" rel="prev">
+      [<span class="nav-prvnxt__icon">(#INCLURE{fond=img/icon-arrow-prev.svg})</span>]
+      <div>
+        <h3 class="nav-prvnxt__title"><span><:pratiques_picturales:nav_prev_article:></span> [(#TITRE|couper{30,'…'})]</h3>
+      </div>
+    </a>
+  </BOUCLE_precedent>
+    <span class="nav-prvnxt__item nav-prvnxt__item--prev is-disabled">[<span class="nav-prvnxt__icon">(#INCLURE{fond=img/icon-arrow-prev.svg})</span>]</span>
+  <//B_precedent>
+  <BOUCLE_suivant(ARTICLES){id_rubrique}{par num titre, date}{suivant}>
+    <a class="nav-prvnxt__item nav-prvnxt__item--next is-enabled" href="#URL_ARTICLE" rel="next">
+      [<span class="nav-prvnxt__icon">(#INCLURE{fond=img/icon-arrow-next.svg})</span>]
+      <div>
+        <h3 class="nav-prvnxt__title"><span><:pratiques_picturales:nav_next_article:></span> [(#TITRE|couper{30,'…'})]</h3>
+      </div>
+    </a>
+  </BOUCLE_suivant>
+    <span class="nav-prvnxt__item nav-prvnxt__item--next is-disabled">[<span class="nav-prvnxt__icon">(#INCLURE{fond=img/icon-arrow-next.svg})</span>]</span>
+  <//B_suivant>
+</nav>
+</BOUCLE_article>

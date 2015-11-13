@@ -1,0 +1,14 @@
+[(#SET{layout,#ENV{layout,''}})]
+<BOUCLE_mot_resume(MOTS){id_mot}>
+<article class="element resume mot-resume[ (#ENV{class_block_modifier})]">
+  <a href="#URL_MOT" class="element__link[ t-(#ENV{class_color})__color--hover]">
+    <header class="element__header">
+      <h1 class="element__title element__title--mb gamma">#TITRE</h1>
+    </header>
+    [<div class="article-resume__desc [(#LOGO_ARTICLE|oui)article-resume__desc--logo]">
+      (#DESCRIPTIF)
+    </div>]
+    <p class="element__next article-resume__next[ t-(#ENV{class_color})__icon-next][ t-(#ENV{class_color})__icon-next--std]">[(#ENV{lien_suite}|=={texte}|?{<:pratiques_picturales:lire_texte_integral:>,<:pratiques_picturales:lire_mot:>}) ][(#INCLURE{fond=img/icon-next.svg, class=icon icon-next, class-fill=icon-next__fill})]</p>
+  </a>
+</article>
+</BOUCLE_mot_resume>

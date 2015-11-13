@@ -1,7 +1,10 @@
-[(#SET{page-variable,#ENV{type-page,page}})][
-  (#GET{page-variable}|match{rubrique|article}|oui)
-    #SET{page-variable,#ID_RUBRIQUE}
-][(#SET{class,[page_(#ENV{type-page,page})[ #ENV{type-page,page}_(#ENV{composition,''})]][ composition_(#ENV{composition})]})]
+[(#SET{page-variable,#ENV{type-page,page}})]
+  [(#GET{page-variable}|match{rubrique|article}|?{#SET{page-variable,#ID_RUBRIQUE}})]
+  [(#ENV{composition}|match{apropos|contact|mentions}|?{#SET{page-variable,apropos}})]
+  [(#GET{page-variable}|=={auteur}|?{#SET{page-variable,auteurs}})]
+  [(#GET{page-variable}|=={mot}|?{#SET{page-variable,mots}})]
+  [(#GET{page-variable}|=={404}|?{#SET{page-variable,apropos}})]
+[(#SET{class,[page_(#ENV{type-page,page})[ #ENV{type-page,page}_(#ENV{composition,''})]][ composition_(#ENV{composition})]})]
 <body id="js-page-body" class="[(#ENV{type-page}|oui)page-body] [(#GET{class})]">
   <INCLURE{fond=header/#ENV{type-page}, env, page-variable=#GET{page-variable}} />
   <main class="page-content[ t-(#GET{page-variable})__border]">
@@ -10,5 +13,5 @@
     </div><!-- /.wrapper -->
   </main>
   <INCLURE{fond=footer/#ENV{type-page}, env, page-variable=#GET{page-variable}} />
-  <INCLURE{fond=foot_js/#ENV{type-page}, env} />
+  <INCLURE{fond=foot_js/#ENV{type-page}, env, page-variable=#GET{page-variable}} />
 </body>

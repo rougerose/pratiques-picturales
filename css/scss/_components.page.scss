@@ -3,7 +3,6 @@
    ========================================================================== */
 
 .page {
-  font-family: "URW Classico Regular","Helevetica Neue", Helvetica, sans-serif;
+  font-family: "URWClassico","Helevetica Neue", Helvetica, sans-serif;
   color: $text-color;
-  @include inuit-font-size(14px, 20px);
 }

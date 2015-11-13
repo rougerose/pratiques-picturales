@@ -2,25 +2,29 @@
    #ICONS
    ========================================================================== */
 
-.icon-svg-source {
-  display: none;
+.icon {
+  vertical-align: middle;
+  transition: transform 0.1s cubic-bezier(0.550, 0.055, 0.675, 0.190);
 }
 
-.icon-oblique {
-  width: 9px;
-  height: 19px;
-}
-
-  .icon-oblique__stroke {
-    stroke: currentColor;
+  .icon--round {
+    border-radius: 50%;
   }
 
+  .icon--24 {
+    width: 24px;
+    height: 24px;
+  }
+
+  .icon--40 {
+    width: 40px;
+    height: 40px;
+  }
 
 .icon-next {
   width: 24px;
   height: 24px;
   border-radius: 24px;
-  vertical-align: bottom;
   @include transition(background);
 }
 

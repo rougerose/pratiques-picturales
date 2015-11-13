@@ -1,0 +1,50 @@
+<div class="formulaire_spip formulaire_ecrire_auteur ajax" id="formulaire_ecrire_auteur#ENV{id}">
+<br class='bugajaxie' />
+[<p class="info info--ok reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
+[<p class="info info--error reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+[(#ENV{editable})
+<form class="form" method='post' action='#ENV{action}#formulaire_ecrire_auteur#ENV{id}' enctype='multipart/form-data'>
+  [(#REM) declarer les hidden qui declencheront le service du formulaire parametre : url d'action ]
+  #ACTION_FORMULAIRE{#ENV{action}}
+  [(#REM) Previsualisation... ]
+  [(#ENV*{erreurs}|table_valeur{previsu}|oui)
+  <fieldset class="previsu">
+    <legend class="form-contact__legend gamma t-apropos__color"><:previsualisation:></legend>
+    <ul class="list-bare">
+      <li class="form__item"><span class="info-label"><:pratiques_picturales:contact_previsu_email:></span> #ENV{email_message_auteur}</li>
+      <li class="form__item"><span class="info-label"><:pratiques_picturales:contact_previsu_sujet:></span> #ENV{sujet_message_auteur}</li>
+      <li class="form__item"><span class="info-label"><:pratiques_picturales:contact_previsu_message:></span> [(#ENV{texte_message_auteur}|nl2br)]</li>
+    </ul>
+    <p class="form__item boutons"><input type="submit" class="btn btn--submit t-apropos__btn--submit submit" name="confirmer" value="<:form_prop_confirmer_envoi:>" /></p>
+  </fieldset>
+  ]
+  [(#REM) Sinon, formulaire normal ]
+  <fieldset>
+    <legend class="form-contact__legend gamma t-apropos__color"><:envoyer_message:></legend>
+    <ul class="editer-groupe list-bare">
+      <li class='form__item editer saisie_email_message_auteur obligatoire[ (#ENV*{erreurs}|table_valeur{email_message_auteur}|oui)form__item--error]'>
+        <label class="form-contact__label" for="email_message_auteur#ENV{id}"><:entree_adresse_email:> <:info_obligatoire_02:></label>
+        [<span class="info-label info-label--error erreur_message">(#ENV*{erreurs}|table_valeur{email_message_auteur})</span>]
+        <input[ (#HTML5|?{required="required" type="email" class="text email form__field",type="text" class="text"})] name="email_message_auteur" id="email_message_auteur#ENV{id}" value="#ENV{email_message_auteur}" size="30" />
+      </li>
+      <li class='form__item editer saisie_sujet_message_auteur obligatoire[ (#ENV*{erreurs}|table_valeur{sujet_message_auteur}|oui)form__item--error]'>
+        <label class="form-contact__label" for="sujet_message_auteur#ENV{id}"><:form_prop_sujet:> <:info_obligatoire_02:></label>
+        [<span class="info-label info-label--error erreur_message">(#ENV*{erreurs}|table_valeur{sujet_message_auteur})</span>]
+        <input type="text" class="text form__field" name="sujet_message_auteur" id="sujet_message_auteur#ENV{id}" value="#ENV{sujet_message_auteur}" size="30"[(#HTML5) required="required"] />
+      </li>
+      <li class='form__item editer saisie_texte_message_auteur obligatoire[ (#ENV*{erreurs}|table_valeur{texte_message_auteur}|oui)form__item--error]'>
+        <label class="form-contact__label" for="texte_message_auteur#ENV{id}"><:info_texte_message:> <:info_obligatoire_02:></label>
+        [<span class="info-label info-label--error erreur_message">(#ENV*{erreurs}|table_valeur{texte_message_auteur})</span>]
+        <textarea class="form__field form-contact__textarea" name="texte_message_auteur" id="texte_message_auteur#ENV{id}" [(#HTML5) required="required"]>#ENV{texte_message_auteur}</textarea>
+      </li>
+    </ul>
+  </fieldset>
+  [(#REM) Piege a robots spammeurs ]
+  <p style="display: none;">
+    <label for="nobot"><:antispam_champ_vide:></label>
+    <input type="text" class="text" name="nobot" id="nobot" value="#ENV{nobot}" size="10" />
+  </p>
+  <p class="form__item boutons"><input type="submit" class="btn btn--submit t-apropos__btn--submit submit" name="valide" value="<:pratiques_picturales:form_prop_envoyer:>" /></p>
+</form>
+]
+</div>

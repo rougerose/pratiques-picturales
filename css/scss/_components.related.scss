@@ -50,7 +50,7 @@
 
 .related__desc-block {
   > p {
-    @extend .related__desc;
+    margin-bottom: 0;
   }
 }
 
@@ -59,17 +59,19 @@
 }
 
 .related__desc--about-links {
-  @extend .flex-grid;
-  margin-left: 12px;
+  margin: $spacing-unit 0;
+  @extend .clearfix;
+  > div {
+    // padding-left: $spacing-unit--small;
+    @include media-query(m-and-l) {
+      float: left;
+      width: 50%;
+    }
+  }
 }
 
   .related__link {
-    @extend .flex-grid__item;
-    flex: 0 0 50%;
-    margin-bottom: $spacing-unit--tiny;
-    justify-content: flex-start;
-    padding-left: 0;
-    margin-left: 0;
+    display: block;
   }
 
 .related__desc--aff {

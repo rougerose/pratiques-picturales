@@ -3,7 +3,8 @@
    ========================================================================== */
 
 .page-content {
-  padding: $spacing-unit 0 $spacing-unit $spacing-unit--small;
+  position: relative; // nav-prev-next
+  padding: $spacing-unit 0 0 $spacing-unit--small;
   border-right: $spacing-unit--small solid $black-color;
 
   @include media-query(m-and-l) {

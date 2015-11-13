@@ -12,29 +12,36 @@
 [(#SET{couleur,#ID_RUBRIQUE|couleur_rubrique|sinon{#ID_RUBRIQUE|couleur_secteur}|sinon{#GET{defaut}}})]
 [(#SET{couleur_lum06,[(#GET{couleur}|couleur_luminance{0.6})]})]
 
-[(#REM) mediaqueries ]
+[(#REM) <!-- mediaqueries  --> ]
   [(#SET{s, "screen and (max-width: 499px)"})]
   [(#SET{m, "screen and (min-width: 500px) and (max-width: 749px)"})]
-  [(#SET{m-and-l, "screen and (min-width: 750px)"})]
+  [(#SET{m-and-l, "screen and (min-width: 500px)"})]
   [(#SET{l, "screen and (min-width: 750px)"})]
 
-[(#REM) définition principale ]
-  .t-[(#ID_RUBRIQUE)]__color,
-  .t-[(#ID_RUBRIQUE)]__color--hover:hover,
-  .t-[(#ID_RUBRIQUE)]__color-nav,
-  .active .t-[(#ID_RUBRIQUE)]__color-nav,
-  .active .t-[(#ID_RUBRIQUE)]__color-nav > .nav__label,
-  .t-[(#ID_RUBRIQUE)]__color-nav:hover,
-  .t-[(#ID_RUBRIQUE)]__color-nav:hover > .nav__label,
-  .t-[(#ID_RUBRIQUE)]__color-nav.is-active > .nav__label,
-  .t-[(#ID_RUBRIQUE)]__toc .toc__link:hover
-  {
+[(#REM) <!-- définition principale --> ]
+  [.t-(#ID_RUBRIQUE)__color,]
+  [.t-(#ID_RUBRIQUE)__color--inter h2.spip,]
+  [.t-(#ID_RUBRIQUE)__color--hover:hover,]
+  [.t-(#ID_RUBRIQUE)__color-nav,]
+  [.active .t-(#ID_RUBRIQUE)__color-nav,]
+  [.active .t-(#ID_RUBRIQUE)__color-nav > .nav__label,]
+  [.t-(#ID_RUBRIQUE)__color-nav:hover,]
+  [.t-(#ID_RUBRIQUE)__color-nav:hover > .nav__label,]
+  [.t-(#ID_RUBRIQUE)__color-nav.is-active > .nav__label,]
+  [.t-(#ID_RUBRIQUE)__toc .toc__link:hover,]
+  [.t-(#ID_RUBRIQUE)__pagination > a:hover] {
     color: [#(#GET{couleur})];
   }
-
+[(#REM) <!-- intertitres --> ]
+  .t-[(#ID_RUBRIQUE)]__color--inter h3.spip,
+  .t-[(#ID_RUBRIQUE)]__color--inter h4.spip,
+  .t-[(#ID_RUBRIQUE)]__color--inter h5.spip,
+  .t-[(#ID_RUBRIQUE)]__color--inter h6.spip
+  {
+    color: [#(#GET{couleur}|couleur_luminance{0.55})];
+  }
 [(#REM) border ]
-  .t-[(#ID_RUBRIQUE)]__border,
-  .t-[(#ID_RUBRIQUE)]__pagination > strong
+  .t-[(#ID_RUBRIQUE)]__border
   {
     border-color: [#(#GET{couleur})];
   }
@@ -42,7 +49,8 @@
 [(#REM) background ]
   .t-[(#ID_RUBRIQUE)]__bg,
   .t-[(#ID_RUBRIQUE)]__bg--hover:hover,
-  .t-[(#ID_RUBRIQUE)]__pagination > strong
+  .t-[(#ID_RUBRIQUE)]__pagination > strong,
+  .t-[(#ID_RUBRIQUE)]__nav-prvnxt .nav-prvnxt__item div
   {
     color: [#(#GET{couleur}|couleur_extreme)];
     background: [#(#GET{couleur})];
@@ -70,8 +78,17 @@
   {
     background: [#(#GET{couleur}|couleur_luminance{0.6})];
   }
+[(#REM) <!-- nav-prvnxt --> <!-- voir également ligne 54 --> ]
+  .t-[(#ID_RUBRIQUE)]__nav-prvnxt .nav-prvnxt__item.is-enabled
+  {
+    background: [#(#GET{couleur})];
+  }
+  .t-[(#ID_RUBRIQUE)]__nav-prvnxt .nav-prvnxt__item.is-enabled svg
+  {
+    fill: [#(#GET{couleur}|couleur_extreme)];
+  }
 
-[(#REM) box-arrow ]
+[(#REM) <!-- box-arrow --> ]
   .t-[(#ID_RUBRIQUE)]__box-arrow,
   .t-[(#ID_RUBRIQUE)]__box-arrow:before
   {
@@ -79,7 +96,7 @@
     color: [#(#GET{couleur})];
   }
 
-[(#REM) related-articles / version s uniquement  ]
+[(#REM) <!-- related-articles / version s uniquement --> ]
   @media [(#GET{s})]
   {
     .t-[(#ID_RUBRIQUE)]__related-articles
@@ -118,7 +135,8 @@
   {
     background: [#(#GET{couleur})];
   }
-  .t-[(#ID_RUBRIQUE)]__icon-next--std .icon-next__fill
+  .t-[(#ID_RUBRIQUE)]__icon-next--std .icon-next__fill,
+  a:hover .t-[(#ID_RUBRIQUE)]__icon-next--std .icon-next__fill
   {
     fill: #fff;
   }
@@ -129,10 +147,6 @@
   a:hover .t-[(#ID_RUBRIQUE)]__icon-next--std .icon-next
   {
     background: #000
-  }
-  a:hover .t-[(#ID_RUBRIQUE)]__icon-next--std .icon-next__fill
-  {
-    fill: #fff;
   }
   [(#REM) icon-next--cover ]
   .t-[(#ID_RUBRIQUE)]__icon-next--cover
@@ -162,8 +176,6 @@
     fill: [#(#GET{couleur}|couleur_luminance{0.7})];
   }
 
-
-
 [(#ID_RUBRIQUE|=={#ID_SECTEUR}|oui)
   [(#REM) navigation principale ]
     .t-[(#ID_RUBRIQUE)]__color-nav,
@@ -175,28 +187,177 @@
      {
        color: [#(#GET{couleur})];
      }
-
-   ]
-
+  ]
 </BOUCLE_rubriques>
 
-
 [(#REM) couleurs des pages autres que les rubriques ]
-[(#SET{pages,#ARRAY{auteurs,'f5a623',mots,'4a90e2',recherche,'df69e8',home,'dacd23'}})]
+[(#SET{pages,#ARRAY{auteurs,'f5a623',mots,'4a90e2',recherche,'df69e8',sommaire,'a70a37',apropos,'f84212'}})]
 
 <BOUCLE_pages(DATA){source tableau,#GET{pages}}>
 
-[(#REM) définition principale ]
+[(#REM) auteurs ]
+[(#CLE|=={auteurs}|oui)
+  .t-[(#CLE)]__contact:hover,
+][(#REM) définition principale ]
   .t-[(#CLE)]__color,
-
+  .t-[(#CLE)]__color--inter h2.spip,
+  .t-[(#CLE)]__color--hover:hover,
+[(#REM) tabs-color ]
+  .t-[(#CLE)]__tabs-color .tabs__item--current,
 [(#REM) navigation principale ]
   .t-[(#CLE)]__color-nav,
   .active .t-[(#CLE)]__color-nav,
   .active .t-[(#CLE)]__color-nav > .nav__label,
   .t-[(#CLE)]__color-nav:hover,
-  .t-[(#CLE)]__color-nav:hover > .nav__label
+  .t-[(#CLE)]__color-nav:hover > .nav__label,
+  .t-[(#CLE)]__color-nav.is-active > .nav__label,
+  .t-[(#CLE)]__pagination > a:hover
   {
     color: [#(#VALEUR)];
   }
 
+[(#REM) toc ]
+  [(#CLE|=={apropos}|oui)
+    .t-[(#CLE)]__toc li.is-active > a,
+    .t-[(#CLE)]__btn--submit
+    {
+      color: [#(#VALEUR)];
+      border-color: [#(#VALEUR)];
+    }
+    .t-[(#CLE)]__toc a:hover
+    {
+      color: [#(#VALEUR)];
+    }
+    .t-[(#CLE)]__toc
+    {
+      background-color: [#(#GET{couleur}|couleur_saturation{0.1})];
+    }
+    @media [(#GET{l})]
+    {
+      .t-[(#CLE)]__toc
+      {
+        background-color: #fff;
+      }
+    }
+  ]
+
+[(#REM) intertitres ]
+  .t-[(#CLE)]__color--inter h3.spip,
+  .t-[(#CLE)]__color--inter h4.spip,
+  .t-[(#CLE)]__color--inter h5.spip,
+  .t-[(#CLE)]__color--inter h6.spip
+  {
+    color: [#(#VALEUR|couleur_luminance{0.55})]
+  }
+
+[(#REM) border ]
+  .t-[(#CLE)]__border
+  {
+    border-color: [#(#VALEUR)];
+  }
+
+[(#REM) background ]
+  [(#CLE|=={apropos}|oui)
+  .t-[(#CLE)]__btn--submit:hover, ]
+  .t-[(#CLE)]__bg,
+  .t-[(#CLE)]__pagination > strong
+  {
+    color: [#(#VALEUR|couleur_extreme)];
+    background: [#(#VALEUR)];
+  }
+
+[(#REM) toc-item ]
+  [(#CLE|=={auteurs}|oui)
+  .t-[(#CLE)]__toc-item.is-active,
+  .t-[(#CLE)]__toc-item.is-active .toc__link,
+  ]
+  [(#CLE|=={apropos}|oui)
+  .t-[(#CLE)]__toc li.is-active,
+  .t-[(#CLE)]__toc li.is-active > a, ]
+[(#REM) hN ]
+  .t-[(#CLE)]__hN,
+  .t-[(#CLE)]__pagination > a:hover
+  {
+    color: [#(#VALEUR)];
+    border-color: [#(#VALEUR)];
+  }
+
+[(#REM) icon ]
+  .t-[(#CLE)]__icon-fill
+  {
+    fill: [#(#VALEUR|couleur_extreme)];
+  }
+
+[(#REM) icon-next]
+  [(#REM) icon-next--std ]
+  .t-[(#CLE)]__icon-next--std
+  {
+    color: [#(#VALEUR)];
+  }
+  .t-[(#CLE)]__icon-next--std .icon-next,
+  .t-[(#CLE)]__icon
+  {
+    background: [#(#VALEUR)];
+  }
+  .t-[(#CLE)]__icon-next--std .icon-next__fill,
+  a:hover .t-[(#CLE)]__icon-next--std .icon-next__fill
+  {
+    fill: #fff;
+  }
+  a:hover .t-[(#CLE)]__icon-next--std
+  {
+    color: #000;
+  }
+  a:hover .t-[(#CLE)]__icon-next--std .icon-next
+  {
+    background: #000
+  }
+  [(#REM) icon-next--cover ]
+  .t-[(#CLE)]__icon-next--cover
+  {
+    color: [#(#VALEUR|couleur_luminance{0.8})];
+  }
+  .t-[(#CLE)]__icon-next--cover .icon-next
+  {
+    background: [#(#VALEUR|couleur_luminance{0.8})];
+  }
+  .t-[(#CLE)]__icon-next--cover .icon-next__fill
+  {
+    fill: [#(#VALEUR)];
+  }
+  a:hover .t-[(#CLE)]__icon-next--cover
+  {
+    color: [#(#VALEUR|couleur_extreme)];
+  }
+  a:hover .t-[(#CLE)]__icon-next--cover .icon-next,
+  .t-[(#CLE)]__bg .cover__subtitle--std:after,
+  .t-[(#CLE)]__bg .element__next:before
+  {
+    background: [#(#VALEUR|couleur_extreme)];
+  }
+  a:hover .t-[(#CLE)]__icon-next--cover .icon-next__fill
+  {
+    fill: [#(#VALEUR|couleur_luminance{0.7})];
+  }
+
+[(#REM) media-queries ]
+  @media [(#GET{s})]
+  {
+    .t-[(#CLE)]__tabs-color .tabs__item--current
+    {
+      background-color: [#(#VALEUR)];
+      color: [#(#VALEUR|couleur_extreme)];
+    }
+    .tabs-nav.t-[(#CLE)]__tabs-border:after
+    {
+      border-color: [#(#VALEUR)];
+    }
+  }
+  @media [(#GET{m-and-l})]
+  {
+    .tabs__item.t-[(#CLE)]__tabs-border:after
+    {
+      border-color: [#(#VALEUR)];
+    }
+  }
 </BOUCLE_pages>

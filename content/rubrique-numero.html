@@ -3,19 +3,32 @@
 
   <div class="layout">
 
-    [<div class="layout__item">
+    [<div class="layout__item u-9/12-m-and-l">
       <div class="element cover">
-        (#INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, contexte=toc})
+        (#INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, layout=stack, link=0, descriptif=0, adaptive=1})
       </div>
     </div>]
+    <div class="layout__item u-11/12-m u-1/12-push-m u-9/12-l u-3/12-push-l">
 
+      <aside class="element__section element__meta">
+        <div class="layout">
+          <div class="layout__item u-8/12-m-and-l">
+            <!-- rien -->
+          </div>[<div class="layout__item u-4/12-m-and-l">
+            (#PLUGIN{socialtags}|oui)
+              [(#INCLURE{fond=inclure/share})]
+          </div>]
+        </div>
+      </aside>
+
+    </div>
     <div class="layout__item u-10/12-m u-1/12-push-m u-8/12-l u-1/12-push-l">
-      [<div class="element__section">
+      [<div class="element__section[ t-(#ID_RUBRIQUE)__color--inter]">
         (#TEXTE)
       </div>]
       [<section class="element__section">
-        <h1 class="delta hN [t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
-        <div class="notes u-col2-m-and-l">
+        <h1 class="delta hN[ t-(#ID_RUBRIQUE)__hN]"><:pratiques_picturales:notes:></h1>
+        <div class="notes">
           (#NOTES)
         </div>
       </section>]
@@ -24,19 +37,20 @@
     <B_sommaire>
     <div class="layout__item u-10/12-m-and-l u-1/12-push-m-and-l">
       <section class="element__content">
-        <h1 class="element__title element__title--section alpha [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:sommaire:></h1>
-
-        <div class="flex-grid u-flex-6/12-m-and-l">
-          <BOUCLE_sommaire(ARTICLES){id_rubrique}>
-            <INCLURE{fond=inclure/article-resume,id_article,layout=flex-grid__item} />
-          </BOUCLE_sommaire>
+        <h1 class="element__title element__title--section element__title--mb alpha [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:sommaire:></h1>
+        <div class="layout">
+          <BOUCLE_sommaire(ARTICLES){id_rubrique}{par num titre, date}
+          ><div class="layout__item u-6/12-l">
+            <INCLURE{fond=inclure/article-resume, id_article, class_color=#ID_RUBRIQUE, lien_suite=texte} />
+          </div
+          ></BOUCLE_sommaire>
         </div>
-        </BOUCLE_sommaire>
       </section>
-
     </div>
     </B_sommaire>
-
+    [<aside>
+      (#INCLURE{fond=inclure/rubrique-numero-nav-prevnext, id_rubrique, t-color=[t-(#ID_RUBRIQUE)__nav-prvnxt]})
+    </aside>]
     [<div class="layout__item">
       (#INCLURE{fond=breadcrumb/rubrique,id_rubrique})
     </div>]

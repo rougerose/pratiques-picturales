@@ -1,0 +1,15 @@
+<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+<B_numeros>
+  #ANCRE_PAGINATION
+  <BOUCLE_numeros(RUBRIQUES){id_parent}{!par num titre, titre}{pagination 4}
+  ><div class="layout__item u-6/12-l">
+    [<article class="element cover">
+      (#INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, layout=#ENV{layout}, link=#ENV{link}, descriptif=#ENV{descriptif}, adaptive=#ENV{adaptive}})
+    </article>]
+  </div
+  ></BOUCLE_numeros>
+  [<nav class="pagination pagination--center pagination--bottom">
+    (#PAGINATION{numeros,id_rubrique})
+  </nav>]
+</B_numeros>
+</BOUCLE_rubrique>
