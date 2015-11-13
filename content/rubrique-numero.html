@@ -39,7 +39,7 @@
       <section class="element__content">
         <h1 class="element__title element__title--section element__title--mb alpha [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:sommaire:></h1>
         <div class="layout">
-          <BOUCLE_sommaire(ARTICLES){id_rubrique}
+          <BOUCLE_sommaire(ARTICLES){id_rubrique}{par num titre, date}
           ><div class="layout__item u-6/12-l">
             <INCLURE{fond=inclure/article-resume, id_article, class_color=#ID_RUBRIQUE, lien_suite=texte} />
           </div
