@@ -1,6 +1,5 @@
 Prioritaire:
   ☐ robots.txt
-  ☐ corriger le traitement des noms/prénoms auteurs dans le backend
 
 Todo:
 
@@ -15,6 +14,7 @@ Pour mémoire:
   ☐ ratio des images: 1.5
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+  ✔ corriger le traitement des noms/prénoms auteurs dans le backend @done(2015-11-13 18:55) @project(Prioritaire)
   ✔ page 404 @done(2015-11-03 18:25) @project(Prioritaire)
   ✔ favicon @done(2015-11-04 18:11) @project(Prioritaire)
   ✔ styles print @done(2015-11-04 18:11) @project(Prioritaire)
