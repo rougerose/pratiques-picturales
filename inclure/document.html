@@ -1,11 +1,12 @@
 <BOUCLE_documents_joints(DOCUMENTS){id_document}>
-<a href="[(#URL_DOCUMENT)]" type="#MIME_TYPE" class="media[ (#ENV{class_doc})]">
+<a href="[(#URL_DOCUMENT)]" type="#MIME_TYPE" class="media[ (#ENV{class_doc})][(#EXTENSION|match{gif|jpg|png}|oui) galerie]"[ title="(#TITRE|attribut_html)[ : (#DESCRIPTIF|attribut_html|couper{60})]"]>
   [<img src="(#LOGO_DOCUMENT|extraire_attribut{src})"[ alt="(#TITRE|couper{40})"] class="media__img media__img--doc">]
   <div class="media__body media__body--doc">
     [<h3 class="media__titre">(#TITRE)</h3>]
     [<p class="media__descriptif">(#DESCRIPTIF|PtoBR)</p>]
     [<p class="media__credit">(#CREDITS)</p>]
-    <p class="media__type-info">[<abbr title="<:pratiques_picturales:info_document:> #TYPE_DOCUMENT" class="ext">(#EXTENSION|strtoupper)</abbr> - ][<span>(#TAILLE|taille_en_octets)</span>]</p>
+    [(#EXTENSION|match{gif|jpg|png}|non)
+      <p class="media__type-info">[<abbr title="<:pratiques_picturales:info_document:> #TYPE_DOCUMENT" class="ext">(#EXTENSION|strtoupper)</abbr> - ][<span>(#TAILLE|taille_en_octets)</span>]</p>]
   </div>
 </a>
 </BOUCLE_documents_joints>

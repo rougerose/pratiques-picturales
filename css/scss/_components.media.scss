@@ -67,7 +67,7 @@
 
     .media__titre {
       margin-bottom: 0;
-      @include inuit-font-size(14px);
+      @include inuit-font-size(16px);
 
       .media__body--doc & {
         margin-top: 0;

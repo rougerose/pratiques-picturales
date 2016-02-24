@@ -30,7 +30,7 @@ gulp.task('css', function () {
     .pipe(sass({ sourceMap: false }))
     .pipe(sass({ sourceComments: false }))
     .pipe(autoprefixer())
-    //.pipe(nano())
+    .pipe(nano())
     .pipe(gulp.dest('./css'))
     .pipe(notify({
       //title: 'Gulp',
