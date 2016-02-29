@@ -23,7 +23,10 @@
 <BOUCLE_rubrique_numero_cover(RUBRIQUES){id_rubrique}>
   [(#ENV{link}|=={1}|?{<a href="#URL_RUBRIQUE" class="element__link element__link--cover">})]
     [(#ENV{adaptive}|=={1}|?{
-      [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,800}|image_recadre{1200,800,center}|adaptive_images{1090})],
+      [(#ENV{origine}|=={sommaire}|?{
+        [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,800}|image_recadre{1200,600,center}|adaptive_images{1090})],
+        [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,800}|image_recadre{1200,800,center}|adaptive_images{1090})]
+      })],
       [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{690,460}|image_recadre{690,460,center})]
     })]
 
