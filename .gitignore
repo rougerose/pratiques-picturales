@@ -6,3 +6,4 @@
 node_modules/
 bower_components/
 css/webfonts/
+yarn.lock
