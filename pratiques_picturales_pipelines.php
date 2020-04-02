@@ -10,4 +10,17 @@ function pratiques_picturales_insert_head_css($flux){
   return $flux;
 }
 
-?>
+function pratiques_picturales_porte_plume_barre_charger($barres) {
+  $barre = &$barres['edition'];
+  $barre->cacher(array(
+    'alignerdroite',
+    'alignergauche',
+    'cadretexte',
+    'barre_cadre',
+    'petitescapitales',
+    'stroke_through_et',
+    'miseenevidence',
+    'miseenevidence2'
+  ));
+  return $barres;
+}
