@@ -14,7 +14,6 @@
 
 //.element {}
 
-
 /* pour le premier élément et englobant l'ensemble du contenu de la page */
 .element--container {
   @include media-query(s) {
@@ -55,54 +54,55 @@
   margin-bottom: 0;
 }
 
-  .element__title {
-    margin-bottom: 0;
-  }
+.element__title {
+  margin-bottom: 0;
+}
 
-  .element__title--section {
-    text-transform: uppercase;
-  }
+.element__title--section {
+  text-transform: uppercase;
+}
 
-  .element__title--mb {
-    margin-bottom: $spacing-unit;
-  }
+.element__title--mb {
+  margin-bottom: $spacing-unit;
+}
 
-  .element__subtitle {
-    margin: $spacing-unit--tiny 0 0;
-    font-style: italic;
-    color: $gray-color;
-  }
+.element__subtitle {
+  margin: $spacing-unit--tiny 0 0;
+  font-style: italic;
+  color: $gray-color;
+}
 
-  .element__subtitle--resume {
-    margin-top: $spacing-unit--tiny;
-    color: $gray-color;
-  }
+.element__subtitle--resume {
+  margin-top: $spacing-unit--tiny;
+  color: $gray-color;
+}
 
 // .element__meta {}
 
-  .element__byline {}
+.element__byline {
+}
 
-  .element__authors {
-    font-style: italic;
-  }
+.element__authors {
+  font-style: italic;
+}
 
-  .element__authors--article {
-    &:before {
-      content: ' | ';
-      color: $gray-color;
-    }
-  }
-
-  .element__authors--resume {
-    margin-top: $spacing-unit--tiny;
-    @include inuit-font-size(16px);
-  }
-
-  .element__date {
+.element__authors--article {
+  &:before {
+    content: " | ";
     color: $gray-color;
   }
+}
 
-  // .element__date--article {}
+.element__authors--resume {
+  margin-top: $spacing-unit--tiny;
+  @include inuit-font-size(16px);
+}
+
+.element__date {
+  color: $gray-color;
+}
+
+// .element__date--article {}
 
 /*
    element__content
@@ -120,41 +120,40 @@
   @extend .element__content--main;
 }
 
-  // .element__texte {}
+// .element__texte {}
 
-  .element__texte--mb {
-    margin-bottom: $spacing-unit--large;
-  }
+.element__texte--mb {
+  margin-bottom: $spacing-unit--large;
+}
 
-  .element__chapo {
-    margin-bottom: $spacing-unit--large;
-    @include inuit-font-size(18px);
-    color: darken($text-color,15%);
-  }
+.element__chapo {
+  margin-bottom: $spacing-unit--large;
+  @include inuit-font-size(18px);
+  color: darken($text-color, 15%);
+}
 
+.element__link {
+  text-decoration: none;
+  display: block;
+}
 
-  .element__link {
-    text-decoration: none;
-    display: block;
-  }
+.element__contact {
+  text-align: center;
+}
 
-  .element__contact {
-    text-align: center;
-  }
-
-  .element__next {
-    margin-top: $spacing-unit--small;
+.element__next {
+  margin-top: $spacing-unit--small;
+  margin-bottom: $spacing-unit--tiny;
+  text-align: right;
+  font-weight: 600;
+  @include transition(color);
+  &:before,
+  &:after {
     margin-bottom: $spacing-unit--tiny;
-    text-align: right;
-    font-weight: bold;
-    @include transition(color);
-    &:before,
-    &:after {
-      margin-bottom: $spacing-unit--tiny;
-      display: block;
-      content: '';
-      width: 20%;
-      height: 0; // la taille est définie par une classe spécifique à l'élément.
-      background-color: currentColor;
-    }
+    display: block;
+    content: "";
+    width: 20%;
+    height: 0; // la taille est définie par une classe spécifique à l'élément.
+    background-color: currentColor;
   }
+}

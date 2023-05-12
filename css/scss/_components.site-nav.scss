@@ -8,50 +8,50 @@
   }
 }
 
-  .site-nav__container {
-    @extend .clearfix;
-    margin-left: -$spacing-unit;
-    margin-bottom: $spacing-unit;
-  }
+.site-nav__container {
+  @extend .clearfix;
+  margin-left: -$spacing-unit;
+  margin-bottom: $spacing-unit;
+}
 
-  .site-nav__home {
-    width: 100%;
-  }
+.site-nav__home {
+  width: 100%;
+}
 
-    .site-nav__logo {
-      max-width: 477px;
-      width: 100%;
-      margin-bottom: $spacing-unit--small;
-    }
+.site-nav__logo {
+  max-width: 477px;
+  width: 100%;
+  margin-bottom: $spacing-unit--small;
+}
 
-  /**
+/**
    * les éléments site-nav__list se comportent comme des .layout__item,
    * (élement parent est un div.layout)
    * mais positionnés avec float, au lieu de inline-block compte tenu
    * des retours de chariots produits par spip qui sont impossibles à supprimer.
    * La largeur des éléments est réglée directement ici.
    **/
-  .site-nav__list {
-    margin:  0;
-    list-style: none;
-    width: (1 / 3) * 100%;
-    float: left;
-    padding-left: $spacing-unit;
-    @include inuit-font-size(18px);
+.site-nav__list {
+  margin: 0;
+  list-style: none;
+  width: (1 / 3) * 100%;
+  float: left;
+  padding-left: $spacing-unit;
+  @include inuit-font-size(18px);
 
-    @include media-query(s) {
-      width: 50%; // u-1/2
-    }
-
-    @include media-query(l) {
-      width: (2 / 11) * 100%; // u-2/11
-    }
+  @include media-query(s) {
+    width: 50%; // u-1/2
   }
 
-    // .site-nav__item {}
+  @include media-query(l) {
+    width: (2 / 11) * 100%; // u-2/11
+  }
+}
 
-      .site-nav__link {
-        .active & {
-          font-weight: bold;
-        }
-      }
+// .site-nav__item {}
+
+.site-nav__link {
+  .active & {
+    font-weight: 600;
+  }
+}

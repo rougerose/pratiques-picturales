@@ -70,22 +70,22 @@
   }
 }
 
-  .related__link {
-    display: block;
-  }
+.related__link {
+  display: block;
+}
 
 .related__desc--aff {
   font-style: italic;
-  font-weight: bold;
+  font-weight: 600;
   color: $black-color;
 }
 
-  .related__logo-aff {
-    display: block;
-    margin: $spacing-unit--tiny $spacing-unit--tiny $spacing-unit--tiny 0;
-    width: 100%;
-    height: round(150px * 0.35);
-    background: url('../img/institut-acte.svg') no-repeat;
-    background-size: contain;
-    text-indent: -9999px;
-  }
+.related__logo-aff {
+  display: block;
+  margin: $spacing-unit--tiny $spacing-unit--tiny $spacing-unit--tiny 0;
+  width: 100%;
+  height: round(150px * 0.35);
+  background: url("../img/institut-acte.svg") no-repeat;
+  background-size: contain;
+  text-indent: -9999px;
+}

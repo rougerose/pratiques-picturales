@@ -13,74 +13,74 @@
   @include transition(background);
 }
 
-  .cover__body--simple {
-    width: 100%;
+.cover__body--simple {
+  width: 100%;
+}
+
+.cover__body--short {
+  width: 100%;
+  @include media-query(m-and-l) {
+    position: absolute;
+    bottom: 0px;
+    width: 60%;
+  }
+}
+
+.cover__body--stack {
+  position: relative;
+  margin-top: -10%;
+  @include media-query(m-and-l) {
+    // @extend .u-1\/12-push-m-and-l;
+    margin-left: (1/9) * 100%;
   }
 
-  .cover__body--short {
-    width: 100%;
-    @include media-query(m-and-l) {
-      position: absolute;
-      bottom: 0px;
-      width: 60%;
-    }
+  @include media-query(m) {
+    @extend .u-10\/12-m;
   }
 
-  .cover__body--stack {
-    position: relative;
-    margin-top: -10%;
-    @include media-query(m-and-l) {
-      // @extend .u-1\/12-push-m-and-l;
-      margin-left: (1/9)*100%;
-    }
-
-    @include media-query(m) {
-      @extend .u-10\/12-m;
-    }
-
-    @include media-query(l) {
-      // @extend .u-11\/12-l;
-    }
+  @include media-query(l) {
+    // @extend .u-11\/12-l;
   }
+}
 
-  .cover__title {
-    margin-top: 0;
-  }
+.cover__title {
+  margin-top: 0;
+}
 
-  .cover__subtitle {
+.cover__subtitle {
+  margin-top: $spacing-unit--tiny;
+  text-transform: uppercase;
+  color: inherit;
+}
+
+.cover__subtitle--std {
+  &:after {
+    display: block;
+    content: "";
+    width: 20%;
+    height: 1px;
     margin-top: $spacing-unit--tiny;
-    text-transform: uppercase;
-    color: inherit;
+    background-color: currentColor;
   }
+}
 
-  .cover__subtitle--std {
-    &:after {
-      display: block;
-      content: '';
-      width: 20%;
-      height: 1px;
-      margin-top: $spacing-unit--tiny;
-      background-color: currentColor;
-    }
-  }
+.cover__desc {
+  margin-bottom: $spacing-unit--tiny;
+}
 
-  .cover__desc {
-    margin-bottom: $spacing-unit--tiny;
-  }
+.cover__desc-direction {
+  font-weight: 600;
+}
 
-  .cover__desc-direction {
-    font-weight: bold;
+.cover__desc-contributions {
+  font-style: italic;
+  > span {
+    font-weight: 600;
   }
+}
 
-  .cover__desc-contributions {
-    font-style: italic;
-    > span {
-      font-weight: bold;
-    }
+.cover__next {
+  &:before {
+    height: 1px;
   }
-
-  .cover__next {
-    &:before {
-      height: 1px;
-    }
-  }
+}

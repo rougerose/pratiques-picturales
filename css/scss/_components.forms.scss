@@ -21,8 +21,8 @@ textarea {
   border: 1px solid $lightest-gray-color;
 }
 
-
-.form {}
+.form {
+}
 
 .form__item {
   position: relative;
@@ -43,7 +43,7 @@ textarea {
 
 .form-contact__legend {
   margin-bottom: $spacing-unit--small;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .form-contact__label {
@@ -54,7 +54,6 @@ textarea {
 .form-contact__textarea {
   min-height: 10em;
 }
-
 
 /*
    #FORM-SEARCH
@@ -79,7 +78,7 @@ textarea {
   float: left;
   border: none;
   color: $black-color;
-  @include inuit-font-size(20px,false);
+  @include inuit-font-size(20px, false);
   &::placeholder {
     color: $gray-color;
   }
@@ -94,7 +93,7 @@ textarea {
   background: $white-color;
   border: none;
   color: $gray-color;
-  @include inuit-font-size(20px,false);
+  @include inuit-font-size(20px, false);
   &:hover {
     color: $black-color;
   }

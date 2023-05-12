@@ -14,129 +14,127 @@
 // Trumps ------ Overrides and helper classes.
 
 // SETTINGS:
-  @import "node_modules/inuit-defaults/settings.defaults";
-  @import "settings.colors";
-  @import "settings.global";
+@import "../../node_modules/inuit-defaults/settings.defaults";
+@import "settings.colors";
+@import "settings.global";
 
-  @import "node_modules/inuit-responsive-settings/settings.responsive";
+@import "../../node_modules/inuit-responsive-settings/settings.responsive";
 
-  // TOOLS:
-  @import "node_modules/inuit-functions/tools.functions";
-  @import "node_modules/inuit-mixins/tools.mixins";
-  @import "tools.mixins";
-  @import "node_modules/inuit-responsive-tools/tools.responsive";
+// TOOLS:
+@import "../../node_modules/inuit-functions/tools.functions";
+@import "../../node_modules/inuit-mixins/tools.mixins";
+@import "tools.mixins";
+@import "../../node_modules/inuit-responsive-tools/tools.responsive";
 
-  // @import "node_modules/inuit-tools-widths/tools.widths";
-  @import "tools.widths"; // sans déclaration !important
+// @import "../../node_modules/inuit-tools-widths/tools.widths";
+@import "tools.widths"; // sans déclaration !important
 
-  // GENERIC:
-  @import "node_modules/inuit-normalize/generic.normalize";
-  @import "node_modules/inuit-box-sizing/generic.box-sizing";
-  @import "generic.shared";
-  // @import "node_modules/inuit-reset/generic.reset";
-  // @import "node_modules/inuit-shared/generic.shared";
+// GENERIC:
+@import "../../node_modules/inuit-normalize/generic.normalize";
+@import "../../node_modules/inuit-box-sizing/generic.box-sizing";
+@import "generic.shared";
+// @import "../../node_modules/inuit-reset/generic.reset";
+// @import "../../node_modules/inuit-shared/generic.shared";
 
-  // BASE:
-  // @import "base.fonts";
-  @import "base.webfonts";
+// BASE:
+// @import "base.fonts";
+@import "base.webfonts";
 
-  @import "base.page";
-  @import "base.links";
+@import "base.page";
+@import "base.links";
 
+// @import "../../node_modules/inuit-headings/base.headings";
+@import "../../node_modules/inuit-paragraphs/base.paragraphs";
+// @import "../../node_modules/inuit-lists/base.lists";
+@import "../../node_modules/inuit-images/base.images";
 
-  // @import "node_modules/inuit-headings/base.headings";
-  @import "node_modules/inuit-paragraphs/base.paragraphs";
-  // @import "node_modules/inuit-lists/base.lists";
-  @import "node_modules/inuit-images/base.images";
+// OBJECTS:
+// @import "../../node_modules/inuit-block/objects.block";
+// @import "../../node_modules/inuit-box/objects.box";
+@import "../../node_modules/inuit-buttons/objects.buttons";
+// @import "../../node_modules/inuit-flag/objects.flag";
+@import "../../node_modules/inuit-layout/objects.layout";
+@import "../../node_modules/inuit-list-bare/objects.list-bare";
+// @import "../../node_modules/inuit-list-block/objects.list-block";
+// @import "../../node_modules/inuit-list-inline/objects.list-inline";
+// @import "../../node_modules/inuit-list-ui/objects.list-ui";
+// @import "../../node_modules/inuit-media/objects.media";
+// @import "../../node_modules/inuit-pack/objects.pack";
+// @import "../../node_modules/inuit-tables/objects.tables";
+@import "../../node_modules/inuit-tabs/objects.tabs";
 
-  // OBJECTS:
-  // @import "node_modules/inuit-block/objects.block";
-  // @import "node_modules/inuit-box/objects.box";
-  @import "node_modules/inuit-buttons/objects.buttons";
-  // @import "node_modules/inuit-flag/objects.flag";
-  @import "node_modules/inuit-layout/objects.layout";
-  @import "node_modules/inuit-list-bare/objects.list-bare";
-  // @import "node_modules/inuit-list-block/objects.list-block";
-  // @import "node_modules/inuit-list-inline/objects.list-inline";
-  // @import "node_modules/inuit-list-ui/objects.list-ui";
-  // @import "node_modules/inuit-media/objects.media";
-  // @import "node_modules/inuit-pack/objects.pack";
-  // @import "node_modules/inuit-tables/objects.tables";
-  @import "node_modules/inuit-tabs/objects.tabs";
+@import "objects.wrapper";
 
-  @import "objects.wrapper";
+// COMPONENTS:
 
-  // COMPONENTS:
+// page
+@import "components.page";
+@import "components.page-head";
+@import "components.page-body";
+@import "components.page-content";
+@import "components.page-foot";
 
-  // page
-  @import "components.page";
-  @import "components.page-head";
-  @import "components.page-body";
-  @import "components.page-content";
-  @import "components.page-foot";
+//
+@import "components.forms";
+@import "components.info";
+@import "components.headings";
+@import "components.hr";
+@import "components.quotes";
+@import "components.tables";
 
-  //
-  @import "components.forms";
-  @import "components.info";
-  @import "components.headings";
-  @import "components.hr";
-  @import "components.quotes";
-  @import "components.tables";
+@import "components.media";
+@import "components.images";
 
-  @import "components.media";
-  @import "components.images";
+@import "components.lists";
 
-  @import "components.lists";
+@import "components.site-nav";
+@import "components.nav";
 
-  @import "components.site-nav";
-  @import "components.nav";
+@import "components.element";
+@import "components.resumes";
 
-  @import "components.element";
-  @import "components.resumes";
+// rubrique
+// @import "components.rubrique";
 
-  // rubrique
-  // @import "components.rubrique";
+// article
+@import "components.article-resume";
+@import "components.toc";
+@import "components.notes";
+@import "components.tags";
+@import "components.bibliographie";
+// @import "components.meta";
+@import "components.breadcrumb";
+@import "components.related";
+@import "components.promo";
 
-  // article
-  @import "components.article-resume";
-  @import "components.toc";
-  @import "components.notes";
-  @import "components.tags";
-  @import "components.bibliographie";
-  // @import "components.meta";
-  @import "components.breadcrumb";
-  @import "components.related";
-  @import "components.promo";
+// @import "components.auteur";
+@import "components.contact";
 
-  // @import "components.auteur";
-  @import "components.contact";
+@import "components.index";
 
-  @import "components.index";
+@import "components.cover";
 
-  @import "components.cover";
+@import "components.boxes";
+@import "components.icons";
+@import "components.buttons";
+@import "components.pagination";
+@import "components.tabs";
+@import "components.sort";
+@import "components.share";
 
+@import "components.spip-admin";
 
-  @import "components.boxes";
-  @import "components.icons";
-  @import "components.buttons";
-  @import "components.pagination";
-  @import "components.tabs";
-  @import "components.sort";
-  @import "components.share";
+// TRUMPS:
+@import "../../node_modules/inuit-clearfix/trumps.clearfix";
+// @import "../../node_modules/inuit-headings-trumps/trumps.headings";
+// @import "../../node_modules/inuit-spacing/trumps.spacing";
+// @import "../../node_modules/inuit-responsive-spacing/trumps.spacing-responsive";
+@import "trumps.headings";
 
-  @import "components.spip-admin";
-
-  // TRUMPS:
-  @import "node_modules/inuit-clearfix/trumps.clearfix";
-  // @import "node_modules/inuit-headings-trumps/trumps.headings";
-  // @import "node_modules/inuit-spacing/trumps.spacing";
-  // @import "node_modules/inuit-responsive-spacing/trumps.spacing-responsive";
-  @import "trumps.headings";
-
-  @import "node_modules/inuit-widths/trumps.widths";
-  @import "node_modules/inuit-responsive-widths/trumps.widths-responsive";
-  // @import "trumps.widths-layout";
-  @import "trumps.widths-push-pull";
+@import "../../node_modules/inuit-widths/trumps.widths";
+@import "../../node_modules/inuit-responsive-widths/trumps.widths-responsive";
+// @import "trumps.widths-layout";
+@import "trumps.widths-push-pull";
 
 @media print {
   @import "trumps.print";
