@@ -1,21 +1,8 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="generator" content="SPIP" />
-[(#REM) Favicon ]
-[<meta name="msapplication-TileColor" content="#FFFFFF" />
-<meta name="msapplication-TileImage" content="(#CHEMIN{img/pratiques-picturales-144.png})" />]
-[<link rel="apple-touch-icon-precomposed" href="(#CHEMIN{img/pratiques-picturales-152.png})" />]
-
-[(#REM) Lien vers le flux RSS du site ]
-[<link rel="alternate" type="application/rss+xml" title="[(#NOM_SITE_SPIP|textebrut)]" href="(#URL_PAGE{backend})" />]
-
-[(#REM) Balise permettant aux plugins d'inserer des fichiers CSS ]
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content="SPIP[ (#SPIP_VERSION)]" />
+[<link rel="alternate" type="application/rss+xml" title="[(#NOM_SITE_SPIP|textebrut) : ]<:syndiquer_site:>" href="(#URL_PAGE{backend})"/>]
+<INCLURE{fond=inclure/favicons}/>
 #INSERT_HEAD_CSS
-
-[(#REM) CSS fichier pratiques_picturales.couleurs.css.html ]
-[<link
-  rel="stylesheet"
-  href="(#PRODUIRE{fond=css/pratiques_picturales.couleurs.css}|compacte)"
-  type="text/css"
-  media="screen" />]
-
+[(#REM) CSS fichier pratiques_picturales.couleurs ]
+[<link rel="stylesheet" href="(#PRODUIRE{fond=css/pratiques_picturales.couleurs.css}|compacte)" type="text/css" media="screen" />]
 #INSERT_HEAD
