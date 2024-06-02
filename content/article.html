@@ -2,10 +2,16 @@
 <article class="element element--container article">
   <div class="layout">
     [(#REM) logo article ]
+	[(#LOGO_ARTICLE|oui)
+		[(#LOGO_ARTICLE|largeur|>{#LOGO_ARTICLE|hauteur}|?{
+			[(#SET{logo, #LOGO_ARTICLE|inserer_attribut{alt,#TITRE|textebrut}|image_passe_partout{720,480}|image_recadre{720,480, center, white}})],
+			[(#SET{logo,
+			#LOGO_ARTICLE|inserer_attribut{alt,#TITRE|textebrut}|image_passe_partout{480,720}|image_reduire{720,480}|image_recadre{720,480,center,white}})]
+		})]
+	]
     [<div class="layout__item u-10/12-m u-8/12-l">
-
       <aside class="element cover">
-        (#LOGO_ARTICLE|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,800}|image_recadre{1200,800,center}|adaptive_images{1090})
+		(#GET{logo})
       </aside>
 
     </div>]

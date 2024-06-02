@@ -31,7 +31,7 @@
           <BOUCLE_dernier_numero(RUBRIQUES){id_parent=1}{!par num titre}{0,1}>
           <h1 class="element__title element__title--section beta [t-(#ID_RUBRIQUE)__color]"><:pratiques_picturales:issue_last:></h1>
           <article class="cover">
-            <INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, layout=stack, link=1, descriptif=1, adaptive=1, origine=sommaire} />
+            <INCLURE{fond=inclure/rubrique-numero-cover, id_rubrique, layout=stack, link=1, descriptif=1, origine=sommaire} />
           </article>
           </BOUCLE_dernier_numero>
         </section>
@@ -50,7 +50,7 @@
                 <header class="element__header [(#LOGO_SELECTIONS_CONTENU|oui)element__header--resume-logo]">
                   <h1 class="element__title element__title--mb gamma">#TITRE</h1>
                 </header>
-                [(#LOGO_SELECTIONS_CONTENU|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,900}|image_recadre{980,0}|adaptive_images{490})]
+                [(#LOGO_SELECTIONS_CONTENU|inserer_attribut{alt,#TITRE}|image_passe_partout{490,326}|image_recadre{490,0})]
                 [<div class="article-resume__desc [(#LOGO_SELECTIONS_CONTENU|oui)article-resume__desc--logo]">
                   (#DESCRIPTIF)
                 </div>]

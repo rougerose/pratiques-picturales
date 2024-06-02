@@ -6,7 +6,7 @@
 
 ]<BOUCLE_rubrique_numero_cover(RUBRIQUES){id_rubrique}>
 <a class="element__link element__link--color" href="#URL_RUBRIQUE">
-  [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,900}|image_recadre{1200,900,center}|adaptive_images{720})]
+  [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{720,480}|image_reduire{720,0})]
   <div class="cover__body cover__body--short [t-(#ID_RUBRIQUE)__bg]">
     <h2 class="element__title cover__title gamma">#TITRE</h2>
     [<p class="element__subtitle cover__subtitle">(#SOUSTITRE)[/(#DATE_NUMERO|affdate{Y})]</p>]

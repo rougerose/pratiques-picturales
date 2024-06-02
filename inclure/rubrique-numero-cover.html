@@ -11,10 +11,6 @@
   Afficher le lien vers la rubrique ou pas:
     - #ENV{link} => 0 ou 1
 
-  Le traitement (adaptatif ou pas) du logo de la rubrique est déterminé
-  avec un paramètre transmis dans l'inclusion:
-    - #ENV{adaptive} => O ou 1
-
   Le descriptif est affiché ou pas:
     - #ENV{descriptif} => 0 ou 1
 
@@ -22,14 +18,10 @@
 
 <BOUCLE_rubrique_numero_cover(RUBRIQUES){id_rubrique}>
   [(#ENV{link}|=={1}|?{<a href="#URL_RUBRIQUE" class="element__link element__link--cover">})]
-    [(#ENV{adaptive}|=={1}|?{
-      [(#ENV{origine}|=={sommaire}|?{
-        [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,800}|image_recadre{1200,600,center}|adaptive_images{1090})],
-        [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{1200,800}|image_recadre{1200,800,center}|adaptive_images{1090})]
-      })],
-      [(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE}|image_passe_partout{690,460}|image_recadre{690,460,center})]
-    })]
-
+	[(#ENV{origine}|=={sommaire}|?{
+		[(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE|textebrut}|image_passe_partout{1000,600}|image_recadre{1000,600,center})],
+		[(#LOGO_RUBRIQUE|inserer_attribut{alt,#TITRE|textebrut}|image_passe_partout{690,460}|image_reduire{690,460}|image_recadre{640,460,center,black})]
+	})]
     <div class="cover__body [cover__body--(#ENV{layout})] [t-(#ID_RUBRIQUE)__bg]">
       <header>
         <h1 class="element__title cover__title beta">#TITRE</h1>
