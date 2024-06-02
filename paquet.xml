@@ -8,8 +8,7 @@
 >
     <nom>Pratiques picturales : plugin Spip 4.2</nom>
     <auteur lien="http://rouge-rose.net">Christophe Le Drean</auteur>
-    <pipeline nom="porte_plume_barre_charger" inclure="pratiques_picturales_pipelines.php" />
-    <necessite nom="adaptive_images" compatibilite="[1.9.1;[" />
+    <!-- <necessite nom="adaptive_images" compatibilite="[1.9.1;[" /> -->
     <necessite nom="bellespuces" />
     <necessite nom="cextras" compatibilite="[3.7.1;[" />
     <necessite nom="compositions" compatibilite="[3.3.13;[" />
@@ -21,13 +20,11 @@
     <necessite nom="pages" compatibilite="[1.2.10;[" />
     <necessite nom="palette" compatibilite="[3.0.6;[" />
     <necessite nom="pb_couleur_rubrique" compatibilite="[2.3.6;[" />
+    <necessite nom="porte_plume_intertitres" />
     <necessite nom="sommaire" compatibilite="[1.2.1;[" />
     <necessite nom="selections_editoriales" />
     <necessite nom="suivant_precedent" />
-    <necessite nom="typoenluminee" compatibilite="[3.5.15;[" />
     <necessite nom="Zcore" compatibilite="[2.4.5;[" />
-    <utilise nom="socialtags" compatibilite="[1.0.9;[" />
-    <utilise nom="medoc" compatibilite="[2.2.6;[" />
 
     <spip compatibilite="[3.2.0;4.2.*]">
       <style type="public" source="css/pratiques_picturales.css" />
