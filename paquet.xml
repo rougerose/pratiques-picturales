@@ -1,6 +1,6 @@
 <paquet
     prefix="pratiques_picturales"
-    version="2.0.1"
+    version="2.0.2"
     etat="stable"
     categorie="squelette"
     compatibilite="[4.2.0;4.4.*]"
