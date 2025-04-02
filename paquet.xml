@@ -1,12 +1,12 @@
 <paquet
     prefix="pratiques_picturales"
-    version="2.0.0"
+    version="2.0.1"
     etat="stable"
     categorie="squelette"
-    compatibilite="[4.2.0;4.2.*]"
+    compatibilite="[4.2.0;4.4.*]"
     logo="img/pratiques_picturales-32.png"
 >
-    <nom>Pratiques picturales : plugin Spip 4.2</nom>
+    <nom>Pratiques picturales : plugin Spip 4.4</nom>
     <auteur lien="http://rouge-rose.net">Christophe Le Drean</auteur>
     <necessite nom="bellespuces" />
     <necessite nom="cextras" />
@@ -25,7 +25,7 @@
     <necessite nom="suivant_precedent" />
     <necessite nom="Zcore" />
 
-    <spip compatibilite="[4.2.0;4.2.*]">
+    <spip compatibilite="[4.2.0;4.4.*]">
       <style type="public" source="css/pratiques_picturales.css" />
     </spip>
 </paquet>
